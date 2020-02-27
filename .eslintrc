@@ -1,0 +1,26 @@
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"plugins": ["react", "@typescript-eslint", "prettier"],
+	"env": {
+		"browser": true,
+		"jest": true
+	},
+	"rules": {
+		"prettier/prettier": ["error", { "singleQuote": false }],
+		"@typescript-eslint/explicit-member-accessibility": 0,
+		"@typescript-eslint/explicit-function-return-type": 0,
+		"react/display-name": 0,
+		"react/react-in-jsx-scope": 0
+	},
+	"settings": {
+		"react": {
+			"pragma": "React",
+			"version": "detect"
+		}
+	},
+	"parserOptions": {
+		"ecmaVersion": 2018,
+		"sourceType": "module"
+	}
+}
