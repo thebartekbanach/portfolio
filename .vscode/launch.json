@@ -1,0 +1,29 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "firefox",
+			"request": "launch",
+			"reAttach": true,
+			"name": "Debug: Firefox",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}",
+			"pathMappings": [
+				{
+					"url": "webpack:///store",
+					"path": "${workspaceFolder}/store"
+				}
+			]
+		},
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Debug: Chrome",
+			"url": "http://localhost:3000",
+			"webRoot": "${workspaceFolder}"
+		}
+	]
+}
