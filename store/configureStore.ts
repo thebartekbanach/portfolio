@@ -2,6 +2,8 @@ import createSagaMiddleware from "redux-saga";
 import rootReducer from "./rootReducer";
 import rootSaga from "./rootSaga";
 import { applyMiddleware, createStore, Middleware } from "redux";
+import { MakeStoreOptions } from "next-redux-wrapper";
+import { Store } from ".";
 
 function bindMiddleware(middleware: Middleware[]) {
 	if (process.env.NODE_ENV !== "production") {
@@ -12,7 +14,7 @@ function bindMiddleware(middleware: Middleware[]) {
 	return applyMiddleware(...middleware);
 }
 
-export function configureStore(preloadedState, { isServer, req = null }) {
+export function configureStore(preloadedState: Store, { isServer, req = null }: MakeStoreOptions) {
 	const sagaMiddleware = createSagaMiddleware();
 
 	const store = createStore(rootReducer, preloadedState, bindMiddleware([sagaMiddleware]));
