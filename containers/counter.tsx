@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { counterActions } from "../store/counter/actions";
+import { countSelector } from "../store/counter/selectors";
 import { FC } from "react";
 import { Store } from "../store";
 
@@ -16,7 +17,7 @@ export const Counter: FC<CounterProps> = ({ count, increment }) => (
 );
 
 const mapStateToProps = (state: Store) => ({
-	count: state.count
+	count: countSelector(state)
 });
 
 const mapDispatchToProps = {
