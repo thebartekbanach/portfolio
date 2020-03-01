@@ -1,8 +1,8 @@
 import { connect } from "react-redux";
-import { counterActions } from "../store/counter/actions";
-import { countSelector } from "../store/counter/selectors";
 import { FC } from "react";
-import { Store } from "../store";
+import { counterActions } from "~/store/counter/actions";
+import { countSelector } from "~/store/counter/selectors";
+import { Store } from "~/store/index";
 
 interface CounterProps {
 	count?: number;

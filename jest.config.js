@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-undef
+const makeModuleNameMapper = require("./tests/rootImports");
+
 module.exports = {
 	transform: {
 		"^.+\\.tsx?$": "ts-jest"
@@ -12,5 +13,6 @@ module.exports = {
 	testPathIgnorePatterns: ["/lib/", "/node_modules/"],
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 	collectCoverage: true,
-	setupFilesAfterEnv: ["<rootDir>/tests/setupEnzyme.ts", "<rootDir>/tests/setupGlobals.ts"]
+	setupFilesAfterEnv: ["<rootDir>/tests/setupEnzyme.ts", "<rootDir>/tests/setupGlobals.ts"],
+	moduleNameMapper: makeModuleNameMapper()
 };
