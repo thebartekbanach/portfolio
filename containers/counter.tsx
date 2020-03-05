@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { FC } from "react";
 import { counterActions } from "~/store/counter/actions";
 import { countSelector } from "~/store/counter/selectors";
-import { Store } from "~/store/index";
+import { Store } from "~/store";
 
 interface CounterProps {
 	count?: number;
