@@ -17,6 +17,10 @@ const availableLanguages = createReducer([] as AvailableLanguage[], handleAction
 			return state;
 		}
 
+		if (language.translations !== undefined) {
+			return state;
+		}
+
 		const missingLanguage: AvailableLanguage = {
 			code: action.payload.languageCode,
 			name: language.name,
