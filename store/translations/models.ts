@@ -64,3 +64,9 @@ export interface Translations {
 	contact: ContactSectionTranslations;
 	privacyPolicy: PrivacyPolicyTranslations;
 }
+
+export interface AvailableLanguage {
+	code: string;
+	name: string;
+	translations?: Translations;
+}
