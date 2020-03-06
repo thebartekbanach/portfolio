@@ -12,7 +12,7 @@ describe("setLanguage request action creator", () => {
 describe("setLanguage success action creator", () => {
 	it("should return proper payload object", () => {
 		const result = setLanguage.success("pl");
-		expect(result.payload).toEqual({ languageCode: "pl" });
+		expect(result.payload).toEqual({ languageCode: "pl", missingTranslations: undefined });
 	});
 
 	it("should return proper meta object", () => {
@@ -20,12 +20,15 @@ describe("setLanguage success action creator", () => {
 
 		const result = setLanguage.success("pl", translationsMock);
 
-		expect(result.meta).toEqual({ missingTranslations: translationsMock });
+		expect(result.payload).toEqual({
+			languageCode: "pl",
+			missingTranslations: translationsMock
+		});
 	});
 
 	it("should return undefined missingTranslations meta property if missingTranslations are not specified", () => {
 		const result = setLanguage.success("pl");
-		expect(result.meta).toEqual({ missingTranslations: undefined });
+		expect(result.payload).toEqual({ languageCode: "pl", missingTranslations: undefined });
 	});
 });
 

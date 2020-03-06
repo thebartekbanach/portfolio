@@ -9,7 +9,7 @@ export const setLanguage = {
 	success: createActionCreator(
 		"language/setLanguage/success",
 		resolve => (languageCode: string, missingTranslations?: Translations) =>
-			resolve({ languageCode }, { missingTranslations })
+			resolve({ languageCode, missingTranslations })
 	),
 	failed: createActionCreator(
 		"language/setLanguage/failed",
