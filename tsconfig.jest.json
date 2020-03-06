@@ -2,6 +2,7 @@
 	"extends": "./tsconfig.json",
 	"compilerOptions": {
 		"jsx": "react",
-		"allowUmdGlobalAccess": true
+		"allowUmdGlobalAccess": true,
+		"plugins": [{ "transform": "ts-auto-mock/transformer", "cacheBetweenTests": false }]
 	}
 }
