@@ -64,4 +64,18 @@ describe("availableLanguages reducer", () => {
 
 		expect(result).toBe(stateMock);
 	});
+
+	it("should not change state when given language code is unknown", () => {
+		const stateMock: AvailableLanguage[] = [
+			{ code: "en", name: "English", translations: createMock<Translations>() },
+			{ code: "pl", name: "Polski", translations: createMock<Translations>() }
+		];
+
+		const result = translationsReducer.availableLanguages(
+			stateMock,
+			setLanguage.success("fr", createMock<Translations>())
+		);
+
+		expect(result).toBe(stateMock);
+	});
 });
