@@ -4,9 +4,8 @@ interface SectionTranslations {
 }
 
 interface WelcomeSectionTranslations {
-	logoText: string;
 	name: string;
-	grade: string;
+	job: string;
 	aboutMe: string;
 	navbar: {
 		skills: string;
