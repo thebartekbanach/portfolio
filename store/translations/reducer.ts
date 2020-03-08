@@ -1,27 +1,25 @@
 import { createReducer } from "deox";
 import { LoadingState, PageState } from "./models";
 import { registerTranslationProvider, setLanguage } from "./actions";
+import { isNullOrUndefined } from "~/lib/isNullOrUndefined";
 
 const currentLanguageCode = createReducer("en", handleAction => [
-	handleAction(setLanguage.success, (state, action) => {
-		if (
-			action.payload.newLanguageCode === undefined ||
-			action.payload.newLanguageCode === null
-		) {
+	handleAction(setLanguage.success, (state, { payload }) => {
+		if (isNullOrUndefined(payload.newLanguageCode)) {
 			return state;
 		}
 
-		if (action.payload.newLanguageCode === state) {
+		if (payload.newLanguageCode === state) {
 			return state;
 		}
 
-		return action.payload.newLanguageCode;
+		return payload.newLanguageCode;
 	})
 ]);
 
 const pendingLanguageCode = createReducer(undefined as string, handleAction => [
-	handleAction(setLanguage.request, (state, action) => {
-		if (action.payload.languageCode === null || action.payload.languageCode === undefined) {
+	handleAction(setLanguage.request, (state, { payload }) => {
+		if (payload.languageCode === null || payload.languageCode === undefined) {
 			return state;
 		}
 
@@ -29,7 +27,7 @@ const pendingLanguageCode = createReducer(undefined as string, handleAction => [
 			return state;
 		}
 
-		return action.payload.languageCode;
+		return payload.languageCode;
 	}),
 	handleAction([setLanguage.success, setLanguage.failed], () => {
 		return undefined;
@@ -37,34 +35,28 @@ const pendingLanguageCode = createReducer(undefined as string, handleAction => [
 ]);
 
 const registeredTranslationProviders = createReducer([] as string[], handleAction => [
-	handleAction(registerTranslationProvider, (state, action) => {
-		if (
-			action.payload.translationProviderId === null ||
-			action.payload.translationProviderId === undefined
-		) {
+	handleAction(registerTranslationProvider, (state, { payload }) => {
+		if (isNullOrUndefined(payload.translationProviderId)) {
 			return state;
 		}
 
-		if (state.includes(action.payload.translationProviderId)) {
+		if (state.includes(payload.translationProviderId)) {
 			return state;
 		}
 
-		return [...state, action.payload.translationProviderId];
+		return [...state, payload.translationProviderId];
 	})
 ]);
 
 const loadingState = createReducer({} as LoadingState, handleAction => [
-	handleAction(registerTranslationProvider, (state, action) => {
-		if (
-			action.payload.translationProviderId === null ||
-			action.payload.translationProviderId === undefined
-		) {
+	handleAction(registerTranslationProvider, (state, { payload }) => {
+		if (isNullOrUndefined(payload.translationProviderId)) {
 			return state;
 		}
 
 		const result = { ...state };
 
-		result[action.payload.translationProviderId] = false;
+		result[payload.translationProviderId] = false;
 
 		return result;
 	}),
@@ -77,11 +69,11 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 
 		return result;
 	}),
-	handleAction(setLanguage.translationProviderReady, (state, action) => {
+	handleAction(setLanguage.translationProviderReady, (state, { payload }) => {
 		const result = { ...state };
 
 		for (const prop in state) {
-			if (prop === action.payload.providerId) {
+			if (prop === payload.providerId) {
 				result[prop] = true;
 				break;
 			}
@@ -101,25 +93,22 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 ]);
 
 const pageState = createReducer("shown" as PageState, handleAction => [
-	handleAction(setLanguage.request, (state, action) => {
-		if (action.payload.languageCode === null || action.payload.languageCode === undefined) {
+	handleAction(setLanguage.request, (state, { payload }) => {
+		if (isNullOrUndefined(payload.languageCode)) {
 			return "shown";
 		}
 
 		return "hiding";
 	}),
-	handleAction(setLanguage.success, (state, action) => {
-		if (
-			action.payload.newLanguageCode === null ||
-			action.payload.newLanguageCode === undefined
-		) {
+	handleAction(setLanguage.success, (state, { payload }) => {
+		if (isNullOrUndefined(payload.newLanguageCode)) {
 			return state;
 		}
 
 		return "shown";
 	}),
-	handleAction(setLanguage.failed, (state, action) => {
-		if (action.payload.languageCode === null || action.payload.languageCode === undefined) {
+	handleAction(setLanguage.failed, (state, { payload }) => {
+		if (isNullOrUndefined(payload.languageCode)) {
 			return state;
 		}
 
