@@ -1,14 +1,9 @@
 import { createReducer } from "deox";
 import { LoadingState, PageState } from "./models";
 import { registerTranslationProvider, setLanguage } from "./actions";
-import { isNullOrUndefined } from "~/lib/isNullOrUndefined";
 
 const currentLanguageCode = createReducer("en", handleAction => [
 	handleAction(setLanguage.success, (state, { payload }) => {
-		if (isNullOrUndefined(payload.newLanguageCode)) {
-			return state;
-		}
-
 		if (payload.newLanguageCode === state) {
 			return state;
 		}
@@ -17,12 +12,8 @@ const currentLanguageCode = createReducer("en", handleAction => [
 	})
 ]);
 
-const pendingLanguageCode = createReducer(undefined as string, handleAction => [
+const pendingLanguageCode = createReducer(undefined as string | undefined, handleAction => [
 	handleAction(setLanguage.request, (state, { payload }) => {
-		if (payload.languageCode === null || payload.languageCode === undefined) {
-			return state;
-		}
-
 		if (state !== undefined) {
 			return state;
 		}
@@ -36,10 +27,6 @@ const pendingLanguageCode = createReducer(undefined as string, handleAction => [
 
 const registeredTranslationProviders = createReducer([] as string[], handleAction => [
 	handleAction(registerTranslationProvider, (state, { payload }) => {
-		if (isNullOrUndefined(payload.translationProviderId)) {
-			return state;
-		}
-
 		if (state.includes(payload.translationProviderId)) {
 			return state;
 		}
@@ -50,10 +37,6 @@ const registeredTranslationProviders = createReducer([] as string[], handleActio
 
 const loadingState = createReducer({} as LoadingState, handleAction => [
 	handleAction(registerTranslationProvider, (state, { payload }) => {
-		if (isNullOrUndefined(payload.translationProviderId)) {
-			return state;
-		}
-
 		const result = { ...state };
 
 		result[payload.translationProviderId] = false;
@@ -93,27 +76,9 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 ]);
 
 const pageState = createReducer("shown" as PageState, handleAction => [
-	handleAction(setLanguage.request, (state, { payload }) => {
-		if (isNullOrUndefined(payload.languageCode)) {
-			return "shown";
-		}
-
-		return "hiding";
-	}),
-	handleAction(setLanguage.success, (state, { payload }) => {
-		if (isNullOrUndefined(payload.newLanguageCode)) {
-			return state;
-		}
-
-		return "shown";
-	}),
-	handleAction(setLanguage.failed, (state, { payload }) => {
-		if (isNullOrUndefined(payload.languageCode)) {
-			return state;
-		}
-
-		return "shown";
-	}),
+	handleAction(setLanguage.request, () => "hiding"),
+	handleAction(setLanguage.success, () => "shown"),
+	handleAction(setLanguage.failed, () => "shown"),
 	handleAction(setLanguage.pageHasBeenHidden, () => "hidden")
 ]);
 

@@ -1,12 +1,12 @@
-import { translate, TypedTranslation } from "../translate";
+import { ParametrizedTranslation, translate } from "../translate";
 
 describe("translate function", () => {
 	interface SomeSimpleTranslation {
-		aboutMe: TypedTranslation<{ age: number }>;
+		aboutMe: ParametrizedTranslation<{ age: number }>;
 	}
 
 	interface SomeAdvancedTranslation {
-		aboutMe: TypedTranslation<{ name: string; age: number }>;
+		aboutMe: ParametrizedTranslation<{ name: string; age: number }>;
 	}
 
 	it("should translate string with single parameter occurrence", () => {
@@ -51,78 +51,6 @@ describe("translate function", () => {
 		);
 	});
 
-	it("should throw error when parameters object is undefined", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
-		const parameters = undefined;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"params cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when parameters object is null", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
-		const parameters = null;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"params cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is undefined", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: undefined };
-		const parameters = { age: 20 };
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is null", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: null };
-		const parameters = { age: 20 };
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is undefined and parameters is undefined", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: undefined };
-		const parameters = undefined;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is undefined and parameters is null", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: undefined };
-		const parameters = null;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is null and parameters is undefined", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: null };
-		const parameters = undefined;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
-	it("should throw error when translation object is null and parameters is null", () => {
-		const translation: SomeSimpleTranslation = { aboutMe: null };
-		const parameters = null;
-
-		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"text cannot be null or undefined"
-		);
-	});
-
 	it("should throw error when translation is not string", () => {
 		const translation = () => "functions should not work";
 		const parameters = { age: 20 };
@@ -137,7 +65,7 @@ describe("translate function", () => {
 		const parameters = { age: (() => 20) as any };
 
 		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"params cannot contain a function or nested object"
+			'params can contain only strings or numbers, "age" = "function () { return 20; }"'
 		);
 	});
 
@@ -146,7 +74,79 @@ describe("translate function", () => {
 		const parameters = { age: { age: 20 } as any };
 
 		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
-			"params cannot contain a function or nested object"
+			'params can contain only strings or numbers, "age" = "[object Object]"'
+		);
+	});
+
+	it("should throw error when text to translate is null", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: null as any };
+		const parameters = { age: 20 };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"text cannot be null or undefined"
+		);
+	});
+
+	it("should throw error when text to translate is undefined", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: undefined as any };
+		const parameters = { age: 20 };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"text cannot be null or undefined"
+		);
+	});
+
+	it("should throw error when parameters are null", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = null;
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot be null or undefined"
+		);
+	});
+
+	it("should throw error when parameters are undefined", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = undefined;
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot be null or undefined"
+		);
+	});
+
+	it("should throw error when parameter value is null", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = { age: null as any };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot contain null or undefined"
+		);
+	});
+
+	it("should throw error when parameter value is undefined", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = { age: undefined as any };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot contain null or undefined"
+		);
+	});
+
+	it("should throw error when parameter value is NaN", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = { age: NaN };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot contain NaN or Infinity"
+		);
+	});
+
+	it("should throw error when parameter value is Infinity", () => {
+		const translation: SomeSimpleTranslation = { aboutMe: "before {age} after" };
+		const parameters = { age: Infinity };
+
+		expect(() => translate(translation.aboutMe, parameters)).toThrowError(
+			"params cannot contain NaN or Infinity"
 		);
 	});
 });
