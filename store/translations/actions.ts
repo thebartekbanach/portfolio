@@ -1,5 +1,5 @@
+import { AvailableLanguage } from "./models";
 import { createActionCreator } from "deox";
-import { PageState } from "./models";
 
 export const setLanguage = {
 	request: createActionCreator(
@@ -29,4 +29,9 @@ export const setLanguage = {
 export const registerTranslationProvider = createActionCreator(
 	"translations/registerTranslationProvider",
 	resolve => (translationProviderId: string) => resolve({ translationProviderId })
+);
+
+export const setupAvailableLanguages = createActionCreator(
+	"translations/setupAvailableLanguages",
+	resolve => (availableLanguages: AvailableLanguage[]) => resolve({ availableLanguages })
 );
