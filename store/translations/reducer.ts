@@ -1,6 +1,6 @@
+import { AvailableLanguage, LoadingState, PageState } from "./models";
 import { createReducer } from "deox";
-import { LoadingState, PageState } from "./models";
-import { registerTranslationProvider, setLanguage } from "./actions";
+import { registerTranslationProvider, setLanguage, setupAvailableLanguages } from "./actions";
 
 const currentLanguageCode = createReducer("en", handleAction => [
 	handleAction(setLanguage.success, (state, { payload }) => {
@@ -82,7 +82,12 @@ const pageState = createReducer("shown" as PageState, handleAction => [
 	handleAction(setLanguage.pageHasBeenHidden, () => "hidden")
 ]);
 
+const availableLanguages = createReducer([] as AvailableLanguage[], handleAction => [
+	handleAction(setupAvailableLanguages, (state, action) => action.payload.availableLanguages)
+]);
+
 export const translationsReducer = {
+	availableLanguages,
 	currentLanguageCode,
 	pendingLanguageCode,
 	registeredTranslationProviders,

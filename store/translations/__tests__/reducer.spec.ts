@@ -1,5 +1,5 @@
 import { LoadingState, PageState } from "../models";
-import { registerTranslationProvider, setLanguage } from "../actions";
+import { registerTranslationProvider, setLanguage, setupAvailableLanguages } from "../actions";
 import { translationsReducer } from "../reducer";
 
 describe("translationsReducer.registeredTranslationProviders reducer", () => {
@@ -207,5 +207,20 @@ describe("translationsReducer.loadingState reducer", () => {
 		const result = translationsReducer.loadingState(initialState, action);
 
 		expect(result).toEqual({ page: false, contact: false });
+	});
+});
+
+describe("translationsReducer.availableLanguages reducer", () => {
+	it("should set available languages on setupAvailableLanguages action", () => {
+		const initialState = [];
+		const availableLanguages = [
+			{ code: "pl", name: "Polski" },
+			{ code: "en", name: "english" }
+		];
+		const action = setupAvailableLanguages(availableLanguages);
+
+		const result = translationsReducer.availableLanguages(initialState, action);
+
+		expect(result).toEqual(availableLanguages);
 	});
 });
