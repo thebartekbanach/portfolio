@@ -1,9 +1,9 @@
 import { AvailableLanguage, LoadingState, PageState } from "./models";
 import { createReducer } from "deox";
-import { registerTranslationProvider, setLanguage, setupAvailableLanguages } from "./actions";
+import { language } from "./actions";
 
 const currentLanguageCode = createReducer("en", handleAction => [
-	handleAction(setLanguage.success, (state, { payload }) => {
+	handleAction(language.setLanguage.success, (state, { payload }) => {
 		if (payload.newLanguageCode === state) {
 			return state;
 		}
@@ -13,20 +13,20 @@ const currentLanguageCode = createReducer("en", handleAction => [
 ]);
 
 const pendingLanguageCode = createReducer(undefined as string | undefined, handleAction => [
-	handleAction(setLanguage.request, (state, { payload }) => {
+	handleAction(language.setLanguage.request, (state, { payload }) => {
 		if (state !== undefined) {
 			return state;
 		}
 
 		return payload.languageCode;
 	}),
-	handleAction([setLanguage.success, setLanguage.failed], () => {
+	handleAction([language.setLanguage.success, language.setLanguage.failed], () => {
 		return undefined;
 	})
 ]);
 
 const registeredTranslationProviders = createReducer([] as string[], handleAction => [
-	handleAction(registerTranslationProvider, (state, { payload }) => {
+	handleAction(language.registerTranslationProvider, (state, { payload }) => {
 		if (state.includes(payload.translationProviderId)) {
 			return state;
 		}
@@ -36,14 +36,14 @@ const registeredTranslationProviders = createReducer([] as string[], handleActio
 ]);
 
 const loadingState = createReducer({} as LoadingState, handleAction => [
-	handleAction(registerTranslationProvider, (state, { payload }) => {
+	handleAction(language.registerTranslationProvider, (state, { payload }) => {
 		const result = { ...state };
 
 		result[payload.translationProviderId] = false;
 
 		return result;
 	}),
-	handleAction(setLanguage.request, state => {
+	handleAction(language.setLanguage.request, state => {
 		const result = {};
 
 		for (const prop in state) {
@@ -52,7 +52,7 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 
 		return result;
 	}),
-	handleAction(setLanguage.translationProviderReady, (state, { payload }) => {
+	handleAction(language.translationProviderReady, (state, { payload }) => {
 		const result = { ...state };
 
 		for (const prop in state) {
@@ -64,7 +64,7 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 
 		return result;
 	}),
-	handleAction(setLanguage.failed, state => {
+	handleAction(language.setLanguage.failed, state => {
 		const result = {};
 
 		for (const prop in state) {
@@ -76,14 +76,17 @@ const loadingState = createReducer({} as LoadingState, handleAction => [
 ]);
 
 const pageState = createReducer("shown" as PageState, handleAction => [
-	handleAction(setLanguage.request, () => "hiding"),
-	handleAction(setLanguage.success, () => "shown"),
-	handleAction(setLanguage.failed, () => "shown"),
-	handleAction(setLanguage.pageHasBeenHidden, () => "hidden")
+	handleAction(language.setLanguage.request, () => "hiding"),
+	handleAction(language.setLanguage.success, () => "shown"),
+	handleAction(language.setLanguage.failed, () => "shown"),
+	handleAction(language.pageHasBeenHidden, () => "hidden")
 ]);
 
 const availableLanguages = createReducer([] as AvailableLanguage[], handleAction => [
-	handleAction(setupAvailableLanguages, (state, action) => action.payload.availableLanguages)
+	handleAction(
+		language.setupAvailableLanguages,
+		(state, action) => action.payload.availableLanguages
+	)
 ]);
 
 export const translationsReducer = {

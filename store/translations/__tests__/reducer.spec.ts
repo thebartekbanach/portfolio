@@ -1,11 +1,11 @@
+import { language } from "../actions";
 import { LoadingState, PageState } from "../models";
-import { registerTranslationProvider, setLanguage, setupAvailableLanguages } from "../actions";
 import { translationsReducer } from "../reducer";
 
 describe("translationsReducer.registeredTranslationProviders reducer", () => {
 	it("should add new translation provider id", () => {
 		const initialState = [];
-		const action = registerTranslationProvider("page");
+		const action = language.registerTranslationProvider("page");
 
 		const result = translationsReducer.registeredTranslationProviders(initialState, action);
 
@@ -14,7 +14,7 @@ describe("translationsReducer.registeredTranslationProviders reducer", () => {
 
 	it("should not mutate state", () => {
 		const initialState = ["page"];
-		const action = registerTranslationProvider("contact");
+		const action = language.registerTranslationProvider("contact");
 
 		const result = translationsReducer.registeredTranslationProviders(initialState, action);
 
@@ -23,7 +23,7 @@ describe("translationsReducer.registeredTranslationProviders reducer", () => {
 
 	it("should add new translation provider and leave existing ones", () => {
 		const initialState = ["page"];
-		const action = registerTranslationProvider("contact");
+		const action = language.registerTranslationProvider("contact");
 
 		const result = translationsReducer.registeredTranslationProviders(initialState, action);
 
@@ -32,7 +32,7 @@ describe("translationsReducer.registeredTranslationProviders reducer", () => {
 
 	it("should not add existing translation provider id", () => {
 		const initialState = ["page"];
-		const action = registerTranslationProvider("page");
+		const action = language.registerTranslationProvider("page");
 
 		const result = translationsReducer.registeredTranslationProviders(initialState, action);
 
@@ -43,7 +43,7 @@ describe("translationsReducer.registeredTranslationProviders reducer", () => {
 describe("translationsReducer.pendingLanguageCode reducer", () => {
 	it("should set pending language to requested language", () => {
 		const initialState = undefined;
-		const action = setLanguage.request("pl");
+		const action = language.setLanguage.request("pl");
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
@@ -52,7 +52,7 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 
 	it("should not change pending language when is already loading", () => {
 		const initialState = "pl";
-		const action = setLanguage.request("en");
+		const action = language.setLanguage.request("en");
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
@@ -61,7 +61,7 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 
 	it("should set pending language to undefined after success", () => {
 		const initialState = "pl";
-		const action = setLanguage.success("pl");
+		const action = language.setLanguage.success("pl");
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
@@ -70,7 +70,7 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 
 	it("should set pending language to undefined after failure", () => {
 		const initialState = "pl";
-		const action = setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", "page", 500);
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
@@ -81,7 +81,7 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 describe("translationsReducer.currentLanguageCode reducer", () => {
 	it("should set current language after success", () => {
 		const initialState = "pl";
-		const action = setLanguage.success("en");
+		const action = language.setLanguage.success("en");
 
 		const result = translationsReducer.currentLanguageCode(initialState, action);
 
@@ -90,7 +90,7 @@ describe("translationsReducer.currentLanguageCode reducer", () => {
 
 	it("should not change state if language code is the same", () => {
 		const initialState = "pl";
-		const action = setLanguage.success("pl");
+		const action = language.setLanguage.success("pl");
 
 		const result = translationsReducer.currentLanguageCode(initialState, action);
 
@@ -101,7 +101,7 @@ describe("translationsReducer.currentLanguageCode reducer", () => {
 describe("translationsReducer.pageState reducer", () => {
 	it("should change state to 'hiding' after language change request action", () => {
 		const initialState: PageState = "shown";
-		const action = setLanguage.request("pl");
+		const action = language.setLanguage.request("pl");
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -110,7 +110,7 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'hidden' after pageHasBeenHidden action", () => {
 		const initialState: PageState = "hiding";
-		const action = setLanguage.pageHasBeenHidden();
+		const action = language.pageHasBeenHidden();
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -119,7 +119,7 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'shown' after language change success action", () => {
 		const initialState: PageState = "hidden";
-		const action = setLanguage.success("pl");
+		const action = language.setLanguage.success("pl");
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -128,7 +128,7 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'shown' after language change failed action when initial state is 'hidden'", () => {
 		const initialState: PageState = "hidden";
-		const action = setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", "page", 500);
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -137,7 +137,7 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'shown' after language change failed action when initial state is 'hiding'", () => {
 		const initialState: PageState = "hiding";
-		const action = setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", "page", 500);
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -148,7 +148,7 @@ describe("translationsReducer.pageState reducer", () => {
 describe("translationsReducer.loadingState reducer", () => {
 	it("should register translation provider correctly", () => {
 		const initialState = {};
-		const action = registerTranslationProvider("page");
+		const action = language.registerTranslationProvider("page");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
@@ -157,7 +157,7 @@ describe("translationsReducer.loadingState reducer", () => {
 
 	it("should register second translation provider correctly", () => {
 		const initialState = { page: false };
-		const action = registerTranslationProvider("contact");
+		const action = language.registerTranslationProvider("contact");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
@@ -166,7 +166,7 @@ describe("translationsReducer.loadingState reducer", () => {
 
 	it("should not modify original state", () => {
 		const initialState = { page: false };
-		const action = registerTranslationProvider("contact");
+		const action = language.registerTranslationProvider("contact");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
@@ -175,25 +175,25 @@ describe("translationsReducer.loadingState reducer", () => {
 
 	it("should mark specified provider as loaded by translationProviderReady action", () => {
 		const initialState = { page: false, contact: false };
-		const action = setLanguage.translationProviderReady("contact");
+		const action = language.translationProviderReady("contact");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
 		expect(result).toEqual({ page: false, contact: true });
 	});
 
-	it("should reset states to true on setLanguage request action", () => {
+	it("should reset states to true on language.setLanguage request action", () => {
 		const initialState = { page: true, contact: true };
-		const action = setLanguage.success("pl");
+		const action = language.setLanguage.success("pl");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
 		expect(result).toEqual({ page: true, contact: true });
 	});
 
-	it("should reset states to true on setLanguage failed action", () => {
+	it("should reset states to true on language.setLanguage failed action", () => {
 		const initialState = { page: false, contact: false };
-		const action = setLanguage.failed("pl", "contact", 500);
+		const action = language.setLanguage.failed("pl", "contact", 500);
 
 		const result = translationsReducer.loadingState(initialState, action);
 
@@ -202,7 +202,7 @@ describe("translationsReducer.loadingState reducer", () => {
 
 	it("should reset states to false on setLanuage request action", () => {
 		const initialState = { page: true, contact: true };
-		const action = setLanguage.request("pl");
+		const action = language.setLanguage.request("pl");
 
 		const result = translationsReducer.loadingState(initialState, action);
 
@@ -217,7 +217,7 @@ describe("translationsReducer.availableLanguages reducer", () => {
 			{ code: "pl", name: "Polski" },
 			{ code: "en", name: "english" }
 		];
-		const action = setupAvailableLanguages(availableLanguages);
+		const action = language.setupAvailableLanguages(availableLanguages);
 
 		const result = translationsReducer.availableLanguages(initialState, action);
 

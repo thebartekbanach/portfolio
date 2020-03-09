@@ -18,20 +18,30 @@ export const setLanguage = {
 			statusCode: number,
 			response?: string
 		) => resolve({ languageCode }, { translationProviderId, statusCode, response })
-	),
-	pageHasBeenHidden: createActionCreator("translations/setLanguage/pageHasBeenHidden"),
-	translationProviderReady: createActionCreator(
-		"translations/setLanguage/translationProviderReady",
-		resolve => (providerId: string) => resolve({ providerId })
 	)
 };
 
-export const registerTranslationProvider = createActionCreator(
+const pageHasBeenHidden = createActionCreator("translations/setLanguage/pageHasBeenHidden");
+
+const translationProviderReady = createActionCreator(
+	"translations/setLanguage/translationProviderReady",
+	resolve => (providerId: string) => resolve({ providerId })
+);
+
+const registerTranslationProvider = createActionCreator(
 	"translations/registerTranslationProvider",
 	resolve => (translationProviderId: string) => resolve({ translationProviderId })
 );
 
-export const setupAvailableLanguages = createActionCreator(
+const setupAvailableLanguages = createActionCreator(
 	"translations/setupAvailableLanguages",
 	resolve => (availableLanguages: AvailableLanguage[]) => resolve({ availableLanguages })
 );
+
+export const language = {
+	setupAvailableLanguages,
+	registerTranslationProvider,
+	setLanguage,
+	translationProviderReady,
+	pageHasBeenHidden
+};
