@@ -1,4 +1,5 @@
 import { AvailableLanguage, LoadingState, PageState } from "./models";
+import { combineReducers } from "redux";
 import { createReducer } from "deox";
 import { language } from "./actions";
 
@@ -97,3 +98,5 @@ export const translationsReducer = {
 	loadingState,
 	pageState
 };
+
+export default combineReducers(translationsReducer);
