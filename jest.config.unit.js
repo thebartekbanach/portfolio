@@ -12,7 +12,7 @@ module.exports = {
 			compiler: "ttypescript"
 		}
 	},
-	testRegex: "(/__tests__/.*\\.i?spec)\\.(jsx?|tsx?)",
+	testRegex: "(/__tests__/.*\\.spec)\\.(jsx?|tsx?)",
 	testPathIgnorePatterns: ["/node_modules/", "/.next/"],
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 	collectCoverage: true,
