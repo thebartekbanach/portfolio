@@ -1,0 +1,41 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"label": "Test: all",
+			"script": "test"
+		},
+		{
+			"type": "npm",
+			"label": "Test and watch: all",
+			"script": "test:watch",
+			"group": {
+				"kind": "test",
+				"isDefault": true
+			}
+		},
+		{
+			"type": "npm",
+			"label": "Test: unit",
+			"script": "test.unit"
+		},
+		{
+			"type": "npm",
+			"label": "Test and watch: unit",
+			"script": "test.unit:watch"
+		},
+		{
+			"type": "npm",
+			"label": "Test: integration",
+			"script": "test.integration"
+		},
+		{
+			"type": "npm",
+			"label": "Test and watch: integration",
+			"script": "test.integration:watch"
+		}
+	]
+}
