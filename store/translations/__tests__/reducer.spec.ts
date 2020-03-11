@@ -42,7 +42,7 @@ describe("translationsReducer.registeredTranslationProviders reducer", () => {
 
 describe("translationsReducer.pendingLanguageCode reducer", () => {
 	it("should set pending language to requested language", () => {
-		const initialState = undefined;
+		const initialState = null;
 		const action = language.setLanguage.request("pl");
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
@@ -59,22 +59,26 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 		expect(result).toBe(initialState);
 	});
 
-	it("should set pending language to undefined after success", () => {
+	it("should set pending language to null after success", () => {
 		const initialState = "pl";
 		const action = language.setLanguage.success("pl");
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
-		expect(result).toBe(undefined);
+		expect(result).toBe(null);
 	});
 
-	it("should set pending language to undefined after failure", () => {
+	it("should set pending language to null after failure", () => {
 		const initialState = "pl";
-		const action = language.setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", {
+			from: "translation-provider",
+			translationProviderId: "page",
+			statusCode: 500
+		});
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
 
-		expect(result).toBe(undefined);
+		expect(result).toBe(null);
 	});
 });
 
@@ -128,7 +132,11 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'shown' after language change failed action when initial state is 'hidden'", () => {
 		const initialState: PageState = "hidden";
-		const action = language.setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", {
+			from: "translation-provider",
+			translationProviderId: "page",
+			statusCode: 500
+		});
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -137,7 +145,11 @@ describe("translationsReducer.pageState reducer", () => {
 
 	it("should change state to 'shown' after language change failed action when initial state is 'hiding'", () => {
 		const initialState: PageState = "hiding";
-		const action = language.setLanguage.failed("pl", "page", 500);
+		const action = language.setLanguage.failed("pl", {
+			from: "translation-provider",
+			translationProviderId: "page",
+			statusCode: 500
+		});
 
 		const result = translationsReducer.pageState(initialState, action);
 
@@ -193,7 +205,11 @@ describe("translationsReducer.loadingState reducer", () => {
 
 	it("should reset states to true on language.setLanguage failed action", () => {
 		const initialState = { page: false, contact: false };
-		const action = language.setLanguage.failed("pl", "contact", 500);
+		const action = language.setLanguage.failed("pl", {
+			from: "translation-provider",
+			translationProviderId: "page",
+			statusCode: 500
+		});
 
 		const result = translationsReducer.loadingState(initialState, action);
 

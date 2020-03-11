@@ -13,16 +13,16 @@ const currentLanguageCode = createReducer("en", handleAction => [
 	})
 ]);
 
-const pendingLanguageCode = createReducer(undefined as string | undefined, handleAction => [
+const pendingLanguageCode = createReducer(null as string | null, handleAction => [
 	handleAction(language.setLanguage.request, (state, { payload }) => {
-		if (state !== undefined) {
+		if (state !== null) {
 			return state;
 		}
 
 		return payload.languageCode;
 	}),
 	handleAction([language.setLanguage.success, language.setLanguage.failed], () => {
-		return undefined;
+		return null;
 	})
 ]);
 
