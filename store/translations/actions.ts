@@ -1,6 +1,18 @@
 import { AvailableLanguage } from "./models";
 import { createActionCreator } from "deox";
 
+type SetLanguageFailedActionCreatorErrorDetails =
+	| {
+			from: "translation-provider";
+			translationProviderId: string;
+			statusCode: number;
+			response?: string;
+	  }
+	| {
+			from: "redux-saga";
+			error: Error;
+	  };
+
 export const setLanguage = {
 	request: createActionCreator(
 		"translations/setLanguage/request",
@@ -13,11 +25,9 @@ export const setLanguage = {
 	failed: createActionCreator(
 		"translations/setLanguage/failed",
 		resolve => (
-			languageCode: string,
-			translationProviderId: string,
-			statusCode: number,
-			response?: string
-		) => resolve({ languageCode }, { translationProviderId, statusCode, response })
+			languageCode: string | undefined,
+			error: SetLanguageFailedActionCreatorErrorDetails
+		) => resolve({ languageCode }, { error })
 	)
 };
 
