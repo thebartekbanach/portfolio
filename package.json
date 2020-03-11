@@ -15,8 +15,8 @@
 		"test:watch": "jest --watch",
 		"test.unit": "jest -c jest.config.unit.js",
 		"test.unit:watch": "jest -c jest.config.unit.js --watch",
-		"test.integration": "jest -c jest.config.integration.js",
-		"test.integration:watch": "jest -c jest.config.integration.js --watch"
+		"test.integration": "jest -c jest.config.integration.js --coverage=false",
+		"test.integration:watch": "jest -c jest.config.integration.js --coverage=false --watch"
 	},
 	"author": "",
 	"license": "ISC",
