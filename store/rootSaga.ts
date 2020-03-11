@@ -1,8 +1,8 @@
 import { all } from "redux-saga/effects";
-import { watchIncrementAsync } from "./counter/sagas";
+import translationsSagas from "./translations/sagas";
 
 function* rootSaga() {
-	yield all([watchIncrementAsync()]);
+	yield all([translationsSagas()]);
 }
 
 export default rootSaga;
