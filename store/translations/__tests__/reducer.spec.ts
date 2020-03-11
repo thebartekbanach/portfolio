@@ -1,6 +1,6 @@
 import { language } from "../actions";
 import { LoadingState, PageState } from "../models";
-import { translationsReducer } from "../reducer";
+import { translationsReducer } from "../reducers";
 
 describe("translationsReducer.registeredTranslationProviders reducer", () => {
 	it("should add new translation provider id", () => {
