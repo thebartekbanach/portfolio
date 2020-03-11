@@ -1,9 +1,9 @@
 import { combineReducers } from "redux";
 import { createReducer } from "deox";
-import { environment } from "./actions";
+import { environment } from ".";
 
 const runningInBrowser = createReducer(false, handleAction => [
-	handleAction(environment.runningEnvironmentChanged, () => true)
+	handleAction(environment.actions.runningEnvironmentChanged, () => true)
 ]);
 
 export const environmentReducer = {

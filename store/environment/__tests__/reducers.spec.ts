@@ -1,10 +1,10 @@
-import { environment } from "../actions";
+import { environment } from "..";
 import { environmentReducer } from "../reducers";
 
 describe("environmentReducer.runningInBrowser", () => {
 	it("should change state to true after environment runningEnvironmentChanged action", () => {
 		const initialState = false;
-		const action = environment.runningEnvironmentChanged();
+		const action = environment.actions.runningEnvironmentChanged();
 
 		const result = environmentReducer.runningInBrowser(initialState, action);
 

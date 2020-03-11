@@ -1,12 +1,7 @@
 import { put, takeEvery, select } from "typed-redux-saga";
 import { getType } from "deox";
-import { language } from "./actions";
 import { isRunningOnServerSelector } from "../environment/selectors";
-import {
-	isPageHiddenSelector,
-	areAllTranslationProvidersReady,
-	pendingLanguageCodeSelector
-} from "./selectors";
+import { translations } from ".";
 
 export function* changeLanguageIfPageAndTranslationsAreReady() {
 	const isServer = yield* select(isRunningOnServerSelector);
@@ -14,22 +9,24 @@ export function* changeLanguageIfPageAndTranslationsAreReady() {
 	let pageIsAlreadyHidden = true;
 
 	if (!isServer) {
-		pageIsAlreadyHidden = yield* select(isPageHiddenSelector);
+		pageIsAlreadyHidden = yield* select(translations.selectors.isPageHidden);
 	}
 
-	const translationsAreReady = yield* select(areAllTranslationProvidersReady);
+	const translationsAreReady = yield* select(
+		translations.selectors.areAllTranslationProvidersReady
+	);
 
 	if (pageIsAlreadyHidden && translationsAreReady) {
-		const pendingLanguageCode = yield* select(pendingLanguageCodeSelector);
+		const pendingLanguageCode = yield* select(translations.selectors.pendingLanguageCode);
 
-		if (pendingLanguageCode !== undefined) {
-			yield put(language.setLanguage.success(pendingLanguageCode));
+		if (pendingLanguageCode !== null) {
+			yield put(translations.actions.setLanguage.success(pendingLanguageCode));
 		} else {
 			yield put(
-				language.setLanguage.failed(pendingLanguageCode, {
+				translations.actions.setLanguage.failed(pendingLanguageCode, {
 					from: "redux-saga",
 					error: new Error(
-						"Attempt to set current language when pendingLanguageCode is undefined"
+						"Attempt to set current language when pendingLanguageCode is null"
 					)
 				})
 			);
@@ -37,13 +34,13 @@ export function* changeLanguageIfPageAndTranslationsAreReady() {
 	}
 }
 
-export function* watchTranslationActions() {
+export default function* watchTranslationActions() {
 	yield takeEvery(
-		getType(language.pageHasBeenHidden),
+		getType(translations.actions.pageHasBeenHidden),
 		changeLanguageIfPageAndTranslationsAreReady
 	);
 	yield takeEvery(
-		getType(language.translationProviderReady),
+		getType(translations.actions.translationProviderReady),
 		changeLanguageIfPageAndTranslationsAreReady
 	);
 }

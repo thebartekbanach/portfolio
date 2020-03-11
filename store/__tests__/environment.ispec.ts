@@ -1,5 +1,5 @@
 import { configureStore } from "../configureStore";
-import { environment } from "../environment/actions";
+import { environment } from "../environment";
 import { isRunningInBrowserSelector } from "../environment/selectors";
 
 describe("environment integration tests", () => {
@@ -13,7 +13,7 @@ describe("environment integration tests", () => {
 
 	it("should change state to true after environment runningEnvironmentChanged action", () => {
 		const store = configureStore(undefined as any, { isServer: false });
-		const action = environment.runningEnvironmentChanged();
+		const action = environment.actions.runningEnvironmentChanged();
 
 		store.dispatch(action);
 		const result = isRunningInBrowserSelector(store.getState());
