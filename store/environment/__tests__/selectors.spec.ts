@@ -1,5 +1,9 @@
-import { isRunningInBrowserSelector, isRunningOnServerSelector, runningEnvironmentSelector } from "../selectors";
 import { Store } from "~/store";
+import {
+	isRunningInBrowserSelector,
+	isRunningOnServerSelector,
+	runningEnvironmentSelector
+} from "../selectors";
 
 describe("environment state selectors", () => {
 	describe("runningEnvironmentSelector", () => {
