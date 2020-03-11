@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import environment from "./environment/reducer";
+import environment from "./environment/reducers";
 import translations from "./translations/reducers";
 
 const rootReducer = combineReducers({

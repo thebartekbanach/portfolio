@@ -1,5 +1,5 @@
 import { environment } from "../actions";
-import { environmentReducer } from "../reducer";
+import { environmentReducer } from "../reducers";
 
 describe("environmentReducer.runningInBrowser", () => {
 	it("should change state to true after environment runningEnvironmentChanged action", () => {
