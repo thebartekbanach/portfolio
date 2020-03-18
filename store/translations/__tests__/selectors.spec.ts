@@ -1,6 +1,11 @@
 import { Store } from "~/store";
 import { DeepPartial } from "redux";
-import { isPageHidden, areAllTranslationProvidersReady } from "../selectors";
+import {
+	isPageHidden,
+	areAllTranslationProvidersReady,
+	availableLanguages,
+	currentLanguageCode
+} from "../selectors";
 
 describe("translations state selectors", () => {
 	describe("isPageHiddenSelector", () => {
@@ -59,6 +64,37 @@ describe("translations state selectors", () => {
 			const result = areAllTranslationProvidersReady(state as Store);
 
 			expect(result).toBe(false);
+		});
+	});
+
+	describe("availableLanguages", () => {
+		it("should return correct availableLanguages array", () => {
+			const state: DeepPartial<Store> = {
+				translations: {
+					availableLanguages: [
+						{ code: "pl", name: "Polski" },
+						{ code: "en", name: "English" }
+					]
+				}
+			};
+
+			const result = availableLanguages(state as Store);
+
+			expect(result).toBe(state.translations?.availableLanguages);
+		});
+	});
+
+	describe("currentLanguageCode", () => {
+		it("should return currentLanguageCode", () => {
+			const state: DeepPartial<Store> = {
+				translations: {
+					currentLanguageCode: "ok"
+				}
+			};
+
+			const result = currentLanguageCode(state as Store);
+
+			expect(result).toEqual("ok");
 		});
 	});
 });

@@ -7,3 +7,7 @@ export const areAllTranslationProvidersReady = (state: Store) => {
 };
 
 export const pendingLanguageCode = (state: Store) => state.translations.pendingLanguageCode;
+
+export const availableLanguages = (state: Store) => state.translations.availableLanguages;
+
+export const currentLanguageCode = (state: Store) => state.translations.currentLanguageCode;
