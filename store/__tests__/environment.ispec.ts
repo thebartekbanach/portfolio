@@ -1,12 +1,11 @@
 import { configureStore } from "../configureStore";
 import { environment } from "../environment";
-import { isRunningInBrowserSelector } from "../environment/selectors";
 
 describe("environment integration tests", () => {
 	it("should set initial state of isRunningInBrowser to false", () => {
-		const store = configureStore(undefined as any, { isServer: false });
+		const store = configureStore(undefined as any, { isServer: true });
 
-		const result = isRunningInBrowserSelector(store.getState());
+		const result = environment.selectors.isRunningInBrowser(store.getState());
 
 		expect(result).toBe(false);
 	});
@@ -16,7 +15,7 @@ describe("environment integration tests", () => {
 		const action = environment.actions.runningEnvironmentChanged();
 
 		store.dispatch(action);
-		const result = isRunningInBrowserSelector(store.getState());
+		const result = environment.selectors.isRunningInBrowser(store.getState());
 
 		expect(result).toBe(true);
 	});
