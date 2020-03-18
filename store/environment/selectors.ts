@@ -1,8 +1,8 @@
 import { Store } from "..";
 
-export const runningEnvironmentSelector = (store: Store) =>
+export const runningEnvironment = (store: Store) =>
 	store.environment.runningInBrowser ? "browser" : "server";
 
-export const isRunningInBrowserSelector = (store: Store) => store.environment.runningInBrowser;
+export const isRunningInBrowser = (store: Store) => store.environment.runningInBrowser;
 
-export const isRunningOnServerSelector = (store: Store) => !store.environment.runningInBrowser;
+export const isRunningOnServer = (store: Store) => !store.environment.runningInBrowser;

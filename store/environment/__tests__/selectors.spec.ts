@@ -1,16 +1,12 @@
 import { Store } from "~/store";
-import {
-	isRunningInBrowserSelector,
-	isRunningOnServerSelector,
-	runningEnvironmentSelector
-} from "../selectors";
+import { isRunningInBrowser, isRunningOnServer, runningEnvironment } from "../selectors";
 
 describe("environment state selectors", () => {
-	describe("runningEnvironmentSelector", () => {
+	describe("runningEnvironment", () => {
 		it("should return 'server' if running on server", () => {
 			const state: Partial<Store> = { environment: { runningInBrowser: false } };
 
-			const result = runningEnvironmentSelector(state as Store);
+			const result = runningEnvironment(state as Store);
 
 			expect(result).toEqual("server");
 		});
@@ -18,29 +14,45 @@ describe("environment state selectors", () => {
 		it("should return 'browser' if running in browser", () => {
 			const state: Partial<Store> = { environment: { runningInBrowser: true } };
 
-			const result = runningEnvironmentSelector(state as Store);
+			const result = runningEnvironment(state as Store);
 
 			expect(result).toEqual("browser");
 		});
 	});
 
-	describe("isRunningInBrowserSelector", () => {
+	describe("isRunningInBrowser", () => {
 		it("should return true if environment.runningInBrowser is equal to true", () => {
 			const state: Partial<Store> = { environment: { runningInBrowser: true } };
 
-			const result = isRunningInBrowserSelector(state as Store);
+			const result = isRunningInBrowser(state as Store);
 
 			expect(result).toBe(true);
 		});
+
+		it("should return false if environment.runningInBrowser is equal to false", () => {
+			const state: Partial<Store> = { environment: { runningInBrowser: false } };
+
+			const result = isRunningInBrowser(state as Store);
+
+			expect(result).toBe(false);
+		});
 	});
 
-	describe("isRunningOnServerSelector", () => {
+	describe("isRunningOnServer", () => {
 		it("should return true if environment.runningInBrowser is equal to false", () => {
 			const state: Partial<Store> = { environment: { runningInBrowser: false } };
 
-			const result = isRunningOnServerSelector(state as Store);
+			const result = isRunningOnServer(state as Store);
 
 			expect(result).toBe(true);
+		});
+
+		it("should return false if environment.runningInBrowser is equal to true", () => {
+			const state: Partial<Store> = { environment: { runningInBrowser: true } };
+
+			const result = isRunningOnServer(state as Store);
+
+			expect(result).toBe(false);
 		});
 	});
 });
