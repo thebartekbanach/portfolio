@@ -73,7 +73,7 @@ describe("translationsReducer.pendingLanguageCode reducer", () => {
 		const action = translations.actions.setLanguage.failed("pl", {
 			from: "translation-provider",
 			translationProviderId: "page",
-			statusCode: 500
+			error: new Error("error")
 		});
 
 		const result = translationsReducer.pendingLanguageCode(initialState, action);
@@ -135,7 +135,7 @@ describe("translationsReducer.pageState reducer", () => {
 		const action = translations.actions.setLanguage.failed("pl", {
 			from: "translation-provider",
 			translationProviderId: "page",
-			statusCode: 500
+			error: new Error("error")
 		});
 
 		const result = translationsReducer.pageState(initialState, action);
@@ -148,7 +148,7 @@ describe("translationsReducer.pageState reducer", () => {
 		const action = translations.actions.setLanguage.failed("pl", {
 			from: "translation-provider",
 			translationProviderId: "page",
-			statusCode: 500
+			error: new Error("error")
 		});
 
 		const result = translationsReducer.pageState(initialState, action);
@@ -208,7 +208,7 @@ describe("translationsReducer.loadingState reducer", () => {
 		const action = translations.actions.setLanguage.failed("pl", {
 			from: "translation-provider",
 			translationProviderId: "page",
-			statusCode: 500
+			error: new Error("error")
 		});
 
 		const result = translationsReducer.loadingState(initialState, action);

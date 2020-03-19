@@ -202,7 +202,7 @@ describe("translations integration tests", () => {
 		const contactTranslationProviderFailed = translations.actions.setLanguage.failed("pl", {
 			from: "translation-provider",
 			translationProviderId: "contact",
-			statusCode: 404
+			error: new Error("error")
 		});
 
 		store.dispatch(changeRunningEnvironmentToBrowser);

@@ -5,8 +5,7 @@ type SetLanguageFailedActionCreatorErrorDetails =
 	| {
 			from: "translation-provider";
 			translationProviderId: string;
-			statusCode: number;
-			response?: string;
+			error: Error;
 	  }
 	| {
 			from: "redux-saga";

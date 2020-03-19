@@ -222,8 +222,8 @@ describe("translations state sagas", () => {
 				.dispatch(
 					translations.actions.setLanguage.failed("pl", {
 						from: "translation-provider",
-						statusCode: 500,
-						translationProviderId: "contact"
+						translationProviderId: "contact",
+						error: new Error("error")
 					})
 				)
 				.returns(false)
