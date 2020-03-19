@@ -25,11 +25,12 @@
 
 export * from "typed-redux-saga";
 import { race as typedRace } from "typed-redux-saga";
-import { call as originalCall, delay } from "redux-saga/effects";
+import { call, take, delay } from "redux-saga/effects";
 
 const race = {
 	fn: typedRace,
-	call: originalCall
+	call,
+	take
 };
 
 export { race, delay };
