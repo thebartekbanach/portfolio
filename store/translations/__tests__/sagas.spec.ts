@@ -188,10 +188,9 @@ describe("translations state sagas", () => {
 
 			return expectSaga(makeSureAllTranslationProvidersAreReady)
 				.provide([
-					providers.select(
-						translations.selectors.areAllTranslationProvidersReady,
-						areAllTranslationProvidersReady
-					)
+					providers
+						.select(translations.selectors.areAllTranslationProvidersReady)
+						.mockedBy(areAllTranslationProvidersReady)
 				])
 				.take(readyOrFailedTakeType)
 				.dispatch(translations.actions.translationProviderReady("page"))
@@ -211,10 +210,9 @@ describe("translations state sagas", () => {
 
 			return expectSaga(makeSureAllTranslationProvidersAreReady)
 				.provide([
-					providers.select(
-						translations.selectors.areAllTranslationProvidersReady,
-						areAllTranslationProvidersReady
-					)
+					providers
+						.select(translations.selectors.areAllTranslationProvidersReady)
+						.mockedBy(areAllTranslationProvidersReady)
 				])
 				.take(readyOrFailedTakeType)
 				.dispatch(translations.actions.translationProviderReady("page"))
