@@ -1,6 +1,6 @@
 {
 	"parser": "@typescript-eslint/parser",
-	"extends": ["eslint:recommended", "plugin:react/recommended"],
+	"extends": ["eslint:recommended", "plugin:react/recommended", "@typescript-eslint/recommended"],
 	"plugins": ["react", "@typescript-eslint", "prettier"],
 	"env": {
 		"es6": true,
@@ -14,7 +14,6 @@
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"react/display-name": 0,
 		"react/react-in-jsx-scope": 0,
-		"no-unused-vars": "off",
 		"react/prop-types": 0,
 		"no-mixed-spaces-and-tabs": "off"
 	},

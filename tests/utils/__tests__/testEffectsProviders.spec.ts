@@ -1,12 +1,11 @@
 import { select, call, race } from "../testEffectsProviders";
-import { translations } from "~/store/translations";
 import * as effects from "~/lib/sagaEffects";
 
 describe("testEffectsProviders", () => {
 	describe("select", () => {
 		it("should create correct effect provider", () => {
 			const mock = jest.fn().mockReturnValue("ok");
-			const selector = translations.selectors.pendingLanguageCode;
+			const selector = (store: any) => store.someState;
 
 			const result = select(selector).mockedBy(mock);
 
@@ -15,7 +14,7 @@ describe("testEffectsProviders", () => {
 
 		it("should return mock() if selector is matched", () => {
 			const mock = jest.fn().mockReturnValue("ok");
-			const selector = translations.selectors.pendingLanguageCode;
+			const selector = (store: any) => store.someState;
 
 			const provider = select(selector).mockedBy(mock);
 			const result = provider.select({ selector }, () => {});
@@ -27,8 +26,8 @@ describe("testEffectsProviders", () => {
 		it("should return next() if selector does not match", () => {
 			const mock = jest.fn().mockReturnValue("ok");
 			const next = jest.fn().mockReturnValue("next value");
-			const selector = translations.selectors.pendingLanguageCode;
-			const otherSelector = translations.selectors.isPageHidden;
+			const selector = (store: any) => store.someState;
+			const otherSelector = (store: any) => store.someOtherState;
 
 			const provider = select(selector).mockedBy(mock);
 			const result = provider.select({ selector: otherSelector }, next);

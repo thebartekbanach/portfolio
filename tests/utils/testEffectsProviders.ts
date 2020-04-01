@@ -1,7 +1,7 @@
-import { Store } from "~/store";
+import { State } from "~/store";
 import deepEqual from "deep-equal";
 
-export const select = (selectorFunc: (store: Store) => unknown) => ({
+export const select = (selectorFunc: (store: State) => unknown) => ({
 	mockedBy: (mock: jest.Mock) => ({
 		select({ selector }: { selector: Function }, next: Function) {
 			if (selectorFunc === selector) {
