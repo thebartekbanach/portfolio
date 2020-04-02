@@ -8,14 +8,15 @@
  *
  * Unfortunately redux-saga-test-plan package race matchers
  * does not want to work with typed-redux-saga
- * call and delay inside race effect.
+ * call, take and delay inside race effect.
  *
  * And because of it I needed to export all packages manually,
  * that means to leave all typed-redux-saga exports excluding race
  * which I changed to object below.
  *
- * race.fn is race effect exported from redux saga.
+ * race.fn is race effect exported from redux-saga/effects.
  * race.call is clear call effect exported from redux-saga/effects;
+ * race.take is take effect exported from redux-saga/effects;
  *
  * And we are exporting also delay effect from redux-saga/effects,
  * because this also does not want to work with redux-saga-test-plan
