@@ -4,20 +4,23 @@ import withReduxSaga from "next-redux-saga";
 import { configureStore } from "../store/configureStore";
 import { Provider } from "react-redux";
 import "normalize.css";
+import i18nextInstance, { appWithTranslation } from "~/lib/i18next";
 
 interface MyAppProps {
 	store: any;
 }
 
 class MyApp extends App<MyAppProps> {
-	static async getInitialProps({ Component, ctx }: AppContext) {
+	static async getInitialProps({ Component, ctx, req }: any) {
 		let pageProps = {};
 
 		if (Component.getInitialProps) {
 			pageProps = await Component.getInitialProps(ctx);
 		}
 
-		return { pageProps };
+		return {
+			pageProps
+		};
 	}
 
 	render() {
@@ -31,4 +34,4 @@ class MyApp extends App<MyAppProps> {
 	}
 }
 
-export default withRedux(configureStore)(withReduxSaga(MyApp));
+export default withRedux(configureStore)(withReduxSaga(appWithTranslation(MyApp)));

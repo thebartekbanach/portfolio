@@ -1,7 +1,16 @@
 import { HelloWorldComponent } from "../components/helloWorld";
+import { SomeContainer } from "~/containers/SomeContainer";
+import { NextPage } from "next";
 
-export default () => (
+const Index: NextPage = () => (
 	<>
 		<HelloWorldComponent />
+		<SomeContainer />
 	</>
 );
+
+Index.getInitialProps = () => ({
+	namespacesRequired: ["common"]
+});
+
+export default Index;
