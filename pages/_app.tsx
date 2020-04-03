@@ -4,7 +4,7 @@ import withReduxSaga from "next-redux-saga";
 import { configureStore } from "../store/configureStore";
 import { Provider } from "react-redux";
 import "normalize.css";
-import i18nextInstance, { appWithTranslation } from "~/lib/i18next";
+import i18nextInstance, { appWithTranslation } from "~/utils/i18next";
 
 interface MyAppProps {
 	store: any;

@@ -1,5 +1,5 @@
 import { select, call, race } from "../testEffectsProviders";
-import * as effects from "~/lib/sagaEffects";
+import * as effects from "~/utils/sagaEffects";
 
 describe("testEffectsProviders", () => {
 	describe("select", () => {

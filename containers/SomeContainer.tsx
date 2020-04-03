@@ -1,5 +1,5 @@
 import { HelloWorldStyled } from "~/components/helloWorld.styles";
-import { useTranslation } from "~/lib/i18next";
+import { useTranslation } from "~/utils/i18next";
 
 export const SomeContainer = () => {
 	const { t, i18n } = useTranslation();
