@@ -1,5 +1,6 @@
 require("jest-ts-auto-mock");
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const makeModuleNameMapper = require("./tests/rootImports");
 
 module.exports = {
@@ -9,7 +10,8 @@ module.exports = {
 	globals: {
 		"ts-jest": {
 			tsConfig: "tsconfig.jest.json",
-			compiler: "ttypescript"
+			compiler: "ttypescript",
+			babelConfig: ".babelrc"
 		}
 	},
 	testRegex: "(/__tests__/.*\\.i?spec)\\.(jsx?|tsx?)",
@@ -17,5 +19,6 @@ module.exports = {
 	moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 	collectCoverage: true,
 	setupFilesAfterEnv: ["<rootDir>/tests/setupEnzyme.ts", "<rootDir>/tests/setupGlobals.ts"],
-	moduleNameMapper: makeModuleNameMapper()
+	moduleNameMapper: makeModuleNameMapper(),
+	snapshotSerializers: ["enzyme-to-json/serializer"]
 };
