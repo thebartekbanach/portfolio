@@ -1,0 +1,24 @@
+{
+	"logo": {
+		"rootPath": "/dev/",
+		"userName": "BartekBanach"
+	},
+	"navbarItems": [
+		{
+			"id": 1,
+			"url": "#umiejetnosci",
+			"content": "Umiejętności"
+		},
+		{
+			"id": 2,
+			"url": "#realizacje",
+			"content": "Realizacje"
+		},
+		{
+			"id": 3,
+			"url": "#kontakt",
+			"content": "Kontakt"
+		}
+	],
+	"contactButtonContent": "Napisz do mnie"
+}

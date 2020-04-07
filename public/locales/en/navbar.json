@@ -1,0 +1,24 @@
+{
+	"logo": {
+		"rootPath": "/dev/",
+		"userName": "BartekBanach"
+	},
+	"navbarItems": [
+		{
+			"id": 1,
+			"url": "#skills",
+			"content": "Skills"
+		},
+		{
+			"id": 2,
+			"url": "#realizations",
+			"content": "Realizations"
+		},
+		{
+			"id": 3,
+			"url": "#contact",
+			"content": "Contact"
+		}
+	],
+	"contactButtonContent": "Write to me"
+}
