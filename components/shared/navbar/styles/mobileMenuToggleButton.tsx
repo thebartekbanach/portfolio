@@ -98,7 +98,7 @@ export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>
 
 	-webkit-tap-highlight-color: transparent;
 
-	@media (any-pointer: coarse) and (any-pointer: fine) {
+	@media (any-pointer: coarse) or (any-pointer: fine) {
 		&:hover {
 			${hoverAnimationOnClosedMenu}
 			${hoverAnimationOnOpenMenu}
