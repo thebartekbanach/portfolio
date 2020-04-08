@@ -65,7 +65,7 @@ export const NavItemsWrapper = styled.nav<NavItemsProps>`
 		position: absolute;
 		left: 0;
 		top: 0;
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 		overflow: hidden;
 		z-index: ${p => (p.isShownOnMobile ? 1 : -1)};
