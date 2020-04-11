@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { fonts } from "~/utils/styles/fonts";
+import { useFont } from "~/utils/styles/fonts";
 
 export const ContactButton = styled.button`
 	display: inline-block;
@@ -9,8 +9,7 @@ export const ContactButton = styled.button`
 	border-radius: 50px;
 	border: none;
 
-	font-family: ${fonts.nunitoSans};
-	font-weight: bold;
+	${useFont.nunitoSans.semiBold};
 	color: white;
 	letter-spacing: 0.6px;
 

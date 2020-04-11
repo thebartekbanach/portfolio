@@ -12,7 +12,7 @@ export const MobileMenuToggleButtonIcon = styled.div<MobileMenuToggleButtonProps
 	width: ${p => (p.mobileMenuState ? 48 : 40)}%;
 	transform: translate(-50%, -50%);
 
-	background: ${p => (p.mobileMenuState ? "transparent" : "#5d56f6")};
+	background: ${p => (p.mobileMenuState ? "transparent" : "#4763e8")};
 
 	height: 6px;
 	border-radius: 2px;
@@ -28,7 +28,7 @@ export const MobileMenuToggleButtonIcon = styled.div<MobileMenuToggleButtonProps
 		width: 100%;
 		height: 6px;
 		border-radius: 2px;
-		background: #5d56f6;
+		background: #4763e8;
 		transition: top 100ms ease-in-out, bottom 100ms ease-in-out, height 100ms ease-in-out,
 			left 100ms ease-in-out, transform 300ms;
 	}
@@ -43,6 +43,26 @@ export const MobileMenuToggleButtonIcon = styled.div<MobileMenuToggleButtonProps
 		bottom: 9px;
 		transform: translateY(${p => (p.mobileMenuState ? 9 : 0)}px)
 			rotate(${p => (p.mobileMenuState ? -45 : 0)}deg);
+	}
+
+	@media (max-width: 599px) {
+		&::before,
+		&::after,
+		& {
+			height: 5px;
+		}
+
+		&::before {
+			top: 7px;
+			transform: translateY(${p => (p.mobileMenuState ? -7 : 0)}px)
+				rotate(${p => (p.mobileMenuState ? 45 : 0)}deg);
+		}
+
+		&::after {
+			bottom: 7px;
+			transform: translateY(${p => (p.mobileMenuState ? 7 : 0)}px)
+				rotate(${p => (p.mobileMenuState ? -45 : 0)}deg);
+		}
 	}
 `;
 
@@ -74,6 +94,18 @@ function hoverAnimationOnOpenMenu({ mobileMenuState }: MobileMenuToggleButtonPro
 			&::after {
 				height: 7px;
 			}
+			
+			@media (max-width: 599px) {
+				height: 6px;
+
+				&::before {
+					height: 6px;
+				}
+	
+				&::after {
+					height: 6px;
+				}
+			}
 		}
 	`;
 }
@@ -85,8 +117,8 @@ export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>
 
 	display: inline-block;
 	position: relative;
-	width: 60px;
-	height: 60px;
+	width: 50px;
+	height: 50px;
 	border-radius: 8px;
 	background: #f5e7fe;
 	border: none;
@@ -107,5 +139,10 @@ export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>
 
 	&:active {
 		transform: scale(0.9);
+	}
+
+	@media (min-width: 600px) {
+		width: 60px;
+		height: 60px;
 	}
 `;

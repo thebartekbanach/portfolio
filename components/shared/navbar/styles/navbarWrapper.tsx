@@ -1,18 +1,18 @@
 import styled from "styled-components";
-import { fonts } from "~/utils/styles/fonts";
+import { useFont } from "~/utils/styles/fonts";
 
 export const NavbarWrapper = styled.div`
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 
+	height: 150px;
 	width: 100%;
 	box-sizing: border-box;
-	padding: 56px 52px;
+	padding: 0 52px;
 
+	${useFont.nunitoSans.semiBold};
 	font-size: 18px;
-	font-family: ${fonts.nunitoSans};
-	font-weight: bold;
 	letter-spacing: 0.6px;
 
 	@media (max-width: 1000px) {
@@ -20,7 +20,8 @@ export const NavbarWrapper = styled.div`
 	}
 
 	@media (max-width: 500px) {
-		justify-content: space-evenly;
-		padding: 40px 0px;
+		height: 100px;
+		margin-bottom: 15px;
+		padding: 0 7.5vw;
 	}
 `;
