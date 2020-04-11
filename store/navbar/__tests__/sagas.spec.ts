@@ -4,7 +4,7 @@ import { race } from "~/utils/sagaEffects";
 import { hideMenuOnScroll, toggleMenuSaga, navbarWatchSaga } from "../sagas";
 import { navbar } from "..";
 import { waitForPageScrollEvent } from "~/utils/waitForPageScrollEvent";
-import { scrollToTop } from "~/utils/scrollToTop";
+import { scrollToTop, getScrollPosition } from "~/utils/scrollToTop";
 
 describe(hideMenuOnScroll, () => {
 	it("should hide menu if page scroll down is detected", () => {
@@ -61,6 +61,22 @@ describe(toggleMenuSaga, () => {
 			])
 			.call(scrollToTop)
 			.delay(navbar.constants.mobileNavigationMenuToggleTime)
+			.put(navbar.actions.internal.setMenuState(false))
+			.not.spawn(hideMenuOnScroll)
+			.run(navbar.constants.mobileNavigationMenuToggleTime + 100);
+	});
+
+	it("should toggle menu off if page was scrolled until show animation", () => {
+		return expectSaga(toggleMenuSaga)
+			.provide([
+				[match.call(scrollToTop), true],
+				[match.select(navbar.selectors.isMobileNavbarOpen), false],
+				[match.call(getScrollPosition), 69]
+			])
+			.call(scrollToTop)
+			.put(navbar.actions.internal.setMenuState(true))
+			.delay(navbar.constants.mobileNavigationMenuToggleTime)
+			.call(getScrollPosition)
 			.put(navbar.actions.internal.setMenuState(false))
 			.not.spawn(hideMenuOnScroll)
 			.run(navbar.constants.mobileNavigationMenuToggleTime + 100);
