@@ -21,6 +21,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"babel-plugin-inline-react-svg": "^1.1.1",
 		"deox": "^3.2.1",
 		"express": "^4.17.1",
 		"next": "^9.3.4",
