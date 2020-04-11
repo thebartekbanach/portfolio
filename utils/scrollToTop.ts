@@ -1,4 +1,4 @@
-const getScrollPosition = () => {
+export const getScrollPosition = () => {
 	const element = document.documentElement.clientHeight
 		? document.documentElement
 		: document.body;

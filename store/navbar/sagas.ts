@@ -1,6 +1,6 @@
 import { takeLeading, put, select, delay, call, race, spawn } from "~/utils/sagaEffects";
 import { navbar } from ".";
-import { scrollToTop } from "~/utils/scrollToTop";
+import { scrollToTop, getScrollPosition } from "~/utils/scrollToTop";
 import { waitForPageScrollEvent } from "~/utils/waitForPageScrollEvent";
 
 export function* hideMenuOnScroll() {
@@ -22,7 +22,15 @@ export function* toggleMenuSaga() {
 
 	yield delay(navbar.constants.mobileNavigationMenuToggleTime);
 
-	if (!isMobileNavbarOpen) {
+	const actualNavbarState = !isMobileNavbarOpen;
+
+	if (actualNavbarState === true) {
+		const scrollPosition = yield* call(getScrollPosition);
+
+		if (scrollPosition !== 0) {
+			return yield* put(navbar.actions.internal.setMenuState(false));
+		}
+
 		yield* spawn(hideMenuOnScroll);
 	}
 }
