@@ -4,8 +4,8 @@ export const DeveloperPictureContainer = styled.div`
 	position: absolute;
 	top: 50%;
 	right: 0px;
-	transform: translateY(-50%);
 	width: 50%;
+	transform: translateY(-50%);
 
 	@media (max-width: 1199px) {
 		right: -20px;
@@ -19,9 +19,9 @@ export const DeveloperPictureContainer = styled.div`
 		position: relative;
 		top: 0;
 		right: 0;
-		transform: none;
-		width: calc(100% - 5vw);
 		margin: auto;
+		width: calc(100% - 5vw);
+		transform: none;
 	}
 `;
 

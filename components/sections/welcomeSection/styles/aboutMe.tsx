@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useFont } from "~/utils/styles/fonts";
+import { textGradient } from "~/utils/styles/textGradient";
 
 export const AboutMeContainer = styled.div`
 	max-width: 40%;
@@ -21,14 +22,6 @@ export const AboutMeContainer = styled.div`
 	}
 
 	b {
-		color: #4764e6;
-
-		@supports (-webkit-text-fill-color: transparent) and
-			((-webkit-background-clip: text) or (background-clip: text)) {
-			background: linear-gradient(to top, #4764e6, #694fff);
-			-webkit-text-fill-color: transparent;
-			-webkit-background-clip: text;
-			background-clip: text;
-		}
+		${textGradient("to top", "#4764e6", "#694fff", "#4764e6")}
 	}
 `;
