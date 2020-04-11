@@ -38,6 +38,9 @@ class MyApp extends App<MyAppProps> {
 						content="initial-scale=1.0, width=device-width"
 						key="viewport"
 					/>
+					<meta name="theme-color" content="#694fff" />
+					<meta name="apple-mobile-web-app-capable" content="yes" />
+					<meta name="apple-mobile-web-app-status-bar-style" content="#694fff" />
 				</Head>
 				<GlobalStyles />
 				<Provider store={store}>
