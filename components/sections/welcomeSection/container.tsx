@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
-export const WelcomeSectionContentContainer = styled.div`
-	min-height: calc(100vh - 150px);
-`;
+export const WelcomeSectionContentContainer = styled.div``;
 
 export const WelcomeSectionContent = styled.div`
 	position: relative;
