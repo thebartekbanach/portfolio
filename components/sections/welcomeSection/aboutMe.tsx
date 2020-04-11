@@ -6,5 +6,5 @@ interface AboutMeProps {
 }
 
 export const AboutMe: FC<AboutMeProps> = ({ content }) => (
-	<AboutMeContainer lang="pl" dangerouslySetInnerHTML={{ __html: content }} />
+	<AboutMeContainer dangerouslySetInnerHTML={{ __html: content }} />
 );
