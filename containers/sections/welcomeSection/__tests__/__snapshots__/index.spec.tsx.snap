@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WelcomeSection should match snapshot 1`] = `
+<section__Section>
+  <Navbar />
+  <container__WelcomeSection>
+    <Header
+      name="Bartek Banach"
+      specialization="Full Stack Developer"
+    />
+    <DeveloperPicture />
+    <AboutMe
+      content="This is some description about me"
+    />
+  </container__WelcomeSection>
+</section__Section>
+`;
