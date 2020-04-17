@@ -2,7 +2,7 @@ import { UseTranslation } from "next-i18next";
 
 export function useTranslationMock(
 	mockNamespace: string | string[] | undefined,
-	mockTranslations: { [key: string]: string }
+	mockTranslations: { [key: string]: unknown }
 ) {
 	// eslint-disable-next-line @typescript-eslint/no-var-requires
 	const { useTranslation } = require("~/utils/i18next");

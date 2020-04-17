@@ -13,14 +13,14 @@ export const select = (selectorFunc: (store: State) => unknown) => ({
 	})
 });
 
-type Parameters<T> = T extends (...args: infer T) => any ? T : never;
+type Parameters<T> = T extends (...args: infer T) => unknown ? T : never;
 
-export const call = <Fn extends (...args: any[]) => any>(
+export const call = <Fn extends (...args: unknown[]) => unknown>(
 	callFunc: Fn,
 	...params: Parameters<Fn>
 ) => ({
 	mockedBy: (mock: jest.Mock) => ({
-		call(effect: { fn: Function; args: any[] }, next: Function) {
+		call(effect: { fn: Function; args: unknown[] }, next: Function) {
 			if (effect.fn === callFunc && deepEqual(effect.args, params)) {
 				return mock();
 			}
@@ -32,7 +32,7 @@ export const call = <Fn extends (...args: any[]) => any>(
 
 export const race = <T>(raceConfig: T) => ({
 	mockedBy: (mock: jest.Mock) => ({
-		race(raceCallParams: T | any, next: Function) {
+		race(raceCallParams: T | unknown, next: Function) {
 			if (deepEqual(raceCallParams, raceConfig)) {
 				return mock();
 			}

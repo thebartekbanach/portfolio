@@ -1,7 +1,7 @@
 import { DeepPartial, Store, AnyAction, Observer } from "redux";
 import { State } from "~/store";
 import deepEqual from "deep-equal";
-import { shallow, ShallowRendererProps, mount } from "enzyme";
+import { ShallowRendererProps, mount } from "enzyme";
 import { Provider } from "react-redux";
 import { Reducer, ReactElement } from "react";
 import { Unsubscribe } from "redux-saga";
@@ -22,6 +22,7 @@ export class FakeStore {
 	}
 
 	[Symbol.observable] = () => ({
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		subscribe: (observer: Observer<any>) => ({
 			unsubscribe: this.subscribe((observer.next as unknown) as () => void)
 		}),

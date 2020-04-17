@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { select, call, race } from "../testEffectsProviders";
 import * as effects from "~/utils/sagaEffects";
 
@@ -17,6 +18,7 @@ describe("testEffectsProviders", () => {
 			const selector = (store: any) => store.someState;
 
 			const provider = select(selector).mockedBy(mock);
+			// eslint-disable-next-line @typescript-eslint/no-empty-function
 			const result = provider.select({ selector }, () => {});
 
 			expect(result).toEqual("ok");
