@@ -1,42 +1,94 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { select, call, race } from "../testEffectsProviders";
+import { select, call, race, take } from "../testEffectsProviders";
 import * as effects from "~/utils/sagaEffects";
 
 describe("testEffectsProviders", () => {
 	describe("select", () => {
-		it("should create correct effect provider", () => {
-			const mock = jest.fn().mockReturnValue("ok");
-			const selector = (store: any) => store.someState;
+		describe("mockedBy", () => {
+			it("should create correct effect provider", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const selector = (store: any) => store.someState;
 
-			const result = select(selector).mockedBy(mock);
+				const result = select(selector).mockedBy(mock);
 
-			expect(typeof result.select).toEqual("function");
+				expect(typeof result.select).toEqual("function");
+			});
+
+			it("should return mock() if selector is matched", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const selector = (store: any) => store.someState;
+
+				const provider = select(selector).mockedBy(mock);
+				// eslint-disable-next-line @typescript-eslint/no-empty-function
+				const result = provider.select({ selector }, () => {});
+
+				expect(result).toEqual("ok");
+				expect(mock).toBeCalled();
+			});
+
+			it("should return next() if selector does not match", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const next = jest.fn().mockReturnValue("next value");
+				const selector = (store: any) => store.someState;
+				const otherSelector = (store: any) => store.someOtherState;
+
+				const provider = select(selector).mockedBy(mock);
+				const result = provider.select({ selector: otherSelector }, next);
+
+				expect(result).toEqual("next value");
+				expect(mock).not.toBeCalled();
+				expect(next).toBeCalled();
+			});
 		});
 
-		it("should return mock() if selector is matched", () => {
-			const mock = jest.fn().mockReturnValue("ok");
-			const selector = (store: any) => store.someState;
+		describe("usingNameMockedBy", () => {
+			it("should create correct effect provider", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const selector = (store: any) => store.someState;
 
-			const provider = select(selector).mockedBy(mock);
-			// eslint-disable-next-line @typescript-eslint/no-empty-function
-			const result = provider.select({ selector }, () => {});
+				const result = select(selector).usingNameMockedBy(mock);
 
-			expect(result).toEqual("ok");
-			expect(mock).toBeCalled();
-		});
+				expect(typeof result.select).toEqual("function");
+			});
 
-		it("should return next() if selector does not match", () => {
-			const mock = jest.fn().mockReturnValue("ok");
-			const next = jest.fn().mockReturnValue("next value");
-			const selector = (store: any) => store.someState;
-			const otherSelector = (store: any) => store.someOtherState;
+			it("should return mock() if selector is matched", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const selectorA = (param: any) =>
+					function x(store: any) {
+						return store.someState + param;
+					};
+				const selectorB = (param: any) =>
+					function x(store: any) {
+						return store.someOtherState + param;
+					};
 
-			const provider = select(selector).mockedBy(mock);
-			const result = provider.select({ selector: otherSelector }, next);
+				const provider = select(selectorA({})).usingNameMockedBy(mock);
+				// eslint-disable-next-line @typescript-eslint/no-empty-function
+				const result = provider.select({ selector: selectorB(2137) }, () => {});
 
-			expect(result).toEqual("next value");
-			expect(mock).not.toBeCalled();
-			expect(next).toBeCalled();
+				expect(result).toEqual("ok");
+				expect(mock).toBeCalled();
+			});
+
+			it("should return next() if selector does not match", () => {
+				const mock = jest.fn().mockReturnValue("ok");
+				const next = jest.fn().mockReturnValue("next value");
+				const selectorA = (param: any) =>
+					function x(store: any) {
+						return store.someState + param;
+					};
+				const selectorB = (param: any) =>
+					function y(store: any) {
+						return store.someOtherState + param;
+					};
+
+				const provider = select(selectorA("should fail")).usingNameMockedBy(mock);
+				const result = provider.select({ selector: selectorB(2137) }, next);
+
+				expect(result).toEqual("next value");
+				expect(mock).not.toBeCalled();
+				expect(next).toBeCalled();
+			});
 		});
 	});
 
@@ -143,6 +195,120 @@ describe("testEffectsProviders", () => {
 
 			const provider = race(params).mockedBy(mock);
 			const result = provider.race(testParams, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+	});
+
+	describe("take", () => {
+		it("should return mock value if take pattern matches", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = "some/pattern";
+			const testPattern = "some/pattern";
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("ok");
+			expect(mock).toBeCalled();
+			expect(next).not.toBeCalled();
+		});
+
+		it("should return mock value if take pattern array matches", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = ["some/action", "second/action"];
+			const testPattern = ["some/action", "second/action"];
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("ok");
+			expect(mock).toBeCalled();
+			expect(next).not.toBeCalled();
+		});
+
+		it("should return mock value even if take pattern array is not in exact order", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = ["some/action", "second/action"];
+			const testPattern = ["second/action", "some/action"];
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("ok");
+			expect(mock).toBeCalled();
+			expect(next).not.toBeCalled();
+		});
+
+		it("should return next if pattern does not match", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = "some/pattern";
+			const testPattern = "some/other/pattern";
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+
+		it("should return next if pattern array has missing actions", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = ["some/action", "second/action"];
+			const testPattern = ["some/action"];
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+
+		it("should return next if pattern array has more actions than expected", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = ["some/action", "second/action"];
+			const testPattern = ["some/action", "second/action", "third/action"];
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+
+		it("should return next if take config and given pattern are not the same string type", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = "some/action";
+			const testPattern = ["some/action", "second/action"];
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+
+		it("should return next if take config and given pattern are not the same array type", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const pattern = ["some/action", "second/action"];
+			const testPattern = "some/action";
+
+			const provider = take(pattern).mockedBy(mock);
+			const result = provider.take({ pattern: testPattern }, next);
 
 			expect(result).toEqual("next value");
 			expect(next).toBeCalled();

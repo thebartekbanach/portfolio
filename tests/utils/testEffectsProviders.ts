@@ -10,6 +10,14 @@ export const select = (selectorFunc: (store: State) => unknown) => ({
 
 			return next();
 		}
+	}),
+	usingNameMockedBy: (mock: jest.Mock) => ({
+		select({ selector }: { selector: Function }, next: Function) {
+			if (selectorFunc.name === selector.name) {
+				return mock();
+			}
+			return next();
+		}
 	})
 });
 
@@ -34,6 +42,32 @@ export const race = <T>(raceConfig: T) => ({
 	mockedBy: (mock: jest.Mock) => ({
 		race(raceCallParams: T | unknown, next: Function) {
 			if (deepEqual(raceCallParams, raceConfig)) {
+				return mock();
+			}
+
+			return next();
+		}
+	})
+});
+
+export const take = <T>(takeConfig: T) => ({
+	mockedBy: (mock: jest.Mock) => ({
+		take({ pattern: takeCallParams }: { pattern: T | unknown }, next: Function) {
+			if (Array.isArray(takeConfig)) {
+				if (!Array.isArray(takeCallParams) || takeConfig.length !== takeCallParams.length) {
+					return next();
+				}
+
+				for (const item of takeConfig) {
+					if (takeCallParams.findIndex(i => i === item) === -1) {
+						return next();
+					}
+				}
+
+				return mock();
+			}
+
+			if (deepEqual(takeCallParams, takeConfig)) {
 				return mock();
 			}
 
