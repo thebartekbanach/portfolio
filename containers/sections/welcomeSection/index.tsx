@@ -1,4 +1,4 @@
-import { Navbar } from "~/containers/Navbar";
+import { Navbar } from "~/containers/shared/navbar";
 import { Section } from "~/components/shared/layout/section";
 import { Header } from "~/components/sections/welcomeSection/header";
 import { WelcomeSection as WelcomeSectionContainer } from "~/components/sections/welcomeSection/container";
@@ -10,7 +10,7 @@ export const WelcomeSection = () => {
 	const { t } = useTranslation("welcome");
 
 	return (
-		<Section>
+		<Section isFirstSection>
 			<Navbar />
 			<WelcomeSectionContainer>
 				<Header name={t("name")} specialization={t("specialization")} />
