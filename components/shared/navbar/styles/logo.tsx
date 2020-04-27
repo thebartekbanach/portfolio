@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { useFont } from "~/utils/styles/fonts";
 
 export const DirectoryName = styled.span`
-	color: #a163aa;
+	color: #ad58f8;
 `;
 
 export const UserName = styled.span`
-	color: #898989;
+	color: #5e58f8;
 `;
 
 export const LogoElement = styled.span`
