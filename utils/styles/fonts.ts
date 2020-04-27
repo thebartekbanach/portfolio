@@ -44,6 +44,32 @@ export const FontsImport = createGlobalStyle`
 			url("fonts/montserrat/extra-bold/font.woff") format("woff"),
 			url("fonts/montserrat/extra-bold/font.woff2") format("woff2");
 	}
+
+	/* roboto */
+
+	@font-face {
+		font-family: roboto-regular;
+		src:
+			url("fonts/roboto/regular/font.ttf") format("truetype"),
+			url("fonts/roboto/regular/font.woff") format("woff"),
+			url("fonts/roboto/regular/font.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: roboto-medium;
+		src:
+			url("fonts/roboto/bold/font.ttf") format("truetype"),
+			url("fonts/roboto/bold/font.woff") format("woff"),
+			url("fonts/roboto/bold/font.woff2") format("woff2");
+	}
+
+	@font-face {
+		font-family: roboto-bold;
+		src:
+			url("fonts/roboto/medium/font.ttf") format("truetype"),
+			url("fonts/roboto/medium/font.woff") format("woff"),
+			url("fonts/roboto/medium/font.woff2") format("woff2");
+	}
 `;
 
 export const useFont = {
@@ -55,5 +81,10 @@ export const useFont = {
 	},
 	montserrat: {
 		extraBold: "font-family: montserrat-extra-bold, sans-serif; font-weight: 800;"
+	},
+	roboto: {
+		regular: "font-family: roboto-regular, sans-serif; font-weight: 400;",
+		medium: "font-family: roboto-medium, sans-serif; font-weight: 500;",
+		bold: "font-family: roboto-bold, sans-serif; font-weight: 700;"
 	}
 };
