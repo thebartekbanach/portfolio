@@ -33,8 +33,6 @@ interface NavigationProps extends NavItemsListProps {
 	mobileMenuState: boolean;
 	logoDirectoryName: string;
 	logoUserName: string;
-	items: NavigationItem[];
-	onNavItemClick: (id: string) => void;
 	contactButtonText: string;
 	onContactButtonClick: () => void;
 	onMobileMenuToggleButtonClick: () => void;
@@ -60,7 +58,7 @@ export const Navbar: FC<NavigationProps> = ({
 		<NavItemsWrapper isShownOnMobile={mobileMenuState}>
 			<NavItems isShownOnMobile={mobileMenuState}>
 				<NavItemsList {...navItemsListProps} />
-				<NavItem>
+				<NavItem key="contact-button">
 					<ContactButton onClick={onContactButtonClick}>
 						{contactButtonText}
 					</ContactButton>
