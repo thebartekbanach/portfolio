@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { select, call, race, take } from "../testEffectsProviders";
 import * as effects from "~/utils/sagaEffects";
+import { channel } from "redux-saga";
 
 describe("testEffectsProviders", () => {
 	describe("select", () => {
@@ -309,6 +310,33 @@ describe("testEffectsProviders", () => {
 
 			const provider = take(pattern).mockedBy(mock);
 			const result = provider.take({ pattern: testPattern }, next);
+
+			expect(result).toEqual("next value");
+			expect(next).toBeCalled();
+			expect(mock).not.toBeCalled();
+		});
+
+		it("should return mock if provided channel is correct", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const ch = channel();
+
+			const provider = take(ch).mockedBy(mock);
+			const result = provider.take({ channel: ch }, next);
+
+			expect(result).toEqual("ok");
+			expect(mock).toBeCalled();
+			expect(next).not.toBeCalled();
+		});
+
+		it("should return next if provided channel is not correct", () => {
+			const mock = jest.fn().mockReturnValue("ok");
+			const next = jest.fn().mockReturnValue("next value");
+			const ch1 = channel();
+			const ch2 = channel();
+
+			const provider = take(ch1).mockedBy(mock);
+			const result = provider.take({ channel: ch2 }, next);
 
 			expect(result).toEqual("next value");
 			expect(next).toBeCalled();

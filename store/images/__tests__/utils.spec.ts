@@ -4,7 +4,7 @@ import { images } from "..";
 import { expectSaga } from "redux-saga-test-plan";
 
 describe(images.utils.makeSureImageIsLoaded, () => {
-	it.skip("should return true if image is already loaded", () => {
+	it("should return true if image is already loaded", () => {
 		const correctUrl = "https://google.com";
 		const selectMock = providers
 			.select(images.selectors.isImageLoaded(correctUrl))
@@ -16,7 +16,7 @@ describe(images.utils.makeSureImageIsLoaded, () => {
 			.run();
 	});
 
-	it.skip("should return true if image is loaded on first take", () => {
+	it("should return true if image is loaded on first take", () => {
 		const correctUrl = "https://google.com";
 		const selectMock = providers
 			.select(images.selectors.isImageLoaded(correctUrl))
@@ -66,7 +66,7 @@ describe(images.utils.makeSureImageIsLoaded, () => {
 			.run();
 	});
 
-	it.skip("should return false on image load failure", () => {
+	it("should return false on image load failure", () => {
 		const correctUrl = "https://google.com";
 		const selectMock = providers
 			.select(images.selectors.isImageLoaded(correctUrl))
@@ -82,6 +82,46 @@ describe(images.utils.makeSureImageIsLoaded, () => {
 				[match.take(successOrFailureActions), images.actions.loadImage.failed(correctUrl)]
 			])
 			.take(successOrFailureActions)
+			.returns(false)
+			.run();
+	});
+});
+
+describe(images.utils.makeSureAllImagesAreLoaded, () => {
+	it("should return true if all images are loaded correctly", () => {
+		const urls = ["https://google.com", "https://youtube.com", "https://facebook.com"];
+		const makeSureImageIsLoadedMocks = urls.map(url =>
+			providers
+				.call(images.utils.makeSureImageIsLoaded, url)
+				.mockedBy(jest.fn().mockReturnValue(true))
+		);
+
+		return expectSaga(images.utils.makeSureAllImagesAreLoaded, urls)
+			.provide(makeSureImageIsLoadedMocks)
+			.call(images.utils.makeSureImageIsLoaded, "https://google.com")
+			.call(images.utils.makeSureImageIsLoaded, "https://youtube.com")
+			.call(images.utils.makeSureImageIsLoaded, "https://facebook.com")
+			.returns(true)
+			.run();
+	});
+
+	it("should return false on image loading failure", () => {
+		const urls = ["https://google.com", "https://youtube.com", "https://facebook.com"];
+		const makeSureImageIsLoadedMocks = urls.map(url =>
+			providers
+				.call(images.utils.makeSureImageIsLoaded, url)
+				.mockedBy(jest.fn().mockReturnValue(true))
+		);
+
+		makeSureImageIsLoadedMocks[1] = providers
+			.call(images.utils.makeSureImageIsLoaded, "https://youtube.com")
+			.mockedBy(jest.fn().mockReturnValue(false));
+
+		return expectSaga(images.utils.makeSureAllImagesAreLoaded, urls)
+			.provide(makeSureImageIsLoadedMocks)
+			.call(images.utils.makeSureImageIsLoaded, "https://google.com")
+			.call(images.utils.makeSureImageIsLoaded, "https://youtube.com")
+			.not.call(images.utils.makeSureImageIsLoaded, "https://facebook.com")
 			.returns(false)
 			.run();
 	});

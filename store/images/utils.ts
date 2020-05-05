@@ -1,4 +1,4 @@
-import { select, put, take } from "~/utils/sagaEffects";
+import { select, put, take, call } from "~/utils/sagaEffects";
 import * as selectors from "./selectors";
 import * as actions from "./actions";
 
@@ -27,4 +27,16 @@ export function* makeSureImageIsLoaded(url: string) {
 
 		return action.type === actions.loadImage.success.type;
 	}
+}
+
+export function* makeSureAllImagesAreLoaded(urls: string[]) {
+	for (const url of urls) {
+		const loadedSuccessfully = yield* call(makeSureImageIsLoaded, url);
+
+		if (!loadedSuccessfully) {
+			return false;
+		}
+	}
+
+	return true;
 }
