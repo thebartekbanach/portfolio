@@ -1,5 +1,4 @@
 import { useTranslation } from "~/utils/i18next";
-import { useState } from "react";
 import { SkillTile } from "~/components/sections/skillsSection/skillTiles";
 import { SkillsGridAreaNames } from "~/components/sections/skillsSection/styles/skillGrid";
 
@@ -7,7 +6,7 @@ import FrontendIcon from "../../../public/img/skills/categoryIcons/frontend.svg"
 import BackendIcon from "../../../public/img/skills/categoryIcons/backend.svg";
 import EmbeddedIcon from "../../../public/img/skills/categoryIcons/embedded.svg";
 import { useSelector, useDispatch } from "react-redux";
-import { skillsSection } from "~/store/sections/skills";
+import { skills } from "~/store/skills";
 
 interface SkillTileInfo {
 	tileAreaName: SkillsGridAreaNames;
@@ -26,7 +25,7 @@ const renderSkillTiles = (tiles: SkillTileInfo[]) => {
 
 export const CategoryPicker = () => {
 	const { t } = useTranslation("skills");
-	const selectedCategory = useSelector(skillsSection.selectors.selectedCategoryName);
+	const selectedCategory = useSelector(skills.selectors.selectedCategoryName);
 	const dispatch = useDispatch();
 
 	const categories: SkillsGridAreaNames[] = ["frontend", "backend", "embedded"];
@@ -43,7 +42,7 @@ export const CategoryPicker = () => {
 		title: t(`categories.${category}.title`),
 		description: t(`categories.${category}.description`),
 		isSelected: selectedCategory === category,
-		onClick: () => dispatch(skillsSection.actions.changeActiveSkillsCategory.request(category))
+		onClick: () => dispatch(skills.actions.changeActiveSkillsCategory.request(category))
 	}));
 
 	return <>{renderSkillTiles(tilesData)}</>;
