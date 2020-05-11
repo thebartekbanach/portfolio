@@ -25,6 +25,7 @@
  */
 
 export * from "typed-redux-saga";
+export { getFromRootContext } from "./getFromRootContext";
 import { race as typedRace } from "typed-redux-saga";
 import { call, take, delay } from "redux-saga/effects";
 
