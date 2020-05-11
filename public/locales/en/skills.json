@@ -1,5 +1,5 @@
 {
-	"sectionTitle": "Skills",
+	"sectionTitle": "Umiejętności",
 	"sectionDescription": "Wybierz jedną z kategorii<br />aby dowiedzieć się więcej",
 	"categories": {
 		"frontend": {
@@ -7,15 +7,15 @@
 			"description": "Kocham tworzyć proste oraz intuicyjne interfejsy użytkownika, dzięki którym może on szybko wykonywać swoje zadania",
 			"content": [
 				{
-					"categoryName": "Języki Programowania",
+					"categoryName": "Języki Programowania EN FRONT-END",
 					"items": [
 						{
-							"iconPath": "frontend/javascript.svg",
+							"iconPath": "/img/skills/frontend/javascript.svg",
 							"title": "Javascript",
 							"description": "Standard ES7"
 						},
 						{
-							"iconPath": "frontend/typescript.svg",
+							"iconPath": "/img/skills/frontend/typescript.svg",
 							"title": "Typescript",
 							"description": "Wersja 3.8.2"
 						}
@@ -25,28 +25,28 @@
 					"categoryName": "Technologie",
 					"items": [
 						{
-							"iconPath": "frontend/react.svg",
+							"iconPath": "/img/skills/frontend/react.svg",
 							"iconScale": 1.5,
 							"title": "React"
 						},
 						{
-							"iconPath": "frontend/redux.svg",
+							"iconPath": "/img/skills/frontend/redux.svg",
 							"title": "Redux"
 						},
 						{
-							"iconPath": "frontend/styled-components.png",
+							"iconPath": "/img/skills/frontend/styled-components.png",
 							"title": "Styled components"
 						},
 						{
-							"iconPath": "frontend/nunjucks.png",
+							"iconPath": "/img/skills/frontend/nunjucks.png",
 							"title": "Nunjucks"
 						},
 						{
-							"iconPath": "frontend/jquery.svg",
+							"iconPath": "/img/skills/frontend/jquery.svg",
 							"title": "JQuery"
 						},
 						{
-							"iconPath": "frontend/sass.svg",
+							"iconPath": "/img/skills/frontend/sass.svg",
 							"title": "Sass"
 						}
 					]
@@ -55,19 +55,19 @@
 					"categoryName": "Narzędzia",
 					"items": [
 						{
-							"iconPath": "frontend/next.svg",
+							"iconPath": "/img/skills/frontend/next.svg",
 							"title": "NextJS"
 						},
 						{
-							"iconPath": "frontend/nx.svg",
+							"iconPath": "/img/skills/frontend/nx.svg",
 							"title": "Nx.js"
 						},
 						{
-							"iconPath": "frontend/webpack.svg",
+							"iconPath": "/img/skills/frontend/webpack.svg",
 							"title": "Webpack"
 						},
 						{
-							"iconPath": "frontend/tslint.svg",
+							"iconPath": "/img/skills/frontend/tslint.svg",
 							"title": "Tslint"
 						}
 					]
@@ -77,172 +77,146 @@
 		"backend": {
 			"title": "Back-end",
 			"description": "Kod źródłowy moich aplikacji backendowych jest równie prosty i czytelny dla programistów co frontend dla użytkowników",
-			"categories": {
-				"content": [
-					{
-						"categoryName": "Języki Programowania",
-						"items": [
-							{
-								"iconPath": "frontend/javascript.svg",
-								"title": "Javascript",
-								"description": "Standard ES7",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/typescript.svg",
-								"title": "Typescript",
-								"description": "Wersja 3.8.2",
-								"isFavorite": false
-							}
-						]
-					},
-					{
-						"categoryName": "Technologie",
-						"items": [
-							{
-								"iconPath": "frontend/react.svg",
-								"title": "React",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/redux.svg",
-								"title": "Redux",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/styled-components.png",
-								"title": "Styled components",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/nunjucks.png",
-								"title": "Nunjucks",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/jquery.svg",
-								"title": "JQuery",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/sass.svg",
-								"title": "Sass",
-								"isFavorite": false
-							}
-						]
-					},
-					{
-						"categoryName": "Narzędzia",
-						"items": [
-							{
-								"iconPath": "frontend/next.svg",
-								"title": "NextJS",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/nx.svg",
-								"title": "Nx.js",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/webpack.svg",
-								"title": "Webpack",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/tslint.svg",
-								"title": "Tslint",
-								"isFavorite": false
-							}
-						]
-					}
-				]
-			}
+			"content": [
+				{
+					"categoryName": "Języki Programowania EN BACK-END",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/javascript.svg",
+							"title": "Javascript",
+							"description": "Standard ES7"
+						},
+						{
+							"iconPath": "/img/skills/frontend/typescript.svg",
+							"title": "Typescript",
+							"description": "Wersja 3.8.2"
+						}
+					]
+				},
+				{
+					"categoryName": "Technologie",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/react.svg",
+							"iconScale": 1.5,
+							"title": "React"
+						},
+						{
+							"iconPath": "/img/skills/frontend/redux.svg",
+							"title": "Redux"
+						},
+						{
+							"iconPath": "/img/skills/frontend/styled-components.png",
+							"title": "Styled components"
+						},
+						{
+							"iconPath": "/img/skills/frontend/nunjucks.png",
+							"title": "Nunjucks"
+						},
+						{
+							"iconPath": "/img/skills/frontend/jquery.svg",
+							"title": "JQuery"
+						},
+						{
+							"iconPath": "/img/skills/frontend/sass.svg",
+							"title": "Sass"
+						}
+					]
+				},
+				{
+					"categoryName": "Narzędzia",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/next.svg",
+							"title": "NextJS"
+						},
+						{
+							"iconPath": "/img/skills/frontend/nx.svg",
+							"title": "Nx.js"
+						},
+						{
+							"iconPath": "/img/skills/frontend/webpack.svg",
+							"title": "Webpack"
+						},
+						{
+							"iconPath": "/img/skills/frontend/tslint.svg",
+							"title": "Tslint"
+						}
+					]
+				}
+			]
 		},
 		"embedded": {
 			"title": "Embedded",
 			"description": "W wolnym czasie majsterkuję. Programuję urządzenia które są łatwe w konfiguracji i proste w użyciu",
-			"categories": {
-				"content": [
-					{
-						"categoryName": "Języki Programowania",
-						"items": [
-							{
-								"iconPath": "frontend/javascript.svg",
-								"title": "Javascript",
-								"description": "Standard ES7",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/typescript.svg",
-								"title": "Typescript",
-								"description": "Wersja 3.8.2",
-								"isFavorite": false
-							}
-						]
-					},
-					{
-						"categoryName": "Technologie",
-						"items": [
-							{
-								"iconPath": "frontend/react.svg",
-								"title": "React",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/redux.svg",
-								"title": "Redux",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/styled-components.png",
-								"title": "Styled components",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/nunjucks.png",
-								"title": "Nunjucks",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/jquery.svg",
-								"title": "JQuery",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/sass.svg",
-								"title": "Sass",
-								"isFavorite": false
-							}
-						]
-					},
-					{
-						"categoryName": "Narzędzia",
-						"items": [
-							{
-								"iconPath": "frontend/next.svg",
-								"title": "NextJS",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/nx.svg",
-								"title": "Nx.js",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/webpack.svg",
-								"title": "Webpack",
-								"isFavorite": false
-							},
-							{
-								"iconPath": "frontend/tslint.svg",
-								"title": "Tslint",
-								"isFavorite": false
-							}
-						]
-					}
-				]
-			}
+			"content": [
+				{
+					"categoryName": "Języki Programowania EN EMBEDDED",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/javascript.svg",
+							"title": "Javascript",
+							"description": "Standard ES7"
+						},
+						{
+							"iconPath": "/img/skills/frontend/typescript.svg",
+							"title": "Typescript",
+							"description": "Wersja 3.8.2"
+						}
+					]
+				},
+				{
+					"categoryName": "Technologie",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/react.svg",
+							"iconScale": 1.5,
+							"title": "React"
+						},
+						{
+							"iconPath": "/img/skills/frontend/redux.svg",
+							"title": "Redux"
+						},
+						{
+							"iconPath": "/img/skills/frontend/styled-components.png",
+							"title": "Styled components"
+						},
+						{
+							"iconPath": "/img/skills/frontend/nunjucks.png",
+							"title": "Nunjucks"
+						},
+						{
+							"iconPath": "/img/skills/frontend/jquery.svg",
+							"title": "JQuery"
+						},
+						{
+							"iconPath": "/img/skills/frontend/sass.svg",
+							"title": "Sass"
+						}
+					]
+				},
+				{
+					"categoryName": "Narzędzia",
+					"items": [
+						{
+							"iconPath": "/img/skills/frontend/next.svg",
+							"title": "NextJS"
+						},
+						{
+							"iconPath": "/img/skills/frontend/nx.svg",
+							"title": "Nx.js"
+						},
+						{
+							"iconPath": "/img/skills/frontend/webpack.svg",
+							"title": "Webpack"
+						},
+						{
+							"iconPath": "/img/skills/frontend/tslint.svg",
+							"title": "Tslint"
+						}
+					]
+				}
+			]
 		}
 	}
 }
