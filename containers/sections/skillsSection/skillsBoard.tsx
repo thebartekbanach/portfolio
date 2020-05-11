@@ -1,11 +1,15 @@
 import { SkillBoardComponent } from "~/components/sections/skillsSection/skillBoard";
 import { useSelector } from "react-redux";
-import { skillsSection } from "~/store/sections/skills";
+import { skills } from "~/store/skills";
 
 export const SkillsBoard = () => {
-	const activeBoardName = useSelector(skillsSection.selectors.selectedCategoryName);
-	const activeBoardContents = useSelector(skillsSection.selectors.selectedBoardContents);
-	const isActiveBoardLoaded = useSelector(skillsSection.selectors.isSelectedBoardLoaded);
+	const activeBoardName = useSelector(skills.selectors.selectedCategoryName) || "none";
+	const activeBoardContents = useSelector(skills.selectors.selectedBoardContents);
+	const isActiveBoardLoaded = useSelector(skills.selectors.isSelectedBoardLoaded);
+
+	if (activeBoardName === "none") {
+		return null;
+	}
 
 	return (
 		<SkillBoardComponent
