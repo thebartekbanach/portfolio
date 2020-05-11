@@ -13,7 +13,7 @@ import {
 	SkillBoardItemDescription,
 	SkillBoardContent
 } from "./styles/skillBoard";
-import { BoardItem, BoardCategory } from "~/store/sections/skills/models";
+import { BoardItem, BoardCategory } from "~/store/skills/models";
 import { AnimatedLoader } from "~/components/shared/animatedLoader";
 
 function renderSkillBoardItemDescription(description: string | undefined) {
@@ -28,7 +28,7 @@ function renderSkillBoardItems(items: BoardItem[]) {
 	return items.map(({ iconPath, iconScale, title, description }) => (
 		<SkillBoardItem key={title}>
 			<SkillBoardItemIconWrapper>
-				<SkillBoardItemIcon src={"/img/skills/" + iconPath} iconScale={iconScale ?? 1} />
+				<SkillBoardItemIcon src={iconPath} iconScale={iconScale ?? 1} />
 			</SkillBoardItemIconWrapper>
 			<SkillBoardItemInfo>
 				<SkillBoardItemTitle>{title}</SkillBoardItemTitle>
