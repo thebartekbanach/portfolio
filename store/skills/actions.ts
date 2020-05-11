@@ -1,6 +1,8 @@
 import { createActionCreator } from "deox";
 import { CategoryName, BoardsContent } from "./models";
 
+export const setupSkillsSection = createActionCreator("sections/skills/setupSkillsSection");
+
 export const setupBoardsContent = createActionCreator(
 	"sections/skills/setupBoardsContent",
 	resolve => (contents: BoardsContent) => resolve({ contents })

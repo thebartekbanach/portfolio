@@ -1,5 +1,5 @@
 import { BoardCategory, BoardsContent } from "../models";
-import { skillsSection } from "..";
+import { skills } from "..";
 
 describe("skillsSection.selectors.isSelectedBoardLoaded", () => {
 	it("should return correct state of active category", () => {
@@ -10,7 +10,7 @@ describe("skillsSection.selectors.isSelectedBoardLoaded", () => {
 		};
 		const selectedCategoryName = "backend";
 
-		const result = skillsSection.selectors.isSelectedBoardLoaded.resultFunc(
+		const result = skills.selectors.isSelectedBoardLoaded.resultFunc(
 			boardsLoadingState,
 			selectedCategoryName
 		);
@@ -28,7 +28,7 @@ describe("skillsSection.selectors.selectedBoardContents", () => {
 		};
 		const selectedCategory = "embedded";
 
-		const result = skillsSection.selectors.selectedBoardContents.resultFunc(
+		const result = skills.selectors.selectedBoardContents.resultFunc(
 			contents,
 			selectedCategory
 		);
@@ -76,7 +76,7 @@ describe("skillsSection.selectors.selectedBoardImages", () => {
 			}
 		];
 
-		const result = skillsSection.selectors.selectedBoardImages.resultFunc(categories);
+		const result = skills.selectors.selectedBoardImages.resultFunc(categories);
 
 		expect(result).toEqual([
 			"/some/path/1",
@@ -126,7 +126,7 @@ describe("skillsSection.selectors.selectedBoardImages", () => {
 			}
 		];
 
-		const result = skillsSection.selectors.selectedBoardImages.resultFunc(categories);
+		const result = skills.selectors.selectedBoardImages.resultFunc(categories);
 
 		expect(result).toEqual(["/some/path/1", "/some/path/2", "/some/path/4", "/some/path/5"]);
 	});

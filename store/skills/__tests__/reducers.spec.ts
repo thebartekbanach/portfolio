@@ -1,5 +1,5 @@
 import { skillsReducers } from "../reducers";
-import { skillsSection } from "..";
+import { skills } from "..";
 import { createMock } from "ts-auto-mock";
 import { BoardsContent, BoardsLoadingState } from "../models";
 
@@ -7,7 +7,7 @@ describe("skillsReducers", () => {
 	describe("selectedCategoryName", () => {
 		it("should change selected category", () => {
 			const initialState = "frontend";
-			const action = skillsSection.actions.changeActiveSkillsCategory.request("backend");
+			const action = skills.actions.changeActiveSkillsCategory.request("backend");
 
 			const result = skillsReducers.selectedCategoryName(initialState, action);
 
@@ -22,7 +22,7 @@ describe("skillsReducers", () => {
 				backend: false,
 				embedded: false
 			};
-			const action = skillsSection.actions.changeActiveSkillsCategory.success("backend");
+			const action = skills.actions.changeActiveSkillsCategory.success("backend");
 
 			const result = skillsReducers.boardsLoadingState(initialState, action);
 
@@ -34,7 +34,7 @@ describe("skillsReducers", () => {
 		it("should set boards content", () => {
 			const initialState = createMock<BoardsContent>();
 			const nextState = createMock<BoardsContent>();
-			const action = skillsSection.actions.setupBoardsContent(nextState);
+			const action = skills.actions.setupBoardsContent(nextState);
 
 			const result = skillsReducers.boardsContent(initialState, action);
 

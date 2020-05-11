@@ -1,13 +1,10 @@
 import { createReducer } from "deox";
 import { CategoryName, BoardsLoadingState, BoardsContent } from "./models";
 import { combineReducers } from "redux";
-import { skillsSection } from ".";
+import { skills } from ".";
 
-const selectedCategoryName = createReducer("frontend" as CategoryName, handle => [
-	handle(
-		skillsSection.actions.changeActiveSkillsCategory.request,
-		(_, action) => action.payload.to
-	)
+const selectedCategoryName = createReducer(null as CategoryName | null, handle => [
+	handle(skills.actions.changeActiveSkillsCategory.request, (_, action) => action.payload.to)
 ]);
 
 const boardsLoadingStateDefaultValue = {
@@ -19,7 +16,7 @@ const boardsLoadingStateDefaultValue = {
 const boardsLoadingState = createReducer(
 	boardsLoadingStateDefaultValue as BoardsLoadingState,
 	handle => [
-		handle(skillsSection.actions.changeActiveSkillsCategory.success, (state, action) => {
+		handle(skills.actions.changeActiveSkillsCategory.success, (state, action) => {
 			const nextState = { ...state };
 			nextState[action.payload.loaded] = true;
 			return nextState;
@@ -34,7 +31,7 @@ const boardsContentDefaultValue = {
 } as BoardsContent;
 
 const boardsContent = createReducer(boardsContentDefaultValue, handle => [
-	handle(skillsSection.actions.setupBoardsContent, (_, action) => action.payload.contents)
+	handle(skills.actions.setupBoardsContent, (_, action) => action.payload.contents)
 ]);
 
 export const skillsReducers = {
