@@ -264,6 +264,36 @@ describe(FakeStore, () => {
 			).toBe(false);
 		});
 	});
+
+	describe("updateStateIfActionIsDispatched", () => {
+		it("should change state if correct action is dispatched", () => {
+			const initialState = { isReady: false };
+			const stateAfterToggle = { isReady: true };
+			const toggleAction = { type: "toggleIsReady" };
+			const actionToDispatch = { type: "toggleIsReady" };
+
+			const fakeStore = new FakeStore(initialState);
+			fakeStore.updateStateIfActionIsDispatched(toggleAction, stateAfterToggle);
+			fakeStore.dispatch(actionToDispatch);
+			const result = fakeStore.getState();
+
+			expect(result).toBe(stateAfterToggle);
+		});
+
+		it("should not change state if other action is dispatched", () => {
+			const initialState = { isReady: false };
+			const stateAfterToggle = { isReady: true };
+			const toggleAction = { type: "toggleIsReady" };
+			const someOtherAction = { type: "doSomeOtherStuff" };
+
+			const fakeStore = new FakeStore(initialState);
+			fakeStore.updateStateIfActionIsDispatched(toggleAction, stateAfterToggle);
+			fakeStore.dispatch(someOtherAction);
+			const result = fakeStore.getState();
+
+			expect(result).toBe(initialState);
+		});
+	});
 });
 
 describe(mountWithRedux, () => {

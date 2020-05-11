@@ -8,16 +8,16 @@ import { Unsubscribe } from "redux-saga";
 
 type Dispatch = <T>(action: T) => T;
 
-export class FakeStore {
-	private state: DeepPartial<State> = {};
+export class FakeStore<TState = State> {
+	private state: DeepPartial<TState> = {};
 	private subscribers: (() => void)[] = [];
 	public dispatchedActions: unknown[] = [];
 
-	constructor(initialState: DeepPartial<State>) {
+	constructor(initialState: DeepPartial<TState>) {
 		this.state = initialState;
 	}
 
-	setState(state: DeepPartial<State>) {
+	setState(state: DeepPartial<TState>) {
 		this.state = state;
 	}
 
@@ -90,6 +90,18 @@ export class FakeStore {
 
 	isActionDispatched(action: unknown) {
 		return this.dispatchedActions.findIndex(item => deepEqual(item, action)) !== -1;
+	}
+
+	updateStateIfActionIsDispatched(action: unknown, state: TState) {
+		this.subscribe(() => {
+			if (this.isActionDispatched(action)) {
+				this.setState(state);
+			}
+		});
+	}
+
+	asStore() {
+		return (this as unknown) as Store<TState>;
 	}
 }
 
