@@ -53,7 +53,7 @@ interface SkillBoartItemListProps {
 
 export const SkillBoardItemList = styled.ul<SkillBoartItemListProps>`
 	display: grid;
-	grid-template-columns: 1fr 1fr ${(p) => (p.useSimplifiedGrid ? "" : "1fr")};
+	grid-template-columns: 1fr 1fr ${p => (p.useSimplifiedGrid ? "" : "1fr")};
 	grid-gap: 30px;
 	padding: 5px 13px;
 	box-sizing: border-box;
@@ -97,7 +97,7 @@ export const SkillBoardItemIcon = styled.img<SkillBoardItemIconProps>`
 	display: block;
 	top: 50%;
 	width: 100%;
-	transform: translateY(-50%) scale(${(p) => p.iconScale});
+	transform: translateY(-50%) scale(${p => p.iconScale});
 	overflow: hidden;
 `;
 
