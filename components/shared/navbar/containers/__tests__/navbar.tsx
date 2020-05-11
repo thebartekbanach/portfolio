@@ -1,6 +1,6 @@
 jest.mock("~/utils/i18next");
 
-import { Navbar } from "~/containers/shared/navbar";
+import { Navbar } from "~/components/shared/navbar/containers/navbar";
 import { useTranslationMock } from "~/tests/utils/useTranslationMock";
 import { mountWithRedux, FakeStore } from "~/tests/utils/mountWithRedux";
 

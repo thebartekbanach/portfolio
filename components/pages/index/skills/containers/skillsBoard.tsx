@@ -1,4 +1,4 @@
-import { SkillBoardComponent } from "~/components/sections/skillsSection/skillBoard";
+import { SkillBoardComponent } from "~/components/pages/index/skills/components/skillBoard";
 import { useSelector } from "react-redux";
 import { skills } from "~/store/skills";
 

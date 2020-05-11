@@ -1,10 +1,10 @@
 import { useTranslation } from "~/utils/i18next";
-import { SkillTile } from "~/components/sections/skillsSection/skillTiles";
-import { SkillsGridAreaNames } from "~/components/sections/skillsSection/styles/skillGrid";
+import { SkillTile } from "~/components/pages/index/skills/components/skillTiles";
+import { SkillsGridAreaNames } from "~/components/pages/index/skills/styles/skillGrid";
 
-import FrontendIcon from "../../../public/img/skills/categoryIcons/frontend.svg";
-import BackendIcon from "../../../public/img/skills/categoryIcons/backend.svg";
-import EmbeddedIcon from "../../../public/img/skills/categoryIcons/embedded.svg";
+import FrontendIcon from "../../../../../public/img/skills/categoryIcons/frontend.svg";
+import BackendIcon from "../../../../../public/img/skills/categoryIcons/backend.svg";
+import EmbeddedIcon from "../../../../../public/img/skills/categoryIcons/embedded.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { skills } from "~/store/skills";
 

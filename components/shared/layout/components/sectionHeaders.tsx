@@ -3,7 +3,7 @@ import {
 	SectionHeadersContainer,
 	SectionHeader,
 	SectionDescription
-} from "./styles/sectionHeaders";
+} from "../styles/sectionHeaders";
 
 interface SectionHeadersProps {
 	title: string;

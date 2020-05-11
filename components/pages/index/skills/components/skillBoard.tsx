@@ -12,9 +12,9 @@ import {
 	SkillBoardItemTitle,
 	SkillBoardItemDescription,
 	SkillBoardContent
-} from "./styles/skillBoard";
+} from "../styles/skillBoard";
 import { BoardItem, BoardCategory } from "~/store/skills/models";
-import { AnimatedLoader } from "~/components/shared/animatedLoader";
+import { AnimatedLoader } from "~/components/shared/animatedLoader/components/animatedLoader";
 
 function renderSkillBoardItemDescription(description: string | undefined) {
 	if (!description) {

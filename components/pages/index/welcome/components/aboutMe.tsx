@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { AboutMeContainer } from "./styles/aboutMe";
+import { AboutMeContainer } from "../styles/aboutMe";
 
 interface AboutMeProps {
 	content: string;

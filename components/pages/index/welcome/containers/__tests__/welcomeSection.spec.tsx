@@ -1,6 +1,6 @@
 jest.mock("~/utils/i18next");
 
-import { WelcomeSection } from "../../../../components/pages/index/welcome/containers/welcomeSection";
+import { WelcomeSection } from "../welcomeSection";
 import { shallow } from "enzyme";
 import { useTranslationMock } from "~/tests/utils/useTranslationMock";
 import { Header } from "~/components/pages/index/welcome/components/header";

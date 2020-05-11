@@ -1,4 +1,4 @@
-import { AnimatedCubeLoaderContainer, AnimatedLoaderCube } from "./styles/cubeLoader";
+import { AnimatedCubeLoaderContainer, AnimatedLoaderCube } from "../styles/cubeLoader";
 import { SFC } from "react";
 
 export const CubeLoader: SFC<{ className?: string }> = ({ className }) => (

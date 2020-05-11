@@ -1,4 +1,4 @@
-import { DeveloperPictureContainer, DeveloperImage } from "./styles/developerPicture";
+import { DeveloperPictureContainer, DeveloperImage } from "../styles/developerPicture";
 
 export const DeveloperPicture = () => (
 	<DeveloperPictureContainer>

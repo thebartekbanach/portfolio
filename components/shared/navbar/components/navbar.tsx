@@ -1,12 +1,12 @@
 import { FC } from "react";
 import { Logo } from "./logo";
-import { NavItem, NavItemsWrapper, NavItems } from "./styles/navbarItems";
-import { NavbarWrapper } from "./styles/navbarWrapper";
+import { NavItem, NavItemsWrapper, NavItems } from "../styles/navbarItems";
+import { NavbarWrapper } from "../styles/navbarWrapper";
 import {
 	MobileMenuToggleButton,
 	MobileMenuToggleButtonIcon
-} from "./styles/mobileMenuToggleButton";
-import { ContactButton } from "./styles/contactButton";
+} from "../styles/mobileMenuToggleButton";
+import { ContactButton } from "../styles/contactButton";
 
 interface NavigationItem {
 	id: string;

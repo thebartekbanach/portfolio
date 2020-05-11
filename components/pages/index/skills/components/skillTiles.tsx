@@ -7,13 +7,13 @@ import {
 	SkillTileItemStatePointer,
 	SkillTileItemStatePointerIconWrapper,
 	SkillTileItemContent
-} from "./styles/skillTiles";
-import ArrowSelected from "../../../public/img/skills/arrow-selected.svg";
-import ArrowNormal from "../../../public/img/skills/arrow-normal.svg";
+} from "../styles/skillTiles";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
-import { SkillsGridAreaNames } from "./styles/skillGrid";
+import { SkillsGridAreaNames } from "../styles/skillGrid";
+import ArrowSelected from "../../../../../public/img/skills/arrow-selected.svg";
+import ArrowNormal from "../../../../../public/img/skills/arrow-normal.svg";
 
-export { SkillsGrid } from "./styles/skillGrid";
+export { SkillsGrid } from "../styles/skillGrid";
 
 interface SkillTileProps {
 	tileAreaName: SkillsGridAreaNames;

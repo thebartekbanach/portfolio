@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { LogoElement, DirectoryName, UserName, LogoWrapper } from "./styles/logo";
+import { LogoElement, DirectoryName, UserName, LogoWrapper } from "../styles/logo";
 
 interface LogoProps {
 	directoryName: string;

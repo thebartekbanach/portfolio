@@ -1,7 +1,7 @@
 import { NextPage } from "next";
-import { Main } from "~/components/shared/layout/main";
-import { WelcomeSection } from "~/containers/sections/welcomeSection";
-import { SkillsSection } from "~/containers/sections/skillsSection";
+import { Main } from "~/components/shared/layout/components/main";
+import { WelcomeSection } from "~/components/pages/index/welcome/containers/welcomeSection";
+import { SkillsSection } from "~/components/pages/index/skills/containers/skillsSection";
 import { dispatchAndWaitForResult } from "~/utils/dispatchAndWaitForResult";
 import { skills } from "~/store/skills";
 

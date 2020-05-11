@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { NameHeader, SpecializationSubheader, HeaderContainer } from "./styles/header";
+import { NameHeader, SpecializationSubheader, HeaderContainer } from "../styles/header";
 
 interface HeaderProps {
 	name: string;

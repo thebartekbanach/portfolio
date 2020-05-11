@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Navbar as NavbarComponent } from "~/components/shared/navbar";
+import { Navbar as NavbarComponent } from "~/components/shared/navbar/components";
 import { useTranslation } from "~/utils/i18next";
 import { useSelector, useDispatch } from "react-redux";
 import { navbar } from "~/store/navbar";
