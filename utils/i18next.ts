@@ -1,7 +1,10 @@
-import NextI18Next from "next-i18next";
-import { channel } from "redux-saga";
+import NextI18Next, { I18n } from "next-i18next";
 
 const i18nextInstance = new NextI18Next({
+	localeSubpaths: {
+		en: "en",
+		pl: "pl"
+	},
 	defaultLanguage: "en",
 	otherLanguages: ["pl"],
 	defaultNS: "common",
@@ -12,9 +15,5 @@ export default i18nextInstance;
 
 export const { appWithTranslation, useTranslation, i18n } = i18nextInstance;
 
-export const languageChangeChannel = channel<string>();
-i18nextInstance.i18n.on("languageChanged", languageChangeChannel.put);
-
-export const getObjectFromTranslations = (namespace: string) => {
-	i18nextInstance.i18n.t(namespace, { returnObjects: true });
-};
+export const getObjectFromTranslations = <T = unknown>(i18n: I18n, namespace: string) =>
+	(i18n.t(namespace, { returnObjects: true }) as unknown) as T;
