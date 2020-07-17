@@ -5,6 +5,7 @@ import { SkillsGridAreaNames } from "~/components/pages/index/skills/styles/skil
 import FrontendIcon from "../../../../../public/img/skills/categoryIcons/frontend.svg";
 import BackendIcon from "../../../../../public/img/skills/categoryIcons/backend.svg";
 import EmbeddedIcon from "../../../../../public/img/skills/categoryIcons/embedded.svg";
+
 import { useSelector, useDispatch } from "react-redux";
 import { skills } from "~/store/skills";
 
