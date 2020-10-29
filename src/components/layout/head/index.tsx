@@ -1,13 +1,37 @@
-import { Favicon } from "./favicon";
-import { FacebookMeta } from "./meta/facebook";
-import { GoogleMeta } from "./meta/google";
+import Head from "next/head";
+import { FC } from "react";
+import { useTranslation } from "~/utils/i18next";
+import { favicon } from "./favicon";
+import { facebookMeta } from "./meta/facebook";
+import { googleMeta } from "./meta/google";
 
-export const PageHead = () => (
-	<>
-		<title>Bartek Banach - portfolio</title>
-		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-		<Favicon />
-		<GoogleMeta />
-		<FacebookMeta />
-	</>
-);
+export interface PageHeadProps {
+	pageTitle: string;
+	description: string;
+	url?: string;
+	locale?: string;
+	coverImage?: string;
+}
+
+export const PageHead: FC<PageHeadProps> = props => {
+	const [t] = useTranslation("pageMeta");
+
+	const pageProps = { ...props };
+
+	pageProps.url =
+		pageProps.url ?? typeof window !== "undefined"
+			? window.location.href
+			: "https://bartekbanach.dev";
+	pageProps.locale = pageProps.locale ?? t("facebook.locale");
+	pageProps.coverImage = pageProps.coverImage ?? t("facebook.coverImage");
+
+	return (
+		<Head>
+			<title>{pageProps.pageTitle}</title>
+			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			{favicon()}
+			{googleMeta(pageProps)}
+			{facebookMeta(pageProps)}
+		</Head>
+	);
+};

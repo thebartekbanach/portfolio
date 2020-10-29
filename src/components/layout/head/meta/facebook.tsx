@@ -1,10 +1,12 @@
-export const FacebookMeta = () => (
+import { PageHeadProps } from "..";
+
+export const facebookMeta = (props: PageHeadProps) => (
 	<>
-		<meta property="og:url" content="https://kajakgo.pl" />
+		<meta property="og:url" content={props.url} />
 		<meta property="og:type" content="website" />
-		<meta property="og:locale" content="pl_PL" />
-		<meta property="og:title" content="Bartek Banach - portfolio" />
-		<meta property="og:description" content="TODO" />
-		<meta property="og:image" content="TODO" />
+		<meta property="og:locale" content={props.locale} />
+		<meta property="og:title" content={props.pageTitle} />
+		<meta property="og:description" content={props.description} />
+		<meta property="og:image" content={props.coverImage} />
 	</>
 );

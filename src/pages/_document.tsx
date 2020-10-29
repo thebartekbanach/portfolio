@@ -6,7 +6,6 @@ import Document, {
 	NextScript,
 	Html
 } from "next/document";
-import { PageHead } from "~/components/layout/head";
 import { collectStyles } from "~/utils/collectStyles";
 
 interface MyDocumentProps extends DocumentInitialProps {
@@ -21,10 +20,7 @@ export default class MyDocument extends Document<MyDocumentProps> {
 	render() {
 		return (
 			<Html>
-				<Head>
-					<PageHead />
-					{this.props.styles}
-				</Head>
+				<Head>{this.props.styles}</Head>
 				<body>
 					<Main />
 					<NextScript />
