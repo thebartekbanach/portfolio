@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { PageHead } from "~/components/layout/head";
+import { PageContainer } from "~/components/layout/pageContainer";
 import { useTranslation } from "~/utils/i18next";
 import { useFont } from "~/utils/useFont";
 
@@ -13,7 +14,7 @@ const IndexPage = () => {
 	return (
 		<>
 			<PageHead pageTitle="Bartek Banach - portfolio" description="TODO" />
-			<div>
+			<PageContainer>
 				<h1>{t("hello-world")}, its a font test:</h1>
 				<ul>
 					<StyledFontExample font={useFont.montserrat.bold}>
@@ -52,7 +53,7 @@ const IndexPage = () => {
 						Change to {i18n.language === "en" ? "pl" : "en"}
 					</button>
 				</div>
-			</div>
+			</PageContainer>
 		</>
 	);
 };
