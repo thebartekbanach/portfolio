@@ -1,24 +1,25 @@
 {
 	"logo": {
+		"href": "/#start",
 		"rootPath": "/dev/",
 		"userName": "BartekBanach"
 	},
 	"navbarItems": [
 		{
-			"id": 1,
-			"url": "#skills",
-			"content": "Skills"
+			"href": "/#skills",
+			"text": "Skills"
 		},
 		{
-			"id": 2,
-			"url": "#realizations",
-			"content": "Realizations"
+			"href": "/#realizations",
+			"text": "Realizations"
 		},
 		{
-			"id": 3,
-			"url": "#contact",
-			"content": "Contact"
+			"href": "/#contact",
+			"text": "Contact"
 		}
 	],
-	"contactButtonContent": "Write to me"
+	"contactButton": {
+		"href": "/#contact",
+		"text": "Write to me"
+	}
 }

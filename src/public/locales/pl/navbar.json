@@ -1,24 +1,25 @@
 {
 	"logo": {
+		"href": "/pl#start",
 		"rootPath": "/dev/",
 		"userName": "BartekBanach"
 	},
 	"navbarItems": [
 		{
-			"id": 1,
-			"url": "#umiejetnosci",
-			"content": "Umiejętności"
+			"href": "/pl#umiejetnosci",
+			"text": "Umiejętności"
 		},
 		{
-			"id": 2,
-			"url": "#realizacje",
-			"content": "Realizacje"
+			"href": "/pl#realizacje",
+			"text": "Realizacje"
 		},
 		{
-			"id": 3,
-			"url": "#kontakt",
-			"content": "Kontakt"
+			"href": "/pl#kontakt",
+			"text": "Kontakt"
 		}
 	],
-	"contactButtonContent": "Napisz do mnie"
+	"contactButton": {
+		"href": "/pl#kontakt",
+		"text": "Napisz do mnie"
+	}
 }
