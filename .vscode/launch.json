@@ -5,51 +5,11 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "firefox",
-			"request": "launch",
-			"reAttach": true,
-			"name": "Debug: Firefox",
-			"url": "http://localhost:3000",
-			"webRoot": "${workspaceFolder}",
-			"pathMappings": [
-				{
-					"url": "webpack:///store",
-					"path": "${workspaceFolder}/store"
-				}
-			]
-		},
-		{
 			"type": "chrome",
 			"request": "launch",
 			"name": "Debug: Chrome",
-			"url": "http://localhost:3000",
-			"webRoot": "${workspaceFolder}"
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Jest All",
-			"program": "${workspaceFolder}/node_modules/.bin/jest",
-			"args": ["--runInBand"],
-			"console": "integratedTerminal",
-			"internalConsoleOptions": "neverOpen",
-			"disableOptimisticBPs": true,
-			"windows": {
-				"program": "${workspaceFolder}/node_modules/jest/bin/jest"
-			}
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Jest Current File",
-			"program": "${workspaceFolder}/node_modules/.bin/jest",
-			"args": ["${fileBasenameNoExtension}", "--config", "jest.config.js"],
-			"console": "integratedTerminal",
-			"internalConsoleOptions": "neverOpen",
-			"disableOptimisticBPs": true,
-			"windows": {
-				"program": "${workspaceFolder}/node_modules/jest/bin/jest"
-			}
+			"url": "http://localhost/",
+			"webRoot": "${workspaceFolder}/src"
 		}
 	]
 }
