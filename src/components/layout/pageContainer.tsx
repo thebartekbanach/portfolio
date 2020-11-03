@@ -1,5 +1,6 @@
 import { FC } from "react";
 import styled from "styled-components";
+import { Navbar } from "./navbar";
 
 const StyledPageContainer = styled.main`
 	position: relative;
@@ -8,5 +9,10 @@ const StyledPageContainer = styled.main`
 `;
 
 export const PageContainer: FC = ({ children }) => {
-	return <StyledPageContainer>{children}</StyledPageContainer>;
+	return (
+		<StyledPageContainer>
+			<Navbar />
+			{children}
+		</StyledPageContainer>
+	);
 };
