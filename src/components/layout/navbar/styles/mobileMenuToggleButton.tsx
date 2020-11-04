@@ -142,7 +142,7 @@ export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>
 		transform: scale(0.9);
 	}
 
-	@media (min-width: 600px) {
+	@media (min-width: 750px) {
 		width: 60px;
 		height: 60px;
 	}
