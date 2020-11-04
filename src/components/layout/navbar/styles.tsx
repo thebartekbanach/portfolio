@@ -15,5 +15,3 @@ export const NavbarContainer = styled.nav`
 
 	letter-spacing: 0.7px;
 `;
-
-export const NavbarContent = styled.div``;

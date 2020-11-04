@@ -2,9 +2,8 @@ import React, { FC } from "react";
 import {
 	MobileMenuToggleButton,
 	MobileMenuToggleButtonIcon
-} from "../styles/mobileMenuToggleButton";
-import { NavbarContent } from "../styles/navbarContainer";
-import { NavbarItem, NavbarItems, NavbarContactButton } from "../styles/navbarItems";
+} from "./styles/mobileMenuToggleButton";
+import { NavbarItem, NavbarItems, NavbarContactButton, NavbarContent } from "./styles/navItems";
 
 export interface NavItem {
 	text: string;

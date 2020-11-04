@@ -5,7 +5,7 @@ import {
 	NavbarLogoContainer,
 	NavbarLogoDevPart,
 	NavbarLogoUserNamePart
-} from "../styles/logo";
+} from "./styles";
 
 interface LogoProps {
 	subPage?: string;

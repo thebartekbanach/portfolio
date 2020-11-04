@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { useFont } from "~/utils/useFont";
 
+export const NavbarContent = styled.div``;
+
 export const NavbarItem = styled.a`
 	${useFont.nunitoSans.bold};
 	text-decoration: none;

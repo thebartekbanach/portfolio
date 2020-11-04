@@ -1,8 +1,8 @@
 import React, { FC, useState } from "react";
 import { useTranslation } from "~/utils/i18next";
-import { Logo } from "./components/logo";
-import { NavItems } from "./components/navItems";
-import { NavbarContainer } from "./styles/navbarContainer";
+import { Logo } from "./logo";
+import { NavItems } from "./navItems";
+import { NavbarContainer } from "./styles";
 
 interface NavbarProps {
 	pageSubPath?: string;
