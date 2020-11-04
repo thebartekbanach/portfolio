@@ -1,4 +1,26 @@
 {
 	"presets": ["next/babel"],
-	"plugins": ["inline-react-svg", ["styled-components", { "ssr": true, "displayName": true }]]
+	"plugins": [
+		[
+			"inline-react-svg",
+			{
+				"svgo": {
+					"plugins": [
+						{
+							"removeAttrs": {
+								"attrs": ["data-name", "data-original", "data-old_color"]
+							}
+						}
+					]
+				}
+			}
+		],
+		[
+			"styled-components",
+			{
+				"ssr": true,
+				"displayName": true
+			}
+		]
+	]
 }
