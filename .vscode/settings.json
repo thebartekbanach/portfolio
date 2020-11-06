@@ -7,5 +7,9 @@
 	},
 	"editor.formatOnSave": true,
 	"typescript.extension.sortImports.sortOnSave": true,
-	"typescript.extension.sortImports.quoteStyle": "double"
+	"typescript.extension.sortImports.quoteStyle": "double",
+	"conventionalCommits.scopes": [
+		"styles",
+		"vscode"
+	]
 }
