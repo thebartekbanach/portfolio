@@ -18,6 +18,13 @@ module.exports = {
 			config.resolve.plugins = [new TsConfigPathsPlugin()];
 		}
 
+		config.module.rules.push({
+			test: /\.svg$/,
+			issuer: {
+				test: /\.(js|ts)x?$/
+			},
+			use: ["@svgr/webpack"]
+		});
 
 		if (!options.isServer && config.mode === "development") {
 			const path = require("path");

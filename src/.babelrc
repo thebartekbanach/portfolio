@@ -2,20 +2,6 @@
 	"presets": ["next/babel"],
 	"plugins": [
 		[
-			"inline-react-svg",
-			{
-				"svgo": {
-					"plugins": [
-						{
-							"removeAttrs": {
-								"attrs": ["data-name", "data-original", "data-old_color"]
-							}
-						}
-					]
-				}
-			}
-		],
-		[
 			"styled-components",
 			{
 				"ssr": true,
