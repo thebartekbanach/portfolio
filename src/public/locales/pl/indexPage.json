@@ -3,5 +3,228 @@
 		"title": "Bartek Banach",
 		"subTitle": "Full Stack Developer",
 		"aboutMe": "Jestem <b>21 letnim</b> w pełni samodzielnym <b>pasjonatem web developmentu</b>. <b>Kocham automatyzować zadania, ułatwiać pracę ludziom</b> nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded. Lubię też <b>tworzyć proste, intuicyjne aplikacje frontendowe</b>, które są proste w użyciu oraz przydatne w codziennym życiu. [PL]"
+	},
+	"skills": {
+		"sectionId": "umiejetnosci",
+		"sectionName": "Umiejętności",
+		"sectionDescription": "Wybierz jedną z kategorii aby dowiedzieć się więcej",
+		"categoryRoots": [
+			{
+				"title": "Front-end",
+				"description": "Kocham tworzyć proste oraz intuicyjne interfejsy użytkownika, dzięki którym może on szybko wykonywać swoje zadania",
+				"content": [
+					{
+						"categoryName": "Języki Programowania",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"name": "Javascript",
+								"comment": "Standard ES7"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/typescript.svg",
+								"name": "Typescript",
+								"comment": "Wersja 3.8.2"
+							}
+						]
+					},
+					{
+						"categoryName": "Technologie",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/react.svg",
+								"iconScale": 1.5,
+								"name": "React"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/redux.svg",
+								"name": "Redux"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/styled-components.png",
+								"name": "Styled components"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/nunjucks.png",
+								"name": "Nunjucks"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/jquery.svg",
+								"name": "JQuery"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/sass.svg",
+								"name": "Sass"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Back-end",
+				"description": "Kod źródłowy moich aplikacji backendowych jest równie prosty i czytelny dla programistów co frontend dla użytkowników",
+				"content": [
+					{
+						"categoryName": "Języki Programowania PL BACK-END",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/javascript.svg",
+								"name": "Javascript",
+								"comment": "Standard ES7"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/typescript.svg",
+								"name": "Typescript",
+								"comment": "Wersja 3.8.2"
+							}
+						]
+					},
+					{
+						"categoryName": "Technologie",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/react.svg",
+								"iconScale": 1.5,
+								"name": "React"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/redux.svg",
+								"name": "Redux"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/styled-components.png",
+								"name": "Styled components"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nunjucks.png",
+								"name": "Nunjucks"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/jquery.svg",
+								"name": "JQuery"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/sass.svg",
+								"name": "Sass"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Embedded",
+				"description": "W wolnym czasie majsterkuję. Programuję urządzenia które są łatwe w konfiguracji i proste w użyciu",
+				"content": [
+					{
+						"categoryName": "Języki Programowania PL EMBEDDED",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/javascript.svg",
+								"name": "Javascript",
+								"comment": "Standard ES7"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/typescript.svg",
+								"name": "Typescript",
+								"comment": "Wersja 3.8.2"
+							}
+						]
+					},
+					{
+						"categoryName": "Technologie",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/react.svg",
+								"iconScale": 1.5,
+								"name": "React"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/redux.svg",
+								"name": "Redux"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/styled-components.png",
+								"name": "Styled components"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nunjucks.png",
+								"name": "Nunjucks"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/jquery.svg",
+								"name": "JQuery"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/sass.svg",
+								"name": "Sass"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					}
+				]
+			}
+		]
 	}
 }
