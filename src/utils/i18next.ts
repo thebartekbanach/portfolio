@@ -11,6 +11,16 @@ const i18nextInstance = new NextI18Next({
 		typeof window === "undefined" ? require("path").resolve("public/locales") : "locales"
 });
 
+if (process.env.NODE_ENV !== "production") {
+	if (process.browser) {
+		const { applyClientHMR } = require("i18next-hmr/client");
+		applyClientHMR(i18nextInstance.i18n);
+	} else {
+		const { applyServerHMR } = require("i18next-hmr/server");
+		applyServerHMR(i18nextInstance.i18n);
+	}
+}
+
 export default i18nextInstance;
 
 export const { appWithTranslation, useTranslation, i18n } = i18nextInstance;
