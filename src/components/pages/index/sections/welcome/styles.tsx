@@ -107,7 +107,7 @@ export const AboutMe = styled.div`
 	${useFont.nunitoSans.regular};
 	font-size: 17px;
 	letter-spacing: 0.5px;
-	line-height: 23px;
+	line-height: 25px;
 
 	b {
 		color: #4764e6;
