@@ -1,7 +1,7 @@
 import { FC } from "react";
 
-import SkillTileArrowNormal from "../../../../../../public/assets/pages/index/skills/arrow/normal.svg";
-import SkillTileArrowSelected from "../../../../../../public/assets/pages/index/skills/arrow/selected.svg";
+import SkillTileArrowNormal from "~/public/assets/pages/index/skills/arrow/normal.svg";
+import SkillTileArrowSelected from "~/public/assets/pages/index/skills/arrow/selected.svg";
 
 import { Border } from "./border";
 import { AnimationStartPoint } from "./border/styles";
