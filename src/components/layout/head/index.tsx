@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { FC } from "react";
+
 import { useTranslation } from "~/utils/i18next";
+
 import { favicon } from "./favicon";
 import { facebookMeta } from "./meta/facebook";
 import { googleMeta } from "./meta/google";

@@ -1,4 +1,10 @@
 import { FC } from "react";
+
+import SkillTileArrowNormal from "../../../../../../public/assets/pages/index/skills/arrow/normal.svg";
+import SkillTileArrowSelected from "../../../../../../public/assets/pages/index/skills/arrow/selected.svg";
+
+import { Border } from "./border";
+import { AnimationStartPoint } from "./border/styles";
 import {
 	SkillTileArrow,
 	SkillTileDescription,
@@ -6,11 +12,6 @@ import {
 	SkillTileIconWrapper,
 	SkillTileTitle
 } from "./styles";
-import { Border } from "./border";
-
-import SkillTileArrowNormal from "../../../../../../public/assets/pages/index/skills/arrow/normal.svg";
-import SkillTileArrowSelected from "../../../../../../public/assets/pages/index/skills/arrow/selected.svg";
-import { AnimationStartPoint } from "./border/styles";
 
 export interface SkillTileInfo {
 	icon: React.ElementType;

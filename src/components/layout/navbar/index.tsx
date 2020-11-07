@@ -1,5 +1,7 @@
 import React, { FC, useState } from "react";
+
 import { useTranslation } from "~/utils/i18next";
+
 import { Logo } from "./logo";
 import { NavItems } from "./navItems";
 import { NavbarContainer } from "./styles";

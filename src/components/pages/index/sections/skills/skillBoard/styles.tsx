@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import { useFont } from "~/utils/useFont";
 
 export const SkillBoardWrapper = styled.div`

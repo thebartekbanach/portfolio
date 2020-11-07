@@ -11,6 +11,7 @@ import "~/public/fonts/roboto/medium/include.css";
 import "~/public/fonts/roboto/bold/include.css";
 
 import App from "next/app";
+
 import { appWithTranslation } from "~/utils/i18next";
 
 class MyApp extends App {

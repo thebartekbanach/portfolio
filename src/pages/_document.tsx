@@ -6,6 +6,7 @@ import Document, {
 	NextScript,
 	Html
 } from "next/document";
+
 import { collectStyles } from "~/utils/collectStyles";
 
 interface MyDocumentProps extends DocumentInitialProps {

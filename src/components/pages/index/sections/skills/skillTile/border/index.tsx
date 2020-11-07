@@ -1,4 +1,5 @@
 import { FC } from "react";
+
 import { usePathLength } from "./hooks";
 import { AnimationStartPoint, BorderSvgElement } from "./styles";
 
