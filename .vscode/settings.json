@@ -6,10 +6,9 @@
 		"coverage": true
 	},
 	"editor.formatOnSave": true,
-	"typescript.extension.sortImports.sortOnSave": true,
-	"typescript.extension.sortImports.quoteStyle": "double",
 	"conventionalCommits.scopes": [
 		"styles",
-		"vscode"
+		"vscode",
+		"linters"
 	]
 }
