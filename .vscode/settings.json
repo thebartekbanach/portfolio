@@ -1,14 +1,13 @@
 {
 	"files.exclude": {
-		"**/.next": true,
-		"**/.vscode": true,
-		"**/node_modules": true,
-		"coverage": true
+		"**/.next": false,
+		"**/.vscode": false,
+		"**/node_modules": false,
+		"coverage": false
 	},
 	"editor.formatOnSave": true,
-	"conventionalCommits.scopes": [
-		"styles",
-		"vscode",
-		"linters"
-	]
+	"conventionalCommits.scopes": ["styles", "vscode", "linters"],
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	}
 }
