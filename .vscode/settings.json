@@ -8,6 +8,8 @@
 	"editor.formatOnSave": true,
 	"conventionalCommits.scopes": ["styles", "vscode", "linters"],
 	"editor.codeActionsOnSave": {
-		"source.fixAll": true
-	}
+		"source.fixAll": true,
+		"source.fixAll.stylelint": false
+	},
+	"stylelint.syntax": "css-in-js"
 }
