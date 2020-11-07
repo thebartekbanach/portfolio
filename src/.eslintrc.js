@@ -35,6 +35,11 @@ module.exports = {
 				"newlines-between": "always",
 				pathGroups: [
 					{
+						pattern: "~/**/*.svg",
+						group: "internal",
+						position: "after"
+					},
+					{
 						pattern: "~/**",
 						group: "internal",
 						position: "before"
