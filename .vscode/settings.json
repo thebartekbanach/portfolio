@@ -1,9 +1,9 @@
 {
 	"files.exclude": {
-		"**/.next": false,
-		"**/.vscode": false,
-		"**/node_modules": false,
-		"coverage": false
+		"**/.next": true,
+		"**/.vscode": true,
+		"**/node_modules": true,
+		"coverage": true
 	},
 	"editor.formatOnSave": true,
 	"conventionalCommits.scopes": ["styles", "vscode", "linters"],
