@@ -22,7 +22,7 @@ const scrollBy = (top: number, abortAfterTimeMs = 1500) =>
 		});
 	});
 
-export class StickGuard {
+export class ScrollAnchor {
 	private target: (EventTarget & Element) | null = null;
 	private offsetTop = 0;
 

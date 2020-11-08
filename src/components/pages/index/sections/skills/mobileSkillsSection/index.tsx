@@ -10,7 +10,7 @@ import { AnimationStartPoint } from "../skillTile/border/styles";
 import { SkillsSectionGrid } from "../styles";
 
 import { SkillBoardBody, SkillBoardWrapper } from "./styles";
-import { StickGuard } from "./utils";
+import { ScrollAnchor } from "./utils";
 
 interface MobileSkillsSectionProps {
 	categoryRoots: SkillCategoryRoot[];
@@ -20,7 +20,7 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 	const [selectedCategory, setSelectedCategory] = useState(0 as number);
 	const [skillBoardIsVisible, setSkillBoardIsVisible] = useState(false);
 
-	const stickGuard = useRef(new StickGuard());
+	const stickGuard = useRef(new ScrollAnchor());
 	const pendingAnimation = useRef(false);
 
 	const onSkillTileClick = (tileIndex: number) => async (e: React.MouseEvent) => {
