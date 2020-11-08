@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 import { useFont } from "~/utils/useFont";
 
-export const NavbarContent = styled.div``;
+export const NavbarContent = styled.div`
+	z-index: 100;
+`;
 
 export const NavbarItem = styled.a`
 	${useFont.nunitoSans.bold};

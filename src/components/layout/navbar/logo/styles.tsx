@@ -9,7 +9,7 @@ export const NavbarLogoContainer = styled.a`
 
 	padding: 15px 15px 15px 0;
 
-	z-index: 2;
+	z-index: 101;
 
 	&:hover {
 		text-decoration: underline;

@@ -132,7 +132,7 @@ export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>
 	background: #f5e7fe;
 	border: none;
 	cursor: pointer;
-	z-index: 2;
+	z-index: 101;
 	outline: none;
 
 	transition: transform 200ms;
