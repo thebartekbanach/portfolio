@@ -1,6 +1,6 @@
 import debounce from "lodash.debounce";
 
-export const scrollBy = (top: number, abortAfterTimeMs = 1500) =>
+const scrollBy = (top: number, abortAfterTimeMs = 1500) =>
 	new Promise((resolve, reject) => {
 		const abortTimeoutId = setTimeout(() => {
 			window.removeEventListener("scroll", scrollEventHandler, eventOptions);
