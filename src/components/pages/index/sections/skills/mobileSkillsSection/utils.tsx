@@ -47,7 +47,10 @@ export class StickGuard {
 	async scrollToAndStick(target: EventTarget & Element, offsetTop = 0) {
 		const position = target.getBoundingClientRect().top - offsetTop;
 
-		await scrollBy(position);
+		if (position > 1) {
+			await scrollBy(position);
+		}
+
 		this.stickTo(target, offsetTop);
 	}
 
