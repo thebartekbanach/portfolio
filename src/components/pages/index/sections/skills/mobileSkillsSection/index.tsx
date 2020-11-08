@@ -20,8 +20,15 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 	const [skillBoardIsVisible, setSkillBoardIsVisible] = useState(false);
 
 	const stickGuard = useRef(new StickGuard());
+	const pendingAnimation = useRef(false);
 
 	const onSkillTileClick = (tileIndex: number) => async (e: React.MouseEvent) => {
+		if (pendingAnimation.current || (tileIndex === selectedCategory && skillBoardIsVisible)) {
+			return;
+		}
+
+		pendingAnimation.current = true;
+
 		try {
 			await stickGuard.current.scrollToAndStick(e.currentTarget, 45);
 		} catch (e) {
@@ -40,6 +47,7 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 		const stopStickingIfBoardIsShown = ({ newHeight }: { newHeight: number }) => {
 			if (newHeight !== 0) {
 				stickGuard.current.stopSticking();
+				pendingAnimation.current = false;
 			}
 		};
 
