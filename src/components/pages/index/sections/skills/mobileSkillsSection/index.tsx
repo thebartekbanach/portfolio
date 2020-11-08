@@ -17,7 +17,7 @@ interface MobileSkillsSectionProps {
 }
 
 export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoots }) => {
-	const [selectedCategory, setSelectedCategory] = useState(1 as number);
+	const [selectedCategory, setSelectedCategory] = useState(0 as number);
 	const [skillBoardIsVisible, setSkillBoardIsVisible] = useState(false);
 
 	const stickGuard = useRef(new StickGuard());
@@ -55,14 +55,14 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 		return !skillBoardIsVisible ? null : (
 			<SkillBoardWrapper>
 				<SkillBoardBody>
-			<AnimateHeight
+					<AnimateHeight
 						duration={status === "entering" ? 0 : status === "exiting" ? 1000 : 500}
-				height={status === "entered" ? "auto" : 0}
-				onAnimationEnd={stopStickingIfBoardIsShown}
+						height={status === "entered" ? "auto" : 0}
+						onAnimationEnd={stopStickingIfBoardIsShown}
 						animateOpacity
-			>
+					>
 						<SkillBoardContent categories={currentCategoryContent} />
-			</AnimateHeight>
+					</AnimateHeight>
 				</SkillBoardBody>
 			</SkillBoardWrapper>
 		);
