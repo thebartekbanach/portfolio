@@ -24,6 +24,8 @@ export const SkillBoardElement = styled.div`
 	}
 `;
 
+export const SkillBoardContentElement = styled.div``;
+
 export const SkillBoardCategory = styled.div`
 	margin-top: 20px;
 

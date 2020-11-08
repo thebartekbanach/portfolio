@@ -4,10 +4,11 @@ import { Transition, TransitionGroup } from "react-transition-group";
 import { TransitionStatus } from "react-transition-group/Transition";
 
 import { SkillCategoryRoot } from "..";
-import { SkillBoard } from "../skillBoard";
+import { SkillBoardContent } from "../skillBoard";
 import { SkillTile } from "../skillTile";
 import { SkillsSectionGrid } from "../styles";
 
+import { SkillBoardBody, SkillBoardWrapper } from "./styles";
 import { StickGuard } from "./utils";
 
 interface MobileSkillsSectionProps {
@@ -43,13 +44,18 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 		};
 
 		return !skillBoardIsVisible ? null : (
+			<SkillBoardWrapper>
+				<SkillBoardBody>
 			<AnimateHeight
-				duration={status === "entering" ? 0 : 1000}
+						duration={status === "entering" ? 0 : status === "exiting" ? 1000 : 500}
 				height={status === "entered" ? "auto" : 0}
 				onAnimationEnd={stopStickingIfBoardIsShown}
+						animateOpacity
 			>
-				<SkillBoard categories={currentCategoryContent} />
+						<SkillBoardContent categories={currentCategoryContent} />
 			</AnimateHeight>
+				</SkillBoardBody>
+			</SkillBoardWrapper>
 		);
 	};
 

@@ -9,8 +9,7 @@ import {
 	SkillBoardCategoryItemNameAndDescriptionWrapper,
 	SkillBoardCategoryItems,
 	SkillBoardCategoryName,
-	SkillBoardElement,
-	SkillBoardWrapper
+	SkillBoardContentElement
 } from "./styles";
 
 export interface SkillInfo {
@@ -54,12 +53,8 @@ function renderCategory({ categoryName, items }: SkillCategory) {
 	);
 }
 
-export const SkillBoard: FC<SkillBoardProps> = ({ categories }) => {
+export const SkillBoardContent: FC<SkillBoardProps> = ({ categories }) => {
 	const renderedCategories = categories.map(renderCategory);
 
-	return (
-		<SkillBoardWrapper>
-			<SkillBoardElement>{renderedCategories}</SkillBoardElement>
-		</SkillBoardWrapper>
-	);
+	return <SkillBoardContentElement>{renderedCategories}</SkillBoardContentElement>;
 };
