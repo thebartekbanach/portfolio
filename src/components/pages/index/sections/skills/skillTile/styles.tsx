@@ -31,6 +31,8 @@ export const SkillTileElement = styled.div<SkillTileElementProps>`
 	border-top-color: #4764e6;
 	border-bottom-color: #694fff;
 
+	z-index: 1;
+
 	cursor: ${p => (p.isSelected ? "default" : "pointer")};
 
 	.border {
