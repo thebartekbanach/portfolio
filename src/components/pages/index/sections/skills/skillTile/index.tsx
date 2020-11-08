@@ -20,6 +20,7 @@ export interface SkillTileInfo {
 }
 
 interface SkillTileProps extends SkillTileInfo {
+	animationStartPoint?: AnimationStartPoint;
 	index: number;
 	isSelected: boolean;
 	onClick: (e: React.MouseEvent) => void;
@@ -29,13 +30,17 @@ export const SkillTile: FC<SkillTileProps> = ({
 	icon: Icon,
 	title,
 	description,
+	animationStartPoint,
 	index,
 	isSelected,
 	onClick
 }) => {
 	return (
 		<SkillTileElement elementIndex={index} isSelected={isSelected} onClick={onClick}>
-			<Border animationStartPoint={index as AnimationStartPoint} isVisible={isSelected} />
+			<Border
+				animationStartPoint={animationStartPoint ?? (index as AnimationStartPoint)}
+				isVisible={isSelected}
+			/>
 			<SkillTileIconWrapper>
 				<Icon />
 			</SkillTileIconWrapper>
