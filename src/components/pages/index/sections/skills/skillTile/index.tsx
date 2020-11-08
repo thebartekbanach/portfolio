@@ -22,7 +22,7 @@ export interface SkillTileInfo {
 interface SkillTileProps extends SkillTileInfo {
 	index: number;
 	isSelected: boolean;
-	onClick: () => void;
+	onClick: (e: React.MouseEvent) => void;
 }
 
 export const SkillTile: FC<SkillTileProps> = ({
