@@ -10,8 +10,6 @@ export const usePathLength = () => {
 		} else {
 			setPathLength(borderRef.current.getTotalLength());
 		}
-
-		console.log(`New path length is: ${pathLength}`);
 	}, [borderRef.current]);
 
 	return [borderRef, pathLength] as [typeof borderRef, typeof pathLength];
