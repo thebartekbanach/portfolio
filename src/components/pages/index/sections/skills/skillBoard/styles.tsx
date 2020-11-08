@@ -11,7 +11,6 @@ export const SkillBoardWrapper = styled.div`
 export const SkillBoardElement = styled.div`
 	max-width: 75%;
 	margin: 0 auto;
-	margin-top: 50px;
 
 	padding: 30px 25px;
 	box-sizing: border-box;
