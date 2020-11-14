@@ -68,7 +68,7 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 	};
 
 	const renderedBoard = (
-		<Transition key={`${selectedCategory}-board`} timeout={1500}>
+		<Transition key={`${selectedCategory}-board`} timeout={1100}>
 			{renderBoard}
 		</Transition>
 	);
