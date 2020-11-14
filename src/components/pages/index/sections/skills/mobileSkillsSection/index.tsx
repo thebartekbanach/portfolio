@@ -22,6 +22,9 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 	const stickGuard = useRef(new ScrollAnchor());
 	const pendingAnimation = useRef(false);
 
+	const selectedCategoryRef = useRef(selectedCategory);
+	selectedCategoryRef.current = selectedCategory;
+
 	const onSkillTileClick = (tileIndex: number) => async (e: React.MouseEvent) => {
 		if (pendingAnimation.current || (tileIndex === selectedCategory && skillBoardIsVisible)) {
 			return;
@@ -43,7 +46,7 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 
 	const currentCategoryContent = categoryRoots.map(root => root.content)[selectedCategory];
 
-	const renderBoard = (status: TransitionStatus) => {
+	const renderBoard = (thisBoardPosition: number) => (status: TransitionStatus) => {
 		const stopStickingIfBoardIsShown = ({ newHeight }: { newHeight: number }) => {
 			if (newHeight !== 0) {
 				stickGuard.current.stopSticking();
@@ -51,9 +54,11 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 			}
 		};
 
-		const isHeightAnimationEnabled = status === "entered" || window.innerHeight > 800;
+		const isHeightAnimationEnabled =
+			(thisBoardPosition >= selectedCategoryRef.current && window.innerHeight > 800) ||
+			status === "entered";
 
-		return !skillBoardIsVisible ? null : (
+		return (
 			<SkillBoardWrapper>
 				<SkillBoardBody>
 					<AnimateHeight
@@ -71,7 +76,7 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 
 	const renderedBoard = (
 		<Transition key={`${selectedCategory}-board`} timeout={1100}>
-			{renderBoard}
+			{renderBoard(selectedCategory)}
 		</Transition>
 	);
 
