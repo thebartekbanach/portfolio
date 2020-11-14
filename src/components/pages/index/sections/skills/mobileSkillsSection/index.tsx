@@ -51,11 +51,13 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 			}
 		};
 
+		const isHeightAnimationEnabled = status === "entered" || window.innerHeight > 800;
+
 		return !skillBoardIsVisible ? null : (
 			<SkillBoardWrapper>
 				<SkillBoardBody>
 					<AnimateHeight
-						duration={status === "entering" ? 0 : status === "exiting" ? 1000 : 500}
+						duration={isHeightAnimationEnabled ? 1000 : 0}
 						height={status === "entered" ? "auto" : 0}
 						onAnimationEnd={stopStickingIfBoardIsShown}
 						animateOpacity
