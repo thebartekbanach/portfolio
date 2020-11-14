@@ -6,7 +6,6 @@ import { TransitionStatus } from "react-transition-group/Transition";
 import { SkillCategoryRoot } from "..";
 import { SkillBoardContent } from "../skillBoard";
 import { SkillTile } from "../skillTile";
-import { AnimationStartPoint } from "../skillTile/border/styles";
 import { SkillsSectionGrid } from "../styles";
 
 import { SkillBoardBody, SkillBoardWrapper } from "./styles";
@@ -79,7 +78,6 @@ export const MobileSkillsSection: FC<MobileSkillsSectionProps> = ({ categoryRoot
 			<SkillTile
 				key={tile.title}
 				index={currentIndex}
-				animationStartPoint={AnimationStartPoint.CENTER}
 				icon={tile.icon}
 				title={tile.title}
 				description={tile.description}

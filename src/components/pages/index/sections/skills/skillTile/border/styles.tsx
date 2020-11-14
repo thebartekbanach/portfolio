@@ -1,85 +1,143 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-export enum AnimationStartPoint {
-	LEFT = 0,
-	CENTER = 1,
-	RIGHT = 2
+interface ElementBorderHideProps {
+	isHiderVisible: boolean;
 }
 
-interface BorderSvgElementProps {
-	horizontalPathLength: number;
-	verticalPathLength: number;
+export const CenterElementBorderHide = styled.div<ElementBorderHideProps>`
+	z-index: 2;
 
-	isBorderVisible: boolean;
-	animationStartPoint: AnimationStartPoint;
-}
+	&,
+	div {
+		position: absolute;
+		top: -2px;
+		left: -2px;
+		width: calc(100% + 3px);
+		height: calc(100% + 3px);
+		box-sizing: border-box;
+	}
 
-const leftRightBorderAnimation = css<BorderSvgElementProps>`
-	transform: rotateY(${p => (p.animationStartPoint === AnimationStartPoint.LEFT ? 0 : 180)}deg);
+	div {
+		border: 8px solid transparent;
+		transition: transform 333ms;
+	}
 
-	line {
-		&.top,
-		&.bottom {
-			stroke-dasharray: ${p => p.horizontalPathLength} ${p => p.horizontalPathLength};
-			stroke-dashoffset: ${p => (p.isBorderVisible ? p.horizontalPathLength : 0)};
-		}
+	div:nth-child(1),
+	div:nth-child(2) {
+		border-top-color: white;
+		width: 55%;
 
-		&.left,
-		&.right {
-			stroke-dasharray: ${p => p.verticalPathLength} ${p => p.verticalPathLength};
-			stroke-dashoffset: ${p => (p.isBorderVisible ? p.verticalPathLength : 0)};
-		}
+		transition-delay: ${p => (p.isHiderVisible ? 666 : 0)}ms;
 
-		&.top,
-		&.left {
-			transition: stroke-dashoffset 500ms;
-			transition-delay: ${p => (p.isBorderVisible ? "0s" : "500ms")};
-		}
+		transform: scaleX(${p => (p.isHiderVisible ? 1 : 0)});
+		transform-origin: left center;
+	}
 
-		&.right,
-		&.bottom {
-			transition: stroke-dashoffset 500ms;
-			transition-delay: ${p => (p.isBorderVisible ? "500ms" : "0s")};
-		}
+	div:nth-child(2) {
+		right: 0;
+		left: auto;
+
+		transform-origin: right center;
+	}
+
+	div:nth-child(3) {
+		top: -4px;
+		left: -2px;
+		height: calc(100% + 8px);
+		width: 101%;
+
+		transform-origin: bottom center;
+		transform: scaleY(${p => (p.isHiderVisible ? 1 : 0)});
+
+		transition-delay: 333ms;
+
+		border-left-color: white;
+		border-right-color: white;
+
+		border-left-width: 12px;
+		border-right-width: 12px;
+	}
+
+	div:nth-child(4) {
+		transform: scaleX(${p => (p.isHiderVisible ? 1 : 0)});
+		transform-origin: center center;
+
+		transition-delay: ${p => (p.isHiderVisible ? 0 : 666)}ms;
+
+		border-bottom-color: white;
 	}
 `;
 
-const centerBorderAnimation = css<BorderSvgElementProps>`
-	line {
-		transition: stroke-dasharray 333ms, stroke-dashoffset 333ms;
+interface SideElementBorderHideProps extends ElementBorderHideProps {
+	animationStartPosition: "left" | "right";
+}
 
-		&.top {
-			stroke-dasharray: ${p =>
-				`${p.horizontalPathLength} ${p.isBorderVisible ? p.horizontalPathLength : 0}`};
-			stroke-dashoffset: ${p =>
-				p.isBorderVisible ? p.horizontalPathLength : p.horizontalPathLength / 2};
+export const SideElementBorderHide = styled.div<SideElementBorderHideProps>`
+	z-index: 2;
 
-			transition-delay: ${p => (p.isBorderVisible ? 0 : 666)}ms;
-		}
+	transform: rotateY(${p => (p.animationStartPosition === "left" ? 0 : 180)}deg);
 
-		&.bottom {
-			stroke-dasharray: ${p =>
-				`${p.isBorderVisible ? 0 : p.horizontalPathLength} ${p.horizontalPathLength}`};
-			stroke-dashoffset: -${p => (p.isBorderVisible ? p.horizontalPathLength / 2 : 0)};
+	&,
+	div {
+		position: absolute;
 
-			transition-delay: ${p => (p.isBorderVisible ? 666 : 0)}ms;
-		}
+		top: -4px;
+		left: -4px;
+		width: calc(100% + 9px);
+		height: calc(100% + 9px);
 
-		&.left,
-		&.right {
-			stroke-dasharray: ${p => p.verticalPathLength} ${p => p.verticalPathLength};
-			stroke-dashoffset: ${p => (p.isBorderVisible ? p.verticalPathLength : 0)};
+		border: 8px solid transparent;
+		box-sizing: border-box;
 
-			transition-delay: 333ms;
-		}
+		transition: transform 500ms;
 	}
-`;
 
-export const BorderSvgElement = styled.svg<BorderSvgElementProps>`
-	${p =>
-		p.animationStartPoint === AnimationStartPoint.CENTER
-			? p.horizontalPathLength !== 0 && p.verticalPathLength !== 0
-				? centerBorderAnimation
-				: null // fix of artifacts of this animation directly after page reload
-			: leftRightBorderAnimation};
+	/* Top border hider */
+	div:nth-child(1) {
+		border-top-color: white;
+	}
+
+	/* Top and bottom border hiders show / hide transform */
+	div:nth-child(1),
+	div:nth-child(4) {
+		transform: scaleX(${p => (p.isHiderVisible ? 1 : 0)});
+		transform-origin: center right;
+	}
+
+	/* Left border hider */
+	div:nth-child(2) {
+		border-left-color: white;
+	}
+
+	/* Top and left border hiders are animated first, when showing border */
+	div:nth-child(1),
+	div:nth-child(2) {
+		transition-delay: ${p => (p.isHiderVisible ? 500 : 0)}ms;
+	}
+
+	/* Right border hider */
+	div:nth-child(3) {
+		border-right-color: white;
+	}
+
+	/* Fix of leaking pixels at corners, show / hide transform */
+	div:nth-child(2),
+	div:nth-child(3) {
+		top: -6px;
+		height: calc(100% + 12px);
+
+		transform: scaleY(${p => (p.isHiderVisible ? 1 : 0)});
+		transform-origin: center bottom;
+	}
+
+	/* Bottom border hider */
+	div:nth-child(4) {
+		border-bottom-color: white;
+	}
+
+	/* Transition delay for right and bottom borders, they are animated last when showing the border */
+	div:nth-child(3),
+	div:nth-child(4) {
+		transition-delay: ${p => (p.isHiderVisible ? 0 : 500)}ms;
+	}
 `;

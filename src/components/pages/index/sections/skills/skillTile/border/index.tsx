@@ -1,65 +1,39 @@
 import { FC } from "react";
 
-import { usePathLength } from "./hooks";
-import { AnimationStartPoint, BorderSvgElement } from "./styles";
+import { CenterElementBorderHide, SideElementBorderHide } from "./styles";
+
+export enum AnimationStartPoint {
+	LEFT = 0,
+	CENTER = 1,
+	RIGHT = 2
+}
 
 interface BorderProps {
 	isVisible: boolean;
-	animationStartPoint: AnimationStartPoint;
+	startPoint: AnimationStartPoint;
 }
 
-export const Border: FC<BorderProps> = ({ isVisible, animationStartPoint }) => {
-	const [horizontalBorderRef, horizontalPathLength] = usePathLength();
-	const [verticalBorderRef, verticalPathLength] = usePathLength();
+export const BorderHide: FC<BorderProps> = ({ isVisible, startPoint }) => {
+	if (startPoint === AnimationStartPoint.CENTER) {
+		return (
+			<CenterElementBorderHide isHiderVisible={isVisible}>
+				<div /> {/* Top border */}
+				<div /> {/* Left & right border */}
+				<div /> {/* Bottom left border */}
+				<div /> {/* Bottom right border */}
+			</CenterElementBorderHide>
+		);
+	}
 
 	return (
-		<BorderSvgElement
-			className="border"
-			width="100%"
-			height="100%"
-			isBorderVisible={isVisible}
-			animationStartPoint={animationStartPoint}
-			horizontalPathLength={horizontalPathLength}
-			verticalPathLength={verticalPathLength}
+		<SideElementBorderHide
+			isHiderVisible={isVisible}
+			animationStartPosition={startPoint === AnimationStartPoint.LEFT ? "left" : "right"}
 		>
-			<line
-				ref={horizontalBorderRef}
-				className="top"
-				x1="100%"
-				x2="0"
-				y1="0"
-				y2="0"
-				strokeWidth="12"
-				stroke="white"
-			/>
-			<line
-				ref={verticalBorderRef}
-				className="left"
-				x1="0"
-				x2="0"
-				y1="100%"
-				y2="0"
-				strokeWidth="12"
-				stroke="white"
-			/>
-			<line
-				className="right"
-				x1="100%"
-				x2="100%"
-				y1="100%"
-				y2="0"
-				strokeWidth="12"
-				stroke="white"
-			/>
-			<line
-				className="bottom"
-				x1="100%"
-				x2="0"
-				y1="100%"
-				y2="100%"
-				strokeWidth="12"
-				stroke="white"
-			/>
-		</BorderSvgElement>
+			<div /> {/* Top border */}
+			<div /> {/* Left border */}
+			<div /> {/* Right border */}
+			<div /> {/* Bottom border */}
+		</SideElementBorderHide>
 	);
 };

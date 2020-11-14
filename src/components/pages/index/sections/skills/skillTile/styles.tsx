@@ -14,40 +14,40 @@ export const SkillTileElement = styled.div<SkillTileElementProps>`
 	margin: 0 auto;
 	margin-top: 80px;
 
-	padding: 50px 30px;
-	padding-bottom: 100px;
-
 	box-sizing: border-box;
 
-	background: white;
-	box-shadow: 1.8px 2.4px 21px 0 rgba(150, 150, 150, 0.58);
+	box-shadow: 1.8px 2.4px 21px 0
+		${p => (p.isSelected ? "rgba(105, 79, 255, 0.4)" : "rgba(150, 150, 150, 0.6)")};
 
-	border-style: dashed;
-	border-width: 2px;
-
-	border-image-source: linear-gradient(to top, #4764e6, #694fff);
-	border-image-slice: 1;
-
-	border-top-color: #4764e6;
-	border-bottom-color: #694fff;
+	transition: box-shadow 500ms ${p => (p.isSelected ? 1000 : 0)}ms;
 
 	z-index: 1;
 
-	cursor: ${p => (p.isSelected ? "default" : "pointer")};
+	overflow: hidden;
 
-	.border {
-		position: absolute;
-		top: -3px;
-		left: -3px;
-		width: calc(100% + 6px);
-		height: calc(100% + 6px);
-	}
+	cursor: ${p => (p.isSelected ? "default" : "pointer")};
 
 	@media (min-width: 1000px) {
 		grid-area: tile-${p => p.elementIndex};
 		max-width: 100%;
 		width: 100%;
 	}
+`;
+
+export const SkillTileElementContent = styled.div`
+	position: relative;
+
+	padding: 50px 30px;
+	padding-bottom: 100px;
+
+	z-index: 1;
+
+	background: white;
+
+	border-width: 2px;
+	border-style: solid;
+	border-image-source: linear-gradient(to bottom, #694fff, #4764e6);
+	border-image-slice: 1;
 `;
 
 export const SkillTileIconWrapper = styled.div`
