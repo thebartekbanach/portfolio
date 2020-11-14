@@ -13,6 +13,8 @@ interface BorderProps {
 	startPoint: AnimationStartPoint;
 }
 
+// TODO: rename border to borderHide
+
 export const BorderHide: FC<BorderProps> = ({ isVisible, startPoint }) => {
 	if (startPoint === AnimationStartPoint.CENTER) {
 		return (

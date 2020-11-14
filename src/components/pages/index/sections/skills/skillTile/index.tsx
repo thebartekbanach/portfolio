@@ -3,7 +3,7 @@ import { FC } from "react";
 import SkillTileArrowNormal from "~/public/assets/pages/index/skills/arrow/normal.svg";
 import SkillTileArrowSelected from "~/public/assets/pages/index/skills/arrow/selected.svg";
 
-import { AnimationStartPoint, BorderHide } from "./border";
+import { AnimationStartPoint, BorderHide } from "./borderHide";
 import {
 	SkillTileArrow,
 	SkillTileDescription,
