@@ -2,7 +2,11 @@ import styled from "styled-components";
 
 import { SkillBoardContentElement } from "../skillBoard/styles";
 
-export const SkillBoardWrapper = styled.div``;
+export const SkillBoardWrapper = styled.div`
+	@media (min-width: 1000px) {
+		grid-area: board;
+	}
+`;
 
 export const SkillBoardBody = styled.div`
 	width: 75%;
@@ -15,5 +19,10 @@ export const SkillBoardBody = styled.div`
 	${SkillBoardContentElement} {
 		padding: 30px 25px;
 		box-sizing: border-box;
+	}
+
+	@media (min-width: 1000px) {
+		width: 80%;
+		max-width: 800px;
 	}
 `;

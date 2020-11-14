@@ -8,6 +8,8 @@ interface SkillTileElementProps {
 }
 
 export const SkillTileElement = styled.div<SkillTileElementProps>`
+	display: flex;
+
 	position: relative;
 	max-width: 80%;
 
@@ -36,6 +38,8 @@ export const SkillTileElement = styled.div<SkillTileElementProps>`
 
 export const SkillTileElementContent = styled.div`
 	position: relative;
+
+	width: 100%;
 
 	padding: 50px 30px;
 	padding-bottom: 100px;

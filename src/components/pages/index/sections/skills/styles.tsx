@@ -20,6 +20,7 @@ export const SkillsSectionGrid = styled.div`
 
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-column-gap: 30px;
+		grid-row-gap: 60px;
 
 		grid-template-areas:
 			"tile-0 tile-1 tile-2"

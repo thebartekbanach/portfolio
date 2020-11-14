@@ -31,6 +31,11 @@ export const SkillBoardCategory = styled.div`
 
 	@media (min-width: 1000px) {
 		margin: 40px 0;
+
+		max-width: calc(100% - 80px);
+
+		margin: 0 auto;
+		margin-top: 20px;
 	}
 `;
 
@@ -49,6 +54,8 @@ export const SkillBoardCategoryName = styled.h4`
 	@media (min-width: 1000px) {
 		text-align: left;
 		font-size: 19px;
+
+		margin: 0 0 20px 0;
 	}
 `;
 
@@ -67,6 +74,9 @@ export const SkillBoardCategoryItems = styled.div`
 
 		padding: 0 20px;
 		padding-top: 10px;
+
+		max-width: none;
+		margin: 0;
 	}
 `;
 
