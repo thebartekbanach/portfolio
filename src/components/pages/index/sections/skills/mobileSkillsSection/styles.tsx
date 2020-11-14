@@ -5,7 +5,8 @@ import { SkillBoardContentElement } from "../skillBoard/styles";
 export const SkillBoardWrapper = styled.div``;
 
 export const SkillBoardBody = styled.div`
-	max-width: 75%;
+	width: 75%;
+	max-width: 400px;
 	margin: 0 auto;
 
 	background: white;

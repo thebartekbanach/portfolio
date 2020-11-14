@@ -9,7 +9,7 @@ export const SkillBoardWrapper = styled.div`
 `;
 
 export const SkillBoardElement = styled.div`
-	max-width: 75%;
+	width: 75%;
 	margin: 0 auto;
 
 	padding: 30px 25px;
@@ -35,6 +35,9 @@ export const SkillBoardCategory = styled.div`
 `;
 
 export const SkillBoardCategoryName = styled.h4`
+	max-width: 250px;
+	margin: 0 auto;
+
 	margin-top: 0;
 	margin-bottom: 20px;
 
@@ -53,10 +56,15 @@ export const SkillBoardCategoryItems = styled.div`
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 
+	max-width: 300px;
+	margin: 0 auto;
+
 	@media (min-width: 1000px) {
 		grid-template-columns: 1fr 1fr 1fr;
+
 		grid-column-gap: 50px;
 		grid-row-gap: 10px;
+
 		padding: 0 20px;
 		padding-top: 10px;
 	}
