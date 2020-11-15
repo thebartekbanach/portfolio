@@ -14,7 +14,7 @@
 				"description": "Kocham tworzyć proste oraz intuicyjne interfejsy użytkownika, dzięki którym może on szybko wykonywać swoje zadania",
 				"content": [
 					{
-						"categoryName": "Języki Programowania EN FRONT-END",
+						"categoryName": "Języki Programowania",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
@@ -86,7 +86,7 @@
 				"description": "Kod źródłowy moich aplikacji backendowych jest równie prosty i czytelny dla programistów co frontend dla użytkowników",
 				"content": [
 					{
-						"categoryName": "Języki Programowania EN BACK-END",
+						"categoryName": "Języki Programowania PL BACK-END",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/javascript.svg",
@@ -131,7 +131,7 @@
 						]
 					},
 					{
-						"categoryName": "Narzędzia",
+						"categoryName": "Narzędzia - 1",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/next.svg",
@@ -150,6 +150,27 @@
 								"name": "Tslint"
 							}
 						]
+					},
+					{
+						"categoryName": "Narzędzia - 2",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
 					}
 				]
 			},
@@ -158,7 +179,7 @@
 				"description": "W wolnym czasie majsterkuję. Programuję urządzenia które są łatwe w konfiguracji i proste w użyciu",
 				"content": [
 					{
-						"categoryName": "Języki Programowania EN EMBEDDED",
+						"categoryName": "Języki Programowania PL EMBEDDED",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/javascript.svg",
@@ -203,7 +224,49 @@
 						]
 					},
 					{
-						"categoryName": "Narzędzia",
+						"categoryName": "Narzędzia - 1",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia - 2",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia - 3",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",

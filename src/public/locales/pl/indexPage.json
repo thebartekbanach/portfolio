@@ -131,7 +131,7 @@
 						]
 					},
 					{
-						"categoryName": "Narzędzia",
+						"categoryName": "Narzędzia - 1",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/next.svg",
@@ -147,6 +147,27 @@
 							},
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia - 2",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/tslint.svg",
 								"name": "Tslint"
 							}
 						]
@@ -203,7 +224,49 @@
 						]
 					},
 					{
-						"categoryName": "Narzędzia",
+						"categoryName": "Narzędzia - 1",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia - 2",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
+								"name": "NextJS"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/nx.svg",
+								"name": "Nx.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/tslint.svg",
+								"name": "Tslint"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia - 3",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/next.svg",
