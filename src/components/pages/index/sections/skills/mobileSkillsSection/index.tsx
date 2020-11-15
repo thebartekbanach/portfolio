@@ -5,10 +5,10 @@ import { TransitionStatus } from "react-transition-group/Transition";
 
 import { SkillCategoryRoot } from "..";
 import { SkillBoardContent } from "../skillBoard";
+import { SkillBoardBody, SkillBoardWrapper } from "../skillBoard/styles";
 import { SkillTile } from "../skillTile";
 import { SkillsSectionGrid } from "../styles";
 
-import { SkillBoardBody, SkillBoardWrapper } from "./styles";
 import { ScrollAnchor } from "./utils";
 
 interface MobileSkillsSectionProps {

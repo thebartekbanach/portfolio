@@ -8,23 +8,25 @@ export const SkillBoardWrapper = styled.div`
 	}
 `;
 
-export const SkillBoardElement = styled.div`
+export const SkillBoardBody = styled.div`
 	width: 75%;
+	max-width: 400px;
 	margin: 0 auto;
-
-	padding: 30px 25px;
-	box-sizing: border-box;
 
 	background: white;
 	box-shadow: 1.8px 2.4px 21px 0 rgba(150, 150, 150, 0.58);
 
 	@media (min-width: 1000px) {
-		max-width: 90%;
-		padding: 30px 125px;
+		width: 80%;
+		max-width: 800px;
+		min-height: 200px;
 	}
 `;
 
-export const SkillBoardContentElement = styled.div``;
+export const SkillBoardContentElement = styled.div`
+	padding: 30px 25px;
+	box-sizing: border-box;
+`;
 
 export const SkillBoardCategory = styled.div`
 	margin-top: 20px;
@@ -56,6 +58,8 @@ export const SkillBoardCategoryName = styled.h4`
 		font-size: 19px;
 
 		margin: 0 0 20px 0;
+
+		max-width: none;
 	}
 `;
 
