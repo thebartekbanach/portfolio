@@ -18,8 +18,7 @@ export const SkillBoardBody = styled.div`
 
 	@media (min-width: 1000px) {
 		width: 80%;
-		max-width: 800px;
-		min-height: 200px;
+		max-width: 900px;
 	}
 `;
 
