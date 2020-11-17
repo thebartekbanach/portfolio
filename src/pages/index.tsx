@@ -1,18 +1,35 @@
+import { NextPage } from "next";
+
 import { PageHead } from "~/components/layout/head";
 import { PageContainer } from "~/components/layout/pageContainer";
 import { SkillsSection } from "~/components/pages/index/sections/skills";
 import { WelcomeSection } from "~/components/pages/index/sections/welcome";
 
-const IndexPage = () => {
+interface IndexPageProps {
+	userAgent: string;
+}
+
+const IndexPage: NextPage<IndexPageProps> = ({ userAgent }) => {
 	return (
 		<>
 			<PageHead pageTitle="Bartek Banach - portfolio" description="TODO" />
 			<PageContainer>
 				<WelcomeSection />
-				<SkillsSection />
+				<SkillsSection userAgent={userAgent} />
 			</PageContainer>
 		</>
 	);
+};
+
+IndexPage.getInitialProps = async ({ req }) => {
+	let userAgent =
+		typeof window === "undefined" ? req?.headers["user-agent"] : window.navigator.userAgent;
+
+	if (userAgent === undefined) {
+		userAgent = "unknown";
+	}
+
+	return { userAgent };
 };
 
 export default IndexPage;

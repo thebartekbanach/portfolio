@@ -1,16 +1,26 @@
+import isMobile from "ismobilejs";
 import React, { FC } from "react";
 
 import { SectionHeader } from "~/components/shared/sectionHeader";
+import { useMatchMedia } from "~/hooks/useMatchMedia";
 import { useTranslation } from "~/utils/i18next";
 
 import BackendIcon from "~/public/assets/pages/index/skills/categories/backend/category-icon.svg";
 import EmbeddedIcon from "~/public/assets/pages/index/skills/categories/embedded/category-icon.svg";
 import FrontendIcon from "~/public/assets/pages/index/skills/categories/frontend/category-icon.svg";
 
+import { DesktopSkillsSection } from "./desktopSkillsSection";
 import { MobileSkillsSection } from "./mobileSkillsSection";
 import { SkillCategory } from "./skillBoard";
 import { SkillTileInfo } from "./skillTile";
 import { SkillsSectionElement } from "./styles";
+
+const useMatchesDesktopDevices = (userAgent: string) => {
+	const isMobileResult = isMobile(userAgent);
+	const isDesktop = !isMobileResult.phone && !isMobileResult.tablet;
+
+	return useMatchMedia("(min-width: 1000px)", isDesktop);
+};
 
 export interface SkillCategoryRoot extends SkillTileInfo {
 	content: SkillCategory[];
@@ -18,8 +28,14 @@ export interface SkillCategoryRoot extends SkillTileInfo {
 
 const categoryIcons = [FrontendIcon, BackendIcon, EmbeddedIcon];
 
-export const SkillsSection: FC = () => {
+interface SkillsSectionProps {
+	userAgent: string; // for server side rendering, to match mobile or desktop version of skills section
+}
+
+export const SkillsSection: FC<SkillsSectionProps> = ({ userAgent }) => {
 	const [t] = useTranslation("indexPage");
+
+	const matchesDesktopDevices = useMatchesDesktopDevices(userAgent);
 
 	const categoryRoots = t<SkillCategoryRoot[]>("skills.categoryRoots", {
 		returnObjects: true
@@ -30,13 +46,15 @@ export const SkillsSection: FC = () => {
 		icon: categoryIcons[index]
 	}));
 
+	const SkillsSectionContent = matchesDesktopDevices ? DesktopSkillsSection : MobileSkillsSection;
+
 	return (
 		<SkillsSectionElement id={t("skills.sectionId")}>
 			<SectionHeader
 				sectionName={t("skills.sectionName")}
 				description={t("skills.sectionDescription")}
 			/>
-			<MobileSkillsSection categoryRoots={categoryRootsWithIcons} />
+			<SkillsSectionContent categoryRoots={categoryRootsWithIcons} />
 		</SkillsSectionElement>
 	);
 };
