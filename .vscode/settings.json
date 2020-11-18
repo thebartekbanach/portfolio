@@ -10,7 +10,8 @@
 		"styles",
 		"vscode",
 		"linters",
-		"translations"
+		"translations",
+		"assets"
 	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true,
