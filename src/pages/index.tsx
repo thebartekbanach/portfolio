@@ -2,6 +2,7 @@ import { NextPage } from "next";
 
 import { PageHead } from "~/components/layout/head";
 import { PageContainer } from "~/components/layout/pageContainer";
+import { GithubSection } from "~/components/pages/index/sections/github";
 import { SkillsSection } from "~/components/pages/index/sections/skills";
 import { WelcomeSection } from "~/components/pages/index/sections/welcome";
 
@@ -16,6 +17,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ userAgent }) => {
 			<PageContainer>
 				<WelcomeSection />
 				<SkillsSection userAgent={userAgent} />
+				<GithubSection />
 			</PageContainer>
 		</>
 	);
