@@ -6,7 +6,12 @@
 		"coverage": true
 	},
 	"editor.formatOnSave": true,
-	"conventionalCommits.scopes": ["styles", "vscode", "linters"],
+	"conventionalCommits.scopes": [
+		"styles",
+		"vscode",
+		"linters",
+		"translations"
+	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true,
 		"source.fixAll.stylelint": false
