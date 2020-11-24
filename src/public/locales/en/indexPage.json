@@ -7,7 +7,7 @@
 	"skills": {
 		"sectionId": "skills",
 		"sectionName": "Skills",
-		"sectionDescription": "Wybierz jedną z kategorii aby dowiedzieć się więcej",
+		"sectionDescription": "Wybierz jedną z kategorii aby<br />dowiedzieć się więcej",
 		"categoryRoots": [
 			{
 				"title": "Front-end",

@@ -15,7 +15,6 @@ export const SectionHeaderElement = styled.h2`
 
 export const SectionDescription = styled.span`
 	display: inline-block;
-	max-width: 250px;
 
 	${useFont.nunitoSans.regular};
 	font-size: 17px;

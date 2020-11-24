@@ -14,6 +14,6 @@ interface SectionHeaderProps {
 export const SectionHeader: FC<SectionHeaderProps> = ({ sectionName, description }) => (
 	<SectionHeaderAndDescriptionWrapper>
 		<SectionHeaderElement>{sectionName}</SectionHeaderElement>
-		<SectionDescription>{description}</SectionDescription>
+		<SectionDescription dangerouslySetInnerHTML={{ __html: description }} />
 	</SectionHeaderAndDescriptionWrapper>
 );
