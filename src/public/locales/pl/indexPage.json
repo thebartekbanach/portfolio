@@ -295,5 +295,48 @@
 		"header": "Github",
 		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz jak wykorzystałem powyższe umiejętności w praktyce",
 		"githubLinkButtonText": "Szczegóły"
+	},
+	"contact": {
+		"sectionId": "kontakt",
+		"sectionName": "Kontakt",
+		"sectionDescription": "Szukasz świetnego programisty?<br />Zapraszam do kontaktu!",
+		"contactForm": {
+			"availableSubjects": [
+				{
+					"subject": "Chcę wycenić projekt",
+					"messagePlaceholder": "Opisz jak najdokładniej swój projekt oraz wszystkie jego specyficzne elementy. W sprawie szczegółów skontaktuję się poprzez email."
+				},
+				{
+					"subject": "Szukam kogoś kto wykona mi stronę internetową",
+					"messagePlaceholder": "Opisz co dokładnie ma się znaleźć na Twojej stronie, w jakiej branży prowadzisz działalność. Podaj przykładowe strony internetowe które Ci się podobają. O resztę szczegółów skontaktuję się poprzez email."
+				},
+				{
+					"subject": "Potrzebuję pomocy w projekcie",
+					"messagePlaceholder": "W jakim projekcie potrzebujesz pomocy? Jakie technologie są w nim użyte?"
+				},
+				{
+					"subject": "Chcę skontaktować się w jakiejś innej sprawie",
+					"messagePlaceholder": "Opisz dokładnie o co chodzi."
+				}
+			],
+			"subject": {
+				"placeholder": "Co mogę dla Ciebie zrobić?",
+				"errors": {
+					"notSelected": "Wybierz jakiś temat aby ułatwić mi klasyfikację wiadomości"
+				}
+			},
+			"senderEmail": {
+				"placeholder": "Na jaki adres email mam odpisać?",
+				"errors": {
+					"cannotBeEmpty": "Musisz podać jakiś email, inaczej nie będę miał jak się z Tobą skontaktować",
+					"notVaildEmail": "Ups, ten adres email nie jest poprawny, upewnij się że nie zawiera żadnych błedów",
+					"blocked": "Nie możesz użyć tego adresu email"
+				}
+			},
+			"message": {
+				"placeholder": "Czego dokładnie oczekujesz?",
+				"sendMessageButton": "Wyślij wiadomość"
+			}
+		}
 	}
 }
