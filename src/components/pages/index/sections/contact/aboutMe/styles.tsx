@@ -111,8 +111,17 @@ export const SocialLink = styled.a`
 
 	padding: 10px;
 
+	opacity: 0.6;
+	filter: grayscale(1);
+	transition: filter 300ms, opacity 300ms;
+
 	svg {
 		width: 100%;
+	}
+
+	&:hover {
+		opacity: 1;
+		filter: grayscale(0);
 	}
 `;
 

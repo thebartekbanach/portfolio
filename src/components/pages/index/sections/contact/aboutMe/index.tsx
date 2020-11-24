@@ -23,7 +23,6 @@ interface AboutMeProps {
 }
 
 // TODO: MobileOpenContactFormButton content should change from "Write to me" to "/\" when contact form is expanded
-// TODO: github and facebook icons should be gray and should change grayscale to color when user hovers over it
 // TODO: remove or change the shape of outline
 // TODO: validation, errors, backend, blacklist
 
