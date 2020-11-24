@@ -58,23 +58,6 @@ export const MyName = styled.h3`
 	}
 `;
 
-export const ContactEmail = styled.a`
-	display: block;
-
-	padding: 15px 0;
-
-	${useFont.nunitoSans.regular};
-	text-decoration: none;
-	text-align: center;
-	font-size: 16px;
-	color: #121212;
-
-	&:hover {
-		text-decoration: underline;
-		text-underline-offset: 4px;
-	}
-`;
-
 export const AboutMeText = styled.p`
 	margin: 0 auto;
 	max-width: 300px;

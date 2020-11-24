@@ -9,7 +9,6 @@ import {
 	AboutMeTile,
 	ProfilePictureWrapper,
 	MyName,
-	ContactEmail,
 	AboutMeText,
 	SocialsWrapper,
 	SocialLink,
