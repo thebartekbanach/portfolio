@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
 import AnimateHeight from "react-animate-height";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import { ReplacementContainer } from "../../../../../../shared/replacementContainer";
 

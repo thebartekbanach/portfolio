@@ -1,9 +1,7 @@
-import isMobile from "ismobilejs";
 import React, { FC } from "react";
 
 import { SectionHeader } from "~/components/shared/sectionHeader";
 import { useMatchesDesktopDevices } from "~/hooks/useMatchesDesktopDevices";
-import { useMatchMedia } from "~/hooks/useMatchMedia";
 import { useTranslation } from "~/utils/i18next";
 
 import BackendIcon from "~/public/assets/pages/index/skills/categories/backend/category-icon.svg";
