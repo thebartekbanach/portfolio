@@ -3,7 +3,11 @@ import AnimateHeight from "react-animate-height";
 
 import { CurrentChildrenWrapper, NextChildrenAbsoluteWrapper } from "./styles";
 
-export const ReplacementContainer: FC = ({ children }) => {
+interface ReplacementContainerProps {
+	zIndex?: number;
+}
+
+export const ReplacementContainer: FC<ReplacementContainerProps> = ({ children, zIndex }) => {
 	if (!isValidElement(children)) {
 		throw new Error("ReplacementContainer children must be a valid react element");
 	}
@@ -48,7 +52,7 @@ export const ReplacementContainer: FC = ({ children }) => {
 			height={heightOverride ?? "auto"}
 			onAnimationEnd={onHeightAnimationEnd}
 		>
-			<CurrentChildrenWrapper isContentVisible={isChildrenVisible}>
+			<CurrentChildrenWrapper isContentVisible={isChildrenVisible} zIndex={zIndex}>
 				{currentChildren}
 			</CurrentChildrenWrapper>
 			{nextChildrenAbsoluteWrapper}

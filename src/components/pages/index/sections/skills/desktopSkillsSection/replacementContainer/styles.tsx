@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const NextChildrenAbsoluteWrapper = styled.div`
 	position: absolute;
@@ -13,9 +13,18 @@ export const NextChildrenAbsoluteWrapper = styled.div`
 
 interface CurrentChildrenWrapperProps {
 	isContentVisible: boolean;
+	zIndex?: number;
 }
 
 export const CurrentChildrenWrapper = styled.div<CurrentChildrenWrapperProps>`
+	${p =>
+		p.zIndex === undefined
+			? null
+			: css`
+					position: relative;
+					z-index: ${p.zIndex};
+			  `}
+
 	opacity: ${p => (p.isContentVisible ? 1 : 0)};
 	transition: opacity 300ms;
 `;
