@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { useTranslation } from "~/utils/i18next";
+
 import FacebookLogo from "~/public/assets/pages/index/contact/socials/facebook-logo.svg";
 import GithubLogo from "~/public/assets/pages/index/contact/socials/github-logo.svg";
 
@@ -19,27 +21,25 @@ interface AboutMeProps {
 }
 
 export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
+	const [t] = useTranslation("indexPage");
+
 	return (
 		<AboutMeTile>
 			<ProfilePictureWrapper>
-				<img src="/assets/pages/index/contact/profile-picture.jpg" />
+				<img src={t("contact.aboutMeTile.profilePictureUrl")} />
 			</ProfilePictureWrapper>
-			<MyName>Bartłomiej Banach</MyName>
-			<AboutMeText>
-				Pasjonat web developmentu. Kocha automatyzować zadania, ułatwiać pracę ludziom nie
-				tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów
-				typu embedded.
-			</AboutMeText>
+			<MyName>{t("contact.aboutMeTile.myName")}</MyName>
+			<AboutMeText>{t("contact.aboutMeTile.aboutMeText")}</AboutMeText>
 			<SocialsWrapper>
-				<SocialLink href="#">
+				<SocialLink href={t("socials:github")}>
 					<GithubLogo />
 				</SocialLink>
-				<SocialLink href="#">
+				<SocialLink href={t("socials:facebook")}>
 					<FacebookLogo />
 				</SocialLink>
 			</SocialsWrapper>
 			<MobileOpenContactFormButton onClick={onContactFormExpandToggle}>
-				Napisz do mnie
+				{t("contact.aboutMeTile.writeToMeButton")}
 			</MobileOpenContactFormButton>
 		</AboutMeTile>
 	);

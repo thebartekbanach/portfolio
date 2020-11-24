@@ -300,6 +300,12 @@
 		"sectionId": "contact",
 		"sectionName": "Contact",
 		"sectionDescription": "Szukasz świetnego programisty?<br />Zapraszam do kontaktu!",
+		"aboutMeTile": {
+			"profilePictureUrl": "/assets/pages/index/contact/profile-picture.jpg",
+			"myName": "Bartłomiej Banach",
+			"aboutMeText": "Pasjonat web developmentu. Kocha automatyzować zadania, ułatwiać pracę ludziom nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded.",
+			"writeToMeButton": "Napisz do mnie"
+		},
 		"contactForm": {
 			"availableSubjects": [
 				{
