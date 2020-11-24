@@ -58,21 +58,17 @@ export const GithubSection: FC = () => {
 
 	useEffect(() => {
 		if (isGithubSectionInViewport && !isParticlesBackgroundVisible) {
-			console.log("Starting to render background");
 			setIsParticlesBackgroundRendered(true);
 		}
 	}, [isGithubSectionInViewport, isParticlesBackgroundVisible]);
 
 	useEffect(() => {
 		if (isGithubSectionInViewport && isParticlesBackgroundRendered) {
-			console.log("Showing background");
 			setIsParticlesBackgroundVisible(true);
 			return;
 		}
 
 		if (!isGithubSectionInViewport && isParticlesBackgroundRendered) {
-			console.log("Hidding background & stopping rendering");
-
 			setIsParticlesBackgroundVisible(false);
 			setIsParticlesBackgroundRendered(false);
 		}
