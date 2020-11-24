@@ -2,6 +2,7 @@ import isMobile from "ismobilejs";
 import React, { FC } from "react";
 
 import { SectionHeader } from "~/components/shared/sectionHeader";
+import { useMatchesDesktopDevices } from "~/hooks/useMatchesDesktopDevices";
 import { useMatchMedia } from "~/hooks/useMatchMedia";
 import { useTranslation } from "~/utils/i18next";
 
@@ -14,13 +15,6 @@ import { MobileSkillsSection } from "./mobileSkillsSection";
 import { SkillCategory } from "./skillBoard";
 import { SkillTileInfo } from "./skillTile";
 import { SkillsSectionElement } from "./styles";
-
-const useMatchesDesktopDevices = (userAgent: string) => {
-	const isMobileResult = isMobile(userAgent);
-	const isDesktop = !isMobileResult.phone && !isMobileResult.tablet;
-
-	return useMatchMedia("(min-width: 1000px)", isDesktop);
-};
 
 export interface SkillCategoryRoot extends SkillTileInfo {
 	content: SkillCategory[];
