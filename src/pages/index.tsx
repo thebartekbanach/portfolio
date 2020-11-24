@@ -19,7 +19,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ userAgent }) => {
 				<WelcomeSection />
 				<SkillsSection userAgent={userAgent} />
 				<GithubSection />
-				<ContactSection />
+				<ContactSection userAgent={userAgent} />
 			</PageContainer>
 		</>
 	);

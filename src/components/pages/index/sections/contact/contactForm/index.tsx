@@ -1,4 +1,5 @@
 import { FC, useState } from "react";
+import AnimateHeight from "react-animate-height";
 
 import { useTranslation } from "~/utils/i18next";
 
@@ -10,7 +11,12 @@ interface AvailableSubject {
 	messagePlaceholder: string;
 }
 
-export const ContactForm: FC = () => {
+interface ContactFormProps {
+	isExpandedOnMobile: boolean;
+	isDesktopDevice: boolean;
+}
+
+export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDesktopDevice }) => {
 	const [t] = useTranslation("indexPage");
 	const [selectedSubjectIndex, setSelectedSubjectIndex] = useState(null as number | null);
 
@@ -26,7 +32,7 @@ export const ContactForm: FC = () => {
 					selectedSubjectIndex ?? 0
 			  ];
 
-	return (
+	const renderedForm = (
 		<ContactFormWrapper>
 			<MessageSubjectSelector
 				placeholder={t("contact.contactForm.subject.placeholder")}
@@ -40,5 +46,15 @@ export const ContactForm: FC = () => {
 				{t("contact.contactForm.message.sendMessageButton")}
 			</SendMessageButton>
 		</ContactFormWrapper>
+	);
+
+	if (isDesktopDevice) {
+		return renderedForm;
+	}
+
+	return (
+		<AnimateHeight duration={500} height={isExpandedOnMobile ? "auto" : 0} animateOpacity>
+			{renderedForm}
+		</AnimateHeight>
 	);
 };

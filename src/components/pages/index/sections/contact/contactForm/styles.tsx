@@ -6,13 +6,17 @@ export const ContactFormWrapper = styled.div`
 	position: relative; // for send message button
 	display: grid;
 
+	height: 100%;
+
 	grid-template-rows: auto auto 1fr;
 
 	width: 80%;
 	margin: 0 auto;
+	padding-top: 20px;
 
 	@media (min-width: 900px) {
 		width: 100%;
+		padding-top: 0;
 	}
 `;
 

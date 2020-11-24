@@ -14,7 +14,11 @@ import {
 	MobileOpenContactFormButton
 } from "./styles";
 
-export const AboutMe: FC = () => {
+interface AboutMeProps {
+	onContactFormExpandToggle: () => void;
+}
+
+export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
 	return (
 		<AboutMeTile>
 			<ProfilePictureWrapper>
@@ -34,7 +38,9 @@ export const AboutMe: FC = () => {
 					<FacebookLogo />
 				</SocialLink>
 			</SocialsWrapper>
-			<MobileOpenContactFormButton>Napisz do mnie</MobileOpenContactFormButton>
+			<MobileOpenContactFormButton onClick={onContactFormExpandToggle}>
+				Napisz do mnie
+			</MobileOpenContactFormButton>
 		</AboutMeTile>
 	);
 };
