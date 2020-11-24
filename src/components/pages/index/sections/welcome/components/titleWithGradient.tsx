@@ -19,7 +19,7 @@ export const TitleWithGradient: FC<TitleWithGradientProps> = ({ text }) => (
 				<stop stopColor="#694fff" offset="100%" />
 			</linearGradient>
 		</defs>
-		<text lengthAdjust="glyphs" x="-2.1" y="22.8" fill="url(#welcomeSectionTitleGradientSetup)">
+		<text x="-2.1" y="22.8" fill="url(#welcomeSectionTitleGradientSetup)">
 			{text}
 		</text>
 	</svg>
