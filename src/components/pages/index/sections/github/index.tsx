@@ -4,7 +4,7 @@ import useIsInViewport from "use-is-in-viewport";
 
 import { useTranslation } from "~/utils/i18next";
 
-import GithubIcon from "~/public/assets/pages/index/skills/github-logo.svg";
+import GithubIcon from "~/public/assets/pages/index/github/github-logo.svg";
 
 import {
 	GithubInfoBackground,
