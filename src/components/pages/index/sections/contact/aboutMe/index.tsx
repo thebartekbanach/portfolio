@@ -1,6 +1,9 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
+import useIsInViewport from "use-is-in-viewport";
 
 import { useTranslation } from "~/utils/i18next";
+import { loadImage } from "~/utils/loadImage";
 
 import FacebookLogo from "~/public/assets/pages/index/contact/socials/facebook-logo.svg";
 import GithubLogo from "~/public/assets/pages/index/contact/socials/github-logo.svg";
@@ -19,7 +22,6 @@ interface AboutMeProps {
 	onContactFormExpandToggle: () => void;
 }
 
-// TODO: add lazy loading of profile picture
 // TODO: MobileOpenContactFormButton content should change from "Write to me" to "/\" when contact form is expanded
 // TODO: github and facebook icons should be gray and should change grayscale to color when user hovers over it
 // TODO: remove or change the shape of outline
@@ -27,11 +29,29 @@ interface AboutMeProps {
 
 export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
 	const [t] = useTranslation("indexPage");
+	const [isSectionInViewport, tileRef] = useIsInViewport();
+	const [isProfilePictureLoaded, setIsProfilePictureLoaded] = useState(false);
+
+	const profilePictureUrl = t("contact.aboutMeTile.profilePictureUrl");
+	const profilePictureImage = !isProfilePictureLoaded ? <div /> : <img src={profilePictureUrl} />;
+
+	useEffect(() => {
+		if (!isProfilePictureLoaded && isSectionInViewport) {
+			loadImage(profilePictureUrl).then(() => setIsProfilePictureLoaded(true));
+		}
+	}, [isSectionInViewport]);
 
 	return (
-		<AboutMeTile>
+		<AboutMeTile ref={tileRef}>
 			<ProfilePictureWrapper>
-				<img src={t("contact.aboutMeTile.profilePictureUrl")} />
+				<SwitchTransition mode="in-out">
+					<CSSTransition
+						key={isProfilePictureLoaded ? "image" : "preloader"}
+						timeout={500}
+					>
+						{profilePictureImage}
+					</CSSTransition>
+				</SwitchTransition>
 			</ProfilePictureWrapper>
 			<MyName>{t("contact.aboutMeTile.myName")}</MyName>
 			<AboutMeText>{t("contact.aboutMeTile.aboutMeText")}</AboutMeText>

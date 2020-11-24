@@ -41,6 +41,30 @@ export const ProfilePictureWrapper = styled.div`
 		width: 100%;
 
 		transform: translateY(-50%);
+
+		transition: opacity 500ms;
+
+		&.enter {
+			opacity: 0;
+		}
+	}
+
+	// gray circle, placeholder
+	div {
+		position: absolute;
+
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		background: #f5f5f5;
+
+		transition: opacity 500ms;
+
+		&.exit-active {
+			opacity: 0;
+		}
 	}
 `;
 
@@ -99,7 +123,6 @@ export const MobileOpenContactFormButton = styled.button`
 	bottom: 0;
 	left: 50%;
 	width: auto;
-	max-width: 10000px;
 
 	margin: 0 auto;
 	padding: 15px 30px;
