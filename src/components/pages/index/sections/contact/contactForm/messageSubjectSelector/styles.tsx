@@ -40,10 +40,11 @@ export const StateArrow = styled.div<StateArrowProps>`
 	width: 12px;
 	height: 12px;
 
-	transform: translateY(-50%) rotateX(${p => (p.subjectSelectorOpenState ? 180 : 0)}deg)
-		rotate(45deg);
+	transform: translateY(${p => (p.subjectSelectorOpenState ? -3 : -8)}px) rotate(45deg)
+		rotateX(${p => (p.subjectSelectorOpenState ? 0 : 180)}deg)
+		rotateY(${p => (p.subjectSelectorOpenState ? 0 : 180)}deg);
 
-	transition: transform 300ms;
+	transition: transform 400ms;
 
 	&::before,
 	&::after {

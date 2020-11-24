@@ -25,7 +25,6 @@ interface AboutMeProps {
 // TODO: github and facebook icons should be gray and should change grayscale to color when user hovers over it
 // TODO: remove or change the shape of outline
 // TODO: validation, errors, backend, blacklist
-// TODO: subject selector arrow should rotate in its middle point
 
 export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
 	const [t] = useTranslation("indexPage");
