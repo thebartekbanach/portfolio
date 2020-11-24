@@ -1,12 +1,12 @@
 import React, { FC, useRef, useState } from "react";
 
+import { ReplacementContainer } from "~/components/shared/replacementContainer";
+
 import { SkillCategoryRoot } from "..";
 import { SkillBoardContent } from "../skillBoard";
 import { SkillBoardWrapper, SkillBoardBody } from "../skillBoard/styles";
 import { SkillTile } from "../skillTile";
 import { SkillsSectionGrid } from "../styles";
-
-import { ReplacementContainer } from "./replacementContainer";
 
 interface DesktopSkillsSectionProps {
 	categoryRoots: SkillCategoryRoot[];
