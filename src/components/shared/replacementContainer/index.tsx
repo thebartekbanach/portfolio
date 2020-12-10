@@ -31,6 +31,13 @@ export const ReplacementContainer: FC<ReplacementContainerProps> = ({ children, 
 		setIsChildrenVisible(false);
 	}, [children.key]);
 
+	useEffect(() => {
+		// update current children when props has been changed
+		if (currentChildren.key === children.key) {
+			setCurrentChildren(children);
+		}
+	}, [children.props]);
+
 	const onHeightAnimationEnd = () => {
 		if (!isChildrenVisible) {
 			setCurrentChildren(children);
