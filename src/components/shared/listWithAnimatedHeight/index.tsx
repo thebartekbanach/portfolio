@@ -1,4 +1,4 @@
-import { Children, FC, isValidElement, ReactNode } from "react";
+import { Children, FC, isValidElement } from "react";
 import AnimateHeight from "react-animate-height";
 import { Transition, TransitionGroup } from "react-transition-group";
 import { TransitionStatus } from "react-transition-group/Transition";
