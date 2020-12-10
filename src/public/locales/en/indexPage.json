@@ -334,9 +334,9 @@
 			"senderEmail": {
 				"placeholder": "Na jaki adres email mam odpisać?",
 				"errors": {
-					"cannotBeEmpty": "Musisz podać jakiś email, inaczej nie będę miał jak się z Tobą skontaktować",
-					"notVaildEmail": "Ups, ten adres email nie jest poprawny, upewnij się że nie zawiera żadnych błedów",
-					"blocked": "Nie możesz użyć tego adresu email"
+					"empty-email-field": "Podaj swój email, bo nie będę miał jak odpisać",
+					"email-is-not-valid": "Upewnij się że ten adres email jest poprawny",
+					"email-is-treated-as-spam": "Nie możesz użyć tego adresu email"
 				}
 			},
 			"message": {

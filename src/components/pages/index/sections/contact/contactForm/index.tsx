@@ -1,15 +1,14 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import AnimateHeight from "react-animate-height";
 
 import { useTranslation } from "~/utils/i18next";
 
-import { MessageSubjectSelector } from "./messageSubjectSelector";
-import { ContactFormWrapper, MessageBox, SenderEmailAddress, SendMessageButton } from "./styles";
-
-interface AvailableSubject {
-	subject: string;
-	messagePlaceholder: string;
-}
+import { useFormField } from "./hooks";
+import { EmailAddressInput } from "./inputs/emailAddressInput";
+import { MessageBodyInput } from "./inputs/messageBodyInput";
+import { MessageSubjectInput } from "./inputs/messageSubjectInput";
+import { ContactFormWrapper, SendMessageButton } from "./styles";
+import { emailValidator, messageBodyValidator, subjectValidator } from "./utils";
 
 interface ContactFormProps {
 	isExpandedOnMobile: boolean;
@@ -18,31 +17,40 @@ interface ContactFormProps {
 
 export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDesktopDevice }) => {
 	const [t] = useTranslation("indexPage");
-	const [selectedSubjectIndex, setSelectedSubjectIndex] = useState(null as number | null);
 
-	const subjectsAndMessagePlaceholders = t("contact.contactForm.availableSubjects", {
-		returnObjects: true
-	}) as AvailableSubject[];
+	const [subject, subjectErrors, subjectState, setSubjectValidationEnabled] = useFormField(
+		null as number | null,
+		subjectValidator
+	);
+	const [email, emailErrors, emailState, setEmailValidationEnabled] = useFormField(
+		"",
+		emailValidator
+	);
+	const [message, messageErrors, messageState, setMessageValidationEnabled] = useFormField(
+		"",
+		messageBodyValidator
+	);
 
-	const subjects = subjectsAndMessagePlaceholders.map(item => item.subject);
-	const messagePlaceholder =
-		selectedSubjectIndex === null
-			? t("contact.contactForm.message.placeholder")
-			: subjectsAndMessagePlaceholders.map(item => item.messagePlaceholder)[
-					selectedSubjectIndex ?? 0
-			  ];
+	const sendMessage = () => {
+		setSubjectValidationEnabled(true);
+		setEmailValidationEnabled(true);
+		setMessageValidationEnabled(true);
+
+		console.log(subject);
+		console.log(email);
+		console.log(message);
+
+		console.log(subjectErrors);
+		console.log(emailErrors);
+		console.log(messageErrors);
+	};
 
 	const renderedForm = (
 		<ContactFormWrapper>
-			<MessageSubjectSelector
-				placeholder={t("contact.contactForm.subject.placeholder")}
-				items={subjects}
-				selectedItem={selectedSubjectIndex}
-				onSelect={setSelectedSubjectIndex}
-			/>
-			<SenderEmailAddress placeholder={t("contact.contactForm.senderEmail.placeholder")} />
-			<MessageBox placeholder={messagePlaceholder} />
-			<SendMessageButton>
+			<MessageSubjectInput fieldState={subjectState} />
+			<EmailAddressInput fieldState={emailState} />
+			<MessageBodyInput fieldState={messageState} selectedSubjectIndex={subject} />
+			<SendMessageButton onClick={sendMessage}>
 				{t("contact.contactForm.message.sendMessageButton")}
 			</SendMessageButton>
 		</ContactFormWrapper>

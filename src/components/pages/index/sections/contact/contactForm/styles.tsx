@@ -20,53 +20,6 @@ export const ContactFormWrapper = styled.div`
 	}
 `;
 
-export const SenderEmailAddress = styled.input`
-	width: 100%;
-	margin-top: 20px;
-	padding: 20px 30px;
-	box-sizing: border-box;
-
-	box-shadow: 3.5px 4.9px 20.6px 0.4px rgba(94, 88, 248, 0.55);
-	background: white;
-
-	border: none;
-	background: none;
-
-	&,
-	&::placeholder {
-		${useFont.nunitoSans.regular};
-		color: #5d5d5d;
-		opacity: 1;
-	}
-
-	&::placeholder {
-		max-width: 100%;
-		text-overflow: ellipsis;
-	}
-`;
-
-export const MessageBox = styled.textarea`
-	width: 100%;
-	margin-top: 20px;
-	margin-bottom: 0;
-	padding: 20px 30px;
-	box-sizing: border-box;
-
-	resize: none;
-	min-height: 250px;
-
-	border: none;
-	box-shadow: 3.5px 4.9px 20.6px 0.4px rgba(94, 88, 248, 0.55);
-	background: white;
-
-	&,
-	&::placeholder {
-		${useFont.nunitoSans.regular};
-		color: #5d5d5d;
-		opacity: 1;
-	}
-`;
-
 export const SendMessageButton = styled.button`
 	display: block;
 	position: absolute;
