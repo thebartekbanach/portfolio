@@ -12,7 +12,7 @@ export const AboutMeTile = styled.div`
 	padding-bottom: 0;
 
 	box-sizing: border-box;
-	box-shadow: 3.5px 4.9px 20.6px 0.4px rgba(94, 88, 248, 0.55);
+	box-shadow: rgba(205, 205, 205, 0.45) 0px 9px 25px;
 
 	@media (min-width: 900px) {
 		width: 100%;
