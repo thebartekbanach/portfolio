@@ -2,10 +2,16 @@ import styled from "styled-components";
 
 import { useFont } from "~/utils/useFont";
 
-export const MessageSubjectSelectorElement = styled.div`
+interface MessageSubjectSelectorProps {
+	hasFocus: boolean;
+}
+
+export const MessageSubjectSelectorElement = styled.div<MessageSubjectSelectorProps>`
 	position: relative;
 
-	box-shadow: 3.5px 4.9px 20.6px 0.4px rgba(94, 88, 248, 0.55);
+	box-shadow: ${p => (p.hasFocus ? "rgba(94, 88, 248, 0.35)" : "rgba(205, 205, 205, 0.45)")} 0px
+		9px 25px;
+	transition: box-shadow 300ms;
 
 	${useFont.nunitoSans.regular};
 	color: #5d5d5d;
@@ -16,7 +22,7 @@ export const MessageSubjectSelectorElement = styled.div`
 
 		display: block;
 		position: absolute;
-		z-index: 1;
+		z-index: 3;
 
 		top: 0;
 		left: 0;
@@ -33,18 +39,19 @@ interface StateArrowProps {
 
 export const StateArrow = styled.div<StateArrowProps>`
 	position: absolute;
-	z-index: 2;
+	z-index: 4;
 
 	top: 50%;
 	right: 25px;
 	width: 12px;
 	height: 12px;
 
-	transform: translateY(${p => (p.subjectSelectorOpenState ? -3 : -8)}px) rotate(45deg)
-		rotateX(${p => (p.subjectSelectorOpenState ? 0 : 180)}deg)
-		rotateY(${p => (p.subjectSelectorOpenState ? 0 : 180)}deg);
+	transform: translateY(${p => (p.subjectSelectorOpenState ? -3 : -8)}px)
+		rotateX(${p => (p.subjectSelectorOpenState ? 0 : 180)}deg) rotate(45deg);
 
 	transition: transform 400ms;
+
+	cursor: pointer;
 
 	&::before,
 	&::after {
@@ -65,26 +72,46 @@ export const StateArrow = styled.div<StateArrowProps>`
 	}
 `;
 
-export const CurrentElement = styled.span`
+interface CurrentElementProps {
+	notSelectedError: boolean;
+}
+
+export const CurrentElement = styled.span<CurrentElementProps>`
 	display: block;
 	position: relative;
 
-	padding: 20px 30px;
+	padding: 20px 27px;
 	padding-right: 60px;
 
-	z-index: 2;
+	border: 3px solid white;
+	border-color: ${p => (p.notSelectedError ? "#fa6767" : "white")};
+	transition: border-color 300ms;
+
+	${p => {
+		console.log(p);
+		return null;
+	}};
 
 	cursor: pointer; // open menu cursor
 `;
 
-export const AvailableElementsWrapper = styled.div`
+interface AvailableElementsWrapperProps {
+	isVisible: boolean;
+}
+
+export const AvailableElementsWrapper = styled.div<AvailableElementsWrapperProps>`
 	position: absolute;
+	z-index: 2;
+
 	top: 100%;
 	left: 0;
 	width: 100%;
 
 	background: white;
-	box-shadow: 3.5px 4.9px 20.6px 0.4px rgba(94, 88, 248, 0.55);
+
+	box-shadow: ${p => (p.isVisible ? "rgba(94, 88, 248, 0.35)" : "rgba(205, 205, 205, 0.45)")} 0px
+		3px 25px;
+	transition: box-shadow 300ms;
 `;
 
 export const AvailableElementsList = styled.ul`
