@@ -309,26 +309,30 @@
 		"contactForm": {
 			"availableSubjects": [
 				{
-					"subject": "Wycenić projekt",
+					"id": "valuate-my-project",
+					"subject": "Chcę wycenić projekt",
 					"messagePlaceholder": "Opisz jak najdokładniej swój projekt oraz wszystkie jego specyficzne elementy. W sprawie szczegółów skontaktuję się poprzez email."
 				},
 				{
-					"subject": "Wykonać stronę internetową",
+					"id": "make-my-website",
+					"subject": "Szukam kogoś kto wykona mi stronę internetową",
 					"messagePlaceholder": "Opisz co dokładnie ma się znaleźć na Twojej stronie, w jakiej branży prowadzisz działalność. Podaj przykładowe strony internetowe które Ci się podobają. O resztę szczegółów skontaktuję się poprzez email."
 				},
 				{
+					"id": "i-need-help-with-project",
 					"subject": "Potrzebuję pomocy w projekcie",
 					"messagePlaceholder": "W jakim projekcie potrzebujesz pomocy? Jakie technologie są w nim użyte?"
 				},
 				{
-					"subject": "Kontaktuję się w jakiejś innej sprawie",
+					"id": "i-just-want-to-contact",
+					"subject": "Chcę skontaktować się w jakiejś innej sprawie",
 					"messagePlaceholder": "Opisz dokładnie o co chodzi."
 				}
 			],
 			"subject": {
 				"placeholder": "Co mogę dla Ciebie zrobić?",
 				"errors": {
-					"notSelected": "Wybierz jakiś temat aby ułatwić mi klasyfikację wiadomości"
+					"not-selected": "Wybierz jakiś temat aby ułatwić mi klasyfikację wiadomości"
 				}
 			},
 			"senderEmail": {
