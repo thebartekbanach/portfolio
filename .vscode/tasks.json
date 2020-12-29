@@ -4,38 +4,44 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"type": "npm",
-			"label": "Test: all",
-			"script": "test"
+			"label": "Portfolio: compose up",
+			"detail": "Starts portfolio docker-compose project",
+			"type": "shell",
+			"command": "docker-compose -p dev-portfolio -f dev.docker-compose.yml up --detach",
+			"options": {
+				"cwd": "./src"
+			},
+			"problemMatcher": []
 		},
 		{
-			"type": "npm",
-			"label": "Test and watch: all",
-			"script": "test:watch",
-			"group": {
-				"kind": "test",
-				"isDefault": true
-			}
+			"label": "Portfolio: compose down",
+			"detail": "Stops portfolio docker-compose project",
+			"type": "shell",
+			"command": "docker-compose -p dev-portfolio -f dev.docker-compose.yml down",
+			"options": {
+				"cwd": "./src"
+			},
+			"problemMatcher": []
 		},
 		{
-			"type": "npm",
-			"label": "Test: unit",
-			"script": "test.unit"
+			"label": "Portfolio: compose restart",
+			"detail": "Restarts portfolio docker-compose project",
+			"type": "shell",
+			"command": "docker-compose -p dev-portfolio -f dev.docker-compose.yml down && docker-compose -p dev-portfolio -f dev.docker-compose.yml up --detach",
+			"options": {
+				"cwd": "./src"
+			},
+			"problemMatcher": []
 		},
 		{
-			"type": "npm",
-			"label": "Test and watch: unit",
-			"script": "test.unit:watch"
-		},
-		{
-			"type": "npm",
-			"label": "Test: integration",
-			"script": "test.integration"
-		},
-		{
-			"type": "npm",
-			"label": "Test and watch: integration",
-			"script": "test.integration:watch"
+			"label": "Portfolio: compose rebuild",
+			"detail": "Rebuilds and starts portfolio docker-compose project",
+			"type": "shell",
+			"command": "docker-compose -p dev-portfolio -f dev.docker-compose.yml up --detach --build",
+			"options": {
+				"cwd": "./src"
+			},
+			"problemMatcher": []
 		}
 	]
 }
