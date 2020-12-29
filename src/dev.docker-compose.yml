@@ -1,0 +1,53 @@
+version: "3.8"
+
+services:
+  proxy:
+    container_name: Dev.Portfolio.Proxy
+    image: nginx:1.19.6
+    ports:
+      - 80:80
+    volumes:
+      - ./services/proxy/dev:/etc/nginx
+    networks:
+      - dev-portfolio-internal
+    depends_on:
+      - client
+      - email-gateway
+      - maildev
+
+  client:
+    container_name: Dev.Portfolio.Client
+    env_file: ./env/Dev.Portfolio.Client.env
+    build:
+      context: ./services/portfolio-client
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - ./services/portfolio-client:/src/app
+    networks:
+      - dev-portfolio-internal
+    depends_on:
+     - email-gateway
+
+  email-gateway:
+    container_name: Dev.Portfolio.EmailGateway
+    env_file: ./env/Dev.Portfolio.EmailGateway.env
+    build:
+      context: ./services/email-gateway
+      dockerfile: ./dev.dockerfile
+    volumes:
+      - ./services/email-gateway:/src/app
+    networks:
+      - dev-portfolio-internal
+    depends_on:
+      - maildev
+
+  maildev:
+    container_name: Dev.Portfolio.MailDev
+    env_file: ./env/Dev.Portfolio.MailDev.env
+    image: maildev/maildev
+    networks:
+      - dev-portfolio-internal
+
+networks:
+  dev-portfolio-internal:
+    name: Dev.Portfolio.Internal
