@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": ".",
+			"name": "Root"
+		},
+		{
+			"path": "src/services/portfolio-client",
+			"name": "Client"
+		},
+		{
+			"path": "src/services/email-gateway",
+			"name": "Email-gateway"
+		}
+	],
+	"settings": {
+		"conventionalCommits.scopes": [
+			"styles",
+			"vscode",
+			"linters",
+			"translations",
+			"assets",
+			"design"
+		]
+	}
+}

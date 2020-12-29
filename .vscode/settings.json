@@ -1,22 +1,12 @@
 {
 	"files.exclude": {
 		"**/.next": true,
-		"**/.vscode": true,
 		"**/node_modules": true,
 		"coverage": true
 	},
 	"editor.formatOnSave": true,
-	"conventionalCommits.scopes": [
-		"styles",
-		"vscode",
-		"linters",
-		"translations",
-		"assets",
-		"design"
-	],
 	"editor.codeActionsOnSave": {
 		"source.fixAll": true,
 		"source.fixAll.stylelint": false
-	},
-	"stylelint.syntax": "css-in-js"
+	}
 }
