@@ -15,11 +15,12 @@
 	],
 	"settings": {
 		"conventionalCommits.scopes": [
-			"styles",
+			"portfolio-client/styles",
+			"portfolio-client/linters",
+			"portfolio-client/translations",
+			"portfolio-client/assets",
+			"email-gateway",
 			"vscode",
-			"linters",
-			"translations",
-			"assets",
 			"design"
 		]
 	}
