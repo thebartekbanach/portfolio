@@ -9,7 +9,7 @@
 			"request": "launch",
 			"name": "Debug: Chrome",
 			"url": "http://localhost/",
-			"webRoot": "${workspaceFolder}/src"
+			"webRoot": "${workspaceFolder}/src/services/portfolio-client"
 		}
 	]
 }
