@@ -26,7 +26,7 @@ func sendEmail(lang, title, senderEmail, message string, env environment) error 
 	msg.SetBody("text/plain", message)
 
 	dialer := gomail.NewDialer(env.emailSMTPServerAddress, env.emailSMTPServerPort, to, "")
-	dialer.TLSConfig = &tls.Config{InsecureSkipVerify: isDevEnv(env)}
+	dialer.TLSConfig = &tls.Config{InsecureSkipVerify: env.isDevEnv()}
 
 	if err := dialer.DialAndSend(msg); err != nil {
 		log.Println("Message send error:", err)

@@ -29,6 +29,6 @@ func getEnvironment() environment {
 	}
 }
 
-func isDevEnv(env environment) bool {
+func (env environment) isDevEnv() bool {
 	return env.envType == "DEV"
 }
