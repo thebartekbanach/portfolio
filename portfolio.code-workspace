@@ -15,6 +15,7 @@
 	],
 	"settings": {
 		"conventionalCommits.scopes": [
+			"portfolio-client",
 			"portfolio-client/styles",
 			"portfolio-client/linters",
 			"portfolio-client/translations",
