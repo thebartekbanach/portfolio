@@ -16,20 +16,20 @@ func contains(s []string, expected string) bool {
 	return false
 }
 
-func verifyMail(lang, senderEmail, title, message string) error {
-	if err := verifyLanguage(lang); err != nil {
+func verifyMessageSendRequest(request messageSendRequest) error {
+	if err := verifyLanguage(request.Lang); err != nil {
 		return err
 	}
 
-	if err := verifyEmail(senderEmail); err != nil {
+	if err := verifyEmail(request.SenderEmail); err != nil {
 		return err
 	}
 
-	if err := verifyTitle(title); err != nil {
+	if err := verifyTitle(request.SubjectID); err != nil {
 		return err
 	}
 
-	if err := verifyMessage(message); err != nil {
+	if err := verifyMessage(request.Message); err != nil {
 		return err
 	}
 
