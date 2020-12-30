@@ -19,7 +19,10 @@ export function useFormField<TValue>(
 		defaultFieldValidationEnabledState
 	);
 
-	const actualValidationErrors = useMemo(() => fieldValidator(fieldValue), [fieldValue]);
+	const actualValidationErrors = useMemo(() => fieldValidator(fieldValue), [
+		fieldValue,
+		fieldValidator
+	]);
 
 	const [fieldStateValidationErrors, setFieldStateValidationErrors] = useState(
 		defaultFieldValidationEnabledState ? actualValidationErrors : []
@@ -29,7 +32,7 @@ export function useFormField<TValue>(
 		if (isFieldValidationEnabled) {
 			setFieldStateValidationErrors(actualValidationErrors);
 		}
-	}, [fieldValue, isFieldValidationEnabled]);
+	}, [fieldValue, isFieldValidationEnabled, fieldValidator]);
 
 	const formFieldsState: FormFieldStateObject<TValue> = {
 		value: fieldValue,
