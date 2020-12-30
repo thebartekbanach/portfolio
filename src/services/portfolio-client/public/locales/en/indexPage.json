@@ -340,7 +340,8 @@
 				"errors": {
 					"empty-email-field": "Podaj swój email, bo nie będę miał jak odpisać",
 					"email-is-not-valid": "Upewnij się że ten adres email jest poprawny",
-					"email-is-treated-as-spam": "Nie możesz użyć tego adresu email"
+					"email-is-treated-as-spam": "Nie możesz użyć tego adresu email",
+					"unresolvable-domain": "Taka domena nie istnieje"
 				}
 			},
 			"message": {
