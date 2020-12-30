@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
 import AnimateHeight from "react-animate-height";
 
-import { ReplacementContainer } from "../../../../../../../../shared/replacementContainer";
+import { ReplacementContainer } from "~/components/shared/replacementContainer";
 
 import {
 	AvailableElementsItem,
@@ -14,48 +14,52 @@ import {
 
 const renderElementsList = (
 	items: string[],
-	selectedItem: number | null,
-	onItemSelect: (itemIndex: number) => void
+	translateItem: (id: string) => string,
+	selectedItem: string | null,
+	onItemSelect: (elementID: string) => void
 ) =>
 	items
-		.map((item, index) => ({ realIndex: index, content: item }))
-		.filter((_, index) => index !== selectedItem)
+		.filter(item => item !== selectedItem)
 		.map(item => (
-			<AvailableElementsItem key={item.content} onClick={() => onItemSelect(item.realIndex)}>
-				{item.content}
+			<AvailableElementsItem key={item} onClick={() => onItemSelect(item)}>
+				{translateItem(item)}
 			</AvailableElementsItem>
 		));
 
 interface MessageSubjectSelectorProps {
 	placeholder: string;
 	items: string[];
-	selectedItem: number | null;
-	onSelect: (itemIndex: number) => void;
+	translateItem: (id: string) => string;
+	selectedItem: string | null;
+	onSelect: (itemID: string) => void;
 	showNotSelectedError: boolean;
 }
 
 export const MessageSubjectSelector: FC<MessageSubjectSelectorProps> = ({
 	placeholder,
 	items,
+	translateItem,
 	selectedItem,
 	onSelect,
 	showNotSelectedError
 }) => {
-	const onItemSelect = (elementIndex: number) => {
+	const onItemSelect = (elementId: string) => {
 		setIsOpen(false);
-		onSelect(elementIndex);
+		onSelect(elementId);
 	};
 
 	const [isOpen, setIsOpen] = useState(false);
 	const [currentElementsList, setCurrentElementsList] = useState(() =>
-		renderElementsList(items, selectedItem, onItemSelect)
+		renderElementsList(items, translateItem, selectedItem, onItemSelect)
 	);
 
-	const currentElement = selectedItem === null ? placeholder : items[selectedItem];
+	const currentElement = selectedItem === null ? placeholder : translateItem(selectedItem);
 
 	const onAnimationEnd = (props: { newHeight: number }) => {
 		if (props.newHeight === 0) {
-			setCurrentElementsList(renderElementsList(items, selectedItem, onItemSelect));
+			setCurrentElementsList(
+				renderElementsList(items, translateItem, selectedItem, onItemSelect)
+			);
 		}
 	};
 

@@ -8,7 +8,7 @@ import { AvailableSubject } from "../../types";
 import { MessageSubjectSelector } from "./messageSubjectSelector";
 
 interface MessageSubjectInputProps {
-	fieldState: FormFieldStateObject<number | null>;
+	fieldState: FormFieldStateObject<string | null>;
 }
 
 export const MessageSubjectInput: FC<MessageSubjectInputProps> = ({ fieldState }) => {
@@ -18,12 +18,23 @@ export const MessageSubjectInput: FC<MessageSubjectInputProps> = ({ fieldState }
 		returnObjects: true
 	}) as AvailableSubject[];
 
-	const subjects = subjectsAndMessagePlaceholders.map(item => item.subject);
+	const subjectIds = subjectsAndMessagePlaceholders.map(item => item.id);
+
+	const subjectTranslator = (subjectId: string) => {
+		const subject = subjectsAndMessagePlaceholders.find(item => item.id === subjectId);
+
+		if (subject === undefined) {
+			throw new Error("Subject translation error");
+		}
+
+		return subject.subject;
+	};
 
 	return (
 		<MessageSubjectSelector
 			placeholder={t("contact.contactForm.subject.placeholder")}
-			items={subjects}
+			items={subjectIds}
+			translateItem={subjectTranslator}
 			selectedItem={fieldState.value}
 			onSelect={fieldState.updateValue}
 			showNotSelectedError={fieldState.errors.length !== 0}

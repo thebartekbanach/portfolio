@@ -9,13 +9,10 @@ import { MessageBox } from "./styles";
 
 interface MessageBodyInputProps {
 	fieldState: FormFieldStateObject<string>;
-	selectedSubjectIndex: number | null;
+	selectedSubjectId: string | null;
 }
 
-export const MessageBodyInput: FC<MessageBodyInputProps> = ({
-	fieldState,
-	selectedSubjectIndex
-}) => {
+export const MessageBodyInput: FC<MessageBodyInputProps> = ({ fieldState, selectedSubjectId }) => {
 	const [t] = useTranslation("indexPage");
 
 	const subjectsAndMessagePlaceholders = t("contact.contactForm.availableSubjects", {
@@ -23,11 +20,10 @@ export const MessageBodyInput: FC<MessageBodyInputProps> = ({
 	}) as AvailableSubject[];
 
 	const messagePlaceholder =
-		selectedSubjectIndex === null
+		selectedSubjectId === null
 			? t("contact.contactForm.message.placeholder")
-			: subjectsAndMessagePlaceholders.map(item => item.messagePlaceholder)[
-					selectedSubjectIndex
-			  ];
+			: subjectsAndMessagePlaceholders.find(subject => subject.id == selectedSubjectId)
+					?.messagePlaceholder;
 
 	return (
 		<MessageBox

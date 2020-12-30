@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useCallback, useState } from "react";
 import AnimateHeight from "react-animate-height";
 
 import { useTranslation } from "~/utils/i18next";
@@ -8,7 +8,12 @@ import { EmailAddressInput } from "./inputs/emailAddressInput";
 import { MessageBodyInput } from "./inputs/messageBodyInput";
 import { MessageSubjectInput } from "./inputs/messageSubjectInput";
 import { ContactFormWrapper, SendMessageButton } from "./styles";
-import { emailValidator, messageBodyValidator, subjectValidator } from "./utils";
+import {
+	createEmailValidator,
+	getEmailDomain,
+	messageBodyValidator,
+	subjectValidator
+} from "./utils";
 
 interface ContactFormProps {
 	isExpandedOnMobile: boolean;
@@ -16,10 +21,17 @@ interface ContactFormProps {
 }
 
 export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDesktopDevice }) => {
-	const [t] = useTranslation("indexPage");
+	const [t, i18n] = useTranslation("indexPage");
+	const [emailsBlacklist, setEmailsBlacklist] = useState<string[]>([]);
+	const [unresolvableDomains, setUnresolvableDomains] = useState<string[]>([]);
+
+	const emailValidator = useCallback(createEmailValidator(emailsBlacklist, unresolvableDomains), [
+		emailsBlacklist,
+		unresolvableDomains
+	]);
 
 	const [subject, subjectErrors, subjectState, setSubjectValidationEnabled] = useFormField(
-		null as number | null,
+		null as string | null,
 		subjectValidator
 	);
 	const [email, emailErrors, emailState, setEmailValidationEnabled] = useFormField(
@@ -31,25 +43,51 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 		messageBodyValidator
 	);
 
-	const sendMessage = () => {
+	const sendMessage = async () => {
 		setSubjectValidationEnabled(true);
 		setEmailValidationEnabled(true);
 		setMessageValidationEnabled(true);
 
-		console.log(subject);
-		console.log(email);
-		console.log(message);
+		if (subjectErrors.length !== 0 || emailErrors.length !== 0 || messageErrors.length !== 0) {
+			return;
+		}
 
-		console.log(subjectErrors);
-		console.log(emailErrors);
-		console.log(messageErrors);
+		const requestBody = {
+			lang: i18n.language,
+			subjectID: subject,
+			senderEmail: email,
+			message
+		};
+
+		const response = await fetch("/api/email-gateway/", {
+			headers: {
+				"content-type": "application/json; charset=UTF-8"
+			},
+			body: JSON.stringify(requestBody),
+			method: "POST"
+		});
+
+		const { status } = response;
+
+		if (status === 200) {
+			// TODO: notify that everything is ok
+			return;
+		}
+
+		const error = await response.text();
+
+		if (error === "unresolvable-host") {
+			setUnresolvableDomains([...unresolvableDomains, getEmailDomain(email)]);
+		} else if (error === "email-is-treated-as-spam") {
+			setEmailsBlacklist([...emailsBlacklist, email]);
+		}
 	};
 
 	const renderedForm = (
 		<ContactFormWrapper>
 			<MessageSubjectInput fieldState={subjectState} />
 			<EmailAddressInput fieldState={emailState} />
-			<MessageBodyInput fieldState={messageState} selectedSubjectIndex={subject} />
+			<MessageBodyInput fieldState={messageState} selectedSubjectId={subject} />
 			<SendMessageButton onClick={sendMessage}>
 				{t("contact.contactForm.message.sendMessageButton")}
 			</SendMessageButton>
