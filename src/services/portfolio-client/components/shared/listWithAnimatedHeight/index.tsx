@@ -18,8 +18,6 @@ export const ListWithAnimatedHeight: FC<ListWithAnimatedHeightProps> = ({
 		}
 
 		const renderChild = (state: TransitionStatus) => {
-			console.log(state);
-
 			const childHeight = state === "entered" || state === "entering" ? "auto" : 0;
 
 			return (

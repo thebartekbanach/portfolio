@@ -87,11 +87,6 @@ export const CurrentElement = styled.span<CurrentElementProps>`
 	border-color: ${p => (p.notSelectedError ? "#fa6767" : "white")};
 	transition: border-color 300ms;
 
-	${p => {
-		console.log(p);
-		return null;
-	}};
-
 	cursor: pointer; // open menu cursor
 `;
 
