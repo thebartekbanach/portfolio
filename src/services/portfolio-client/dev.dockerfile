@@ -1,6 +1,6 @@
 FROM node:12.18.1
 
-# docker-compose shares src/client directory under /usr/src/app
-WORKDIR /src/app
+# docker-compose shares src/portfolio-client directory under /src/portfolio-client
+WORKDIR /src/portfolio-client
 
 ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]

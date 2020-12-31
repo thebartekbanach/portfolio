@@ -22,7 +22,7 @@ services:
       context: ./services/portfolio-client
       dockerfile: ./dev.dockerfile
     volumes:
-      - ./services/portfolio-client:/src/app
+      - ./services/portfolio-client:/src/portfolio-client
     networks:
       - dev-portfolio-internal
     depends_on:
@@ -35,7 +35,8 @@ services:
       context: ./services/email-gateway
       dockerfile: ./dev.dockerfile
     volumes:
-      - ./services/email-gateway:/src/app
+      - ./services/portfolio-client:/src/portfolio-client
+      - ./services/email-gateway:/src/email-gateway
     networks:
       - dev-portfolio-internal
     depends_on:
