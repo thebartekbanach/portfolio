@@ -7,10 +7,12 @@ import (
 )
 
 type environment struct {
-	contactEmailHost       string
-	emailSMTPServerAddress string
-	emailSMTPServerPort    int
-	envType                string
+	envType                      string
+	contactEmailHost             string
+	emailSMTPServerAddress       string
+	emailSMTPServerPort          int
+	subjectTranslationsFilesPath string
+	subjectJSONTranslationQuery  string
 }
 
 func getEnvironment() environment {
@@ -22,10 +24,12 @@ func getEnvironment() environment {
 	envType := os.Getenv("ENV")
 
 	return environment{
-		contactEmailHost:       os.Getenv("CONTACT_EMAIL_HOST"),
-		emailSMTPServerAddress: os.Getenv("EMAIL_SMTP_SERVER_ADDRESS"),
-		emailSMTPServerPort:    smtpServerPort,
-		envType:                envType,
+		envType:                      envType,
+		contactEmailHost:             os.Getenv("CONTACT_EMAIL_HOST"),
+		emailSMTPServerAddress:       os.Getenv("EMAIL_SMTP_SERVER_ADDRESS"),
+		emailSMTPServerPort:          smtpServerPort,
+		subjectTranslationsFilesPath: os.Getenv("SUBJECT_TRANSLATIONS_FILES_PATH"),
+		subjectJSONTranslationQuery:  os.Getenv("SUBJECT_JSON_TRANSLATION_QUERY"),
 	}
 }
 

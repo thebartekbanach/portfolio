@@ -43,7 +43,9 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err := sendEmail(request.Lang, request.SubjectID, request.SenderEmail, request.Message, env); err != nil {
+	translatedSubjectID := convertSubjectIDToTranslatedString(request.SubjectID, request.Lang, env.subjectTranslationsFilesPath, env.subjectJSONTranslationQuery)
+
+	if err := sendEmail(request.Lang, translatedSubjectID, request.SenderEmail, request.Message, env); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("email-send-error"))
 		return
