@@ -73,9 +73,10 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 			return;
 		}
 
-		// if (requestedWidth === "auto" && wrapperWidth === childrenWidth) {
-		// 	setCurrentWidth("auto");
-		// }
+		if (requestedWidth === "auto" && wrapperWidth === childrenWidth) {
+			setCurrentWidth("auto");
+			return;
+		}
 
 		if (requestedWidth !== "auto") {
 			setCurrentWidth(requestedWidth);
