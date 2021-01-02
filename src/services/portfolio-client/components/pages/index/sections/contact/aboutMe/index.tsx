@@ -2,6 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import useIsInViewport from "use-is-in-viewport";
 
+import { HorizontalReplacementContainer } from "~/components/shared/horizontalReplacementContainer";
 import { useTranslation } from "~/utils/i18next";
 import { loadImage } from "~/utils/loadImage";
 
@@ -15,18 +16,19 @@ import {
 	AboutMeText,
 	SocialsWrapper,
 	SocialLink,
-	MobileOpenContactFormButton
+	MobileOpenContactFormButton,
+	MobileOpenContactFormButtonArrow
 } from "./styles";
 
 interface AboutMeProps {
+	isContactFormExpandedOnMobile: boolean;
 	onContactFormExpandToggle: () => void;
 }
 
-// TODO: MobileOpenContactFormButton content should change from "Write to me" to "/\" when contact form is expanded
-// TODO: remove or change the shape of outline
-// TODO: validation, errors, backend, blacklist
-
-export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
+export const AboutMe: FC<AboutMeProps> = ({
+	isContactFormExpandedOnMobile,
+	onContactFormExpandToggle
+}) => {
 	const [t] = useTranslation("indexPage");
 	const [isSectionInViewport, tileRef] = useIsInViewport();
 	const [isProfilePictureLoaded, setIsProfilePictureLoaded] = useState(false);
@@ -39,6 +41,12 @@ export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
 			loadImage(profilePictureUrl).then(() => setIsProfilePictureLoaded(true));
 		}
 	}, [isSectionInViewport]);
+
+	const openContactFormButtonContent = isContactFormExpandedOnMobile ? (
+		<MobileOpenContactFormButtonArrow key="arrow" />
+	) : (
+		<span key="text">{t("contact.aboutMeTile.writeToMeButton")}</span>
+	);
 
 	return (
 		<AboutMeTile ref={tileRef}>
@@ -63,7 +71,9 @@ export const AboutMe: FC<AboutMeProps> = ({ onContactFormExpandToggle }) => {
 				</SocialLink>
 			</SocialsWrapper>
 			<MobileOpenContactFormButton onClick={onContactFormExpandToggle}>
-				{t("contact.aboutMeTile.writeToMeButton")}
+				<HorizontalReplacementContainer>
+					{openContactFormButtonContent}
+				</HorizontalReplacementContainer>
 			</MobileOpenContactFormButton>
 		</AboutMeTile>
 	);

@@ -146,6 +146,8 @@ export const MobileOpenContactFormButton = styled.button`
 
 	transition: transform 300ms, box-shadow 250ms;
 
+	outline: none;
+
 	cursor: pointer;
 
 	${useFont.nunitoSans.regular};
@@ -159,5 +161,32 @@ export const MobileOpenContactFormButton = styled.button`
 
 	@media (min-width: 900px) {
 		display: none;
+	}
+`;
+
+export const MobileOpenContactFormButtonArrow = styled.div`
+	display: block;
+	position: relative;
+	width: 30px;
+	height: 14px;
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 14px;
+		height: 3px;
+		background: white;
+	}
+
+	&::before {
+		transform: translateX(calc(-50% - 4px)) rotate(-45deg);
+	}
+
+	&::after {
+		transform: translateX(calc(-50% + 4px)) rotate(45deg);
 	}
 `;

@@ -25,7 +25,10 @@ export const ContactSection: FC<ContactSectionProps> = ({ userAgent }) => {
 				description="Szukasz świetnego programisty?<br />Zapraszam do kontaktu!"
 			/>
 			<AboutMeAndContactFormWrapper>
-				<AboutMe onContactFormExpandToggle={onContactFormToggle} />
+				<AboutMe
+					isContactFormExpandedOnMobile={isContactFormExpanded}
+					onContactFormExpandToggle={onContactFormToggle}
+				/>
 				<ContactForm
 					isExpandedOnMobile={isDesktopDevice || isContactFormExpanded}
 					isDesktopDevice={!!isDesktopDevice}
