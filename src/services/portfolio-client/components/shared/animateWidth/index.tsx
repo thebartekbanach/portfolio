@@ -24,9 +24,9 @@ export const AnimateWidth: FC<AnimateWidthProps> = ({
 
 	return (
 		<div ref={wrapperRef} style={wrapperStyles}>
-			<span ref={childrenRef} style={{ position: "relative", display: "inline-block" }}>
+			<div ref={childrenRef} style={{ display: "inline-block", position: "relative" }}>
 				{children}
-			</span>
+			</div>
 		</div>
 	);
 };
