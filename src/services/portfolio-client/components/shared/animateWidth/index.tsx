@@ -1,4 +1,6 @@
-import { CSSProperties, FC, useEffect, useRef, useState } from "react";
+import { CSSProperties, FC } from "react";
+
+import { useWidthAnimation } from "./hooks";
 
 interface AnimateWidthProps {
 	duration: number;
@@ -12,61 +14,7 @@ export const AnimateWidth: FC<AnimateWidthProps> = ({
 	onAnimationEnd,
 	children
 }) => {
-	const [currentWidth, setCurrentWidth] = useState<number | "auto">(width);
-	const wrapperRef = useRef<HTMLDivElement>(null);
-	const childrenRef = useRef<HTMLDivElement>(null);
-
-	const widthRef = useRef(width);
-	widthRef.current = width;
-
-	const currentWidthRef = useRef(currentWidth);
-	currentWidthRef.current = currentWidth;
-
-	useEffect(() => {
-		if (currentWidth === width) {
-			return;
-		}
-
-		if (width !== "auto") {
-			// https://stackoverflow.com/questions/43125220/react-element-width-animation
-			requestAnimationFrame(() => {
-				const realWidth = wrapperRef.current?.offsetWidth ?? 0;
-				setCurrentWidth(realWidth);
-			});
-
-			return;
-		}
-
-		const childrenWidth = childrenRef.current?.offsetWidth ?? 0;
-		requestAnimationFrame(() => {
-			wrapperRef.current?.addEventListener(
-				"transitionend",
-				() => {
-					if (widthRef.current !== "auto" || currentWidthRef.current === "auto") {
-						setCurrentWidth(widthRef.current); // have to set currentWidth to width because below effect does not start on many changes
-						return;
-					}
-
-					if (onAnimationEnd !== undefined) {
-						onAnimationEnd();
-					}
-
-					setCurrentWidth("auto");
-				},
-				{ once: true }
-			);
-
-			setCurrentWidth(childrenWidth);
-		});
-	}, [width]);
-
-	useEffect(() => {
-		requestAnimationFrame(() => {
-			if (widthRef.current !== "auto" && widthRef.current !== currentWidth) {
-				setCurrentWidth(width);
-			}
-		});
-	}, [currentWidth]);
+	const [currentWidth, wrapperRef, childrenRef] = useWidthAnimation(width, onAnimationEnd);
 
 	const wrapperStyles: CSSProperties = {
 		transition: `${duration}ms`,
@@ -76,7 +24,9 @@ export const AnimateWidth: FC<AnimateWidthProps> = ({
 
 	return (
 		<div ref={wrapperRef} style={wrapperStyles}>
-			<span ref={childrenRef}>{children}</span>
+			<span ref={childrenRef} style={{ position: "relative" }}>
+				{children}
+			</span>
 		</div>
 	);
 };
