@@ -4,9 +4,5 @@
 		"**/node_modules": true,
 		"coverage": true
 	},
-	"editor.formatOnSave": true,
-	"editor.codeActionsOnSave": {
-		"source.fixAll": true,
-		"source.fixAll.stylelint": false
-	}
+	"editor.formatOnSave": true
 }
