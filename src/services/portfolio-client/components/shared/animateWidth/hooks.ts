@@ -7,6 +7,17 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 	const getWrapperWidth = () => wrapperRef.current?.offsetWidth ?? 0;
 	const getChildrenWidth = () => childrenRef.current?.offsetWidth ?? 0;
 
+	// because wrapper and children widths are get by offsetWidth
+	// which are rounded, we need to get exact values using getBoundingClientRect()
+	const areWrapperAndChildrenWidthsEqual = () => {
+		const wrapperWidth = Math.floor(wrapperRef.current?.getBoundingClientRect().width ?? 0);
+		const childrenWidth = Math.floor(childrenRef.current?.getBoundingClientRect().width ?? 0);
+
+		const result = wrapperWidth === childrenWidth;
+
+		return result;
+	};
+
 	const onTransitionEndRef = useRef(null as (() => void) | null);
 
 	const [currentWidth, setCurrentWidth] = useState(requestedWidth);
@@ -56,7 +67,7 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 			return;
 		}
 
-		if (requestedWidth === "auto" && currentWidth !== childrenWidth) {
+		if (requestedWidth === "auto" && !areWrapperAndChildrenWidthsEqual()) {
 			// from some value to "auto"
 			// this sets width to initial wrapper width
 			// next steps should be
@@ -73,7 +84,7 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 			return;
 		}
 
-		if (requestedWidth === "auto" && wrapperWidth === childrenWidth) {
+		if (requestedWidth === "auto" && areWrapperAndChildrenWidthsEqual()) {
 			setCurrentWidth("auto");
 			return;
 		}
