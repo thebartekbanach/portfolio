@@ -6,11 +6,13 @@ import { CurrentChildrenWrapper, NextChildrenAbsoluteWrapper } from "./styles";
 
 interface HorizontalReplacementContainerProps {
 	zIndex?: number;
+	duration?: number;
 }
 
 export const HorizontalReplacementContainer: FC<HorizontalReplacementContainerProps> = ({
 	children,
-	zIndex
+	zIndex,
+	duration = 500
 }) => {
 	if (!isValidElement(children)) {
 		throw new Error("ReplacementContainer children must be a valid react element");
@@ -59,7 +61,11 @@ export const HorizontalReplacementContainer: FC<HorizontalReplacementContainerPr
 		);
 
 	return (
-		<AnimateWidth duration={500} width={widthOverride} onAnimationEnd={onWidthAnimationEnd}>
+		<AnimateWidth
+			duration={duration}
+			width={widthOverride}
+			onAnimationEnd={onWidthAnimationEnd}
+		>
 			<CurrentChildrenWrapper isContentVisible={isChildrenVisible} zIndex={zIndex}>
 				{currentChildren}
 			</CurrentChildrenWrapper>
