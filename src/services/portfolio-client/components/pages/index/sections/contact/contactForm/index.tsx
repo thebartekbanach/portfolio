@@ -1,9 +1,10 @@
 import { FC, useCallback, useState } from "react";
 import AnimateHeight from "react-animate-height";
 
+import { HorizontalReplacementContainer } from "~/components/shared/horizontalReplacementContainer";
 import { useTranslation } from "~/utils/i18next";
 
-import { useFormField } from "./hooks";
+import { useFormField, useShortMessageAnimation } from "./hooks";
 import { EmailAddressInput } from "./inputs/emailAddressInput";
 import { MessageBodyInput } from "./inputs/messageBodyInput";
 import { MessageSubjectInput } from "./inputs/messageSubjectInput";
@@ -43,12 +44,21 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 		messageBodyValidator
 	);
 
+	const [isSending, setIsSending] = useState(false);
+	const [sendCompleteAnimation, startSendCompleteAnimation] = useShortMessageAnimation(2000);
+	const [sendErrorAnimation, startSendErrorAnimation] = useShortMessageAnimation(2000);
+
 	const sendMessage = async () => {
+		if (isSending) {
+			return;
+		}
+
 		setSubjectValidationEnabled(true);
 		setEmailValidationEnabled(true);
 		setMessageValidationEnabled(true);
 
 		if (subjectErrors.length !== 0 || emailErrors.length !== 0 || messageErrors.length !== 0) {
+			startSendErrorAnimation();
 			return;
 		}
 
@@ -58,6 +68,8 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 			senderEmail: email,
 			message
 		};
+
+		setIsSending(true);
 
 		const response = await fetch("/api/email-gateway/", {
 			headers: {
@@ -70,7 +82,16 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 		const { status } = response;
 
 		if (status === 200) {
-			// TODO: notify that everything is ok
+			setSubjectValidationEnabled(false);
+			setEmailValidationEnabled(false);
+			setMessageValidationEnabled(false);
+
+			subjectState.updateValue(null);
+			emailState.updateValue("");
+			messageState.updateValue("");
+
+			setIsSending(false);
+			startSendCompleteAnimation();
 			return;
 		}
 
@@ -81,15 +102,34 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 		} else if (error === "email-is-treated-as-spam") {
 			setEmailsBlacklist([...emailsBlacklist, email]);
 		}
+
+		setIsSending(false);
+		startSendErrorAnimation();
 	};
+
+	const stateString = isSending
+		? "sending"
+		: sendCompleteAnimation
+		? "sent"
+		: sendErrorAnimation
+		? "error"
+		: "send";
+
+	const sendMessageButtonContent = t(`contact.contactForm.sendButtonStates.${stateString}`);
 
 	const renderedForm = (
 		<ContactFormWrapper>
 			<MessageSubjectInput fieldState={subjectState} />
 			<EmailAddressInput fieldState={emailState} />
 			<MessageBodyInput fieldState={messageState} selectedSubjectId={subject} />
-			<SendMessageButton onClick={sendMessage}>
-				{t("contact.contactForm.message.sendMessageButton")}
+			<SendMessageButton
+				sendComplete={sendCompleteAnimation}
+				sendError={sendErrorAnimation}
+				onClick={sendMessage}
+			>
+				<HorizontalReplacementContainer duration={150}>
+					<span key={stateString}>{sendMessageButtonContent}</span>
+				</HorizontalReplacementContainer>
 			</SendMessageButton>
 		</ContactFormWrapper>
 	);

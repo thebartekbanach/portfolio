@@ -345,8 +345,13 @@
 				}
 			},
 			"message": {
-				"placeholder": "Czego dokładnie oczekujesz?",
-				"sendMessageButton": "Wyślij wiadomość"
+				"placeholder": "Czego dokładnie oczekujesz?"
+			},
+			"sendButtonStates": {
+				"send": "Wyślij wiadomość",
+				"sending": "Wysyłam...",
+				"sent": "Wysłano!",
+				"error": "Coś poszło nie tak"
 			}
 		}
 	}
