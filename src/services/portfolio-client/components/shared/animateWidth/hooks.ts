@@ -39,13 +39,9 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 		wrapperRef.current.addEventListener("transitionend", transitionEndListener);
 
 		return () => {
-			if (wrapperRef.current === null) {
-				throw new Error(
-					"Cannot removeEventListener for transitionend for wrapperRef because ref is null"
-				);
-			}
-
+			if (wrapperRef.current !== null) {
 			wrapperRef.current.removeEventListener("transitionend", transitionEndListener);
+			}
 		};
 	}, []);
 
