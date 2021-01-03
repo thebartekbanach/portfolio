@@ -77,6 +77,7 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 			// when animation ends, set current width to auto as we expected
 			onTransitionEndRef.current = () => {
 				setCurrentWidth("auto");
+
 				if (onAnimationEnd !== undefined) {
 					onAnimationEnd();
 				}
@@ -96,6 +97,7 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 
 		if (requestedWidth !== "auto") {
 			setCurrentWidth(requestedWidth);
+
 			onTransitionEndRef.current = () => {
 				if (onAnimationEnd !== undefined) {
 					onAnimationEnd();
