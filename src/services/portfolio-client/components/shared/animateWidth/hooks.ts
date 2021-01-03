@@ -86,6 +86,11 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 
 		if (requestedWidth === "auto" && areWrapperAndChildrenWidthsEqual()) {
 			setCurrentWidth("auto");
+
+			onTransitionEndRef.current = null;
+			if (onAnimationEnd !== undefined) {
+				onAnimationEnd();
+			}
 			return;
 		}
 
