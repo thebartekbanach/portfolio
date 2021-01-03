@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEnd?: () => void) => {
+export const useWidthAnimation = (
+	requestedWidth: number | "auto",
+	animationDuration: number,
+	onAnimationEnd?: () => void
+) => {
 	const wrapperRef = useRef<HTMLDivElement>(null);
 	const childrenRef = useRef<HTMLDivElement>(null);
 
@@ -40,7 +44,7 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 
 		return () => {
 			if (wrapperRef.current !== null) {
-			wrapperRef.current.removeEventListener("transitionend", transitionEndListener);
+				wrapperRef.current.removeEventListener("transitionend", transitionEndListener);
 			}
 		};
 	}, []);
@@ -60,6 +64,24 @@ export const useWidthAnimation = (requestedWidth: number | "auto", onAnimationEn
 			// auto -> wrapperWidth -> requestedWidth
 			// set to requestedWidth should be done using this effect and last line of it
 			setCurrentWidth(wrapperWidth);
+
+			// when wrapper width and requested width are equal
+			// all animation processing will stuck because of
+			// that "useEffect" currentWidth will not change
+			// so this is a fix of that
+			if (requestedWidth === wrapperWidth) {
+				onTransitionEndRef.current = null;
+				if (onAnimationEnd !== undefined) {
+					// simulate animation execution
+					// because of this we will not
+					// have to take care about
+					// special case that would execute
+					// onAnimationEnd immediately
+					setTimeout(() => {
+						onAnimationEnd();
+					}, animationDuration);
+				}
+			}
 			return;
 		}
 

@@ -14,7 +14,11 @@ export const AnimateWidth: FC<AnimateWidthProps> = ({
 	onAnimationEnd,
 	children
 }) => {
-	const [currentWidth, wrapperRef, childrenRef] = useWidthAnimation(width, onAnimationEnd);
+	const [currentWidth, wrapperRef, childrenRef] = useWidthAnimation(
+		width,
+		duration,
+		onAnimationEnd
+	);
 
 	const wrapperStyles: CSSProperties = {
 		transition: `${duration}ms`,
