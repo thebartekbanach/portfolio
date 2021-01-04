@@ -1,4 +1,4 @@
-import { FC, isValidElement, useEffect, useLayoutEffect, useRef, useState } from "react";
+import { FC, isValidElement, useLayoutEffect, useRef, useState } from "react";
 
 import { AnimateWidth } from "../animateWidth";
 
