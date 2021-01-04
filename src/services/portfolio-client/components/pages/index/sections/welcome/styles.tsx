@@ -13,7 +13,8 @@ export const WelcomeSectionWrapper = styled.section`
 	@media (min-width: 750px) {
 		position: relative;
 
-		max-width: calc(100% - 55px);
+		width: calc(100% - 55px);
+		max-width: 1600px;
 		min-height: calc(100vh - 100px);
 	}
 `;
