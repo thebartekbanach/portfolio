@@ -25,6 +25,8 @@ export const MessageBox = styled.textarea<MessageBoxProps>`
 
 	transition: box-shadow 300ms, border-color 300ms;
 
+	outline: none;
+
 	&,
 	&::placeholder {
 		${useFont.nunitoSans.regular};
