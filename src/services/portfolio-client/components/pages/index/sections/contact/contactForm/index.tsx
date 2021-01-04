@@ -49,7 +49,7 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 	const [sendErrorAnimation, startSendErrorAnimation] = useShortMessageAnimation(2000);
 
 	const sendMessage = async () => {
-		if (isSending) {
+		if (isSending || sendCompleteAnimation || sendErrorAnimation) {
 			return;
 		}
 
