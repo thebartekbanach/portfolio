@@ -5,8 +5,8 @@ import { Navbar } from "./navbar";
 
 const StyledPageContainer = styled.main`
 	position: relative;
-	max-width: 1600px;
 	margin: 0 auto;
+	overflow: hidden;
 `;
 
 export const PageContainer: FC = ({ children }) => {
