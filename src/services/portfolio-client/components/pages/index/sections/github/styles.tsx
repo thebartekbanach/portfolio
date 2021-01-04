@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { useFont } from "~/utils/useFont";
 
-export const GithubSectionElement = styled.div`
+export const GithubSectionElement = styled.section`
 	position: relative;
 
 	max-width: 1200px;
