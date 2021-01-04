@@ -1,4 +1,4 @@
-import { FC, isValidElement, useEffect, useRef, useState } from "react";
+import { FC, isValidElement, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import { AnimateWidth } from "../animateWidth";
 
@@ -28,15 +28,18 @@ export const HorizontalReplacementContainer: FC<HorizontalReplacementContainerPr
 
 	const nextChildrenRef = useRef<HTMLDivElement>(null);
 
+	const childrenRef = useRef(children);
+	childrenRef.current = children;
+
 	const onWidthAnimationEnd = () => {
 		if (!isChildrenVisible) {
-			setCurrentChildren(children);
+			setCurrentChildren(childrenRef.current);
 			setIsChildrenVisible(true);
 			setWidthOverride("auto");
 		}
 	};
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (nextChildrenRef.current === null) {
 			return;
 		}
@@ -46,7 +49,7 @@ export const HorizontalReplacementContainer: FC<HorizontalReplacementContainerPr
 		setIsChildrenVisible(false);
 	}, [children.key]);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		// update current children when props have been changed
 		if (currentChildren.key === children.key) {
 			setCurrentChildren(children);

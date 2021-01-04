@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export const useWidthAnimation = (
 	requestedWidth: number | "auto",
@@ -23,10 +23,19 @@ export const useWidthAnimation = (
 	};
 
 	const onTransitionEndRef = useRef(null as (() => void) | null);
+	const transitionEndSimulationTimeoutId = useRef(null as number | null);
+
+	const clearTransitionEndListeners = () => {
+		onTransitionEndRef.current = null;
+		if (transitionEndSimulationTimeoutId.current) {
+			clearTimeout(transitionEndSimulationTimeoutId.current);
+			transitionEndSimulationTimeoutId.current = null;
+		}
+	};
 
 	const [currentWidth, setCurrentWidth] = useState(requestedWidth);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (wrapperRef.current === null) {
 			throw new Error(
 				"Cannot addEventListener for transitionend for wrapperRef because ref is null"
@@ -49,7 +58,7 @@ export const useWidthAnimation = (
 		};
 	}, []);
 
-	useEffect(() => {
+	useLayoutEffect(() => {
 		if (requestedWidth === currentWidth) {
 			return;
 		}
@@ -70,14 +79,14 @@ export const useWidthAnimation = (
 			// that "useEffect" currentWidth will not change
 			// so this is a fix of that
 			if (requestedWidth === wrapperWidth) {
-				onTransitionEndRef.current = null;
+				clearTransitionEndListeners();
 				if (onAnimationEnd !== undefined) {
 					// simulate animation execution
 					// because of this we will not
 					// have to take care about
 					// special case that would execute
 					// onAnimationEnd immediately
-					setTimeout(() => {
+					transitionEndSimulationTimeoutId.current = setTimeout(() => {
 						onAnimationEnd();
 					}, animationDuration);
 				}
@@ -92,6 +101,7 @@ export const useWidthAnimation = (
 			// some value -> childrenWidth -> auto
 			setCurrentWidth(childrenWidth);
 
+			clearTransitionEndListeners();
 			// when animation ends, set current width to auto as we expected
 			onTransitionEndRef.current = () => {
 				setCurrentWidth("auto");
@@ -106,9 +116,11 @@ export const useWidthAnimation = (
 		if (requestedWidth === "auto" && areWrapperAndChildrenWidthsEqual()) {
 			setCurrentWidth("auto");
 
-			onTransitionEndRef.current = null;
+			clearTransitionEndListeners();
 			if (onAnimationEnd !== undefined) {
-				onAnimationEnd();
+				transitionEndSimulationTimeoutId.current = setTimeout(() => {
+					onAnimationEnd();
+				}, animationDuration);
 			}
 			return;
 		}
@@ -116,6 +128,7 @@ export const useWidthAnimation = (
 		if (requestedWidth !== "auto") {
 			setCurrentWidth(requestedWidth);
 
+			clearTransitionEndListeners();
 			onTransitionEndRef.current = () => {
 				if (onAnimationEnd !== undefined) {
 					onAnimationEnd();
