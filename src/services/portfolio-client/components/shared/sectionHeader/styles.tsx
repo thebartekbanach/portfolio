@@ -15,10 +15,17 @@ export const SectionHeaderElement = styled.h2`
 
 export const SectionDescription = styled.span`
 	display: inline-block;
+	padding: 0 20px;
 
 	${useFont.nunitoSans.regular};
 	font-size: 17px;
 	letter-spacing: 0.7px;
 	line-height: 1.2em;
 	color: #909090;
+
+	@media (max-width: 400px) {
+		br {
+			display: none;
+		}
+	}
 `;
