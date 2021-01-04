@@ -22,7 +22,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ userAgent }) => {
 		<ContactSectionElement>
 			<SectionHeader
 				sectionName="Kontakt"
-				description="Szukasz świetnego programisty?<br />Zapraszam do kontaktu!"
+				description="Szukasz świetnego programisty? <br />Zapraszam do kontaktu!"
 			/>
 			<AboutMeAndContactFormWrapper>
 				<AboutMe
