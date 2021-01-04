@@ -47,6 +47,7 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 	const [isSending, setIsSending] = useState(false);
 	const [sendCompleteAnimation, startSendCompleteAnimation] = useShortMessageAnimation(2000);
 	const [sendErrorAnimation, startSendErrorAnimation] = useShortMessageAnimation(2000);
+	const [formErrorAnimation, startFormErrorAnimation] = useShortMessageAnimation(2000);
 
 	const sendMessage = async () => {
 		if (isSending || sendCompleteAnimation || sendErrorAnimation) {
@@ -58,7 +59,7 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 		setMessageValidationEnabled(true);
 
 		if (subjectErrors.length !== 0 || emailErrors.length !== 0 || messageErrors.length !== 0) {
-			startSendErrorAnimation();
+			startFormErrorAnimation();
 			return;
 		}
 
@@ -97,20 +98,26 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 
 		const error = await response.text();
 
+		setIsSending(false);
+
 		if (error === "unresolvable-host") {
 			setUnresolvableDomains([...unresolvableDomains, getEmailDomain(email)]);
 		} else if (error === "email-is-treated-as-spam") {
 			setEmailsBlacklist([...emailsBlacklist, email]);
+		} else {
+			startSendErrorAnimation();
+			return;
 		}
 
-		setIsSending(false);
-		startSendErrorAnimation();
+		startFormErrorAnimation();
 	};
 
 	const stateString = isSending
 		? "sending"
 		: sendCompleteAnimation
 		? "sent"
+		: formErrorAnimation
+		? "formError"
 		: sendErrorAnimation
 		? "error"
 		: "send";
@@ -124,7 +131,7 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 			<MessageBodyInput fieldState={messageState} selectedSubjectId={subject} />
 			<SendMessageButton
 				sendComplete={sendCompleteAnimation}
-				sendError={sendErrorAnimation}
+				sendError={sendErrorAnimation || formErrorAnimation}
 				onClick={sendMessage}
 			>
 				<HorizontalReplacementContainer duration={150}>

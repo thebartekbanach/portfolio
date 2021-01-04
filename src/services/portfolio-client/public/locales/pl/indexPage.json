@@ -351,7 +351,8 @@
 				"send": "Wyślij wiadomość",
 				"sending": "Wysyłam...",
 				"sent": "Wysłano!",
-				"error": "Coś poszło nie tak"
+				"error": "Coś poszło nie tak",
+				"formError": "Popraw formularz"
 			}
 		}
 	}
