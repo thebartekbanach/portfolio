@@ -21,6 +21,7 @@ export const RealizationWrapper = styled.div`
 `;
 
 export const RealizationPreviewImageArea = styled.div`
+	position: relative;
 	grid-area: photo;
 	padding-bottom: 30px;
 
@@ -31,14 +32,59 @@ export const RealizationPreviewImageArea = styled.div`
 
 export const RealizationPreviewImagesWrapper = styled.div`
 	position: relative;
+	transition: opacity 300ms;
+
+	&.enter {
+		opacity: 0;
+	}
+
+	&.enter-active {
+		opacity: 1;
+	}
 `;
 
 export const RealizationPreviewImage = styled.img`
 	position: relative;
 	max-width: 100%;
-	border-radius: 3px;
 	z-index: 3;
+
+	border-radius: 3px;
 	box-shadow: 0px 3px 15px 0px rgba(240, 250, 254, 0.2);
+`;
+
+export const PreviewImagePlaceholder = styled.div`
+	position: absolute;
+
+	top: 0;
+	left: 0;
+	width: 100%;
+
+	padding-top: 56.25%; /* 16:9 aspect ratio */
+
+	background: #f1f1f1;
+
+	&::before,
+	&::after {
+		content: "";
+
+		position: absolute;
+		z-index: -1;
+
+		bottom: 0;
+		left: 50%;
+		height: 100%;
+		width: 90%;
+
+		background: #e8e8e8;
+		transform: translate(-50%, 15px);
+	}
+
+	&::after {
+		z-index: -2;
+		width: 80%;
+		transform: translate(-50%, 30px);
+		background: #e3e3e3;
+	}
 `;
 
 interface RealizationPreviewSubImagesProps {
@@ -48,15 +94,20 @@ interface RealizationPreviewSubImagesProps {
 
 export const RealizationPreviewSubImageWrapper = styled.div<RealizationPreviewSubImagesProps>`
 	position: absolute;
+	z-index: ${p => p.index};
+
 	bottom: 0;
 	left: 50%;
 	width: ${p => (p.index === 2 ? "90%" : "80%")};
-	z-index: ${p => p.index};
+
 	overflow: hidden;
 	border-radius: 3px;
 	box-shadow: 0px 3px 15px 0px rgba(240, 250, 254, 0.2);
 
-	transform: translate(-50%, ${p => (p.index === 2 ? 15 : 30)}px) rotate(180deg);
+	transform: translate(-50%, ${p => (!p.isVisible ? -10 : p.index === 2 ? 15 : 30)}px)
+		rotate(180deg);
+	transition: transform 300ms;
+	transition-delay: ${p => (p.index === 2 ? 200 : 400)}ms;
 `;
 
 export const RealizationPreviewSubImage = styled.img`
