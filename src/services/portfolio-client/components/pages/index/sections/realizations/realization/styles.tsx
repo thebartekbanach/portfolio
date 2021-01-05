@@ -158,14 +158,24 @@ export const RealizationActionsWrapper = styled.div`
 `;
 
 export const RealizationDetailsLink = styled.a`
+	display: inline-block;
+
 	padding: 15px 30px;
-	background: #5e58f8;
 	border-radius: 60px;
+
+	background: #5e58f8;
+	box-shadow: 1.5px 1.4px 8px 0 rgba(94, 88, 248, 0.46);
+	transition: transform 300ms, box-shadow 250ms;
 
 	${useFont.nunitoSans.regular};
 	text-align: center;
 	text-decoration: none;
 	color: white;
+
+	&:hover {
+		transform: scale(0.95);
+		box-shadow: 0px 0px 0px 0 rgba(94, 88, 248, 0.46);
+	}
 `;
 
 export const RealizationPreviewLink = styled.a`
@@ -182,4 +192,10 @@ export const RealizationPreviewLink = styled.a`
 	text-underline-offset: 6px;
 	text-decoration-thickness: 3px;
 	text-decoration-color: #5e58f8;
+
+	transition: text-underline-offset 150ms;
+
+	&:hover {
+		text-underline-offset: 9px;
+	}
 `;
