@@ -5,6 +5,10 @@
 			"name": "Root"
 		},
 		{
+			"path": "design",
+			"name": "Design"
+		},
+		{
 			"path": "src/services/portfolio-client",
 			"name": "Client"
 		},
