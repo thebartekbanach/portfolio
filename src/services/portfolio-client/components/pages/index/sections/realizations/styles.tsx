@@ -21,7 +21,7 @@ export const RealizationsSectionBackground = styled.div`
 	width: 150%;
 	height: calc(100% + 500px);
 
-	z-index: -1;
+	z-index: -3;
 
 	svg {
 		width: 100%;
