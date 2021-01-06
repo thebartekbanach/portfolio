@@ -31,8 +31,6 @@ export const SkillBoardCategory = styled.div`
 	margin-top: 30px;
 
 	@media (min-width: 1000px) {
-		margin: 40px 0;
-
 		max-width: calc(100% - 80px);
 
 		margin: 0 auto;
