@@ -31,6 +31,11 @@ export const AboutMeTextWrapper = styled.p`
 	${useFont.nunitoSans.regular};
 	line-height: 1.4em;
 	text-align: center;
+
+	b {
+		color: #4764e6;
+		font-weight: normal;
+	}
 `;
 
 export const FindOutMoreButtonWrapper = styled.div`
