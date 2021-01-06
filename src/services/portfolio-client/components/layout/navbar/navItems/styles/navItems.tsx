@@ -30,7 +30,7 @@ export const NavbarContactButton = styled.a`
 	padding: 15px 35px;
 	background: #4764e6;
 	border-radius: 40px;
-	box-shadow: 4.3px 2.5px 16px 0 #4764e6;
+	box-shadow: 1.5px 1.4px 8px 0 rgba(94, 88, 248, 0.46);
 
 	margin-left: 25px;
 
