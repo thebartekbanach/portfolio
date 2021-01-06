@@ -299,7 +299,7 @@
 	"contact": {
 		"sectionId": "kontakt",
 		"sectionName": "Kontakt",
-		"sectionDescription": "Szukasz świetnego programisty?<br />Zapraszam do kontaktu!",
+		"sectionDescription": "Szukasz świetnego programisty? <br />Zapraszam do kontaktu!",
 		"aboutMeTile": {
 			"profilePictureUrl": "/assets/pages/index/contact/profile-picture.jpg",
 			"myName": "Bartłomiej Banach",
