@@ -31,6 +31,8 @@ export const PageHead: FC<PageHeadProps> = props => {
 		<Head>
 			<title>{pageProps.pageTitle}</title>
 			<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+			<meta name="theme-color" content="#5f55f7" />
+			<meta name="apple-mobile-web-app-status-bar-style" content="#5f55f7" />
 			{favicon()}
 			{googleMeta(pageProps)}
 			{facebookMeta(pageProps)}
