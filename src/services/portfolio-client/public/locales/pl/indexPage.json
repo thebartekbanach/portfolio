@@ -1,8 +1,18 @@
 {
 	"welcome": {
-		"title": "Bartek Banach",
-		"subTitle": "Full Stack Developer",
-		"aboutMe": "Jestem <b>21 letnim</b> w pełni samodzielnym <b>pasjonatem web developmentu</b>. <b>Kocham automatyzować zadania, ułatwiać pracę ludziom</b> nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded. Lubię też <b>tworzyć proste, intuicyjne aplikacje frontendowe</b>, które są proste w użyciu oraz przydatne w codziennym życiu. [PL]"
+		"mobile": {
+			"helloText": "Hej, nazywam się",
+			"helloTextViewBox": "0 0 145 23",
+			"myNameText": "Bartek Banach",
+			"myNameTextViewBox": "0 0 127 15",
+			"aboutMe": "Jestem <b>fullstack developerem</b>. Moje ulubione technologie to <b>React</b> oraz <b>Node.js</b>.",
+			"findOutMoreButtonText": "Poznaj mnie"
+		},
+		"desktop": {
+			"title": "Bartek Banach",
+			"subTitle": "Full Stack Developer",
+			"aboutMe": "Jestem <b>21 letnim</b> w pełni samodzielnym <b>pasjonatem web developmentu</b>. <b>Kocham automatyzować zadania, ułatwiać pracę ludziom</b> nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded. Lubię też <b>tworzyć proste, intuicyjne aplikacje frontendowe</b>, które są proste w użyciu oraz przydatne w codziennym życiu. [PL]"
+		}
 	},
 	"skills": {
 		"sectionId": "umiejetnosci",

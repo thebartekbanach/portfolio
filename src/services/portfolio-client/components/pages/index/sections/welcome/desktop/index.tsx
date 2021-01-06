@@ -49,16 +49,16 @@ export const DesktopWelcomeSectionContent: FC = () => {
 		<WelcomeSectionContentWrapper>
 			<HeadersWrapper>
 				<MainHeader>
-					<TitleWithGradient>{t("welcome.title")}</TitleWithGradient>
+					<TitleWithGradient>{t("welcome.desktop.title")}</TitleWithGradient>
 				</MainHeader>
 				<Profession>
-					<SubTitleElement>{t("welcome.subTitle")}</SubTitleElement>
+					<SubTitleElement>{t("welcome.desktop.subTitle")}</SubTitleElement>
 				</Profession>
 			</HeadersWrapper>
 			<DeveloperPictureWrapper>
 				<DeveloperPictureSVG />
 			</DeveloperPictureWrapper>
-			<AboutMe dangerouslySetInnerHTML={{ __html: t("welcome.aboutMe") }} />
+			<AboutMe dangerouslySetInnerHTML={{ __html: t("welcome.desktop.aboutMe") }} />
 		</WelcomeSectionContentWrapper>
 	);
 };

@@ -69,17 +69,21 @@ export const MobileWelcomeSectionContent: FC = () => {
 	return (
 		<MobileWelcomeSectionWrapper>
 			<HelloTextWrapper>
-				<HelloTextElement text="Hej, nazywam się" viewBox="0 0 145 23" />
+				<HelloTextElement
+					text={t("welcome.mobile.helloText")}
+					viewBox={t("welcome.mobile.helloTextViewBox")}
+				/>
 			</HelloTextWrapper>
 			<MyNameWrapper>
-				<MyNameElement text="Bartek Banach" viewBox="0 0 127 15" />
+				<MyNameElement
+					text={t("welcome.mobile.myNameText")}
+					viewBox={t("welcome.mobile.myNameTextViewBox")}
+				/>
 			</MyNameWrapper>
-			<AboutMeTextWrapper>
-				Jestem <b>fullstack developerem</b>. Moje ulubione technologie to <b>React</b> oraz{" "}
-				<b>Nodejs</b>.
-			</AboutMeTextWrapper>
+			<AboutMeTextWrapper dangerouslySetInnerHTML={{ __html: t("welcome.mobile.aboutMe") }} />
 			<FindOutMoreButtonWrapper>
 				<FindOutMoreButton href={skillsSectionUrl} onClick={onFindOutMoreButtonClick}>
+					{t("welcome.mobile.findOutMoreButtonText")}
 				</FindOutMoreButton>
 			</FindOutMoreButtonWrapper>
 		</MobileWelcomeSectionWrapper>
