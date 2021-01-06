@@ -44,7 +44,10 @@ export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
 			);
 		}
 
-		section?.scrollIntoView({ behavior: "smooth" });
+		const offset = parseInt(section.getAttribute("data-smooth-scroll-offset") ?? "0");
+		const scrollPosition = section.getBoundingClientRect().top - offset;
+
+		window.scrollTo({ behavior: "smooth", left: 0, top: scrollPosition });
 	};
 
 	const scrollToTopOfPageOrRedirect = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {

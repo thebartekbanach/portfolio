@@ -19,7 +19,7 @@ export const ContactSection: FC<ContactSectionProps> = ({ userAgent }) => {
 	const onContactFormToggle = () => setIsContactFormExpanded(!isContactFormExpanded);
 
 	return (
-		<ContactSectionElement>
+		<ContactSectionElement id="kontakt" data-smooth-scroll-offset={100}>
 			<SectionHeader
 				sectionName="Kontakt"
 				description="Szukasz świetnego programisty? <br />Zapraszam do kontaktu!"

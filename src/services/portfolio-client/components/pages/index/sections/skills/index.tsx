@@ -41,7 +41,7 @@ export const SkillsSection: FC<SkillsSectionProps> = ({ userAgent }) => {
 	const SkillsSectionContent = matchesDesktopDevices ? DesktopSkillsSection : MobileSkillsSection;
 
 	return (
-		<SkillsSectionElement id={t("skills.sectionId")}>
+		<SkillsSectionElement id={t("skills.sectionId")} data-smooth-scroll-offset={100}>
 			<SectionHeader
 				sectionName={t("skills.sectionName")}
 				description={t("skills.sectionDescription")}

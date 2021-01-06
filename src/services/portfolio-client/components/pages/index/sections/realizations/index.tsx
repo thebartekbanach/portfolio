@@ -19,7 +19,11 @@ export const RealizationsSection = () => {
 	});
 
 	return (
-		<RealizationsSectionElement ref={sectionRef}>
+		<RealizationsSectionElement
+			ref={sectionRef}
+			id="realizacje"
+			data-smooth-scroll-offset={100}
+		>
 			<RealizationsSectionBackground>
 				<BackgroundWave />
 			</RealizationsSectionBackground>
