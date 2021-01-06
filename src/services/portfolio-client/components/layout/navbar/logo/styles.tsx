@@ -20,10 +20,12 @@ export const NavbarLogoContainer = styled.a`
 
 export const NavbarLogoDevPart = styled.span`
 	color: #a163aa;
+	letter-spacing: 0.7px;
 `;
 
 export const NavbarLogoUserNamePart = styled.span`
-	color: #898989;
+	color: #5f55f7;
+	letter-spacing: 0.7px;
 `;
 
 export const NavbarLogoSubPagePart = styled.span``;
