@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 
 import { useTranslation } from "~/utils/i18next";
+import { scrollToElement } from "~/utils/scrollToElement";
 
 import { Logo } from "./logo";
 import { NavItems } from "./navItems";
@@ -44,10 +45,7 @@ export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
 			);
 		}
 
-		const offset = parseInt(section.getAttribute("data-smooth-scroll-offset") ?? "0");
-		const scrollPosition = section.getBoundingClientRect().top - offset;
-
-		window.scrollTo({ behavior: "smooth", left: 0, top: scrollPosition });
+		scrollToElement(section);
 	};
 
 	const scrollToTopOfPageOrRedirect = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
