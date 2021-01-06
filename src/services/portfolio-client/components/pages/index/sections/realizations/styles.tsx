@@ -16,9 +16,6 @@ export const RealizationsList = styled.div`
 
 export const RealizationsSectionBackground = styled.div`
 	position: absolute;
-	top: -400px;
-	left: -25%;
-	width: 150%;
 	height: calc(100% + 500px);
 
 	z-index: -3;
@@ -28,7 +25,19 @@ export const RealizationsSectionBackground = styled.div`
 		height: 100%;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 999px) {
 		display: none;
+	}
+
+	@media (min-width: 1000px) {
+		width: 220%;
+		left: -50%;
+		top: -500px;
+	}
+
+	@media (min-width: 1150px) {
+		top: -400px;
+		left: -25%;
+		width: 150%;
 	}
 `;
