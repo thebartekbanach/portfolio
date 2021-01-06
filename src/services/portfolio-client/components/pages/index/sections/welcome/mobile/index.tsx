@@ -1,5 +1,8 @@
 import { FC } from "react";
 
+import { useTranslation } from "~/utils/i18next";
+import { scrollToElement } from "~/utils/scrollToElement";
+
 import {
 	AboutMeTextWrapper,
 	FindOutMoreButton,
@@ -46,6 +49,23 @@ const MyNameElement: FC<ScalableTextElementProps> = ({ text, viewBox }) => (
 );
 
 export const MobileWelcomeSectionContent: FC = () => {
+	const [t] = useTranslation("indexPage");
+
+	const skillsSectionId = `#${t("skills.sectionId")}`;
+	const skillsSectionUrl = `/${skillsSectionId}`;
+
+	const onFindOutMoreButtonClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+		e.preventDefault();
+
+		const skillsSection = document.querySelector(skillsSectionId);
+
+		if (skillsSection === null) {
+			throw new Error("Cannot scroll to skills section because section element is null");
+		}
+
+		scrollToElement(skillsSection);
+	};
+
 	return (
 		<MobileWelcomeSectionWrapper>
 			<HelloTextWrapper>
@@ -59,7 +79,8 @@ export const MobileWelcomeSectionContent: FC = () => {
 				<b>Nodejs</b>.
 			</AboutMeTextWrapper>
 			<FindOutMoreButtonWrapper>
-				<FindOutMoreButton href="#">Poznaj mnie</FindOutMoreButton>
+				<FindOutMoreButton href={skillsSectionUrl} onClick={onFindOutMoreButtonClick}>
+				</FindOutMoreButton>
 			</FindOutMoreButtonWrapper>
 		</MobileWelcomeSectionWrapper>
 	);
