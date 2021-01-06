@@ -49,7 +49,8 @@ export const FindOutMoreButton = styled.a`
 
 	transition: transform 300ms, box-shadow 250ms;
 
-	${useFont.nunitoSans.regular};
+	${useFont.nunitoSans.bold};
+	letter-spacing: 1px;
 	text-decoration: none;
 	color: white;
 
