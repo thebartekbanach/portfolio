@@ -296,6 +296,51 @@
 		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz jak wykorzystałem powyższe umiejętności w praktyce",
 		"githubLinkButtonText": "Szczegóły"
 	},
+	"realizations": {
+		"sectionId": "realizacje",
+		"sectionName": "Realizacje",
+		"sectionDescription": "W każdy projekt wkładam mnóstwo serca <br />aby działał i wyglądał jak najlepiej",
+		"projectUrlSchema": "/projects/${id}",
+		"buttons": {
+			"github": "Github",
+			"preview": "Podgląd",
+			"details": "Szczegóły"
+		},
+		"projects": [
+			{
+				"id": "majkel-music",
+				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
+				"name": "Majkel Music",
+				"description": "Strona zawiera czytelny CMS za pomocą którego można edytować całą treść zawartą na stronie internetowej. Skrypty napisane w Javascripcie dodają stronie dynamizmu.",
+				"previewType": "website",
+				"previewUrl": "https://kajakgo.pl"
+			},
+			{
+				"id": "dom-u-kasi",
+				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.png",
+				"name": "Dom u Kasi",
+				"description": "Strona interntowa domu letniskowego do wynajęcia. Responsywna oraz dynamiczna, wykonana przy pomocy React, MobX i NextJS. Strona ładuje się szybko nawet przy wolnym łączu dzięki opóźnionemu ładowaniu wszystkich obrazków.",
+				"previewType": "website",
+				"previewUrl": "https://domukasi.pl"
+			},
+			{
+				"id": "hkp-project",
+				"previewImageUrl": "/assets/pages/index/realizations/works/hkp-project.png",
+				"name": "HKP Project",
+				"description": "Witryna stworzona dla firmy zajmującej się haftem komputerowym. Prosta oraz czytelna, w pełni responsywna. Gulp.js pozwala na wygodniejszą edycję treści i wglądu na żywo.",
+				"previewType": "github",
+				"previewUrl": "https://github.com/thebartekbanach/hkp-project"
+			},
+			{
+				"id": "simple-aquaristic-controller",
+				"previewImageUrl": "/assets/pages/index/realizations/works/aquaristic-controller.png",
+				"name": "Aquaristic Controller",
+				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia wodę w akwarium i steruje czasowo urządzeniami takimi jak oświetlenie, napowietrzanie lub cokolwiek innego.",
+				"previewType": "github",
+				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
+			}
+		]
+	},
 	"contact": {
 		"sectionId": "contact",
 		"sectionName": "Contact",

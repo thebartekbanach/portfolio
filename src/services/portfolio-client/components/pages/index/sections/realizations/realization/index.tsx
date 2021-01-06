@@ -1,6 +1,7 @@
 import React, { FC, useLayoutEffect, useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
+import { useTranslation } from "~/utils/i18next";
 import { LazyLoadChainDelegate } from "~/utils/lazyLoadChain";
 import { loadImage } from "~/utils/loadImage";
 
@@ -27,7 +28,7 @@ interface RealizationProps {
 	description: string;
 	detailsUrl: string;
 	previewUrl: string;
-	previewType: "github" | "preview";
+	previewType: "github" | "website";
 }
 
 export const Realization: FC<RealizationProps> = ({
@@ -39,6 +40,8 @@ export const Realization: FC<RealizationProps> = ({
 	previewUrl,
 	previewType
 }) => {
+	const [t] = useTranslation("indexPage");
+
 	const [isPreviewImageLoaded, setIsPreviewImageLoaded] = useState(false);
 
 	// null means "not initialized"
@@ -78,6 +81,11 @@ export const Realization: FC<RealizationProps> = ({
 
 	const imagePlaceholder = <PreviewImagePlaceholder />;
 
+	const detailsButtonContent = t("realizations.buttons.details");
+
+	const previewTranslationType = previewType === "website" ? "preview" : "github";
+	const previewButtonContent = t(`realizations.buttons.${previewTranslationType}`);
+
 	return (
 		<RealizationWrapper>
 			<RealizationPreviewImageArea>
@@ -94,9 +102,11 @@ export const Realization: FC<RealizationProps> = ({
 				<RealizationName>{name}</RealizationName>
 				<RealizationDescription>{description}</RealizationDescription>
 				<RealizationActionsWrapper>
-					<RealizationDetailsLink href={detailsUrl}>Szczegóły</RealizationDetailsLink>
+					<RealizationDetailsLink href={detailsUrl}>
+						{detailsButtonContent}
+					</RealizationDetailsLink>
 					<RealizationPreviewLink href={previewUrl}>
-						{previewType === "github" ? "Github" : "Podgląd"}
+						{previewButtonContent}
 					</RealizationPreviewLink>
 				</RealizationActionsWrapper>
 			</RealizationInfoWrapper>
