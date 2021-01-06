@@ -14,7 +14,7 @@ export const SkillBoardBody = styled.div`
 	margin: 0 auto;
 
 	background: white;
-	box-shadow: 1.8px 2.4px 21px 0 rgba(150, 150, 150, 0.58);
+	box-shadow: 0px 9px 25px rgba(205, 205, 205, 0.45);
 
 	@media (min-width: 1000px) {
 		width: 80%;

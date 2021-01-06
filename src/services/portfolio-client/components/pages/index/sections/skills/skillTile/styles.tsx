@@ -18,8 +18,8 @@ export const SkillTileElement = styled.div<SkillTileElementProps>`
 
 	box-sizing: border-box;
 
-	box-shadow: 1.8px 2.4px 21px 0
-		${p => (p.isSelected ? "rgba(105, 79, 255, 0.4)" : "rgba(150, 150, 150, 0.6)")};
+	box-shadow: 0px 9px 25px
+		${p => (p.isSelected ? "rgba(105, 79, 255, 0.3)" : "rgba(205, 205, 205, 0.45)")};
 
 	transition: box-shadow 500ms ${p => (p.isSelected ? 1000 : 0)}ms;
 
