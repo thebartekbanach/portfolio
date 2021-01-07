@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styled from "styled-components";
 
+import { LanguageSwitch } from "./languageSwitch";
 import { Navbar } from "./navbar";
 
 const StyledPageContainer = styled.main`
@@ -14,6 +15,7 @@ export const PageContainer: FC = ({ children }) => {
 		<StyledPageContainer>
 			<Navbar />
 			{children}
+			<LanguageSwitch />
 		</StyledPageContainer>
 	);
 };
