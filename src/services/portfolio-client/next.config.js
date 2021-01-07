@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
-const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const { nextI18NextRewrites } = require("next-i18next/rewrites");
+const TsConfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 
 const localeSubpaths = {
-	pl: "pl"
+	en: "en"
 };
 
 module.exports = {
