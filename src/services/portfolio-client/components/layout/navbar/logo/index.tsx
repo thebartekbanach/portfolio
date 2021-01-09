@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { useTranslation } from "~/utils/i18next";
+import { Link, useTranslation } from "~/utils/i18next";
 
 import {
 	NavbarLogoSubPagePart,
@@ -21,10 +21,12 @@ export const Logo: FC<LogoProps> = ({ subPage, onLogoClick }) => {
 		subPage !== null ? <NavbarLogoSubPagePart>{subPage}</NavbarLogoSubPagePart> : null;
 
 	return (
-		<NavbarLogoContainer href={t("logo.href")} data-section-name="start" onClick={onLogoClick}>
-			<NavbarLogoDevPart>{t("logo.rootPath")}</NavbarLogoDevPart>
-			<NavbarLogoUserNamePart>{t("logo.userName")}</NavbarLogoUserNamePart>
-			{subPagePart}
-		</NavbarLogoContainer>
+		<Link href={t("logo.href")} passHref>
+			<NavbarLogoContainer data-section-name="start" onClick={onLogoClick}>
+				<NavbarLogoDevPart>{t("logo.rootPath")}</NavbarLogoDevPart>
+				<NavbarLogoUserNamePart>{t("logo.userName")}</NavbarLogoUserNamePart>
+				{subPagePart}
+			</NavbarLogoContainer>
+		</Link>
 	);
 };

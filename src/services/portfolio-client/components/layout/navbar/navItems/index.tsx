@@ -1,5 +1,7 @@
 import React, { FC } from "react";
 
+import { Link } from "~/utils/i18next";
+
 import {
 	MobileMenuToggleButton,
 	MobileMenuToggleButtonIcon
@@ -28,9 +30,11 @@ export const NavItems: FC<NavItemsProps> = ({
 	onNavItemClick
 }) => {
 	const renderedItems = items.map(({ text, href }) => (
-		<NavbarItem key={text} href={href} data-section-name={text} onClick={onNavItemClick}>
-			{text}
-		</NavbarItem>
+		<Link key={text} href={href} passHref>
+			<NavbarItem data-section-name={text} onClick={onNavItemClick}>
+				{text}
+			</NavbarItem>
+		</Link>
 	));
 
 	return (
