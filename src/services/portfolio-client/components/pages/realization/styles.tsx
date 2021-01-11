@@ -153,7 +153,7 @@ export const RealizationDescription = styled.div`
 	letter-spacing: 0.6px;
 	color: #676767;
 
-	@media (min-width: 1000px) {
+	@media (min-width: 1200px) {
 		grid-area: description;
 		margin-top: 0;
 	}
