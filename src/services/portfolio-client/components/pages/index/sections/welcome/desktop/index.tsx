@@ -24,8 +24,8 @@ export const TitleWithGradient: FC = ({ children }) => (
 				y2="100%"
 				gradientUnits="userSpaceOnUse"
 			>
-				<stop stopColor="#4764e6" offset="0%" />
-				<stop stopColor="#694fff" offset="100%" />
+				<stop stopColor="#694fff" offset="0%" />
+				<stop stopColor="#4764e6" offset="100%" />
 			</linearGradient>
 		</defs>
 		<text x="-2.1" y="22.8" fill="url(#myNameTextLinearGradientDef)">

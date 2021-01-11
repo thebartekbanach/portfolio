@@ -38,8 +38,8 @@ const MyNameElement: FC<ScalableTextElementProps> = ({ text, viewBox }) => (
 				y2="100%"
 				gradientUnits="userSpaceOnUse"
 			>
-				<stop stopColor="#4764e6" offset="0%" />
-				<stop stopColor="#694fff" offset="100%" />
+				<stop stopColor="#694fff" offset="0%" />
+				<stop stopColor="#4764e6" offset="100%" />
 			</linearGradient>
 		</defs>
 		<text x="0" y="13" fill="url(#welcomeSectionTitleGradientSetup)">
