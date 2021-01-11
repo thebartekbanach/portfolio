@@ -4,7 +4,8 @@ export const scrollToElement = (element: Element) => {
 	}
 
 	const offset = parseInt(element.getAttribute("data-smooth-scroll-offset") ?? "0");
-	const scrollPosition = element.getBoundingClientRect().top - offset;
+	const elementPosition = element.getBoundingClientRect().top - offset;
+	const scrollPosition = elementPosition + (document.scrollingElement?.scrollTop ?? 0);
 
 	window.scrollTo({ behavior: "smooth", left: 0, top: scrollPosition });
 };
