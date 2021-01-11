@@ -1,5 +1,7 @@
 import { FC } from "react";
 
+import { DecorativePicture } from "~/components/shared/decorativePicture";
+
 import {
 	RealizationName,
 	RealizationPageWrapper,
@@ -71,7 +73,7 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 				</RealizationDate>
 			</RealizationNameAndDateWrapper>
 			<RealizationPreviewImageAndButtonWrapper>
-				<img style={{ maxWidth: "100%" }} src={previewPicture} />
+					<DecorativePicture imageUrl={previewPicture} />
 				<RealizationPreviewButtonWrapper>
 					<RealizationPreviewButton href={previewUrl}>Podgląd</RealizationPreviewButton>
 				</RealizationPreviewButtonWrapper>
