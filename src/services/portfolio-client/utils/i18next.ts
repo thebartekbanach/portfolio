@@ -8,7 +8,7 @@ const i18nextInstance = new NextI18Next({
 
 	defaultNS: "common",
 	localePath:
-		typeof window === "undefined" ? require("path").resolve("public/locales") : "locales"
+		typeof window === "undefined" ? require("path").resolve("public/locales") : "/locales"
 });
 
 if (process.env.NODE_ENV !== "production") {
