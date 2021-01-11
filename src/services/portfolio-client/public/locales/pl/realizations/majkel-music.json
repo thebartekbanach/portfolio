@@ -1,0 +1,23 @@
+{
+	"id": "majkel-music",
+	"title": "Majkel Music",
+	"realizationTime": {
+		"from": "2017-06-27",
+		"to": "2017-10-27"
+	},
+	"previewPicture": "/assets/pages/index/realizations/works/majkel-music.png",
+	"contentUrl": "/locales/pl/realizations/majkel-music.md",
+	"previewUrl": "https://kajakgo.pl",
+	"tags": {
+		"#5e8fea": [
+			"ASP.NET Core 1.1",
+			"Razor Pages",
+			"Entity Framework Core",
+			"FakeItEasy",
+			"AspNetCore.Identity",
+			"Npgsql"
+		],
+		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
+		"#c26eda": ["SASS"]
+	}
+}

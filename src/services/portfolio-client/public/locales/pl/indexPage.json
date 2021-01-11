@@ -310,7 +310,7 @@
 		"sectionId": "realizacje",
 		"sectionName": "Realizacje",
 		"sectionDescription": "W każdy projekt wkładam mnóstwo serca <br />aby działał i wyglądał jak najlepiej",
-		"projectUrlSchema": "/projekt/{{id}}",
+		"projectUrlSchema": "/realization/{{id}}",
 		"buttons": {
 			"github": "Github",
 			"preview": "Podgląd",

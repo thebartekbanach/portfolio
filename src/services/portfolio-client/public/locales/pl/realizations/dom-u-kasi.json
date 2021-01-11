@@ -1,0 +1,23 @@
+{
+	"id": "dom-u-kasi",
+	"title": "Dom u Kasi",
+	"realizationTime": {
+		"from": "2017-06-27",
+		"to": "2017-10-27"
+	},
+	"previewPicture": "/assets/pages/index/realizations/works/dom-u-kasi.png",
+	"contentUrl": "/locales/pl/realizations/dom-u-kasi.md",
+	"previewUrl": "https://domukasi.pl",
+	"tags": {
+		"#333": [
+			"ReactJS",
+			"Razor Pages",
+			"Entity Framework Core",
+			"FakeItEasy",
+			"AspNetCore.Identity",
+			"Npgsql"
+		],
+		"#777": ["JQuery", "Moment.js", "Tether.js"],
+		"#999": ["SASS"]
+	}
+}
