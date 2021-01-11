@@ -7,13 +7,14 @@ import {
 	RealizationPageWrapper,
 	RealizationPreviewButton,
 	RealizationPreviewButtonWrapper,
-	RealizationPreviewImageAndButtonWrapper,
+	RealizationPreviewImageAndButtonArea,
 	RealizationTag,
 	RealizationTags,
 	RealizationDescription,
 	RealizationNameAndDateWrapper,
 	RealizationDate,
-	RealizationDateArrow
+	RealizationDateArrow,
+	RealizationPreviewImageAndButtonWrapper
 } from "./styles";
 
 export interface RealizationInfo {
@@ -72,12 +73,16 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 					{convertDate(realizationTime.to)}
 				</RealizationDate>
 			</RealizationNameAndDateWrapper>
-			<RealizationPreviewImageAndButtonWrapper>
+			<RealizationPreviewImageAndButtonArea>
+				<RealizationPreviewImageAndButtonWrapper>
 					<DecorativePicture imageUrl={previewPicture} />
-				<RealizationPreviewButtonWrapper>
-					<RealizationPreviewButton href={previewUrl}>Podgląd</RealizationPreviewButton>
-				</RealizationPreviewButtonWrapper>
-			</RealizationPreviewImageAndButtonWrapper>
+					<RealizationPreviewButtonWrapper>
+						<RealizationPreviewButton href={previewUrl}>
+							Podgląd
+						</RealizationPreviewButton>
+					</RealizationPreviewButtonWrapper>
+				</RealizationPreviewImageAndButtonWrapper>
+			</RealizationPreviewImageAndButtonArea>
 			<RealizationDescription dangerouslySetInnerHTML={{ __html: realizationContent }} />
 			<RealizationTags>{renderedTags}</RealizationTags>
 		</RealizationPageWrapper>

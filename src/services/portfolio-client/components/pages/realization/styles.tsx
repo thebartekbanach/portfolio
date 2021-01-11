@@ -7,14 +7,18 @@ export const RealizationPageWrapper = styled.div`
 	padding: 0 30px;
 	max-width: 450px;
 	margin: 0 auto;
-	margin-top: 100px;
+	margin-top: 50px;
+	margin-bottom: 80px;
 
-	@media (min-width: 1000px) {
-		width: 90%;
-		max-width: 1200px;
+	@media (min-width: 1200px) {
+		width: 80%;
+		max-width: 1400px;
+
+		margin-top: 100px;
+		margin-bottom: 150px;
 
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: minmax(0.5fr, 550px) 1fr;
 		grid-template-rows: auto auto auto;
 		grid-template-areas:
 			"title preview"
@@ -31,7 +35,7 @@ export const RealizationPageWrapper = styled.div`
 export const RealizationNameAndDateWrapper = styled.header`
 	margin-bottom: 50px;
 
-	@media (min-width: 1000px) {
+	@media (min-width: 1200px) {
 		grid-area: title;
 		margin-bottom: 0;
 	}
@@ -46,7 +50,7 @@ export const RealizationName = styled.h1`
 	text-align: center;
 	letter-spacing: 1px;
 
-	@media (min-width: 1000px) {
+	@media (min-width: 1200px) {
 		text-align: left;
 	}
 `;
@@ -58,7 +62,7 @@ export const RealizationDate = styled.p`
 	text-align: center;
 	color: #676767;
 
-	@media (min-width: 1000px) {
+	@media (min-width: 1200px) {
 		text-align: left;
 	}
 `;
@@ -97,13 +101,20 @@ export const RealizationDateArrow = styled.span`
 	}
 `;
 
-export const RealizationPreviewImageAndButtonWrapper = styled.div`
-	@media (min-width: 1000px) {
+export const RealizationPreviewImageAndButtonArea = styled.div`
+	@media (min-width: 1200px) {
 		grid-area: preview;
+	}
+`;
 
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
+export const RealizationPreviewImageAndButtonWrapper = styled.div`
+	@media (min-width: 1200px) {
+		position: sticky;
+		top: 50vh;
+
+		transform: translateY(-50%);
+
+		margin-top: 250px;
 	}
 `;
 
@@ -114,7 +125,7 @@ export const RealizationPreviewButtonWrapper = styled.div`
 export const RealizationPreviewButton = styled.a`
 	display: inline-block;
 	padding: 15px 60px;
-	margin-top: 30px;
+	margin-top: 60px;
 
 	border-radius: 30px;
 
@@ -152,7 +163,7 @@ export const RealizationTags = styled.div`
 	margin-top: 30px;
 	margin-left: -5px;
 
-	@media (min-width: 1000px) {
+	@media (min-width: 1200px) {
 		grid-area: tags;
 		margin-top: 15px;
 	}
