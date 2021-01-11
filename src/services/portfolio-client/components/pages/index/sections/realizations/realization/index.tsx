@@ -1,7 +1,7 @@
 import React, { FC, useLayoutEffect, useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
-import { useTranslation } from "~/utils/i18next";
+import { useTranslation, Link } from "~/utils/i18next";
 import { LazyLoadChainDelegate } from "~/utils/lazyLoadChain";
 import { loadImage } from "~/utils/loadImage";
 
@@ -102,9 +102,9 @@ export const Realization: FC<RealizationProps> = ({
 				<RealizationName>{name}</RealizationName>
 				<RealizationDescription>{description}</RealizationDescription>
 				<RealizationActionsWrapper>
-					<RealizationDetailsLink href={detailsUrl}>
-						{detailsButtonContent}
-					</RealizationDetailsLink>
+					<Link href={detailsUrl} passHref>
+						<RealizationDetailsLink>{detailsButtonContent}</RealizationDetailsLink>
+					</Link>
 					<RealizationPreviewLink href={previewUrl}>
 						{previewButtonContent}
 					</RealizationPreviewLink>
