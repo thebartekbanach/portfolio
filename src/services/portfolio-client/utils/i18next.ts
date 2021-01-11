@@ -3,9 +3,8 @@ import NextI18Next, { I18n } from "next-i18next";
 
 const i18nextInstance = new NextI18Next({
 	localeSubpaths: require("next/config").default().publicRuntimeConfig.localeSubpaths,
-	defaultLanguage: "en",
-	otherLanguages: ["pl"],
-
+	defaultLanguage: "pl",
+	otherLanguages: ["en"],
 	defaultNS: "common",
 	localePath:
 		typeof window === "undefined" ? require("path").resolve("public/locales") : "/locales"
