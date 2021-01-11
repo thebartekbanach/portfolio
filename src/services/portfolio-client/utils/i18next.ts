@@ -23,7 +23,7 @@ if (process.env.NODE_ENV !== "production") {
 
 export default i18nextInstance;
 
-export const { appWithTranslation, useTranslation, i18n } = i18nextInstance;
+export const { appWithTranslation, useTranslation, i18n, Link, Router } = i18nextInstance;
 
 export const getObjectFromTranslations = <T = unknown>(i18n: I18n, namespace: string) =>
 	(i18n.t(namespace, { returnObjects: true }) as unknown) as T;
