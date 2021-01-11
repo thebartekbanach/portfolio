@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import React, { FC, useCallback, useEffect, useState } from "react";
 
 import { useTranslation } from "~/utils/i18next";
 import { scrollToElement } from "~/utils/scrollToElement";
@@ -15,7 +15,21 @@ export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
 	const [t] = useTranslation("navbar");
 	const [mobileMenuOpenState, setMobileMenuOpenState] = useState(false);
 
-	const toggleMenu = () => setMobileMenuOpenState(!mobileMenuOpenState);
+	const closeOnScrollListener = useCallback(() => {
+		setMobileMenuOpenState(false);
+	}, []);
+
+	useEffect(() => {
+		if (mobileMenuOpenState === true) {
+			const scrollListenerConfig = { once: true, passive: true };
+			document.addEventListener("scroll", closeOnScrollListener, scrollListenerConfig);
+		}
+	}, [mobileMenuOpenState]);
+
+	const toggleMenu = () => {
+		document.removeEventListener("scroll", closeOnScrollListener);
+		setMobileMenuOpenState(!mobileMenuOpenState);
+	};
 
 	const scrollToSectionOrRedirect = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
 		const sectionUrl = e.currentTarget.getAttribute("href");
