@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const RealizationsSectionElement = styled.section`
+	padding-top: 60px;
 	position: relative;
 `;
 

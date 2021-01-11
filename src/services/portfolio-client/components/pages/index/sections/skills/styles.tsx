@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const SkillsSectionElement = styled.section`
+	padding-top: 100px;
+
 	@media (min-width: 600px) {
 		max-width: 600px;
 		margin: 0 auto;

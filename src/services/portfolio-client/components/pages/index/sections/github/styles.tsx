@@ -9,6 +9,7 @@ export const GithubSectionElement = styled.section`
 
 	margin: 0 auto;
 	margin-top: 150px;
+	margin-bottom: 80px;
 	padding: 80px 40px;
 
 	background: #1c1d20;

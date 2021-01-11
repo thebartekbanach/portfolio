@@ -4,7 +4,6 @@ import { useFont } from "~/utils/useFont";
 
 export const SectionHeaderAndDescriptionWrapper = styled.header`
 	text-align: center;
-	margin-top: 160px;
 `;
 
 export const SectionHeaderElement = styled.h2`

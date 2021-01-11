@@ -37,11 +37,7 @@ export const RealizationsSection = () => {
 	));
 
 	return (
-		<RealizationsSectionElement
-			ref={sectionRef}
-			id={t("realizations.sectionId")}
-			data-smooth-scroll-offset={100}
-		>
+		<RealizationsSectionElement ref={sectionRef} id={t("realizations.sectionId")}>
 			<RealizationsSectionBackground>
 				<BackgroundWave />
 			</RealizationsSectionBackground>
