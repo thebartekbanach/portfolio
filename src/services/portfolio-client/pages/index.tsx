@@ -16,7 +16,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ userAgent }) => {
 	return (
 		<>
 			<PageHead pageTitle="Bartek Banach - portfolio" description="TODO" />
-			<PageContainer>
+			<PageContainer useOverflowHidden>
 				<WelcomeSection />
 				<SkillsSection userAgent={userAgent} />
 				<GithubSection />

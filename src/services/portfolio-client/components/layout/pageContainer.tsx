@@ -4,15 +4,19 @@ import styled from "styled-components";
 import { LanguageSwitch } from "./languageSwitch";
 import { Navbar } from "./navbar";
 
-const StyledPageContainer = styled.main`
+interface PageContainerProps {
+	useOverflowHidden?: boolean;
+}
+
+const StyledPageContainer = styled.main<PageContainerProps>`
 	position: relative;
 	margin: 0 auto;
-	overflow: hidden;
+	${p => (p.useOverflowHidden ? "overflow: hidden;" : null)};
 `;
 
-export const PageContainer: FC = ({ children }) => {
+export const PageContainer: FC<PageContainerProps> = ({ children, useOverflowHidden }) => {
 	return (
-		<StyledPageContainer>
+		<StyledPageContainer useOverflowHidden={useOverflowHidden}>
 			<Navbar />
 			{children}
 			<LanguageSwitch />
