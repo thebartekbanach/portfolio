@@ -1,23 +1,17 @@
-import React, { FC, useLayoutEffect, useState } from "react";
-import { CSSTransition, SwitchTransition } from "react-transition-group";
+import React, { FC } from "react";
 
+import { DecorativePicture } from "~/components/shared/decorativePicture";
 import { useTranslation, Link } from "~/utils/i18next";
 import { LazyLoadChainDelegate } from "~/utils/lazyLoadChain";
-import { loadImage } from "~/utils/loadImage";
 
 import {
-	PreviewImagePlaceholder,
 	RealizationActionsWrapper,
 	RealizationDescription,
 	RealizationDetailsLink,
 	RealizationInfoWrapper,
 	RealizationName,
-	RealizationPreviewImage,
 	RealizationPreviewImageArea,
-	RealizationPreviewImagesWrapper,
 	RealizationPreviewLink,
-	RealizationPreviewSubImage,
-	RealizationPreviewSubImageWrapper,
 	RealizationWrapper
 } from "./styles";
 
@@ -42,45 +36,6 @@ export const Realization: FC<RealizationProps> = ({
 }) => {
 	const [t] = useTranslation("indexPage");
 
-	const [isPreviewImageLoaded, setIsPreviewImageLoaded] = useState(false);
-
-	// null means "not initialized"
-	// it is changing from null to false to force rerender component
-	// then when areImagesVisible is false and isPreviewImageLoaded is true
-	// it is set to true to start show animation
-	const [areSubImagesVisible, setAreSubImagesVisible] = useState(null as boolean | null);
-
-	previewImageLoadDelegate(async () => {
-		await loadImage(previewImageUrl);
-		setIsPreviewImageLoaded(true);
-	});
-
-	useLayoutEffect(() => {
-		if (!isPreviewImageLoaded) {
-			return;
-		}
-
-		if (areSubImagesVisible === false) {
-			setAreSubImagesVisible(true);
-		} else if (areSubImagesVisible === null) {
-			setAreSubImagesVisible(false);
-		}
-	}, [isPreviewImageLoaded, areSubImagesVisible]);
-
-	const previewImage = (
-		<RealizationPreviewImagesWrapper>
-			<RealizationPreviewImage src={previewImageUrl} />
-			<RealizationPreviewSubImageWrapper index={2} isVisible={areSubImagesVisible ?? false}>
-				<RealizationPreviewSubImage src={previewImageUrl} />
-			</RealizationPreviewSubImageWrapper>
-			<RealizationPreviewSubImageWrapper index={1} isVisible={areSubImagesVisible ?? false}>
-				<RealizationPreviewSubImage src={previewImageUrl} />
-			</RealizationPreviewSubImageWrapper>
-		</RealizationPreviewImagesWrapper>
-	);
-
-	const imagePlaceholder = <PreviewImagePlaceholder />;
-
 	const detailsButtonContent = t("realizations.buttons.details");
 
 	const previewTranslationType = previewType === "website" ? "preview" : "github";
@@ -89,14 +44,10 @@ export const Realization: FC<RealizationProps> = ({
 	return (
 		<RealizationWrapper>
 			<RealizationPreviewImageArea>
-				<SwitchTransition mode="in-out">
-					<CSSTransition
-						key={isPreviewImageLoaded ? "preview" : "placeholder"}
-						timeout={700}
-					>
-						{isPreviewImageLoaded ? previewImage : imagePlaceholder}
-					</CSSTransition>
-				</SwitchTransition>
+				<DecorativePicture
+					imageUrl={previewImageUrl}
+					lazyLoadDelegate={previewImageLoadDelegate}
+				/>
 			</RealizationPreviewImageArea>
 			<RealizationInfoWrapper>
 				<RealizationName>{name}</RealizationName>
