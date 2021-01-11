@@ -1,26 +1,26 @@
 {
 	"historyEntry": "{{sectionName}} - Bartek Banach portfolio",
 	"logo": {
-		"href": "/#start",
+		"href": "/en",
 		"rootPath": "/dev/",
 		"userName": "BartekBanach"
 	},
 	"navbarItems": [
 		{
-			"href": "/#skills",
+			"href": "/en#skills",
 			"text": "Skills"
 		},
 		{
-			"href": "/#realizations",
+			"href": "/en#realizations",
 			"text": "Realizations"
 		},
 		{
-			"href": "/#contact",
+			"href": "/en#contact",
 			"text": "Contact"
 		}
 	],
 	"contactButton": {
-		"href": "/#contact",
+		"href": "/en#contact",
 		"text": "Write to me"
 	}
 }
