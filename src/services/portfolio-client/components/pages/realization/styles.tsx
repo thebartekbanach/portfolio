@@ -18,17 +18,17 @@ export const RealizationPageWrapper = styled.div`
 		margin-bottom: 150px;
 
 		display: grid;
-		grid-template-columns: minmax(0.5fr, 550px) 1fr;
+		grid-template-columns: 450px 1fr;
 		grid-template-rows: auto auto auto;
 		grid-template-areas:
 			"title preview"
 			"description preview"
 			"tags preview";
-		grid-column-gap: 100px;
+		grid-column-gap: 150px;
 	}
 
-	@media (min-width: 1200px) {
-		grid-column-gap: 150px;
+	@media (min-width: 1400px) {
+		grid-template-columns: 550px 1fr;
 	}
 `;
 
