@@ -9,7 +9,8 @@ import {
 	DecorativeImage,
 	DecorativePictureWrapper,
 	DecorativeSubImage,
-	DecorativeSubImageWrapper
+	DecorativeSubImageWrapper,
+	DecorativePictureBody
 } from "./styles";
 
 interface DecorativePictureProps {
@@ -54,7 +55,7 @@ export const DecorativePicture: FC<DecorativePictureProps> = ({ imageUrl, lazyLo
 	}, [isImageLoaded, areSubImagesVisible]);
 
 	const decorativePicture = (
-		<>
+		<DecorativePictureBody>
 			<DecorativeImage src={isImageLoaded ? imageUrl : ""} />
 			<DecorativeSubImageWrapper index={2} isVisible={isImageLoaded ?? false}>
 				<DecorativeSubImage src={areSubImagesVisible !== null ? imageUrl : ""} />
@@ -62,7 +63,7 @@ export const DecorativePicture: FC<DecorativePictureProps> = ({ imageUrl, lazyLo
 			<DecorativeSubImageWrapper index={1} isVisible={areSubImagesVisible ?? false}>
 				<DecorativeSubImage src={areSubImagesVisible !== null ? imageUrl : ""} />
 			</DecorativeSubImageWrapper>
-		</>
+		</DecorativePictureBody>
 	);
 
 	return (

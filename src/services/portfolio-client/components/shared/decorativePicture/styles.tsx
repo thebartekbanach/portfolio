@@ -6,17 +6,8 @@ interface DecorativePictureWrapperProps {
 
 export const DecorativePictureWrapper = styled.div<DecorativePictureWrapperProps>`
 	position: relative;
-	transition: opacity 300ms;
-
+	width: 100%;
 	padding-top: ${p => (p.isPreviewImageLoaded ? 0 : 56.25)}%; /* 16:9 aspect ratio */
-
-	&.enter {
-		opacity: 0;
-	}
-
-	&.enter-active {
-		opacity: 1;
-	}
 `;
 
 export const DecorativePicturePlaceholder = styled.div`
@@ -61,6 +52,22 @@ export const DecorativePicturePlaceholder = styled.div`
 
 	&.exit {
 		opacity: 0;
+	}
+`;
+
+export const DecorativePictureBody = styled.div`
+	position: relative;
+	width: 100%;
+	height: 100%;
+
+	transition: opacity 300ms;
+
+	&.enter {
+		opacity: 0;
+	}
+
+	&.enter-active {
+		opacity: 1;
 	}
 `;
 
