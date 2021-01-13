@@ -50,8 +50,6 @@ func authorizeGmailService(env environment) {
 func sendEmailUsingGmail(subject, from, message string, env environment) error {
 	var msg gmail.Message
 
-	log.Println(string(subject))
-
 	emailTo := fmt.Sprintln("To:", env.gmailContactEmailAddress)
 	emailFrom := fmt.Sprintln("From:", from)
 	emailSubject := fmt.Sprintln("Subject:", subject)
