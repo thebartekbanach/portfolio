@@ -13,7 +13,6 @@ services:
     depends_on:
       - client
       - email-gateway
-      - maildev
 
   client:
     container_name: Dev.Portfolio.Client
@@ -37,15 +36,6 @@ services:
     volumes:
       - ./services/portfolio-client:/src/portfolio-client
       - ./services/email-gateway:/src/email-gateway
-    networks:
-      - dev-portfolio-internal
-    depends_on:
-      - maildev
-
-  maildev:
-    container_name: Dev.Portfolio.MailDev
-    env_file: ./env/Dev.Portfolio.MailDev.env
-    image: maildev/maildev
     networks:
       - dev-portfolio-internal
 
