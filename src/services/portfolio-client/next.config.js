@@ -11,6 +11,9 @@ module.exports = {
 	publicRuntimeConfig: {
 		localeSubpaths
 	},
+	env: {
+		EMAIL_GATEWAY_API_ADDRESS: process.env.EMAIL_GATEWAY_API_ADDRESS
+	},
 	webpack: (config, options) => {
 		if (config.resolve.plugins) {
 			config.resolve.plugins.push(new TsConfigPathsPlugin());

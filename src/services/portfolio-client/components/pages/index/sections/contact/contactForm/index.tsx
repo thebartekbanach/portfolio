@@ -72,7 +72,7 @@ export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDeskto
 
 		setIsSending(true);
 
-		const response = await fetch("/api/email-gateway/", {
+		const response = await fetch(process.env.EMAIL_GATEWAY_API_ADDRESS, {
 			headers: {
 				"content-type": "application/json; charset=UTF-8"
 			},
