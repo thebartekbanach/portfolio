@@ -1,0 +1,57 @@
+version: "3.8"
+
+services:
+  proxy:
+    container_name: Prod.Portfolio.Proxy
+    image: staticfloat/nginx-certbot
+    ports:
+      - 80:80/tcp
+      - 443:443/tcp
+    env_file:
+      - /app/env/Prod.Portfolio.Proxy.env
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - prod-portfolio-internal
+    volumes:
+      - ./services/proxy/prod:/etc/nginx/user.conf.d:ro
+      - prod-portfolio-proxy-certificates:/etc/letsencrypt
+    depends_on:
+      - client
+      - email-gateway
+    restart: "always"
+
+  -client:
+    container_name: Prod.Portfolio.Client
+    build:
+      context: ./services/client
+      dockerfile: ./prod.dockerfile
+      args:
+        - EMAIL_GATEWAY_API_ADDRESS=$EMAIL_GATEWAY_API_ADDRESS
+    env_file:
+      - /app/env/Prod.Portfolio.Client.env
+    networks:
+      - prod-portfolio-internal
+    depends_on:
+      - email-gateway
+    restart: "always"
+
+  email-gateway:
+    container_name: Prod.Portfolio.EmailGateway
+    build:
+      context: ./services/email-gateway
+      dockerfile: ./prod.dockerfile
+    env_file:
+      - /app/env/Prod.Portfolio.EmailGateway.env
+    networks:
+      - prod-portfolio-internal
+    restart: "always"
+
+networks:
+  prod-portfolio-internal:
+    name: Prod.Portfolio.Internal
+
+volumes:
+  prod-portfolio-proxy-certificates:
+    name: Prod.Portfolio.Proxy.Certificates
