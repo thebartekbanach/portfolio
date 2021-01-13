@@ -3,6 +3,7 @@ package main
 import (
 	"io/ioutil"
 	"log"
+	"mime"
 	"strings"
 
 	"github.com/tidwall/gjson"
@@ -20,5 +21,7 @@ func convertSubjectIDToTranslatedString(subjectID, lang, translationFilesPath, j
 	query := strings.ReplaceAll(jsonTranslationPath, "{id}", subjectID)
 	result := gjson.Get(string(translation), query)
 
-	return result.String()
+	encodedString := mime.QEncoding.Encode("utf-8", result.String())
+
+	return encodedString
 }

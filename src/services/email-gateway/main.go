@@ -45,9 +45,10 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 
 	translatedSubjectID := convertSubjectIDToTranslatedString(request.SubjectID, request.Lang, env.subjectTranslationsFilesPath, env.subjectJSONTranslationQuery)
 
-	if err := sendEmail(request.Lang, translatedSubjectID, request.SenderEmail, request.Message, env); err != nil {
+	if err := sendEmailUsingGmail(translatedSubjectID, request.SenderEmail, request.Message, env); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("email-send-error"))
+		log.Println(err)
 		return
 	}
 
@@ -57,6 +58,8 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 	log.Println("\n\nApplication started")
+	authorizeGmailService(env)
+
 	http.HandleFunc("/", contactFormMessageSendHandler)
 	log.Panicln(http.ListenAndServe(":80", nil))
 }

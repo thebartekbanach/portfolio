@@ -1,37 +1,70 @@
 package main
 
 import (
-	"crypto/tls"
+	"encoding/base64"
 	"fmt"
 	"log"
+	"time"
 
-	gomail "gopkg.in/gomail.v2"
+	"golang.org/x/net/context"
+	"golang.org/x/oauth2"
+	"golang.org/x/oauth2/google"
+	"google.golang.org/api/gmail/v1"
+	"google.golang.org/api/option"
 )
 
-func sendEmail(lang, title, senderEmail, message string, env environment) error {
-	var to string
+var gmailService *gmail.Service
 
-	// TODO: Create JSON file with (key, value) of (lang, email)
-	if lang == "pl" {
-		to = fmt.Sprintf("%s@%s", "kontakt", env.contactEmailHost)
-	} else {
-		to = fmt.Sprintf("%s@%s", "contact", env.contactEmailHost)
+func authorizeGmailService(env environment) {
+	config := oauth2.Config{
+		ClientID:     env.gmailClientID,
+		ClientSecret: env.gmailClientSecret,
+		Endpoint:     google.Endpoint,
+		RedirectURL:  env.gmailOAuth2RedirectURL,
 	}
 
-	msg := gomail.NewMessage()
+	token := oauth2.Token{
+		RefreshToken: env.gmailOAuth2RefreshToken,
+		AccessToken:  env.gmailOAuth2AccessToken,
+		TokenType:    "Bearer",
+		Expiry:       time.Now(),
+	}
 
-	msg.SetHeader("From", senderEmail)
-	msg.SetHeader("To", to)
-	msg.SetHeader("Subject", title)
-	msg.SetBody("text/plain", message)
+	log.Println("Initializing gmail client")
 
-	dialer := gomail.NewDialer(env.emailSMTPServerAddress, env.emailSMTPServerPort, to, "")
-	dialer.TLSConfig = &tls.Config{InsecureSkipVerify: env.isDevEnv()}
+	var tokenSource = config.TokenSource(context.Background(), &token)
 
-	if err := dialer.DialAndSend(msg); err != nil {
-		log.Println("Message send error:", err)
+	srv, err := gmail.NewService(context.Background(), option.WithTokenSource(tokenSource))
+	if err != nil {
+		log.Fatalf("Unable to retrieve Gmail client: %v", err)
+	}
+
+	gmailService = srv
+	if gmailService != nil {
+		log.Println("Email service initialized")
+	} else {
+		log.Fatal("Email service initialization failed")
+	}
+}
+
+func sendEmailUsingGmail(subject, from, message string, env environment) error {
+	var msg gmail.Message
+
+	log.Println(string(subject))
+
+	emailTo := fmt.Sprintln("To:", env.gmailContactEmailAddress)
+	emailFrom := fmt.Sprintln("From:", from)
+	emailSubject := fmt.Sprintln("Subject:", subject)
+	emailMime := "MIME-version: 1.0;\nContent-Type: text/plain; charset=\"UTF-8\";\n\n"
+
+	msgBody := []byte(emailTo + emailFrom + emailSubject + emailMime + "\n" + message)
+
+	msg.Raw = base64.URLEncoding.EncodeToString(msgBody)
+	msg.LabelIds = append(msg.LabelIds, "INBOX", "UNREAD")
+
+	_, err := gmailService.Users.Messages.Insert("me", &msg).Do()
+	if err != nil {
 		return err
 	}
-
 	return nil
 }

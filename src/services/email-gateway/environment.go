@@ -1,35 +1,34 @@
 package main
 
 import (
-	"log"
 	"os"
-	"strconv"
 )
 
 type environment struct {
 	envType                      string
-	contactEmailHost             string
-	emailSMTPServerAddress       string
-	emailSMTPServerPort          int
 	subjectTranslationsFilesPath string
 	subjectJSONTranslationQuery  string
+	gmailClientID                string
+	gmailClientSecret            string
+	gmailOAuth2AccessToken       string
+	gmailOAuth2RefreshToken      string
+	gmailOAuth2RedirectURL       string
+	gmailContactEmailAddress     string
 }
 
 func getEnvironment() environment {
-	smtpServerPort, err := strconv.Atoi(os.Getenv("EMAIL_SMTP_SERVER_PORT"))
-	if err != nil {
-		log.Panicln(err)
-	}
-
 	envType := os.Getenv("ENV")
 
 	return environment{
 		envType:                      envType,
-		contactEmailHost:             os.Getenv("CONTACT_EMAIL_HOST"),
-		emailSMTPServerAddress:       os.Getenv("EMAIL_SMTP_SERVER_ADDRESS"),
-		emailSMTPServerPort:          smtpServerPort,
 		subjectTranslationsFilesPath: os.Getenv("SUBJECT_TRANSLATIONS_FILES_PATH"),
 		subjectJSONTranslationQuery:  os.Getenv("SUBJECT_JSON_TRANSLATION_QUERY"),
+		gmailClientID:                os.Getenv("GMAIL_CLIENT_ID"),
+		gmailClientSecret:            os.Getenv("GMAIL_CLIENT_SECRET"),
+		gmailOAuth2AccessToken:       os.Getenv("GMAIL_OAUTH2_ACCESS_TOKEN"),
+		gmailOAuth2RefreshToken:      os.Getenv("GMAIL_OAUTH2_REFRESH_TOKEN"),
+		gmailOAuth2RedirectURL:       os.Getenv("GMAIL_OAUTH2_REDIRECT_URL"),
+		gmailContactEmailAddress:     os.Getenv("GMAIL_CONTACT_EMAIL_ADDRESS"),
 	}
 }
 
