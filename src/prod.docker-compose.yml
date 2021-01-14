@@ -46,6 +46,8 @@ services:
       - /app/env/Prod.Portfolio.EmailGateway.env
     networks:
       - prod-portfolio-internal
+    volumes:
+      - ./services/portfolio-client:/src/portfolio-client:ro
     restart: "always"
 
 networks:
