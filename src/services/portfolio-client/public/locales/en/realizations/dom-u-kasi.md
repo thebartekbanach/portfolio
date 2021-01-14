@@ -1,4 +1,4 @@
-Dom u Kasi to strona internetowa napisana w ReactJS.
+Dom u Kasi to strona internetowa napisana w ReactJS (EN).
 
 Strona zawiera czytelny CMS za pomocą którego można edytować całą treść zawartą na stronie internetowej. Skrypty napisane w Javascripcie dodają stronie dynamizmu.
 

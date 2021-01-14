@@ -11,11 +11,13 @@ import { RealizationInfo, RealizationPageContent } from "~/components/pages/real
 interface RealizationPageProps {
 	realizationInfo: RealizationInfo | null;
 	realizationContent: string | null;
+	lang: string;
 }
 
 const RealizationPage: NextPage<RealizationPageProps> = ({
 	realizationInfo,
-	realizationContent
+	realizationContent,
+	lang
 }) => {
 	if (realizationInfo === null || realizationContent === null) {
 		return (
@@ -33,6 +35,7 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 			<PageHead pageTitle="Bartek Banach - realizacje" description="TODO" />
 			<PageContainer>
 				<RealizationPageContent
+					lang={lang}
 					realizationInfo={realizationInfo}
 					realizationContent={realizationContent}
 				/>
@@ -40,8 +43,6 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 		</>
 	);
 };
-
-const realizationNotFound = { realizationInfo: null, realizationContent: null };
 
 type GetServerSidePropsContextWithI18n = GetServerSidePropsContext & { req?: { i18n: I18n } };
 
@@ -61,9 +62,9 @@ export const getServerSideProps: GetServerSideProps<RealizationPageProps> = asyn
 
 		const rawContent = await fs.readFile(`${cwd}/public` + info.contentUrl, "utf-8");
 		const renderedContent = marked(rawContent);
-		return { props: { realizationInfo: info, realizationContent: renderedContent } };
+		return { props: { realizationInfo: info, realizationContent: renderedContent, lang } };
 	} catch (err) {
-		return { props: realizationNotFound };
+		return { props: { realizationInfo: null, realizationContent: null, lang } };
 	}
 };
 

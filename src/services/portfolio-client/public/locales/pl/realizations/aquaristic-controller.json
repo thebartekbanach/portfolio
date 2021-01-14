@@ -1,14 +1,14 @@
 {
-	"id": "majkel-music",
-	"title": "Majkel Music",
+	"id": "aquaristic-controller",
+	"title": "Kontroler Akwarystyczny",
 	"realizationTime": {
 		"from": "2017-06-27",
 		"to": "2017-10-27"
 	},
-	"previewPicture": "/assets/pages/index/realizations/works/majkel-music.png",
+	"previewPicture": "/assets/pages/index/realizations/works/aquaristic-controller.png",
 	"contentUrl": "/locales/pl/realizations/majkel-music.md",
-	"previewUrl": "https://kajakgo.pl",
-	"previewType": "website",
+	"previewUrl": "https://github.com/thebartekbanach/simple-aquaristic-controller",
+	"previewType": "github",
 	"tags": {
 		"#5e8fea": [
 			"ASP.NET Core 1.1",

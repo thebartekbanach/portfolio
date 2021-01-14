@@ -1,6 +1,7 @@
 import { FC } from "react";
 
 import { DecorativePicture } from "~/components/shared/decorativePicture";
+import { useTranslation } from "~/utils/i18next";
 
 import {
 	RealizationName,
@@ -27,31 +28,30 @@ export interface RealizationInfo {
 	previewPicture: string;
 	contentUrl: string;
 	previewUrl: string;
+	previewType: "github" | "website";
 	tags: Record<string, string[]>;
 }
 
 interface RealizationPageContentProps {
 	realizationInfo: RealizationInfo;
 	realizationContent: string;
+	lang: string;
 }
-
-const formatDate = (dateString: string) => {
-	const date = new Date(dateString);
-
-	const day = date.getDate();
-	const year = date.getFullYear();
-
-	const monthName = date.toLocaleString("pl", { month: "short" });
-	const monthNameCapitalized = monthName.charAt(0).toUpperCase() + monthName.slice(1);
-
-	return `${day} ${monthNameCapitalized} ${year}`;
-};
 
 export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 	realizationInfo,
-	realizationContent
+	realizationContent,
+	lang
 }) => {
-	const { title, realizationTime, previewPicture, previewUrl, tags } = realizationInfo;
+	const [t] = useTranslation("realizationPage");
+	const {
+		title,
+		realizationTime,
+		previewPicture,
+		previewUrl,
+		previewType,
+		tags
+	} = realizationInfo;
 
 	const renderedTags = Object.keys(tags)
 		.map(tagColor => ({ tagColor, items: tags[tagColor] }))
@@ -62,6 +62,21 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 				</RealizationTag>
 			))
 		);
+
+	console.log(`FORMATTING DATE WITH LANG: ${lang}`);
+
+	const formatDate = (dateString: string) => {
+		const date = new Date(dateString);
+
+		const day = date.getDate();
+		const year = date.getFullYear();
+		const month = date.getMonth();
+
+		const months = t("common:shortMonthNames", { returnObjects: true });
+		const monthName = months[month];
+
+		return `${day} ${monthName} ${year}`;
+	};
 
 	return (
 		<RealizationPageWrapper>
@@ -78,7 +93,11 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 					<DecorativePicture imageUrl={previewPicture} />
 					<RealizationPreviewButtonWrapper>
 						<RealizationPreviewButton href={previewUrl}>
-							Podgląd
+							{t(
+								previewType === "github"
+									? "previewGithubButton"
+									: "previewWebsiteButton"
+							)}
 						</RealizationPreviewButton>
 					</RealizationPreviewButtonWrapper>
 				</RealizationPreviewImageAndButtonWrapper>

@@ -342,9 +342,9 @@
 				"previewUrl": "https://github.com/thebartekbanach/hkp-project"
 			},
 			{
-				"id": "simple-aquaristic-controller",
+				"id": "aquaristic-controller",
 				"previewImageUrl": "/assets/pages/index/realizations/works/aquaristic-controller.png",
-				"name": "Aquaristic Controller",
+				"name": "Kontroler akwarystyczy",
 				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia wodę w akwarium i steruje czasowo urządzeniami takimi jak oświetlenie, napowietrzanie lub cokolwiek innego.",
 				"previewType": "github",
 				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
