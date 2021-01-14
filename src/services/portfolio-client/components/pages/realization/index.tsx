@@ -35,7 +35,7 @@ interface RealizationPageContentProps {
 	realizationContent: string;
 }
 
-const convertDate = (dateString: string) => {
+const formatDate = (dateString: string) => {
 	const date = new Date(dateString);
 
 	const day = date.getDate();
@@ -68,9 +68,9 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 			<RealizationNameAndDateWrapper>
 				<RealizationName>{title}</RealizationName>
 				<RealizationDate>
-					{convertDate(realizationTime.from)}
+					{formatDate(realizationTime.from)}
 					<RealizationDateArrow />
-					{convertDate(realizationTime.to)}
+					{formatDate(realizationTime.to)}
 				</RealizationDate>
 			</RealizationNameAndDateWrapper>
 			<RealizationPreviewImageAndButtonArea>
