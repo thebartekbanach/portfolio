@@ -22,7 +22,7 @@ services:
       - email-gateway
     restart: "always"
 
-  -client:
+  client:
     container_name: Prod.Portfolio.Client
     build:
       context: ./services/client
