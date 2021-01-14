@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source /app/env/Prod.KajakGo.Deploy.env
+source /app/env/Prod.Portfolio.Deploy.env
 
 function gh_curl() {
   curl -H "Authorization: token $GITHUB_PERSONAL_ACCESS_TOKEN" \
@@ -22,7 +22,7 @@ mv /app/tmp/latest/$(tar -tf /app/tmp/latest.tar.gz | head -n 1)/{.[!.],}* /app/
 rm /app/tmp/latest.tar.gz
 
 echo "Building production environment"
-bash /app/tmp/latest/src/scripts/prod/build.sh
+bash /app/tmp/latest/src/scripts/build.sh
 
 echo "Turning the production environment down"
 cd /app/project/src
