@@ -117,7 +117,6 @@ export const SkillBoardCategoryItemIcon = styled.img`
 
 export const SkillBoardCategoryItemName = styled.h5`
 	margin: 10px 0 0 0;
-	word-spacing: 100vw;
 
 	${useFont.roboto.bold};
 	letter-spacing: 1px;
