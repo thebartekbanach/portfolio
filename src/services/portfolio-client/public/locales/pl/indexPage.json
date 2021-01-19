@@ -56,11 +56,11 @@
 								"name": "Redux-saga"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/reselect.svg",
 								"name": "Reselect"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/deox.svg",
 								"name": "Deox"
 							},
 							{
@@ -81,7 +81,7 @@
 						"categoryName": "Testowanie w React",
 						"items": [
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/enzyme.svg",
 								"name": "Enzyme"
 							},
 							{
@@ -89,7 +89,7 @@
 								"name": "Jest"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/redux-saga-test-plan.svg",
 								"name": "Redux-saga-test-plan"
 							}
 						]
@@ -114,7 +114,7 @@
 								"name": "JQuery"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/photoswipe.svg",
 								"name": "Photoswipe"
 							}
 						]
@@ -196,7 +196,7 @@
 								"name": "Dotnet Core"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/backend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/entity-framework-core.svg",
 								"name": "Entity Framework Core"
 							},
 							{
@@ -291,11 +291,11 @@
 								"name": "PlatformIO"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/cad.svg",
 								"name": "Projektowanie 3D"
 							},
 							{
-								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/3d-printing.svg",
 								"name": "Druk 3D"
 							}
 						]
@@ -322,10 +322,10 @@
 		},
 		"projects": [
 			{
-				"id": "majkel-music",
+				"id": "kajakgo",
 				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
-				"name": "Majkel Music",
-				"description": "Strona zawiera czytelny CMS za pomocą którego można edytować całą treść zawartą na stronie internetowej. Skrypty napisane w Javascripcie dodają stronie dynamizmu.",
+				"name": "KajakGO",
+				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
 				"previewType": "website",
 				"previewUrl": "https://kajakgo.pl"
 			},

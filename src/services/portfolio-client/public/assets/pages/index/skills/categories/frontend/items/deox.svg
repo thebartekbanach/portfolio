@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-deox">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="deox" clip-path="url(#clip-deox)">
+    <rect width="200" height="200" fill="#fff"/>
+    <path id="Path_320" data-name="Path 320" d="M-37.324-87.42h32.24q21.452,0,33.294,11.47T40.052-43.772q0,20.708-11.842,32.24T-5.084,0h-32.24Zm31.248,74.4q30.132,0,30.132-30.752Q24.056-74.4-6.076-74.4H-21.328v61.38Z" transform="translate(98.324 143.42)" fill="#764abc"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-enzyme">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="enzyme" clip-path="url(#clip-enzyme)">
+    <rect width="200" height="200" fill="#fff"/>
+    <path id="Path_322" data-name="Path 322" d="M-27.094-87.42H31.434v12.648h-42.9v24.056H28.954v12.524H-11.47v25.544h42.9V0H-27.094Z" transform="translate(98.094 143.42)" fill="#009688"/>
+  </g>
+</svg>

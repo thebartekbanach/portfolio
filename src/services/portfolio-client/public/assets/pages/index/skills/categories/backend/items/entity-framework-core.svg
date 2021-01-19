@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <clipPath id="clip-entity_framework_core">
+      <rect width="200" height="200"/>
+    </clipPath>
+  </defs>
+  <g id="entity_framework_core" data-name="entity framework core" clip-path="url(#clip-entity_framework_core)">
+    <rect width="200" height="200" fill="#fff"/>
+    <path id="Path_324" data-name="Path 324" d="M-62.186-87.42H-3.658v12.648h-42.9v24.056H-6.138v12.524H-46.562v25.544h42.9V0H-62.186Zm73.036,0H68.138v12.772H26.6V-50.84h39.06v12.772H26.6V0H10.85Z" transform="translate(97.186 143.42)" fill="#764abc"/>
+  </g>
+</svg>
