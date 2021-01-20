@@ -105,7 +105,7 @@ export const DecorativeSubImageWrapper = styled.div<DecorativeSubImageWrapperPro
 	border-radius: 3px;
 	box-shadow: rgba(205, 205, 205, 0.45) 0px 0px 25px;
 
-	transform: translate(-50%, ${p => (!p.isVisible ? -10 : p.index === 2 ? 15 : 30)}px);
+	transform: translate(-50%, ${p => (!p.isVisible ? 0 : p.index === 2 ? 15 : 30)}px);
 	transition: transform 300ms;
 	transition-delay: ${p => (p.index === 2 ? 200 : 400)}ms;
 `;
