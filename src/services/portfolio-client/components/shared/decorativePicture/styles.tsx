@@ -7,7 +7,7 @@ interface DecorativePictureWrapperProps {
 export const DecorativePictureWrapper = styled.div<DecorativePictureWrapperProps>`
 	position: relative;
 	width: 100%;
-	padding-top: ${p => (p.isPreviewImageLoaded ? 0 : 56.25)}%; /* 16:9 aspect ratio */
+	padding-top: ${p => (p.isPreviewImageLoaded ? 0 : 52)}%;
 `;
 
 export const DecorativePicturePlaceholder = styled.div`
@@ -17,7 +17,7 @@ export const DecorativePicturePlaceholder = styled.div`
 	left: 0;
 	width: 100%;
 
-	padding-top: 56.25%; /* 16:9 aspect ratio */
+	padding-top: 52%;
 
 	background: #f1f1f1;
 
@@ -58,7 +58,6 @@ export const DecorativePicturePlaceholder = styled.div`
 export const DecorativePictureBody = styled.div`
 	position: relative;
 	width: 100%;
-	height: 100%;
 
 	transition: opacity 300ms;
 
@@ -71,13 +70,22 @@ export const DecorativePictureBody = styled.div`
 	}
 `;
 
-export const DecorativeImage = styled.img`
+export const DecorativeImageWrapper = styled.div`
 	position: relative;
-	max-width: 100%;
+	padding-top: 52%;
+`;
+
+export const DecorativeImage = styled.img`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 	z-index: 3;
+	object-fit: cover;
 
 	border-radius: 3px;
-	box-shadow: 0px 3px 15px 0px rgba(240, 250, 254, 0.2);
+	box-shadow: rgba(205, 205, 205, 0.45) 0px 0px 25px;
 `;
 
 interface DecorativeSubImageWrapperProps {
@@ -95,10 +103,9 @@ export const DecorativeSubImageWrapper = styled.div<DecorativeSubImageWrapperPro
 
 	overflow: hidden;
 	border-radius: 3px;
-	box-shadow: 0px 3px 15px 0px rgba(240, 250, 254, 0.2);
+	box-shadow: rgba(205, 205, 205, 0.45) 0px 0px 25px;
 
-	transform: translate(-50%, ${p => (!p.isVisible ? -10 : p.index === 2 ? 15 : 30)}px)
-		rotate(180deg);
+	transform: translate(-50%, ${p => (!p.isVisible ? -10 : p.index === 2 ? 15 : 30)}px);
 	transition: transform 300ms;
 	transition-delay: ${p => (p.index === 2 ? 200 : 400)}ms;
 `;
