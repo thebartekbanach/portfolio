@@ -10,15 +10,8 @@
 	"previewUrl": "https://domukasi.pl",
 	"previewType": "website",
 	"tags": {
-		"#5e8fea": [
-			"ASP.NET Core 1.1",
-			"Razor Pages",
-			"Entity Framework Core",
-			"FakeItEasy",
-			"AspNetCore.Identity",
-			"Npgsql"
-		],
-		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["SASS"]
+		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "MobX", "Photoswipe"],
+		"#9672e7": ["Express", "Marked", "Sharp"],
+		"#c26eda": ["Tslint"]
 	}
 }

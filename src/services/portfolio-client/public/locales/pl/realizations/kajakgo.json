@@ -1,0 +1,17 @@
+{
+	"id": "kajakgo",
+	"title": "KajakGO",
+	"realizationTime": {
+		"from": "2017-06-27",
+		"to": "2017-10-27"
+	},
+	"previewPicture": "/assets/pages/index/realizations/works/kajakgo.png",
+	"contentUrl": "/locales/pl/realizations/kajakgo.md",
+	"previewUrl": "https://kajakgo.pl",
+	"previewType": "website",
+	"tags": {
+		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "Deox", "Express"],
+		"#9672e7": ["Eslint", "Stylelint", "Prettier", "Webpack"],
+		"#c26eda": ["Docker", "Docker compose", "Nginx"]
+	}
+}

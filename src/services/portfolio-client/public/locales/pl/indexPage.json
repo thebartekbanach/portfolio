@@ -323,7 +323,7 @@
 		"projects": [
 			{
 				"id": "kajakgo",
-				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
+				"previewImageUrl": "/assets/pages/index/realizations/works/kajakgo.png",
 				"name": "KajakGO",
 				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
 				"previewType": "website",
@@ -338,12 +338,12 @@
 				"previewUrl": "https://domukasi.pl"
 			},
 			{
-				"id": "hkp-project",
-				"previewImageUrl": "/assets/pages/index/realizations/works/hkp-project.png",
-				"name": "HKP Project",
-				"description": "Witryna stworzona dla firmy zajmującej się haftem komputerowym. Prosta oraz czytelna, w pełni responsywna. Gulp.js pozwala na wygodniejszą edycję treści i wglądu na żywo.",
-				"previewType": "github",
-				"previewUrl": "https://github.com/thebartekbanach/hkp-project"
+				"id": "majkel-music",
+				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
+				"name": "Majkel Music",
+				"description": "Witryna stworzona dla lokalnej gwiazdy sceny disco polo. Zintegrowany, intuicyjny system CMS pozwala na łatwą edycję treści zawartych na stronie internetowej, a ręcznie napisany odtwarzacz muzyki pozwala odsłuchać wszystkie utwory muzyka.",
+				"previewType": "website",
+				"previewUrl": "https://google.com"
 			},
 			{
 				"id": "aquaristic-controller",

@@ -1,10 +1,13 @@
-Strona zawiera czytelny CMS za pomocą którego można edytować całą treść zawartą na stronie internetowej. Skrypty napisane w Javascripcie dodają stronie dynamizmu.
+Projekt Majkel Music to strona internetowa lokalnej gwiazdy disco polo. Można na niej znaleźć wszystkie utwory artysty i je odsłuchać przy pomocy ręcznie napisanego, wbudowanego odtwarzacza muzyki.
 
-Aplikacja wykonana za pomocą frameworka ASP.NET 5. Zawartość HTML jest generowana za pomocą silnika Razor. Strona zawiera czytelny backend za pomocą którego można edytować całą treść zawartą na stronie internetowej.
+Na stronie dostępne są 3 rodzaje treści stworzonych przez muzyka:
 
-Skrypty napisane w Javascripcie dodają stronie dynamizmu. W tej aplikacji można również przesłuchać wszystkie utwory artysty za pomocą wbudowanego responsywnego odtwarzacza. Użyłem tutaj bazy danych PostgreSQL. Całość jest bardzo szybka i wydajna.
-Strona zawiera czytelny CMS za pomocą którego można edytować całą treść zawartą na stronie internetowej. Skrypty napisane w Javascripcie dodają stronie dynamizmu.
+-   pojedyńcze utwory
+-   całe albumy
+-   teledyski
 
-Aplikacja wykonana za pomocą frameworka ASP.NET 5. Zawartość HTML jest generowana za pomocą silnika Razor. Strona zawiera czytelny backend za pomocą którego można edytować całą treść zawartą na stronie internetowej.
+Edycja treści na stronie jest niezwykle prosta, dzięki systemowi CMS stworzonemu dokładnie pod wymagania projektu. Dzięki temu, system zarządzania treścią nie zawiera multum zbędnych opcji, co stanowczo upraszcza jego użycie dla osób nie obeznanych z tego typu aplikacjami.
 
-Skrypty napisane w Javascripcie dodają stronie dynamizmu. W tej aplikacji można również przesłuchać wszystkie utwory artysty za pomocą wbudowanego responsywnego odtwarzacza. Użyłem tutaj bazy danych PostgreSQL. Całość jest bardzo szybka i wydajna.
+Cała strona jest w pełni responsywna, tak samo CMS jak i klient strony dostosowane są do urządzeń typu desktop, jak i urządzeń mobilnych. Odtwarzacz muzyki również jest dostosowany do każdego typu urządzeń.
+
+Całość jest bardzo szybka i wydajna dzięki użyciu frameworka .NET CORE 1.1. Za przechowywanie danych odpowiada baza danych PostgreSQL.

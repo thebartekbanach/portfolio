@@ -6,19 +6,17 @@
 		"to": "2017-10-27"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/aquaristic-controller.png",
-	"contentUrl": "/locales/pl/realizations/majkel-music.md",
+	"contentUrl": "/locales/pl/realizations/aquaristic-controller.md",
 	"previewUrl": "https://github.com/thebartekbanach/simple-aquaristic-controller",
 	"previewType": "github",
 	"tags": {
-		"#5e8fea": [
-			"ASP.NET Core 1.1",
-			"Razor Pages",
-			"Entity Framework Core",
-			"FakeItEasy",
-			"AspNetCore.Identity",
-			"Npgsql"
-		],
-		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["SASS"]
+		"#00979c": [
+			"C++",
+			"Arduino Due",
+			"Arduino Framework",
+			"PlatformIO",
+			"Projektowanie 3D",
+			"Druk 3D"
+		]
 	}
 }
