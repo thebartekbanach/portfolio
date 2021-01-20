@@ -323,7 +323,7 @@
 		"projects": [
 			{
 				"id": "kajakgo",
-				"previewImageUrl": "/assets/pages/index/realizations/works/kajakgo.png",
+				"previewImageUrl": "/assets/pages/index/realizations/works/kajakgo.jpg",
 				"name": "KajakGO",
 				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
 				"previewType": "website",
@@ -331,7 +331,7 @@
 			},
 			{
 				"id": "dom-u-kasi",
-				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.png",
+				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
 				"name": "Dom u Kasi",
 				"description": "Strona interntowa domu letniskowego do wynajęcia. Responsywna oraz dynamiczna, wykonana przy pomocy React, MobX i NextJS. Strona ładuje się szybko nawet przy wolnym łączu dzięki opóźnionemu ładowaniu wszystkich obrazków.",
 				"previewType": "website",
