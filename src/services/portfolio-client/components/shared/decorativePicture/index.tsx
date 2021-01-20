@@ -60,7 +60,7 @@ export const DecorativePicture: FC<DecorativePictureProps> = ({ imageUrl, lazyLo
 			<DecorativeImageWrapper>
 				<DecorativeImage src={isImageLoaded ? imageUrl : ""} />
 			</DecorativeImageWrapper>
-			<DecorativeSubImageWrapper index={2} isVisible={isImageLoaded ?? false}>
+			<DecorativeSubImageWrapper index={2} isVisible={areSubImagesVisible ?? false}>
 				<DecorativeSubImage src={areSubImagesVisible !== null ? imageUrl : ""} />
 			</DecorativeSubImageWrapper>
 			<DecorativeSubImageWrapper index={1} isVisible={areSubImagesVisible ?? false}>
