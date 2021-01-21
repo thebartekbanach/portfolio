@@ -10,14 +10,16 @@ import "~/public/fonts/roboto/regular/include.css";
 import "~/public/fonts/roboto/medium/include.css";
 import "~/public/fonts/roboto/bold/include.css";
 
-import { AppProps } from "next/app";
+import App, { AppContext, AppInitialProps, AppProps } from "next/app";
 import { FC, useEffect, useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import { appWithTranslation } from "~/utils/i18next";
 import { scrollToElement } from "~/utils/scrollToElement";
 
-const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
+type MyAppType = FC<AppProps> & { getInitialProps: (ctx: AppContext) => Promise<AppInitialProps> };
+
+const MyApp: MyAppType = ({ Component, pageProps, router }) => {
 	const [isPageFadedIn, setIsPageFadedIn] = useState(false);
 
 	useEffect(() => setIsPageFadedIn(true), []);
@@ -52,6 +54,10 @@ const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
 			</SwitchTransition>
 		</CSSTransition>
 	);
+};
+MyApp.getInitialProps = async (appContext: AppContext) => {
+	const pageProps = await App.getInitialProps(appContext);
+	return { ...pageProps };
 };
 
 export default appWithTranslation(MyApp);
