@@ -1,6 +1,7 @@
 {
 	"id": "aquaristic-controller",
 	"title": "Kontroler Akwarystyczny",
+	"shortPageDescription": "Prosty prototyp kontrolera akwarystycznego z obsługą automatycznej podmiany wody i dolewki ze zbiornika rezerwowego",
 	"realizationTime": {
 		"from": "2019-07-11",
 		"to": "2020-02-10"

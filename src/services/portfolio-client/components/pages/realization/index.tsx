@@ -21,6 +21,7 @@ import {
 export interface RealizationInfo {
 	id: string;
 	title: string;
+	shortPageDescription: string;
 	realizationTime: {
 		from: string;
 		to: string;

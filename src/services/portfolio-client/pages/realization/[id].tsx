@@ -37,7 +37,7 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 				pageTitle={t("pageMeta.pageTitle", {
 					replace: { realizationName: realizationInfo?.title }
 				})}
-				description={realizationContent}
+				description={realizationInfo.shortPageDescription}
 				coverImage={realizationInfo.previewPicture}
 			/>
 			<PageContainer>
