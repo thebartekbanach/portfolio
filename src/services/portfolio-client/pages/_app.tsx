@@ -22,8 +22,6 @@ const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
 
 	useEffect(() => setIsPageFadedIn(true), []);
 
-	console.log(isPageFadedIn);
-
 	const [pagePath, sectionId] = router.asPath.split("#");
 
 	const scrollToTopOrToElementWhenPageIsInvisible = () => {
