@@ -53,7 +53,7 @@ export const Realization: FC<RealizationProps> = ({
 				<RealizationName>{name}</RealizationName>
 				<RealizationDescription>{description}</RealizationDescription>
 				<RealizationActionsWrapper>
-					<Link href={detailsUrl} passHref>
+					<Link href={detailsUrl} passHref scroll={false}>
 						<RealizationDetailsLink>{detailsButtonContent}</RealizationDetailsLink>
 					</Link>
 					<RealizationPreviewLink href={previewUrl}>
