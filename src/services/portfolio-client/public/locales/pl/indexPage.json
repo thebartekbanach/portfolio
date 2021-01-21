@@ -337,7 +337,7 @@
 				"id": "dom-u-kasi",
 				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
 				"name": "Dom u Kasi",
-				"description": "Strona interntowa domu letniskowego do wynajęcia. Responsywna oraz dynamiczna, wykonana przy pomocy React, MobX i NextJS. Strona ładuje się szybko nawet przy wolnym łączu dzięki opóźnionemu ładowaniu wszystkich obrazków.",
+				"description": "Witryna internetowa domku letniskowego do wynajęcia. Responsywna oraz dynamiczna, napisana w React. Strona ładuje się szybko nawet przy wolnym łączu dzięki specjalnej optymalizacji ładowania obrazków.",
 				"previewType": "website",
 				"previewUrl": "https://domukasi.pl"
 			},
@@ -345,7 +345,7 @@
 				"id": "majkel-music",
 				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
 				"name": "Majkel Music",
-				"description": "Witryna stworzona dla lokalnej gwiazdy sceny disco polo. Zintegrowany, intuicyjny system CMS pozwala na łatwą edycję treści zawartych na stronie internetowej, a ręcznie napisany odtwarzacz muzyki pozwala odsłuchać wszystkie utwory muzyka.",
+				"description": "Witryna stworzona dla lokalnej gwiazdy muzycznej. Zintegrowany, łatwy w obsłudze system CMS umożliwia edycję treści nawet dla osób nie obeznanych z tego typu systemami.",
 				"previewType": "website",
 				"previewUrl": "https://google.com"
 			},
@@ -353,7 +353,7 @@
 				"id": "aquaristic-controller",
 				"previewImageUrl": "/assets/pages/index/realizations/works/aquaristic-controller.png",
 				"name": "Kontroler akwarystyczy",
-				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia wodę w akwarium i steruje czasowo urządzeniami takimi jak oświetlenie, napowietrzanie lub cokolwiek innego.",
+				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia parującą wodę, dynamicznie steruje oświetleniem w ciągu dnia i wiele więcej!",
 				"previewType": "github",
 				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
 			}
