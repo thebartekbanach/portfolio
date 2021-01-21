@@ -157,6 +157,11 @@ export const RealizationDescription = styled.div`
 		grid-area: description;
 		margin-top: 0;
 	}
+
+	code {
+		${useFont.nunitoSans.semiBold};
+		color: #4764e6;
+	}
 `;
 
 export const RealizationTags = styled.div`
