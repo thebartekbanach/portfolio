@@ -10,34 +10,41 @@ import "~/public/fonts/roboto/regular/include.css";
 import "~/public/fonts/roboto/medium/include.css";
 import "~/public/fonts/roboto/bold/include.css";
 
-import App from "next/app";
+import { AppProps } from "next/app";
+import { FC, useEffect, useState } from "react";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import { appWithTranslation } from "~/utils/i18next";
 import { scrollToElement } from "~/utils/scrollToElement";
 
-class MyApp extends App {
-	render() {
-		const { Component, pageProps } = this.props;
+const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
+	const [isPageFadedIn, setIsPageFadedIn] = useState(false);
 
-		const [pagePath, sectionId] = this.props.router.asPath.split("#");
+	useEffect(() => setIsPageFadedIn(true));
 
-		const scrollToTopOrToElementWhenPageIsInvisible = () => {
-			if (sectionId !== undefined) {
-				const section = document.getElementById(sectionId);
+	const [pagePath, sectionId] = router.asPath.split("#");
 
-				if (section === null) {
-					return;
-				}
+	const scrollToTopOrToElementWhenPageIsInvisible = () => {
+		if (sectionId !== undefined) {
+			const section = document.getElementById(sectionId);
 
-				scrollToElement(section);
+			if (section === null) {
 				return;
 			}
 
-			window.scrollTo({ top: 0, left: 0 });
-		};
+			scrollToElement(section);
+			return;
+		}
 
-		return (
+		window.scrollTo({ top: 0, left: 0 });
+	};
+
+	return (
+		<CSSTransition
+			in={isPageFadedIn}
+			timeout={300}
+			onEnter={scrollToTopOrToElementWhenPageIsInvisible}
+		>
 			<SwitchTransition mode="out-in">
 				<CSSTransition
 					key={pagePath}
@@ -47,8 +54,8 @@ class MyApp extends App {
 					<Component {...pageProps} />
 				</CSSTransition>
 			</SwitchTransition>
-		);
-	}
-}
+		</CSSTransition>
+	);
+};
 
 export default appWithTranslation(MyApp);
