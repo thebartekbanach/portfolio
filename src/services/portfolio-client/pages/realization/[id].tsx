@@ -23,8 +23,13 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 }) => {
 	const [t] = useTranslation("realizationPage");
 
-	if (realizationInfo !== null && realizationContent !== null) {
-		pageContent = (
+	if (realizationInfo === null || realizationContent === null) {
+		return (
+			<PageContainer>
+				<DefaultErrorPage statusCode={404} title={t("pageMeta.realizationNotFoundTitle")} />
+			</PageContainer>
+		);
+	}
 
 	return (
 		<>
