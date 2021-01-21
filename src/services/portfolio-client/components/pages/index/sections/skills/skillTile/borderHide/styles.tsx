@@ -75,7 +75,8 @@ interface SideElementBorderHideProps extends ElementBorderHideProps {
 export const SideElementBorderHide = styled.div<SideElementBorderHideProps>`
 	z-index: 2;
 
-	transform: rotateY(${p => (p.animationStartPosition === "left" ? 0 : 180)}deg);
+	transform: rotateY(${p => (p.animationStartPosition === "left" ? 0 : 180)}deg)
+		translateY(${p => (p.animationStartPosition === "left" ? 0 : -1)}px);
 
 	&,
 	div {
