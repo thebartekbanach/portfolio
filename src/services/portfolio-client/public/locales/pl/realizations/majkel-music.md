@@ -1,13 +1,9 @@
-Projekt Majkel Music to strona internetowa lokalnej gwiazdy disco polo. Można na niej znaleźć wszystkie utwory artysty i je odsłuchać przy pomocy ręcznie napisanego, wbudowanego odtwarzacza muzyki.
+Projekt `Majkel Music` to strona internetowa lokalnej gwiazdy disco polo. Na witrynie znaleźć można najnowsze aktualności dotyczące działalności Michała, jego twórczość, podzieloną na trzy kategorie: piosenki, albumy oraz teledyski a także trasę koncertową oraz informacje kontaktowe.
 
-Na stronie dostępne są 3 rodzaje treści stworzonych przez muzyka:
+Wszystkie utwory oraz albumy można odsłuchać przy pomocy wbudowanego, responsywnego odtwarzacza muzyki.
 
--   pojedyńcze utwory
--   całe albumy
--   teledyski
+Edycja treści na stronie jest niezwykle prosta, dzięki systemowi CMS skrojonemu dokładnie pod wymagania projektu. Dzięki temu, system zarządzania treścią nie zawiera wielu zbędnych opcji, co stanowczo upraszcza jego użycie dla osób, które nie są obeznane z tego typu systemami.
 
-Edycja treści na stronie jest niezwykle prosta, dzięki systemowi CMS stworzonemu dokładnie pod wymagania projektu. Dzięki temu, system zarządzania treścią nie zawiera multum zbędnych opcji, co stanowczo upraszcza jego użycie dla osób nie obeznanych z tego typu aplikacjami.
+Cała strona jest w pełni responsywna, tak samo CMS jak i klient strony dostosowane są do urządzeń typu desktop oraz urządzeń mobilnych.
 
-Cała strona jest w pełni responsywna, tak samo CMS jak i klient strony dostosowane są do urządzeń typu desktop, jak i urządzeń mobilnych. Odtwarzacz muzyki również jest dostosowany do każdego typu urządzeń.
-
-Całość jest bardzo szybka i wydajna dzięki użyciu frameworka .NET CORE 1.1. Za przechowywanie danych odpowiada baza danych PostgreSQL.
+Całość jest bardzo szybka i wydajna dzięki użyciu frameworka `.NET CORE 1.1`. Za przechowywanie danych odpowiada baza danych `PostgreSQL` a klientem bazy danych jest biblioteka `Entity Framework Core` ze sterownikiem `Npgsql`. Frontend aplikacji renderowany jest przy pomocy silnika `Razor`, style napisane zostały przy użyciu `Sass`. Skrypty oraz style aplikacji zostały skompilowane oraz skompresowane używając technologii `Gulp.js`.
