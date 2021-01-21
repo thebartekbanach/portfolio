@@ -20,7 +20,9 @@ import { scrollToElement } from "~/utils/scrollToElement";
 const MyApp: FC<AppProps> = ({ Component, pageProps, router }) => {
 	const [isPageFadedIn, setIsPageFadedIn] = useState(false);
 
-	useEffect(() => setIsPageFadedIn(true));
+	useEffect(() => setIsPageFadedIn(true), []);
+
+	console.log(isPageFadedIn);
 
 	const [pagePath, sectionId] = router.asPath.split("#");
 
