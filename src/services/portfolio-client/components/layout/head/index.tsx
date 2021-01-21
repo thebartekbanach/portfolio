@@ -26,6 +26,10 @@ export const PageHead: FC<PageHeadProps> = props => {
 	pageProps.locale = pageProps.locale ?? t("facebook.locale");
 	pageProps.coverImage = pageProps.coverImage ?? t("facebook.coverImage");
 
+	if (pageProps.coverImage?.charAt(0) === "/") {
+		pageProps.coverImage = "https://bartekbanach.dev" + pageProps.coverImage;
+	}
+
 	return (
 		<Head>
 			<title>{pageProps.pageTitle}</title>
