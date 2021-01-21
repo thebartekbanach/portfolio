@@ -14,21 +14,17 @@ const StyledPageContainer = styled.main<PageContainerProps>`
 	${p => (p.useOverflowHidden ? "overflow: hidden;" : null)};
 
 	transition: opacity 300ms;
+	opacity: 0;
 
-	&.enter {
-		opacity: 0;
-	}
-
-	&.enter-active {
-		opacity: 1;
-	}
-
-	&.exit-active {
-		opacity: 0;
-	}
-
+	&.enter,
+	&.exit-active,
 	&.exit {
 		opacity: 0;
+	}
+
+	&.enter-active,
+	&.enter-done {
+		opacity: 1;
 	}
 `;
 
