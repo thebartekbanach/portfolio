@@ -1,10 +1,6 @@
 {
 	"facebook": {
-		"coverImage": "TODO",
+		"coverImage": "https://bartekbanach.dev/assets/pages/index/welcome/developerPicture.svg",
 		"locale": "pl_PL"
-	},
-	"page": {
-		"rootTitle": "Bartek Banach - portfolio",
-		"rootDescription": "TODO"
 	}
 }

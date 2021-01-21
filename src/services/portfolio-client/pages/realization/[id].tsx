@@ -3,10 +3,12 @@ import { promises as fs } from "fs";
 import marked from "marked";
 import { GetServerSideProps, GetServerSidePropsContext, NextPage } from "next";
 import { I18n } from "next-i18next";
+import DefaultErrorPage from "next/error";
 
 import { PageHead } from "~/components/layout/head";
 import { PageContainer } from "~/components/layout/pageContainer";
 import { RealizationInfo, RealizationPageContent } from "~/components/pages/realization";
+import { useTranslation } from "~/utils/i18next";
 
 interface RealizationPageProps {
 	realizationInfo: RealizationInfo | null;
@@ -19,22 +21,27 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 	realizationContent,
 	lang
 }) => {
-	let pageContent = <h1>Page not found</h1>;
+	const [t] = useTranslation("realizationPage");
 
 	if (realizationInfo !== null && realizationContent !== null) {
 		pageContent = (
-			<RealizationPageContent
-				lang={lang}
-				realizationInfo={realizationInfo}
-				realizationContent={realizationContent}
-			/>
-		);
-	}
 
 	return (
 		<>
-			<PageHead pageTitle="Bartek Banach - realizacje" description="TODO" />
-			<PageContainer>{pageContent}</PageContainer>
+			<PageHead
+				pageTitle={t("pageMeta.pageTitle", {
+					replace: { realizationName: realizationInfo?.title }
+				})}
+				description={realizationContent}
+				coverImage={realizationInfo.previewPicture}
+			/>
+			<PageContainer>
+				<RealizationPageContent
+					lang={lang}
+					realizationInfo={realizationInfo}
+					realizationContent={realizationContent}
+				/>
+			</PageContainer>
 		</>
 	);
 };

@@ -1,4 +1,8 @@
 {
+	"pageMeta": {
+		"title": "Bartek Banach - portfolio",
+		"description": "Programista fullstack, który wykona każde zadanie, bez względu na koszty. Poznajmy się!"
+	},
 	"welcome": {
 		"mobile": {
 			"helloText": "Hej, nazywam się",

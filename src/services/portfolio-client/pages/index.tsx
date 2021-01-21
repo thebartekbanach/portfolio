@@ -7,15 +7,18 @@ import { GithubSection } from "~/components/pages/index/sections/github";
 import { RealizationsSection } from "~/components/pages/index/sections/realizations";
 import { SkillsSection } from "~/components/pages/index/sections/skills";
 import { WelcomeSection } from "~/components/pages/index/sections/welcome";
+import { useTranslation } from "~/utils/i18next";
 
 interface IndexPageProps {
 	userAgent: string;
 }
 
 const IndexPage: NextPage<IndexPageProps> = ({ userAgent }) => {
+	const [t] = useTranslation("indexPage");
+
 	return (
 		<>
-			<PageHead pageTitle="Bartek Banach - portfolio" description="TODO" />
+			<PageHead pageTitle={t("pageMeta.title")} description={t("pageMeta.description")} />
 			<PageContainer useOverflowHidden>
 				<WelcomeSection />
 				<SkillsSection userAgent={userAgent} />
