@@ -47,6 +47,7 @@ export const SkillBoardCategoryName = styled.h4`
 	${useFont.roboto.bold};
 	text-align: center;
 	font-size: 17px;
+	letter-spacing: 0.8px;
 	color: #4764e6;
 
 	@media (min-width: 1000px) {
