@@ -64,8 +64,6 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 			))
 		);
 
-	console.log(`FORMATTING DATE WITH LANG: ${lang}`);
-
 	const formatDate = (dateString: string) => {
 		const date = new Date(dateString);
 
