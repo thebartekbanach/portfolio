@@ -19,27 +19,22 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 	realizationContent,
 	lang
 }) => {
-	if (realizationInfo === null || realizationContent === null) {
-		return (
-			<>
-				<PageHead pageTitle="Bartek Banach - realizacje" description="TODO" />
-				<PageContainer>
-					<h1>Page not found</h1>
-				</PageContainer>
-			</>
+	let pageContent = <h1>Page not found</h1>;
+
+	if (realizationInfo !== null && realizationContent !== null) {
+		pageContent = (
+			<RealizationPageContent
+				lang={lang}
+				realizationInfo={realizationInfo}
+				realizationContent={realizationContent}
+			/>
 		);
 	}
 
 	return (
 		<>
 			<PageHead pageTitle="Bartek Banach - realizacje" description="TODO" />
-			<PageContainer>
-				<RealizationPageContent
-					lang={lang}
-					realizationInfo={realizationInfo}
-					realizationContent={realizationContent}
-				/>
-			</PageContainer>
+			<PageContainer>{pageContent}</PageContainer>
 		</>
 	);
 };
