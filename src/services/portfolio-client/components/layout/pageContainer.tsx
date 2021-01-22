@@ -16,15 +16,15 @@ const StyledPageContainer = styled.main<PageContainerProps>`
 	transition: opacity 300ms;
 	opacity: 0;
 
+	&.enter-active,
+	&.enter-done {
+		opacity: 1;
+	}
+
 	&.enter,
 	&.exit-active,
 	&.exit {
 		opacity: 0;
-	}
-
-	&.enter-active,
-	&.enter-done {
-		opacity: 1;
 	}
 `;
 
