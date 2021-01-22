@@ -5,9 +5,14 @@ import { CurrentChildrenWrapper, NextChildrenAbsoluteWrapper } from "./styles";
 
 interface ReplacementContainerProps {
 	zIndex?: number;
+	onAnimationEnd?: () => void;
 }
 
-export const ReplacementContainer: FC<ReplacementContainerProps> = ({ children, zIndex }) => {
+export const ReplacementContainer: FC<ReplacementContainerProps> = ({
+	children,
+	zIndex,
+	onAnimationEnd
+}) => {
 	if (!isValidElement(children)) {
 		throw new Error("ReplacementContainer children must be a valid react element");
 	}
@@ -43,6 +48,10 @@ export const ReplacementContainer: FC<ReplacementContainerProps> = ({ children, 
 			setCurrentChildren(children);
 			setIsChildrenVisible(true);
 			setHeightOverride("auto");
+		}
+
+		if (isChildrenVisible && nextChildrenRef.current === null && onAnimationEnd !== undefined) {
+			onAnimationEnd();
 		}
 	};
 
