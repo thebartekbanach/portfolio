@@ -21,6 +21,7 @@ export const DesktopSkillsSection: FC<DesktopSkillsSectionProps> = ({ categoryRo
 			return;
 		}
 
+		isAnimating.current = true;
 		setSelectedCategory(tileIndex);
 	};
 
@@ -43,7 +44,7 @@ export const DesktopSkillsSection: FC<DesktopSkillsSectionProps> = ({ categoryRo
 			{renderedSkillTiles}
 			<SkillBoardWrapper>
 				<SkillBoardBody>
-					<ReplacementContainer>
+					<ReplacementContainer onAnimationEnd={() => (isAnimating.current = false)}>
 						<SkillBoardContent
 							key={selectedCategory}
 							categories={currentCategoryContent}
