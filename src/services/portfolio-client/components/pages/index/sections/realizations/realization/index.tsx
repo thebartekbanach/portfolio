@@ -34,7 +34,7 @@ export const Realization: FC<RealizationProps> = ({
 	previewUrl,
 	previewType
 }) => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const detailsButtonContent = t("realizations.buttons.details");
 

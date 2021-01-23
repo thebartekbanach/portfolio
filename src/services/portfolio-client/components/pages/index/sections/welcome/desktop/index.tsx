@@ -43,7 +43,7 @@ export const SubTitleElement: FC = ({ children }) => (
 );
 
 export const DesktopWelcomeSectionContent: FC = () => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	return (
 		<WelcomeSectionContentWrapper>

@@ -15,7 +15,7 @@ import {
 import { ProjectInfo } from "./types";
 
 export const RealizationsSection = () => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const [isSectionInViewport, sectionRef] = useIsInViewport();
 	const [nextDelegate] = useLazyLoadChain({

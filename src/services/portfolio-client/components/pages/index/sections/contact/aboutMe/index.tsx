@@ -29,7 +29,7 @@ export const AboutMe: FC<AboutMeProps> = ({
 	isContactFormExpandedOnMobile,
 	onContactFormExpandToggle
 }) => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 	const [isSectionInViewport, tileRef] = useIsInViewport();
 	const [isProfilePictureLoaded, setIsProfilePictureLoaded] = useState(false);
 

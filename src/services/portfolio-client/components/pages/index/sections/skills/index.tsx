@@ -25,7 +25,7 @@ interface SkillsSectionProps {
 }
 
 export const SkillsSection: FC<SkillsSectionProps> = ({ userAgent }) => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const matchesDesktopDevices = useMatchesDesktopDevices(userAgent);
 

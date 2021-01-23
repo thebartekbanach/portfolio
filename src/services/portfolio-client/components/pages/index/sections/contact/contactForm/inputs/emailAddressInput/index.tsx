@@ -12,7 +12,7 @@ interface EmailAddressInputProps {
 }
 
 export const EmailAddressInput: FC<EmailAddressInputProps> = ({ fieldState }) => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const translatedErrors = fieldState.errors.map(error =>
 		t(`contact.contactForm.senderEmail.errors.${error}`)

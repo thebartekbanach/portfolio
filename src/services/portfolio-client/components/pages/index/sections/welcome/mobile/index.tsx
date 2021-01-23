@@ -49,7 +49,7 @@ const MyNameElement: FC<ScalableTextElementProps> = ({ text, viewBox }) => (
 );
 
 export const MobileWelcomeSectionContent: FC = () => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const skillsSectionId = `#${t("skills.sectionId")}`;
 	const skillsSectionUrl = `/${skillsSectionId}`;

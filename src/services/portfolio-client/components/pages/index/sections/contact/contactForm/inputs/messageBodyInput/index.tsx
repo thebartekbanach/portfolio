@@ -13,7 +13,7 @@ interface MessageBodyInputProps {
 }
 
 export const MessageBodyInput: FC<MessageBodyInputProps> = ({ fieldState, selectedSubjectId }) => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const subjectsAndMessagePlaceholders = t("contact.contactForm.availableSubjects", {
 		returnObjects: true

@@ -22,7 +22,7 @@ interface ContactFormProps {
 }
 
 export const ContactForm: FC<ContactFormProps> = ({ isExpandedOnMobile, isDesktopDevice }) => {
-	const [t, i18n] = useTranslation("indexPage");
+	const [t, i18n] = useTranslation("pages.index");
 	const [emailsBlacklist, setEmailsBlacklist] = useState<string[]>([]);
 	const [unresolvableDomains, setUnresolvableDomains] = useState<string[]>([]);
 

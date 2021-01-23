@@ -50,7 +50,7 @@ const particlesBackgroundOptions = {
 };
 
 export const GithubSection: FC = () => {
-	const [t] = useTranslation("indexPage");
+	const [t] = useTranslation("pages.index");
 
 	const [isGithubSectionInViewport, githubSectionRef] = useIsInViewport();
 	const [isParticlesBackgroundVisible, setIsParticlesBackgroundVisible] = useState(false);
