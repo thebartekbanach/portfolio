@@ -21,7 +21,7 @@ const RealizationPage: NextPage<RealizationPageProps> = ({
 	realizationContent,
 	lang
 }) => {
-	const [t] = useTranslation("realizationPage");
+	const [t] = useTranslation("pages.realization");
 
 	if (realizationInfo === null || realizationContent === null) {
 		return (

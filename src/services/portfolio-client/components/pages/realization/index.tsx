@@ -44,7 +44,7 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 	realizationContent,
 	lang
 }) => {
-	const [t] = useTranslation("realizationPage");
+	const [t] = useTranslation("pages.realization");
 	const {
 		title,
 		realizationTime,
