@@ -67,12 +67,18 @@ export const GithubInfoTitle = styled.h3`
 
 export const GithubInfoDescription = styled.p`
 	margin: 0 auto;
-	max-width: 400px;
+	max-width: 800px;
 
 	${useFont.nunitoSans.regular};
 	letter-spacing: 0.5px;
 	line-height: 21px;
 	color: #b8b8b8;
+
+	@media (max-width: 450px) {
+		br {
+			display: none;
+		}
+	}
 `;
 
 export const GithubInfoDetailsButton = styled.a`
