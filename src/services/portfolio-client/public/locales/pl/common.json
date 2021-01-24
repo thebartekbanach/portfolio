@@ -1,4 +1,41 @@
 {
+	"pageMeta": {
+		"defaultTitle": "Bartek Banach - portfolio",
+		"facebook": {
+			"coverImage": "https://bartekbanach.dev/assets/shared/developerPicture.jpg",
+			"locale": "pl_PL"
+		}
+	},
+	"navbar": {
+		"historyEntry": "{{sectionName}} - Bartek Banach portfolio",
+		"logo": {
+			"href": "/",
+			"rootPath": "/dev/",
+			"userName": "BartekBanach"
+		},
+		"navbarItems": [
+			{
+				"href": "/#umiejetnosci",
+				"text": "Umiejętności"
+			},
+			{
+				"href": "/#realizacje",
+				"text": "Realizacje"
+			},
+			{
+				"href": "/#kontakt",
+				"text": "Kontakt"
+			}
+		],
+		"contactButton": {
+			"href": "/#kontakt",
+			"text": "Napisz do mnie"
+		}
+	},
+	"socials": {
+		"github": "https://github.com/thebartekbanach",
+		"facebook": "https://www.facebook.com/thebartekbanach"
+	},
 	"shortMonthNames": [
 		"Sty",
 		"Lut",

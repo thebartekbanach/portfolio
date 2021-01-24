@@ -12,7 +12,7 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
-	const [t] = useTranslation("navbar");
+	const [t] = useTranslation("common");
 	const [mobileMenuOpenState, setMobileMenuOpenState] = useState(false);
 
 	const closeOnScrollListener = useCallback(() => {
@@ -49,7 +49,9 @@ export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
 
 		window.history.pushState(
 			null,
-			t("historyEntry").replaceAll("{{sectionName}}", sectionName ?? ""),
+			sectionName === null
+				? t("pageMeta.defaultTitle")
+				: t("navbar.historyEntry").replaceAll("{{sectionName}}", sectionName),
 			sectionUrl
 		);
 
@@ -74,15 +76,15 @@ export const Navbar: FC<NavbarProps> = ({ pageSubPath }) => {
 
 		setMobileMenuOpenState(false);
 
-		window.history.pushState(null, t("pageMeta:page.rootTitle"), hrefWithoutSection);
+		window.history.pushState(null, t("pageMeta.defaultTitle"), hrefWithoutSection);
 	};
 
 	return (
 		<NavbarContainer>
 			<Logo subPage={pageSubPath} onLogoClick={scrollToTopOfPageOrRedirect} />
 			<NavItems
-				items={t("navbarItems", { returnObjects: true })}
-				contactButton={t("contactButton", { returnObjects: true })}
+				items={t("navbar.navbarItems", { returnObjects: true })}
+				contactButton={t("navbar.contactButton", { returnObjects: true })}
 				isMobileMenuOpen={mobileMenuOpenState}
 				onMobileMenuToggleButtonClick={toggleMenu}
 				onNavItemClick={scrollToSectionOrRedirect}

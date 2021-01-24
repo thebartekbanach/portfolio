@@ -63,10 +63,10 @@ export const AboutMe: FC<AboutMeProps> = ({
 			<MyName>{t("contact.aboutMeTile.myName")}</MyName>
 			<AboutMeText>{t("contact.aboutMeTile.aboutMeText")}</AboutMeText>
 			<SocialsWrapper>
-				<SocialLink href={t("socials:github")}>
+				<SocialLink href={t("common:socials.github")}>
 					<GithubLogo />
 				</SocialLink>
-				<SocialLink href={t("socials:facebook")}>
+				<SocialLink href={t("common:socials.facebook")}>
 					<FacebookLogo />
 				</SocialLink>
 			</SocialsWrapper>

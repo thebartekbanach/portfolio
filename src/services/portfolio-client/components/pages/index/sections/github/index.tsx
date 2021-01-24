@@ -89,7 +89,7 @@ export const GithubSection: FC = () => {
 				</GithubInfoIconWrapper>
 				<GithubInfoTitle>{t("github.header")}</GithubInfoTitle>
 				<GithubInfoDescription>{t("github.haveALookAtMyGithub")}</GithubInfoDescription>
-				<GithubInfoDetailsButton href={t("socials:github")} target="_blank">
+				<GithubInfoDetailsButton href={t("common:socials.github")} target="_blank">
 					{t("github.githubLinkButtonText")}
 				</GithubInfoDetailsButton>
 			</GithubInfoContent>

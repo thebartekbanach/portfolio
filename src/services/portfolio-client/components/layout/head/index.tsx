@@ -17,14 +17,14 @@ export interface PageHeadProps {
 }
 
 export const PageHead: FC<PageHeadProps> = props => {
-	const [t] = useTranslation("pageMeta");
+	const [t] = useTranslation("common");
 	const router = useRouter();
 
 	const pageProps = { ...props };
 
 	pageProps.url = pageProps.url ?? "https://bartekbanach.dev" + router.asPath;
-	pageProps.locale = pageProps.locale ?? t("facebook.locale");
-	pageProps.coverImage = pageProps.coverImage ?? t("facebook.coverImage");
+	pageProps.locale = pageProps.locale ?? t("pageMeta.facebook.locale");
+	pageProps.coverImage = pageProps.coverImage ?? t("pageMeta.facebook.coverImage");
 
 	if (pageProps.coverImage?.charAt(0) === "/") {
 		pageProps.coverImage = "https://bartekbanach.dev" + pageProps.coverImage;

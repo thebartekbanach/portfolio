@@ -15,16 +15,16 @@ interface LogoProps {
 }
 
 export const Logo: FC<LogoProps> = ({ subPage, onLogoClick }) => {
-	const [t] = useTranslation("navbar");
+	const [t] = useTranslation("common");
 
 	const subPagePart =
 		subPage !== null ? <NavbarLogoSubPagePart>{subPage}</NavbarLogoSubPagePart> : null;
 
 	return (
-		<Link href={t("logo.href")} passHref>
+		<Link href={t("navbar.logo.href")} passHref>
 			<NavbarLogoContainer data-section-name="start" onClick={onLogoClick}>
-				<NavbarLogoDevPart>{t("logo.rootPath")}</NavbarLogoDevPart>
-				<NavbarLogoUserNamePart>{t("logo.userName")}</NavbarLogoUserNamePart>
+				<NavbarLogoDevPart>{t("navbar.logo.rootPath")}</NavbarLogoDevPart>
+				<NavbarLogoUserNamePart>{t("navbar.logo.userName")}</NavbarLogoUserNamePart>
 				{subPagePart}
 			</NavbarLogoContainer>
 		</Link>
