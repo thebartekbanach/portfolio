@@ -1,24 +1,18 @@
 {
 	"id": "dom-u-kasi",
 	"title": "Dom u Kasi",
+	"shortPageDescription": "Dom u Kasi to strona internetowa domku letniskowego do wynajęcia",
 	"realizationTime": {
-		"from": "2017-06-27",
-		"to": "2017-10-27"
+		"from": "2019-03-04",
+		"to": "2019-05-17"
 	},
-	"previewPicture": "/assets/pages/index/realizations/works/dom-u-kasi.png",
-	"contentUrl": "/locales/en/realizations/dom-u-kasi.md",
+	"previewPicture": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
+	"contentUrl": "/locales/pl/realizations/dom-u-kasi.md",
 	"previewUrl": "https://domukasi.pl",
 	"previewType": "website",
 	"tags": {
-		"#5e8fea": [
-			"ASP.NET Core 1.1",
-			"Razor Pages",
-			"Entity Framework Core",
-			"FakeItEasy",
-			"AspNetCore.Identity",
-			"Npgsql"
-		],
-		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["SASS"]
+		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "MobX", "Photoswipe"],
+		"#9672e7": ["Express", "Marked", "Sharp"],
+		"#c26eda": ["Tslint"]
 	}
 }

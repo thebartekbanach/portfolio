@@ -1,0 +1,422 @@
+{
+	"pageMeta": {
+		"title": "Bartek Banach - portfolio",
+		"description": "Programista fullstack, który wykona każde zadanie, bez względu na koszty. Poznajmy się!"
+	},
+	"welcome": {
+		"mobile": {
+			"helloText": "Hej, nazywam się",
+			"helloTextViewBox": "0 0 145 23",
+			"myNameText": "Bartek Banach",
+			"myNameTextViewBox": "0 0 127 15",
+			"aboutMe": "Jestem <b>fullstack developerem</b>. Moje ulubione technologie to <b>React</b> oraz <b>Node.js</b>.",
+			"findOutMoreButtonText": "Poznaj mnie"
+		},
+		"desktop": {
+			"title": "Bartek Banach",
+			"subTitle": "Full Stack Developer",
+			"aboutMe": "Jestem <b>21 letnim</b> w pełni samodzielnym <b>pasjonatem web developmentu</b>. Kocham automatyzować zadania, <b>ułatwiać pracę ludziom</b> nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded. Lubię też tworzyć proste, <b>intuicyjne aplikacje frontendowe</b>, które są proste w użyciu oraz przydatne w codziennym życiu."
+		}
+	},
+	"skills": {
+		"sectionId": "umiejetnosci",
+		"sectionName": "Umiejętności",
+		"sectionDescription": "Wybierz jedną z kategorii aby <br />dowiedzieć się więcej",
+		"categoryRoots": [
+			{
+				"title": "Front-end",
+				"description": "Kocham tworzyć proste oraz intuicyjne interfejsy użytkownika, dzięki którym może on szybko wykonywać swoje zadania",
+				"content": [
+					{
+						"categoryName": "Języki Programowania",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
+								"name": "Javascript"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/typescript.svg",
+								"name": "Typescript"
+							}
+						]
+					},
+					{
+						"categoryName": "Aplikacje React",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/next.svg",
+								"name": "Next.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/react.svg",
+								"name": "React"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/redux.svg",
+								"name": "Redux"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/redux-saga.svg",
+								"name": "Redux-saga"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/reselect.svg",
+								"name": "Reselect"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/deox.svg",
+								"name": "Deox"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/styled-components.png",
+								"name": "Styled components"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/i18next.svg",
+								"name": "I18next"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/mobx.svg",
+								"name": "Mobx"
+							}
+						]
+					},
+					{
+						"categoryName": "Testowanie w React",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/enzyme.svg",
+								"name": "Enzyme"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/jest.svg",
+								"name": "Jest"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/redux-saga-test-plan.svg",
+								"name": "Redux-saga-test-plan"
+							}
+						]
+					},
+					{
+						"categoryName": "Statyczne strony",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/gulp.svg",
+								"name": "Gulp.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/nunjucks.png",
+								"name": "Nunjucks"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/sass.svg",
+								"name": "Sass"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/jquery.svg",
+								"name": "JQuery"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/photoswipe.svg",
+								"name": "Photoswipe"
+							}
+						]
+					},
+					{
+						"categoryName": "Narzędzia",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/webpack.svg",
+								"name": "Webpack"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/eslint.svg",
+								"name": "Eslint"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/prettier.svg",
+								"name": "Prettier"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/stylelint.svg",
+								"name": "Stylelint"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/browsersync.svg",
+								"name": "Browsersync"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Back-end",
+				"description": "Kod źródłowy moich aplikacji backendowych jest równie prosty i czytelny dla programistów co frontend dla użytkowników",
+				"content": [
+					{
+						"categoryName": "Języki Programowania",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/javascript.svg",
+								"name": "Javascript"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/typescript.svg",
+								"name": "Typescript"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/golang.svg",
+								"name": "Golang"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/csharp.svg",
+								"name": "C#"
+							}
+						]
+					},
+					{
+						"categoryName": "Backend w javascript",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nodejs.svg",
+								"name": "Node.js"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/expressjs.svg",
+								"name": "Express"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/sharp.svg",
+								"name": "Sharp"
+							}
+						]
+					},
+					{
+						"categoryName": "Backend w .NET",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/dotnet-core.svg",
+								"name": "Dotnet Core"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/entity-framework-core.svg",
+								"name": "Entity Framework Core"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/hotchocolate.png",
+								"name": "HotChocolate"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/mediatr.png",
+								"name": "MediatR"
+							}
+						]
+					},
+					{
+						"categoryName": "Testowanie w .NET",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nunit.png",
+								"name": "Nunit"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/fakeiteasy.png",
+								"name": "FakeItEasy"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/shouldly.png",
+								"name": "Shouldly"
+							}
+						]
+					},
+					{
+						"categoryName": "Inne",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/docker.svg",
+								"name": "Docker"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nginx.svg",
+								"name": "Nginx"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/bash.svg",
+								"name": "Bash"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/powershell.svg",
+								"name": "Powershell"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/postgresql.svg",
+								"name": "PostgreSQL"
+							}
+						]
+					}
+				]
+			},
+			{
+				"title": "Embedded",
+				"description": "W wolnym czasie majsterkuję. Programuję urządzenia które są łatwe w konfiguracji i proste w użyciu",
+				"content": [
+					{
+						"categoryName": "Języki Programowania",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/cpp.svg",
+								"name": "C++"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/python.svg",
+								"name": "Python"
+							}
+						]
+					},
+					{
+						"categoryName": "Platformy",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/stm32.svg",
+								"name": "STM32"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/arduino.svg",
+								"name": "Arduino Due"
+							}
+						]
+					},
+					{
+						"categoryName": "Inne",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/platformio.svg",
+								"name": "PlatformIO"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/cad.svg",
+								"name": "Projektowanie 3D"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/3d-printing.svg",
+								"name": "Druk 3D"
+							}
+						]
+					}
+				]
+			}
+		]
+	},
+	"github": {
+		"sectionId": "github",
+		"header": "Github",
+		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz jak wykorzystałem powyższe umiejętności w praktyce",
+		"githubLinkButtonText": "Szczegóły"
+	},
+	"realizations": {
+		"sectionId": "realizacje",
+		"sectionName": "Realizacje",
+		"sectionDescription": "W każdy projekt wkładam mnóstwo serca <br />aby działał i wyglądał jak najlepiej",
+		"projectUrlSchema": "/realization/{{id}}",
+		"buttons": {
+			"github": "Github",
+			"preview": "Podgląd",
+			"details": "Szczegóły"
+		},
+		"projects": [
+			{
+				"id": "kajakgo",
+				"previewImageUrl": "/assets/pages/index/realizations/works/kajakgo.jpg",
+				"name": "KajakGO",
+				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
+				"previewType": "website",
+				"previewUrl": "https://kajakgo.pl"
+			},
+			{
+				"id": "dom-u-kasi",
+				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
+				"name": "Dom u Kasi",
+				"description": "Witryna internetowa domku letniskowego do wynajęcia. Responsywna oraz dynamiczna, napisana w React. Strona ładuje się szybko nawet przy wolnym łączu dzięki specjalnej optymalizacji ładowania obrazków.",
+				"previewType": "website",
+				"previewUrl": "https://domukasi.pl"
+			},
+			{
+				"id": "majkel-music",
+				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
+				"name": "Majkel Music",
+				"description": "Witryna stworzona dla lokalnej gwiazdy muzycznej. Zintegrowany, łatwy w obsłudze system CMS umożliwia edycję treści nawet dla osób nie obeznanych z tego typu systemami.",
+				"previewType": "website",
+				"previewUrl": "https://google.com"
+			},
+			{
+				"id": "aquaristic-controller",
+				"previewImageUrl": "/assets/pages/index/realizations/works/aquaristic-controller.png",
+				"name": "Kontroler akwarystyczy",
+				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia parującą wodę, dynamicznie steruje oświetleniem w ciągu dnia i wiele więcej!",
+				"previewType": "github",
+				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
+			}
+		]
+	},
+	"contact": {
+		"sectionId": "kontakt",
+		"sectionName": "Kontakt",
+		"sectionDescription": "Szukasz świetnego programisty? <br />Zapraszam do kontaktu!",
+		"aboutMeTile": {
+			"profilePictureUrl": "/assets/pages/index/contact/profile-picture.jpg",
+			"myName": "Bartłomiej Banach",
+			"aboutMeText": "Pasjonat web developmentu. Kocha automatyzować zadania, ułatwiać pracę ludziom nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded.",
+			"writeToMeButton": "Napisz do mnie"
+		},
+		"contactForm": {
+			"availableSubjects": [
+				{
+					"id": "valuate-my-project",
+					"subject": "Chcę wycenić projekt",
+					"messagePlaceholder": "Opisz jak najdokładniej swój projekt oraz wszystkie jego specyficzne elementy. W sprawie szczegółów skontaktuję się poprzez email."
+				},
+				{
+					"id": "make-my-website",
+					"subject": "Szukam kogoś kto wykona mi stronę internetową",
+					"messagePlaceholder": "Opisz co dokładnie ma się znaleźć na Twojej stronie, w jakiej branży prowadzisz działalność. Podaj przykładowe strony internetowe które Ci się podobają. O resztę szczegółów skontaktuję się poprzez email."
+				},
+				{
+					"id": "i-need-help-with-project",
+					"subject": "Potrzebuję pomocy w projekcie",
+					"messagePlaceholder": "W jakim projekcie potrzebujesz pomocy? Jakie technologie są w nim użyte?"
+				},
+				{
+					"id": "i-just-want-to-contact",
+					"subject": "Chcę skontaktować się w jakiejś innej sprawie",
+					"messagePlaceholder": "Opisz dokładnie o co chodzi."
+				}
+			],
+			"subject": {
+				"placeholder": "Co mogę dla Ciebie zrobić?",
+				"errors": {
+					"not-selected": "Wybierz jakiś temat aby ułatwić mi klasyfikację wiadomości"
+				}
+			},
+			"senderEmail": {
+				"placeholder": "Na jaki adres email mam odpisać?",
+				"errors": {
+					"empty-email-field": "Podaj swój email, bo nie będę miał jak odpisać",
+					"email-is-not-valid": "Upewnij się że ten adres email jest poprawny",
+					"email-is-treated-as-spam": "Nie możesz użyć tego adresu email",
+					"unresolvable-domain": "Taka domena nie istnieje"
+				}
+			},
+			"message": {
+				"placeholder": "Czego dokładnie oczekujesz?"
+			},
+			"sendButtonStates": {
+				"send": "Wyślij wiadomość",
+				"sending": "Wysyłam...",
+				"sent": "Wysłano!",
+				"error": "Coś poszło nie tak",
+				"formError": "Popraw formularz"
+			}
+		}
+	}
+}

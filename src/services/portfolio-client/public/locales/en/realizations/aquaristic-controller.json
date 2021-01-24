@@ -1,24 +1,23 @@
 {
 	"id": "aquaristic-controller",
 	"title": "Kontroler Akwarystyczny",
+	"shortPageDescription": "Prosty prototyp kontrolera akwarystycznego z obsługą automatycznej podmiany wody i dolewki ze zbiornika rezerwowego",
 	"realizationTime": {
-		"from": "2017-06-27",
-		"to": "2017-10-27"
+		"from": "2019-07-11",
+		"to": "2020-02-10"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/aquaristic-controller.png",
-	"contentUrl": "/locales/pl/realizations/majkel-music.md",
-	"previewUrl": "https://github.com/thebartekbanach/simple-aquaristic-controller",
+	"contentUrl": "/locales/pl/realizations/aquaristic-controller.md",
+	"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller",
 	"previewType": "github",
 	"tags": {
-		"#5e8fea": [
-			"ASP.NET Core 1.1",
-			"Razor Pages",
-			"Entity Framework Core",
-			"FakeItEasy",
-			"AspNetCore.Identity",
-			"Npgsql"
-		],
-		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["SASS"]
+		"#00979c": [
+			"C++",
+			"Arduino Due",
+			"Arduino Framework",
+			"PlatformIO",
+			"Projektowanie 3D",
+			"Druk 3D"
+		]
 	}
 }

@@ -1,0 +1,18 @@
+{
+	"id": "kajakgo",
+	"title": "KajakGO",
+	"shortPageDescription": "Strona internetowa firmy zajmującej się spływami kajakowymi rzeką Krutyń",
+	"realizationTime": {
+		"from": "2020-07-12",
+		"to": "2020-10-08"
+	},
+	"previewPicture": "/assets/pages/index/realizations/works/kajakgo.jpg",
+	"contentUrl": "/locales/pl/realizations/kajakgo.md",
+	"previewUrl": "https://kajakgo.pl",
+	"previewType": "website",
+	"tags": {
+		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "Deox", "Express"],
+		"#9672e7": ["Eslint", "Stylelint", "Prettier", "Webpack"],
+		"#c26eda": ["Docker", "Docker compose", "Nginx"]
+	}
+}

@@ -1,8 +1,9 @@
 {
 	"id": "majkel-music",
 	"title": "Majkel Music",
+	"shortPageDescription": "Projekt Majkel Music to strona internetowa lokalnej gwiazdy disco polo",
 	"realizationTime": {
-		"from": "2017-06-27",
+		"from": "2017-06-06",
 		"to": "2017-10-27"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/majkel-music.png",
@@ -14,11 +15,11 @@
 			"ASP.NET Core 1.1",
 			"Razor Pages",
 			"Entity Framework Core",
-			"FakeItEasy",
 			"AspNetCore.Identity",
+			"FakeItEasy",
 			"Npgsql"
 		],
-		"#9672e7": ["JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["SASS"]
+		"#9672e7": ["Gulp", "JQuery", "Moment.js", "Tether.js"],
+		"#c26eda": ["Sass"]
 	}
 }
