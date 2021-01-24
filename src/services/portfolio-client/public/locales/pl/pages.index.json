@@ -9,7 +9,7 @@
 			"helloTextViewBox": "0 0 145 23",
 			"myNameText": "Bartek Banach",
 			"myNameTextViewBox": "0 0 127 15",
-			"aboutMe": "Jestem <b>fullstack developerem</b>. Moje ulubione technologie to <b>React</b> oraz <b>Node.js</b>.",
+			"aboutMe": "Jestem <b>fullstack web developerem</b>. Moje ulubione technologie to <b>React</b>, <b>Node.js</b> oraz <b>Go</b>.",
 			"findOutMoreButtonText": "Poznaj mnie"
 		},
 		"desktop": {
@@ -311,7 +311,7 @@
 	"github": {
 		"sectionId": "github",
 		"header": "Github",
-		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz jak wykorzystałem powyższe umiejętności w praktyce",
+		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz <br/>jak wykorzystałem powyższe umiejętności w praktyce",
 		"githubLinkButtonText": "Szczegóły"
 	},
 	"realizations": {
@@ -366,7 +366,7 @@
 		"aboutMeTile": {
 			"profilePictureUrl": "/assets/pages/index/contact/profile-picture.jpg",
 			"myName": "Bartłomiej Banach",
-			"aboutMeText": "Pasjonat web developmentu. Kocha automatyzować zadania, ułatwiać pracę ludziom nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded.",
+			"aboutMeText": "Pasjonat web developmentu. Komputerami i informatyką interesuje się od najmłodszych lat. Programować zaczął w wieku 12 lat od C++. Później poznał świat aplikacji webowych, w których działa do dziś.",
 			"writeToMeButton": "Napisz do mnie"
 		},
 		"contactForm": {
