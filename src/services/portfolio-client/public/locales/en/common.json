@@ -3,7 +3,7 @@
 		"defaultTitle": "Bartek Banach - portfolio",
 		"facebook": {
 			"coverImage": "https://bartekbanach.dev/assets/shared/developerPicture.jpg",
-			"locale": "pl_PL"
+			"locale": "en_US"
 		}
 	},
 	"navbar": {
@@ -15,21 +15,21 @@
 		},
 		"navbarItems": [
 			{
-				"href": "/#umiejetnosci",
-				"text": "Umiejętności"
+				"href": "/en#skills",
+				"text": "Skills"
 			},
 			{
-				"href": "/#realizacje",
-				"text": "Realizacje"
+				"href": "/en#realizations",
+				"text": "Realizations"
 			},
 			{
-				"href": "/#kontakt",
-				"text": "Kontakt"
+				"href": "/en#contact",
+				"text": "Contact"
 			}
 		],
 		"contactButton": {
-			"href": "/#kontakt",
-			"text": "Napisz do mnie"
+			"href": "/en#contact",
+			"text": "Write to me"
 		}
 	},
 	"socials": {
@@ -37,17 +37,17 @@
 		"facebook": "https://www.facebook.com/thebartekbanach"
 	},
 	"shortMonthNames": [
-		"Sty",
-		"Lut",
+		"Jan",
+		"Feb",
 		"Mar",
-		"Kwi",
-		"Maj",
-		"Cze",
-		"Lip",
-		"Sie",
-		"Wrz",
-		"Paź",
-		"Lis",
-		"Gru"
+		"Apr",
+		"May",
+		"Jun",
+		"Jul",
+		"Aug",
+		"Sep",
+		"Oct",
+		"Nov",
+		"Dec"
 	]
 }

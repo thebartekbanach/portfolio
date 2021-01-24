@@ -5,30 +5,30 @@
 	},
 	"welcome": {
 		"mobile": {
-			"helloText": "Hej, nazywam się",
-			"helloTextViewBox": "0 0 145 23",
+			"helloText": "Hi, my name is",
+			"helloTextViewBox": "0 0 125 23",
 			"myNameText": "Bartek Banach",
 			"myNameTextViewBox": "0 0 127 15",
-			"aboutMe": "Jestem <b>fullstack developerem</b>. Moje ulubione technologie to <b>React</b> oraz <b>Node.js</b>.",
-			"findOutMoreButtonText": "Poznaj mnie"
+			"aboutMe": "I am <b>fullstack web developer</b>. My favorite technologies are <b>React</b>, <b>Node.js</b> and <b>Go</b>.",
+			"findOutMoreButtonText": "Get know about me"
 		},
 		"desktop": {
 			"title": "Bartek Banach",
 			"subTitle": "Full Stack Developer",
-			"aboutMe": "Jestem <b>21 letnim</b> w pełni samodzielnym <b>pasjonatem web developmentu</b>. Kocham automatyzować zadania, <b>ułatwiać pracę ludziom</b> nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded. Lubię też tworzyć proste, <b>intuicyjne aplikacje frontendowe</b>, które są proste w użyciu oraz przydatne w codziennym życiu."
+			"aboutMe": "I am <b>21 year old</b> fully independent <b>web development enthusiast</b>. I love to automate tasks, <b>make people's work easier</b> not only through web applications but also with intuitive embedded systems. I also like creating simple, <b>intuitive frontend applications</b>, that are easy to use and useful in everyday life."
 		}
 	},
 	"skills": {
-		"sectionId": "umiejetnosci",
-		"sectionName": "Umiejętności",
-		"sectionDescription": "Wybierz jedną z kategorii aby <br />dowiedzieć się więcej",
+		"sectionId": "skills",
+		"sectionName": "Skills",
+		"sectionDescription": "Choose one of the categories <br />to find out more",
 		"categoryRoots": [
 			{
 				"title": "Front-end",
-				"description": "Kocham tworzyć proste oraz intuicyjne interfejsy użytkownika, dzięki którym może on szybko wykonywać swoje zadania",
+				"description": "I love creating simple and intuitive user interfaces so that they can get things done quickly",
 				"content": [
 					{
-						"categoryName": "Języki Programowania",
+						"categoryName": "Programming languages",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/javascript.svg",
@@ -41,7 +41,7 @@
 						]
 					},
 					{
-						"categoryName": "Aplikacje React",
+						"categoryName": "React applications",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/next.svg",
@@ -82,7 +82,7 @@
 						]
 					},
 					{
-						"categoryName": "Testowanie w React",
+						"categoryName": "Testing in React",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/enzyme.svg",
@@ -99,7 +99,7 @@
 						]
 					},
 					{
-						"categoryName": "Statyczne strony",
+						"categoryName": "Static websites",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/gulp.svg",
@@ -124,7 +124,7 @@
 						]
 					},
 					{
-						"categoryName": "Narzędzia",
+						"categoryName": "Tools",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/frontend/items/webpack.svg",
@@ -152,10 +152,10 @@
 			},
 			{
 				"title": "Back-end",
-				"description": "Kod źródłowy moich aplikacji backendowych jest równie prosty i czytelny dla programistów co frontend dla użytkowników",
+				"description": "The source code of my backend applications is as simple and readable for programmers as the frontend is for users",
 				"content": [
 					{
-						"categoryName": "Języki Programowania",
+						"categoryName": "Programming languages",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/javascript.svg",
@@ -176,7 +176,7 @@
 						]
 					},
 					{
-						"categoryName": "Backend w javascript",
+						"categoryName": "Backend in Javascript",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nodejs.svg",
@@ -193,7 +193,7 @@
 						]
 					},
 					{
-						"categoryName": "Backend w .NET",
+						"categoryName": "Backend in .NET",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/dotnet-core.svg",
@@ -214,7 +214,7 @@
 						]
 					},
 					{
-						"categoryName": "Testowanie w .NET",
+						"categoryName": "Testing in .NET",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/nunit.png",
@@ -231,7 +231,7 @@
 						]
 					},
 					{
-						"categoryName": "Inne",
+						"categoryName": "Others",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/docker.svg",
@@ -259,10 +259,10 @@
 			},
 			{
 				"title": "Embedded",
-				"description": "W wolnym czasie majsterkuję. Programuję urządzenia które są łatwe w konfiguracji i proste w użyciu",
+				"description": "I do diy in my spare time. I program devices that are easy to configure and easy to use",
 				"content": [
 					{
-						"categoryName": "Języki Programowania",
+						"categoryName": "Programming languages",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/cpp.svg",
@@ -275,7 +275,7 @@
 						]
 					},
 					{
-						"categoryName": "Platformy",
+						"categoryName": "Platforms",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/stm32.svg",
@@ -288,7 +288,7 @@
 						]
 					},
 					{
-						"categoryName": "Inne",
+						"categoryName": "Others",
 						"items": [
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/platformio.svg",
@@ -311,25 +311,25 @@
 	"github": {
 		"sectionId": "github",
 		"header": "Github",
-		"haveALookAtMyGithub": "Rzuć okiem na mojego Githuba i zobacz jak wykorzystałem powyższe umiejętności w praktyce",
-		"githubLinkButtonText": "Szczegóły"
+		"haveALookAtMyGithub": "Take a look at my Github and see <br/>how I put these skills into practice",
+		"githubLinkButtonText": "Details"
 	},
 	"realizations": {
-		"sectionId": "realizacje",
-		"sectionName": "Realizacje",
-		"sectionDescription": "W każdy projekt wkładam mnóstwo serca <br />aby działał i wyglądał jak najlepiej",
+		"sectionId": "realizations",
+		"sectionName": "Realizations",
+		"sectionDescription": "I put a lot of heart into every project <br />to make it work and look its best",
 		"projectUrlSchema": "/realization/{{id}}",
 		"buttons": {
 			"github": "Github",
-			"preview": "Podgląd",
-			"details": "Szczegóły"
+			"preview": "Preview",
+			"details": "Details"
 		},
 		"projects": [
 			{
 				"id": "kajakgo",
 				"previewImageUrl": "/assets/pages/index/realizations/works/kajakgo.jpg",
 				"name": "KajakGO",
-				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
+				"description": "Website of the company offering canoeing on the Krutynia River. Fast, with eye-catching animations and adapted to any device size.",
 				"previewType": "website",
 				"previewUrl": "https://kajakgo.pl"
 			},
@@ -337,7 +337,7 @@
 				"id": "dom-u-kasi",
 				"previewImageUrl": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
 				"name": "Dom u Kasi",
-				"description": "Witryna internetowa domku letniskowego do wynajęcia. Responsywna oraz dynamiczna, napisana w React. Strona ładuje się szybko nawet przy wolnym łączu dzięki specjalnej optymalizacji ładowania obrazków.",
+				"description": "Website of a holiday home for rent. Responsive and dynamic, written in React. The page loads quickly even with a slow internet connection, thanks to the special optimization of images loading.",
 				"previewType": "website",
 				"previewUrl": "https://domukasi.pl"
 			},
@@ -345,77 +345,77 @@
 				"id": "majkel-music",
 				"previewImageUrl": "/assets/pages/index/realizations/works/majkel-music.png",
 				"name": "Majkel Music",
-				"description": "Witryna stworzona dla lokalnej gwiazdy muzycznej. Zintegrowany, łatwy w obsłudze system CMS umożliwia edycję treści nawet dla osób nie obeznanych z tego typu systemami.",
+				"description": "A site made for a local music star. The integrated, easy-to-use CMS system allows to edit content even for people that are not familiar with this type of systems.",
 				"previewType": "website",
 				"previewUrl": "https://google.com"
 			},
 			{
 				"id": "aquaristic-controller",
 				"previewImageUrl": "/assets/pages/index/realizations/works/aquaristic-controller.png",
-				"name": "Kontroler akwarystyczy",
-				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia parującą wodę, dynamicznie steruje oświetleniem w ciągu dnia i wiele więcej!",
+				"name": "Aquaristic controller",
+				"description": "Aquarium controller written for the Arduino Due board. It allows for semi-automatic water change, automatically replenishes evaporating water, dynamically controls lighting during the day and much more!",
 				"previewType": "github",
 				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
 			}
 		]
 	},
 	"contact": {
-		"sectionId": "kontakt",
-		"sectionName": "Kontakt",
-		"sectionDescription": "Szukasz świetnego programisty? <br />Zapraszam do kontaktu!",
+		"sectionId": "contact",
+		"sectionName": "Contact",
+		"sectionDescription": "Looking for a great developer? <br />Feel free to contact me!",
 		"aboutMeTile": {
 			"profilePictureUrl": "/assets/pages/index/contact/profile-picture.jpg",
 			"myName": "Bartłomiej Banach",
-			"aboutMeText": "Pasjonat web developmentu. Kocha automatyzować zadania, ułatwiać pracę ludziom nie tylko za pomocą aplikacji internetowych ale także za pomocą intuicyjnych systemów typu embedded.",
-			"writeToMeButton": "Napisz do mnie"
+			"aboutMeText": "Web development enthusiast. Interested in computers and IT from an early age. Started programming at the age of 12 from C++. Later found out the world of web applications in which works to this day.",
+			"writeToMeButton": "Write to me"
 		},
 		"contactForm": {
 			"availableSubjects": [
 				{
 					"id": "valuate-my-project",
-					"subject": "Chcę wycenić projekt",
-					"messagePlaceholder": "Opisz jak najdokładniej swój projekt oraz wszystkie jego specyficzne elementy. W sprawie szczegółów skontaktuję się poprzez email."
+					"subject": "Valuate my project",
+					"messagePlaceholder": "Describe your project and all its specific elements as accurately as possible. For details I will contact with you through email."
 				},
 				{
 					"id": "make-my-website",
-					"subject": "Szukam kogoś kto wykona mi stronę internetową",
-					"messagePlaceholder": "Opisz co dokładnie ma się znaleźć na Twojej stronie, w jakiej branży prowadzisz działalność. Podaj przykładowe strony internetowe które Ci się podobają. O resztę szczegółów skontaktuję się poprzez email."
+					"subject": "I am looking for someone who will make my website",
+					"messagePlaceholder": "Describe what exactly should be on your website, in which industry you operate. Provide sample websites that you like. I will contact you via email for the rest of the details."
 				},
 				{
 					"id": "i-need-help-with-project",
-					"subject": "Potrzebuję pomocy w projekcie",
-					"messagePlaceholder": "W jakim projekcie potrzebujesz pomocy? Jakie technologie są w nim użyte?"
+					"subject": "I need help with my project",
+					"messagePlaceholder": "What project do you need help with? What technologies are used in it?"
 				},
 				{
 					"id": "i-just-want-to-contact",
-					"subject": "Chcę skontaktować się w jakiejś innej sprawie",
-					"messagePlaceholder": "Opisz dokładnie o co chodzi."
+					"subject": "I just want to contact with you",
+					"messagePlaceholder": "What do you need?"
 				}
 			],
 			"subject": {
-				"placeholder": "Co mogę dla Ciebie zrobić?",
+				"placeholder": "What can I do for you?",
 				"errors": {
-					"not-selected": "Wybierz jakiś temat aby ułatwić mi klasyfikację wiadomości"
+					"not-selected": "Choose a topic to help me classify your message"
 				}
 			},
 			"senderEmail": {
-				"placeholder": "Na jaki adres email mam odpisać?",
+				"placeholder": "What email address should I reply to?",
 				"errors": {
-					"empty-email-field": "Podaj swój email, bo nie będę miał jak odpisać",
-					"email-is-not-valid": "Upewnij się że ten adres email jest poprawny",
-					"email-is-treated-as-spam": "Nie możesz użyć tego adresu email",
-					"unresolvable-domain": "Taka domena nie istnieje"
+					"empty-email-field": "Enter your e-mail address, because I will have no way to write back",
+					"email-is-not-valid": "Please make sure this email address is correct",
+					"email-is-treated-as-spam": "You cannot use this email address",
+					"unresolvable-domain": "Domain used in email does not exist"
 				}
 			},
 			"message": {
-				"placeholder": "Czego dokładnie oczekujesz?"
+				"placeholder": "What do you need?"
 			},
 			"sendButtonStates": {
-				"send": "Wyślij wiadomość",
-				"sending": "Wysyłam...",
-				"sent": "Wysłano!",
-				"error": "Coś poszło nie tak",
-				"formError": "Popraw formularz"
+				"send": "Send message",
+				"sending": "Sending...",
+				"sent": "Sent!",
+				"error": "Something went wrong",
+				"formError": "Correct the form"
 			}
 		}
 	}

@@ -1,8 +1,8 @@
 {
 	"pageMeta": {
-		"pageTitle": "Bartek Banach - realizacja {{realizationName}}",
-		"realizationNotFoundTitle": "Taka realizacja nie istnieje"
+		"pageTitle": "Bartek Banach - {{realizationName}} realization",
+		"realizationNotFoundTitle": "This realization does not exist"
 	},
-	"previewWebsiteButton": "Podgląd",
+	"previewWebsiteButton": "Preview",
 	"previewGithubButton": "Github"
 }
