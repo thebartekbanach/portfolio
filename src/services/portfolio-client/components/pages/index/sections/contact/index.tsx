@@ -2,6 +2,7 @@ import React, { FC, useState } from "react";
 
 import { SectionHeader } from "~/components/shared/sectionHeader";
 import { useMatchesDesktopDevices } from "~/hooks/useMatchesDesktopDevices";
+import { useTranslation } from "~/utils/i18next";
 
 import { AboutMe } from "./aboutMe";
 import { ContactForm } from "./contactForm";
@@ -12,6 +13,8 @@ interface ContactSectionProps {
 }
 
 export const ContactSection: FC<ContactSectionProps> = ({ userAgent }) => {
+	const [t] = useTranslation("pages.index");
+
 	const [isContactFormExpanded, setIsContactFormExpanded] = useState(false);
 
 	const isDesktopDevice = useMatchesDesktopDevices(userAgent, 900);
@@ -19,10 +22,10 @@ export const ContactSection: FC<ContactSectionProps> = ({ userAgent }) => {
 	const onContactFormToggle = () => setIsContactFormExpanded(!isContactFormExpanded);
 
 	return (
-		<ContactSectionElement id="kontakt">
+		<ContactSectionElement id={t("contact.sectionId")}>
 			<SectionHeader
-				sectionName="Kontakt"
-				description="Szukasz świetnego programisty? <br />Zapraszam do kontaktu!"
+				sectionName={t("contact.sectionName")}
+				description={t("contact.sectionDescription")}
 			/>
 			<AboutMeAndContactFormWrapper>
 				<AboutMe
