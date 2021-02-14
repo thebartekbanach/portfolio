@@ -48,8 +48,7 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 	if err := sendEmailUsingGmail(translatedSubjectID, request.SenderEmail, request.Message, env); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("email-send-error"))
-		log.Println(err)
-		return
+		log.Panicln(err)
 	}
 
 	w.WriteHeader(http.StatusOK)
