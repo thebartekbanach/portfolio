@@ -1,28 +1,28 @@
-Strona internetowa firmy zajmującej się spływami kajakowymi rzeką Krutyń. Na stronie przedstawiona jest oferta firmy, sprzęt który posiadają, obsługiwane trasy spływów, prognoza pogody na najbliższe dni, okoliczne atrakcje oraz informacje kontaktowe.
+Website of the company dealing in kayaking on the Krutyń River. The website presents the company's offer, the equipment they have, the supported rafting routes, the weather forecast for the next few days, local attractions and contact information.
 
-Sekcja `Trasy spływów` zawiera mapkę którą można przybliżyć. Można wybrać trasę i zobaczyć w którym miejscu oraz skąd i dokąd prowadzi spływ wybraną trasą. Każda trasa jest dokładnie opisana wraz ze wszelkimi atrakcjami które można zobaczyć podczas spływu wybraną trasą. Cała sekcja jest podzielona na dwie główne kategorie:
+The `Rafting routes` section contains a map that you can zoom in on. You can choose the route and see where, from and to where the rafting takes place along the selected route. Each route is described in detail along with all the attractions that can be seen during the rafting along the selected route. The entire section is broken down into two main categories:
 
--   `Spływ jednodniowy` - opisany wyżej, oraz
--   `Spływ wielodniowy` - czyli dokładny opis spływu wielodniowego
+-   `One-day trip` - described above, and
+-   `Multi-day trip` - a detailed description of a multi-day trip
 
-`Nasz sprzęt` to sekcja przedstawiająca cały sprzęt, jaki firma ma do zaoferowania. Listę można przewijać a obrazki zaczynają się ładować dopiero gdy użytkownik zjedzie do sekcji. Co ważne, ładowane są tylko obrazki aktualnie widoczne na ekranie. Gdy użytkownik przewinie listę, doładowywane są kolejne zdjęcia, pozwala to oszczędzić ilość danych komórkowych zużywanych przez stronę, oraz sprawia, że strona jest lżejsza do załadowania.
+`Our equipment` is a section that presents all the equipment the company offers. The list can be scrolled and the pictures do not start loading until the user enters the section. Importantly, only the pictures currently visible on the screen are loaded. When the user scrolls through the list, more photos are loaded, which saves the amount of cellular data used by the website, and makes the website lighter to load.
 
-Sekcja o nazwie `Okolica` przedstawia okoliczne atrakcje, które warto zwiedzić. Zdjęcia są leniwie ładowane w określonej kolejności żeby zachować spójność animacji - od lewej do prawej, z góry na dół. Atrakcje podzielone są na kategorie względem miejscowości. Na każdym rodzaju urządzeń wyświetlana jest określona początkowa liczba atrakcji w kategorii. Dostępny jest przycisk `Więcej miejsc` który pokazuje miejsca, które nie zmieściły się w początkowej liczbie widocznych atrakcji.
+The section called `Surroundings` presents the local attractions that are worth visiting. Photos are lazily loaded in a specific order to keep the animation consistent - from left to right, from top to bottom. The attractions are categorized by city name. Each device type displays a specific initial number of attractions in the category. There is a `More Places` button that shows places that did not fit into the initial number of visible attractions.
 
-Na stronie dostępna jest również sekcja opisująca prognozę pogody na następne dni. Dane dostarcza platforma Open Weather Map. Dane pobierane są przez serwer napisany na platformę `Node.js` używający biblioteki `Express` i wysyłane do klienta gdy ten zjedzie na stronie do sekcji pogodowej. Dzięki temu, nasz klucz API do platformy Open Weather Map pozostaje tajny, a poza tym serwer robi jeszcze jedną bardzo ważną rzecz: cacheuje dane z API. Po co ten cache? Open Weather Map pozwala na darmowe korzystanie z ich API tylko pod warunkiem, że nie zostanie przekroczona określona ilość żądań w ciągu doby. Serwer cacheuje dane przez wybrany czas (w tym przypadku 10 minut) i gdy klient (frontend) zażąda danych pogodowych, serwer sprawdza, czy dane nadal są aktualne i jeśli nie, to pobiera świeżą prognozę pogody, zapisuje ją, i przesyła do klienta. Pozwala to na ograniczenie użycia API platformy Open Weather Map, żeby nie przekroczyło ilości żądań, po której trzeba byłoby płacić za dane pogodowe.
+The website also has a section describing the weather forecast for the next days. The data is provided by the Open Weather Map platform. The data is downloaded by a server written for the `Node.js` platform using the `Express` library and sent to the client when the page is scrolled down to the weather section. Thanks to this, our API key to the Open Weather Map platform remains secret, and besides, the server does one more very important thing: it caches data from the API. What is this cache for? Open Weather Map allows you to use their API free of charge only if the specified number of requests per day is not exceeded. The server caches the data for the selected time (in this case 10 minutes) and when the client (frontend) requests weather data, the server checks that the data is still up-to-date and if not, it downloads a fresh weather forecast, saves it, and sends it to the client. This allows to limit the usage of the Open Weather Map platform API so that it does not exceed the number of requests at which you would have to pay for weather data.
 
-W ostatniej sekcji dostępną mamy mapkę, na której wskazane jest miejsce gdzie można znaleźć siedzibę firmy. Mapka jest oczywiście ładowana dopiero w momencie gdy użytkownik zjedzie do sekcji kontaktowej.
+In the last section, we have a map with indicated place of the company's headquarters. Of course, the map is loaded only when the user scrolls down to the contact section.
 
-Dodatkowo, zrobione zostało przekierowanie `DNS` wysłanych emaili z maila `kontakt@kajakgo.pl` na adres na domenie `@gmail.com`.
+Addionally, the `DNS` redirection for emails from `kontakt@kajakgo.pl` to `@gmail.com` has been configured.
 
-Całość działa na serwerze `VPS` używając odpowiedniej konfiguracji `docker-compose`. Skonfigurowane są 3 serwisy:
+Everything runs on the `VPS` server using the appropriate `docker-compose` configuration. There are 3 services configured:
 
--   `KajakGo.Client` - cały frontend strony `kajakgo.pl`
--   `KajakGo.Server.Weather` - serwer serwujący oraz cacheujący dane pogodowe
--   `KajakGo.Proxy` - reverse proxy frontendu oraz backendu, którym w tym przypadku jest to `Nginx`
+-   `KajakGo.Client` - the entire frontend of the `kajakgo.pl` website
+-   `KajakGo.Server.Weather` - server that serves and caches weather data
+-   `KajakGo.Proxy` - frontend and backend reverse proxy, which in this case is `Nginx`
 
-Wdrażanie nowych wersji strony zostało zrealizowane przy pomocy `Github Actions` oraz `Releases`. Działa to w ten sposób, że gdy zmienimy jakieś treści na stronie i wrzucimy zmiany do repozytorium na Githubie, to wtedy wystarczy stworzyć nowy release, opisać zmiany, zapisać i chwilę poczekać, żeby zmiany zostały zdeployowane poprzez `Github Actions` na serwer `VPS` dostępny pod adresem `kajakgo.pl`.
+The implementation of the new website versions was done with the help of `Github Actions` and `Releases`. It works in such a way that when we change some content on the page and upload changes to the Github repository, then we just need to create a new release, describe the changes, save it, and wait a moment for the changes to be deployed via `Github Actions` to the `VPS` server available under `kajakgo.pl`.
 
-Dostępna jest również konfiguracja `docker-compose` dla programisty, która ułatwia rozpoczęcie edycji strony internetowej. Wystarczy pobrać repozytorium i uruchomić skrypt Powershella `start.ps1`, który pobierze wszystko za nas i uruchomi wszystkie aplikacje. W konfiguracji deweloperskiej również został użyty serwis proxy `Nginx`, który pozwala nam używać frontendu oraz api pogodowego z jednego adresu, co umożliwia udostępnienie podglądu strony klientowi przy pomocy narzędzi takich jak `localtunnel` lub `ngrok` oraz umożliwienie dla aplikacji frontendowej pobrania danych pogodowych podczas udostępniania.
+There is also a `docker-compose` configuration for the developer, which makes it easy to start editing a website. Just download the repository and run the Powershell script `start.ps1`, which will download everything for us and start all applications. In the development configuration, the `Nginx` proxy service was also used, which allows us to use the frontend and weather api from one address, which allows the client to view the website using tools such as `localtunnel` or `ngrok` and to download weather data for the frontend application while sharing.
 
-Oczywiście dostępna jest dokumentacja projektu opisująca jak edytować oraz wdrożyć całą aplikację na serwer produkcyjny.
+Of course, project documentation is available describing how to edit and deploy the entire application to the production server.

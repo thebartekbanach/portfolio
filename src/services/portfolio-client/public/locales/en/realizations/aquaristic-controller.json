@@ -1,13 +1,13 @@
 {
 	"id": "aquaristic-controller",
-	"title": "Kontroler Akwarystyczny",
-	"shortPageDescription": "Prosty prototyp kontrolera akwarystycznego z obsługą automatycznej podmiany wody i dolewki ze zbiornika rezerwowego",
+	"title": "Aquaristic controller",
+	"shortPageDescription": "A simple prototype of an aquarium controller with support for automatic water change and refilling from the reserve tank",
 	"realizationTime": {
 		"from": "2019-07-11",
 		"to": "2020-02-10"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/aquaristic-controller.png",
-	"contentUrl": "/locales/pl/realizations/aquaristic-controller.md",
+	"contentUrl": "/locales/en/realizations/aquaristic-controller.md",
 	"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller",
 	"previewType": "github",
 	"tags": {
@@ -16,8 +16,8 @@
 			"Arduino Due",
 			"Arduino Framework",
 			"PlatformIO",
-			"Projektowanie 3D",
-			"Druk 3D"
+			"3D Design",
+			"3D Printing"
 		]
 	}
 }

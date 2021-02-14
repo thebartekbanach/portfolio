@@ -1,16 +1,16 @@
-Dom u Kasi to strona internetowa domku letniskowego do wynajęcia. Zawarte są na niej wszystkie informacje na temat domku, warunki wynajmu, opis wyposażenia, galeria zdjęć z podziałem na różne części domu oraz okolicę, filmy prezentujące domek i okoliczne atrakcje, dojazd do domku oraz polecane przez właściciela serwisy i dane kontaktowe do właściciela posiadłości.
+Dom u Kasi is a website of a holiday home for rent. It contains all information about the house, rental conditions, description of the equipment, photo gallery divided into different parts of the house and the surrounding area, videos presenting the house and nearby attractions, access to the house as well as services recommended by the owner and contact details for the owner of the property.
 
-Zdjęcie w sekcji powitalnej jest przycinane dokładnie do rozmiaru urządzenia użytkownika, dzięki czemu zdjęcie w tle pokazuje się szybciej a użytkownicy oszczędzają dane komórkowe.
+The photo in the welcome section is cropped exactly to the size of the user's device, making the background photo show up faster and saving users mobile data.
 
-Obrazki dekoracyjne widoczne po bokach strony, galeria zdjęć a nawet filmy oraz mapa ze wskazanym miejscem docelowym ładowane są dopiero gdy znajdą się na ekranie, przyśpieszając tym samym pierwsze załadowanie strony.
+Decorative pictures visible on the sides of the page, photo gallery and even movies and a map with indicated destination place are loaded only when they are on the screen, thus speeding up the first page loading.
 
-Witryna wykonana została przy pomocy technologii `Next.js`, `React` oraz `Mobx`. Treści są kompilowane i serwowane przy pomocy backendu napisanego przy użyciu `Express.js`. Co ważne, kompilacja odbywa się przy uruchomieniu serwera i skompilowane treści są zapiswane w folderach cache, dzięki czemu nie muszą być kompilowane przy każdym żądaniu, co przyśpiesza wysyłanie danych.
+The website was made with the use of `Next.js`, `React` and `Mobx` technologies. Content is compiled and served using a backend written using `Express.js`. Importantly, compilation takes place at server startup and compiled content is saved in cache folders, so that they do not have to be compiled on every request, which speeds up sending data.
 
-Treści zapisane są w wielu formatach takich jak `markdown` (tekst formatowany), `json` (dane kontaktowe) lub `csv` (tabele). Edycja jest bardzo prosta, wystarczy zmienić treść wybranej części strony, zapisać, oraz zrestartować serwer.
+The content is written in many formats such as `markdown` (rich text), `json` (contact information), or `csv` (tables). Editing is very simple, just change the content of the selected part of the page, save and restart the server.
 
-Ale dlaczego nie mamy tu po prostu CMSa? Z dwóch powodów:
+But why don't we just have a CMS here? For two reasons:
 
-1. ograniczenie kosztów produkcji witryny
-2. osoba obsługująca stronę jest osobą która zna się na informatyce i radzi sobie z edycją treści w ten sposób
+1. reduction of site production costs
+2. the person operating the website is a person who knows about computer science and copes with editing content in this way
 
-Dostępna jest również obszerna dokumentacja w której opisane są instrukcje edycji treści każdej części strony. W dokumentacji opisany został też proces wdrożenia strony na serwer VPS.
+There is also extensive documentation that describes instructions on how to edit the content of each part of the page. The documentation also describes the process of deploying the website on the VPS server.

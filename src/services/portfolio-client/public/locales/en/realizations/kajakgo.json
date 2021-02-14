@@ -1,13 +1,13 @@
 {
 	"id": "kajakgo",
 	"title": "KajakGO",
-	"shortPageDescription": "Strona internetowa firmy zajmującej się spływami kajakowymi rzeką Krutyń",
+	"shortPageDescription": "Website of the company dealing with canoeing on the Krutyń River",
 	"realizationTime": {
 		"from": "2020-07-12",
 		"to": "2020-10-08"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/kajakgo.jpg",
-	"contentUrl": "/locales/pl/realizations/kajakgo.md",
+	"contentUrl": "/locales/en/realizations/kajakgo.md",
 	"previewUrl": "https://kajakgo.pl",
 	"previewType": "website",
 	"tags": {

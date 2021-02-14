@@ -1,13 +1,13 @@
 {
 	"id": "majkel-music",
 	"title": "Majkel Music",
-	"shortPageDescription": "Projekt Majkel Music to strona internetowa lokalnej gwiazdy disco polo",
+	"shortPageDescription": "A site made for a local music star. The integrated, easy-to-use CMS system allows to edit content even for people that are not familiar with this type of systems.",
 	"realizationTime": {
 		"from": "2017-06-06",
 		"to": "2017-10-27"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/majkel-music.png",
-	"contentUrl": "/locales/pl/realizations/majkel-music.md",
+	"contentUrl": "/locales/en/realizations/majkel-music.md",
 	"previewUrl": "https://kajakgo.pl",
 	"previewType": "website",
 	"tags": {

@@ -1,13 +1,13 @@
 {
 	"id": "dom-u-kasi",
 	"title": "Dom u Kasi",
-	"shortPageDescription": "Dom u Kasi to strona internetowa domku letniskowego do wynajęcia",
+	"shortPageDescription": "Dom u Kasi is a website of a holiday home for rent",
 	"realizationTime": {
 		"from": "2019-03-04",
 		"to": "2019-05-17"
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
-	"contentUrl": "/locales/pl/realizations/dom-u-kasi.md",
+	"contentUrl": "/locales/en/realizations/dom-u-kasi.md",
 	"previewUrl": "https://domukasi.pl",
 	"previewType": "website",
 	"tags": {

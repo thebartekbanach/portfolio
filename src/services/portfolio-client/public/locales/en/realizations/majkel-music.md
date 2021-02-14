@@ -1,9 +1,9 @@
-Projekt `Majkel Music` to strona internetowa lokalnej gwiazdy disco polo. Na witrynie znaleźć można najnowsze aktualności dotyczące działalności Michała, jego twórczość, podzieloną na trzy kategorie: piosenki, albumy oraz teledyski a także trasę koncertową oraz informacje kontaktowe.
+The `Majkel Music` project is the website of the local disco polo star. On the website you can find the latest news about Michał's activities, his work, divided into three categories: songs, albums and music videos as well as a concert tour and contact information.
 
-Wszystkie utwory oraz albumy można odsłuchać przy pomocy wbudowanego, responsywnego odtwarzacza muzyki.
+All songs and albums can be listened to using the built-in responsive music player.
 
-Edycja treści na stronie jest niezwykle prosta, dzięki systemowi CMS skrojonemu dokładnie pod wymagania projektu. Dzięki temu, system zarządzania treścią nie zawiera wielu zbędnych opcji, co stanowczo upraszcza jego użycie dla osób, które nie są obeznane z tego typu systemami.
+Editing content on the website is extremely simple, thanks to the CMS system tailored exactly to the project requirements. Thanks to this, the content management system does not contain many unnecessary options, which significantly simplifies its use for people who are not familiar with this type of systems.
 
-Cała strona jest w pełni responsywna, tak samo CMS jak i klient strony dostosowane są do urządzeń typu desktop oraz urządzeń mobilnych.
+The entire website is fully responsive, both the CMS and the website client are adapted to desktop and mobile devices.
 
-Całość jest bardzo szybka i wydajna dzięki użyciu frameworka `.NET CORE 1.1`. Za przechowywanie danych odpowiada baza danych `PostgreSQL` a klientem bazy danych jest biblioteka `Entity Framework Core` ze sterownikiem `Npgsql`. Frontend aplikacji renderowany jest przy pomocy silnika `Razor`, style napisane zostały przy użyciu `Sass`. Skrypty oraz style aplikacji zostały skompilowane oraz skompresowane używając technologii `Gulp.js`.
+The whole thing is very fast and efficient thanks to the use of the `.NET CORE 1.1` framework. The `PostgreSQL` database is responsible for data storage and the `Entity Framework Core` library with the `Npgsql` as database driver. The frontend of the application is rendered with the `Razor` engine, styles are written with `Sass`. Application scripts and styles have been compiled and compressed using the `Gulp.js` technology.
