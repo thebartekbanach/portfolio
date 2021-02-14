@@ -33,10 +33,12 @@ const StyledPageContainer = styled.main<PageContainerProps>`
 
 export const PageContainer: FC<PageContainerProps> = ({ children, useOverflowHidden }) => {
 	return (
-		<StyledPageContainer useOverflowHidden={useOverflowHidden}>
-			<Navbar />
-			{children}
+		<>
+			<StyledPageContainer useOverflowHidden={useOverflowHidden}>
+				<Navbar />
+				{children}
+			</StyledPageContainer>
 			<LanguageSwitch />
-		</StyledPageContainer>
+		</>
 	);
 };
