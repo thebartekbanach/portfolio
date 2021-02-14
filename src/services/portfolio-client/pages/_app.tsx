@@ -42,11 +42,11 @@ const MyApp: MyAppType = ({ Component, pageProps, router }) => {
 	};
 
 	return (
-		<CSSTransition in={isPageFadedIn} timeout={300}>
+		<CSSTransition in={isPageFadedIn} timeout={200}>
 			<SwitchTransition mode="out-in">
 				<CSSTransition
 					key={pagePath}
-					timeout={300}
+					timeout={200}
 					onEnter={scrollToTopOrToElementWhenPageIsInvisible}
 				>
 					<Component {...pageProps} />
