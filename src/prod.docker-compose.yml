@@ -26,7 +26,8 @@ services:
     container_name: Prod.Portfolio.Client
     build:
       context: ./services/portfolio-client
-      dockerfile: ./prod.dockerfile
+      dockerfile: ./Dockerfile
+      target: prod
       args:
         - EMAIL_GATEWAY_API_ADDRESS=$EMAIL_GATEWAY_API_ADDRESS
     env_file:
@@ -41,7 +42,8 @@ services:
     container_name: Prod.Portfolio.EmailGateway
     build:
       context: ./services/email-gateway
-      dockerfile: ./prod.dockerfile
+      dockerfile: ./Dockerfile
+      target: prod
     env_file:
       - /app/env/Prod.Portfolio.EmailGateway.env
     networks:

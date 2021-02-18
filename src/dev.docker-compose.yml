@@ -19,7 +19,8 @@ services:
     env_file: ./env/Dev.Portfolio.Client.env
     build:
       context: ./services/portfolio-client
-      dockerfile: ./dev.dockerfile
+      dockerfile: ./Dockerfile
+      target: dev
     volumes:
       - ./services/portfolio-client:/src/portfolio-client
     networks:
@@ -32,7 +33,8 @@ services:
     env_file: ./env/Dev.Portfolio.EmailGateway.env
     build:
       context: ./services/email-gateway
-      dockerfile: ./dev.dockerfile
+      dockerfile: ./Dockerfile
+      target: dev
     volumes:
       - ./services/portfolio-client:/src/portfolio-client
       - ./services/email-gateway:/src/email-gateway
