@@ -4,14 +4,21 @@ import { useTranslation } from "~/utils/i18next";
 
 import { AvailableLanguage, LanguageSwitchWrapper } from "./styles";
 
-export const LanguageSwitch: FC = () => {
+interface LanguageSwitchProps {
+	hidePage(): Promise<void>;
+	showPage(): Promise<void>;
+}
+
+export const LanguageSwitch: FC<LanguageSwitchProps> = ({ hidePage, showPage }) => {
 	const { i18n } = useTranslation();
 
 	const currentLanguage = i18n.language;
 
-	const switchLanguageTo = (lang: string) => () => {
+	const switchLanguageTo = (lang: string) => async () => {
 		if (i18n.language !== lang) {
+			await hidePage();
 			i18n.changeLanguage(lang);
+			await showPage();
 		}
 	};
 
