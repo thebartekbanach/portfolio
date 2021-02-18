@@ -20,7 +20,7 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 	if err := json.NewDecoder(r.Body).Decode((&request)); err != nil {
 		w.WriteHeader(http.StatusBadRequest)
 		w.Write([]byte("bad-request"))
-		log.Println(err)
+		log.Println("Error when trying to decode email send request:", err)
 		return
 	}
 
@@ -48,7 +48,7 @@ func contactFormMessageSendHandler(w http.ResponseWriter, r *http.Request) {
 	if err := sendEmailUsingGmail(translatedSubjectID, request.SenderEmail, request.Message, env); err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		w.Write([]byte("email-send-error"))
-		log.Panicln(err)
+		log.Panicln("Error when sending email:", err)
 	}
 
 	w.WriteHeader(http.StatusOK)
