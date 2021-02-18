@@ -1,15 +1,13 @@
-FROM golang:alpine AS base
+FROM golang AS dev
 
 WORKDIR /src/email-gateway/
-
-FROM base AS dev
 
 RUN go get github.com/canthefason/go-watcher
 RUN go install github.com/canthefason/go-watcher/cmd/watcher
 
 CMD ["bash", "/src/email-gateway/entrypoint.sh"]
 
-FROM base AS prod
+FROM golang:alpine AS prod
 
 COPY ./go.mod .
 COPY ./go.sum .
