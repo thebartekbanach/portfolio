@@ -9,6 +9,8 @@ CMD ["bash", "/src/email-gateway/entrypoint.sh"]
 
 FROM golang:alpine AS prod
 
+WORKDIR /src/email-gateway/
+
 COPY ./go.mod .
 COPY ./go.sum .
 
