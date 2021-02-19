@@ -12,8 +12,6 @@ ENTRYPOINT ["/bin/bash", "./entrypoint.sh"]
 
 FROM base AS prod
 
-ENV NODE_ENV production
-
 COPY --chown=node:node package*.json ./
 RUN npm ci
 
@@ -21,6 +19,7 @@ COPY --chown=node:node . .
 
 ARG EMAIL_GATEWAY_API_ADDRESS
 ENV EMAIL_GATEWAY_API_ADDRESS=$EMAIL_GATEWAY_API_ADDRESS
+ENV NODE_ENV production
 
 RUN npm run build
 
