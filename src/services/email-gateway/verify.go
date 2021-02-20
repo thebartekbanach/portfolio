@@ -82,8 +82,18 @@ func verifyTitle(titleID string) error {
 }
 
 func verifyLanguage(langCode string) error {
-	// TODO: Read directory names of client/public/locales
-	availableLangs := []string{"pl", "en"}
+	entries, err := ioutil.ReadDir("/src/portfolio-client/public/locales")
+	if err != nil {
+		return errors.New("verifyLanguage error: " + err.Error())
+	}
+
+	availableLangs := []string{}
+
+	for _, entry := range entries {
+		if entry.IsDir() {
+			availableLangs = append(availableLangs, entry.Name())
+		}
+	}
 
 	if !contains(availableLangs, langCode) {
 		return errors.New("language-not-valid")
