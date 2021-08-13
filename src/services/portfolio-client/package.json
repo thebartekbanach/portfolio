@@ -19,7 +19,7 @@
 		"ismobilejs": "^1.1.1",
 		"lodash.debounce": "^4.0.8",
 		"marked": "^2.0.0",
-		"next": "^10.0.0",
+		"next": "^11.1.0",
 		"next-i18next": "^7.0.1",
 		"normalize.css": "^8.0.1",
 		"react": "^17.0.1",
