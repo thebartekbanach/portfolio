@@ -6,15 +6,15 @@ My personal portfolio project is a one page website built with Next.js framework
 
 It consists of 3 services:
 
--   Portfolio.Proxy - the reverse proxy of solution
--   Portfolio.Client - the Next.js application, serves web client application
--   Portfolio.EmailGateway - the gateway service for email messages sent from contact form
+-   `Portfolio.Proxy` - the reverse proxy of solution
+-   `Portfolio.Client` - the Next.js application, serves web client application
+-   `Portfolio.EmailGateway` - the gateway service for email messages sent from contact form
 
 # Requirements
 
--   Docker - to run all necessary containers on your computer
--   Visual Studio Code - I made automation scripts for tasks using this editor as runner
--   Npm & Node.js - a Javascript runtime, necessary for tooling of VSC editor
+-   `Docker` - to run all necessary containers on your computer
+-   `Visual Studio Code` - I made automation scripts for tasks using this editor as runner
+-   `Npm` & `Node.js` - a Javascript runtime, necessary for tooling of VSC editor
 
 # Project structure
 
