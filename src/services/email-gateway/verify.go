@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"io/ioutil"
 
 	"github.com/badoux/checkmail"
 )
