@@ -41,7 +41,7 @@ export const NavbarContactButton = styled.a`
 		box-shadow: 0px 0px 0px 0 #4764e6;
 	}
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1050px) {
 		margin-left: 0;
 		margin-top: 20px;
 
@@ -54,7 +54,7 @@ interface NavbarItemsProps {
 }
 
 export const NavbarItems = styled.div<NavbarItemsProps>`
-	@media (max-width: 1000px) {
+	@media (max-width: 1050px) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;

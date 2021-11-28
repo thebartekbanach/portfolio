@@ -118,7 +118,7 @@ function hoverAnimationOnOpenMenu({ mobileMenuState }: MobileMenuToggleButtonPro
 }
 
 export const MobileMenuToggleButton = styled.button<MobileMenuToggleButtonProps>`
-	@media (min-width: 1001px) {
+	@media (min-width: 1051px) {
 		display: none;
 	}
 
