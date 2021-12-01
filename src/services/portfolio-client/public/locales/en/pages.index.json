@@ -25,7 +25,7 @@
 		"categoryRoots": [
 			{
 				"title": "Front-end",
-				"description": "I love creating simple and intuitive user interfaces so that they can get things done quickly",
+				"description": "I love creating simple and intuitive user interfaces so they can get things done quickly and enjoy the process",
 				"content": [
 					{
 						"categoryName": "Programming languages",
@@ -259,7 +259,7 @@
 			},
 			{
 				"title": "Embedded",
-				"description": "I do diy in my spare time. I program devices that are easy to configure and easy to use",
+				"description": "I do diy in my spare time. I like to program devices that are easy to configure and easy to use for end users",
 				"content": [
 					{
 						"categoryName": "Programming languages",
@@ -296,11 +296,11 @@
 							},
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/cad.svg",
-								"name": "Projektowanie 3D"
+								"name": "3D design"
 							},
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/embedded/items/3d-printing.svg",
-								"name": "Druk 3D"
+								"name": "3D printing"
 							}
 						]
 					}
