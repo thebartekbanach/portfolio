@@ -4,5 +4,5 @@ export interface ProjectInfo {
 	name: string;
 	description: string;
 	previewType: "website" | "github";
-	previewUrl: string;
+	previewUrl: string | null;
 }

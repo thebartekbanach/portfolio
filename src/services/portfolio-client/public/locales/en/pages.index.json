@@ -347,7 +347,7 @@
 				"name": "Majkel Music",
 				"description": "A site made for a local music star. The integrated, easy-to-use CMS system allows to edit content even for people that are not familiar with this type of systems.",
 				"previewType": "website",
-				"previewUrl": "https://google.com"
+				"previewUrl": null
 			},
 			{
 				"id": "aquaristic-controller",

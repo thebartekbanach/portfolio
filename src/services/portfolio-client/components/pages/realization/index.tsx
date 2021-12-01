@@ -91,7 +91,10 @@ export const RealizationPageContent: FC<RealizationPageContentProps> = ({
 				<RealizationPreviewImageAndButtonWrapper>
 					<DecorativePicture imageUrl={previewPicture} />
 					<RealizationPreviewButtonWrapper>
-						<RealizationPreviewButton href={previewUrl}>
+						<RealizationPreviewButton
+							href={previewUrl ?? ""}
+							disabled={previewUrl === null}
+						>
 							{t(
 								previewType === "github"
 									? "previewGithubButton"

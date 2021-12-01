@@ -92,7 +92,11 @@ export const RealizationDetailsLink = styled.a`
 	}
 `;
 
-export const RealizationPreviewLink = styled.a`
+interface RealizationPreviewLinkProps {
+	disabled: boolean;
+}
+
+export const RealizationPreviewLink = styled.a<RealizationPreviewLinkProps>`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -112,4 +116,6 @@ export const RealizationPreviewLink = styled.a`
 	&:hover {
 		text-underline-offset: 9px;
 	}
+
+	${p => p.disabled && "pointer-events: none; opacity: 0.55;"}
 `;

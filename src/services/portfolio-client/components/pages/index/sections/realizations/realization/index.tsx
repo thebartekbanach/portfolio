@@ -21,7 +21,7 @@ interface RealizationProps {
 	name: string;
 	description: string;
 	detailsUrl: string;
-	previewUrl: string;
+	previewUrl: string | null;
 	previewType: "github" | "website";
 }
 
@@ -56,7 +56,7 @@ export const Realization: FC<RealizationProps> = ({
 					<Link href={detailsUrl} passHref scroll={false}>
 						<RealizationDetailsLink>{detailsButtonContent}</RealizationDetailsLink>
 					</Link>
-					<RealizationPreviewLink href={previewUrl}>
+					<RealizationPreviewLink href={previewUrl ?? ""} disabled={previewUrl === null}>
 						{previewButtonContent}
 					</RealizationPreviewLink>
 				</RealizationActionsWrapper>

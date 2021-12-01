@@ -122,7 +122,11 @@ export const RealizationPreviewButtonWrapper = styled.div`
 	text-align: center;
 `;
 
-export const RealizationPreviewButton = styled.a`
+interface RealizationPreviewButtonProps {
+	disabled: boolean;
+}
+
+export const RealizationPreviewButton = styled.a<RealizationPreviewButtonProps>`
 	display: inline-block;
 	padding: 15px 60px;
 	margin-top: 60px;
@@ -143,6 +147,8 @@ export const RealizationPreviewButton = styled.a`
 		transform: scale(0.95);
 		box-shadow: 0px 0px 0px 0 rgba(94, 88, 248, 0.46);
 	}
+
+	${p => p.disabled && "pointer-events: none; opacity: 0.55;"}
 `;
 
 export const RealizationDescription = styled.div`
