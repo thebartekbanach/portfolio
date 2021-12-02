@@ -15,7 +15,7 @@
 		"desktop": {
 			"title": "Bartek Banach",
 			"subTitle": "Full Stack Developer",
-			"aboutMe": "I am <b>21 year old</b> fully independent <b>web development enthusiast</b>. I love to automate tasks, <b>make people's work easier</b> not only through web applications but also with intuitive embedded systems. I also like creating simple, <b>intuitive frontend applications</b>, that are easy to use and useful in everyday life."
+			"aboutMe": "I am <b>22 years old</b> fully independent <b>web development enthusiast</b>. I love to automate tasks, <b>make people's work easier</b> not only through web applications but also with intuitive embedded systems. I also like creating simple, <b>intuitive frontend applications</b>, that are easy to use and useful in everyday life."
 		}
 	},
 	"skills": {
@@ -173,6 +173,23 @@
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/csharp.svg",
 								"name": "C#"
 							}
+						]
+					},
+					{
+						"categoryName": "Backend in Go",
+						"items": [
+							// Wire
+							// Kong
+							// Sql-migrate
+							// Gorilla Websocket
+							// AMQP
+							// testing: Gomock
+							// testing: Goblin
+							// testing: test
+							// others: mongo!
+							// others: sqlite!
+							// others: minio!
+							// others: rabbitmq
 						]
 					},
 					{
