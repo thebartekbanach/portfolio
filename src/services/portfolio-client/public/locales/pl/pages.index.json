@@ -405,7 +405,7 @@
 				"name": "Majkel Music",
 				"description": "Witryna stworzona dla lokalnej gwiazdy muzycznej. Zintegrowany, łatwy w obsłudze system CMS umożliwia edycję treści nawet dla osób nie obeznanych z tego typu systemami.",
 				"previewType": "website",
-				"previewUrl": "https://google.com"
+				"previewUrl": null
 			},
 			{
 				"id": "aquaristic-controller",
