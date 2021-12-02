@@ -178,18 +178,43 @@
 					{
 						"categoryName": "Backend in Go",
 						"items": [
-							// Wire
-							// Kong
-							// Sql-migrate
-							// Gorilla Websocket
-							// AMQP
-							// testing: Gomock
-							// testing: Goblin
-							// testing: test
-							// others: mongo!
-							// others: sqlite!
-							// others: minio!
-							// others: rabbitmq
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/wire.png",
+								"name": "Wire"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/kong.png",
+								"name": "Kong"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/sql-migrate.png",
+								"name": "Sql-migrate"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/gorilla-websocket.png",
+								"name": "Gorilla Websocket"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/amqp.png",
+								"name": "AMQP"
+							}
+						]
+					},
+					{
+						"categoryName": "Testing in Go",
+						"items": [
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/go-testing.png",
+								"name": "Testing package"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/goblin.png",
+								"name": "Goblin"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/gomock.png",
+								"name": "Gomock"
+							}
 						]
 					},
 					{
@@ -269,6 +294,22 @@
 							{
 								"iconUrl": "/assets/pages/index/skills/categories/backend/items/postgresql.svg",
 								"name": "PostgreSQL"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/mongo.png",
+								"name": "MongoDB"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/sqlite.svg",
+								"name": "SQLite"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/minio.png",
+								"name": "Minio"
+							},
+							{
+								"iconUrl": "/assets/pages/index/skills/categories/backend/items/rabbitmq.png",
+								"name": "RabbitMQ"
 							}
 						]
 					}
