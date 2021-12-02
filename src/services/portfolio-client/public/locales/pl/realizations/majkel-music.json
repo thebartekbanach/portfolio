@@ -19,7 +19,14 @@
 			"FakeItEasy",
 			"Npgsql"
 		],
-		"#9672e7": ["Gulp", "JQuery", "Moment.js", "Tether.js"],
-		"#c26eda": ["Sass"]
+		"#9672e7": [
+			"Gulp",
+			"JQuery",
+			"Moment.js",
+			"Tether.js"
+		],
+		"#c26eda": [
+			"Sass"
+		]
 	}
 }
