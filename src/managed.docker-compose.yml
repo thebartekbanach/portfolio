@@ -7,7 +7,6 @@ services:
     volumes:
       - ./services/proxy/dev:/etc/nginx
     networks:
-      - prod-portfolio-internal
       - public
     depends_on:
       - client
@@ -31,7 +30,7 @@ services:
     environment:
       - EMAIL_GATEWAY_API_ADDRESS=${EMAIL_GATEWAY_API_ADDRESS:-/api/email-gateway}
     networks:
-      - prod-portfolio-internal
+      - public
     depends_on:
       - email-gateway
     restart: "always"
@@ -57,13 +56,11 @@ services:
       - GMAIL_OAUTH2_REFRESH_TOKEN=${GMAIL_OAUTH2_REFRESH_TOKEN?:"set oauth2 refresh token"}
       - GMAIL_OAUTH2_ACCESS_TOKEN=${GMAIL_OAUTH2_ACCESS_TOKEN?:"set oauth2 access token"}
     networks:
-      - prod-portfolio-internal
+      - public
     volumes:
       - ./services/portfolio-client:/src/portfolio-client:ro
     restart: "always"
 
 networks:
-  prod-portfolio-internal:
-    name: Prod.Portfolio.Internal
   public:
     external: true
