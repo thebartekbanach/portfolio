@@ -15,7 +15,7 @@ services:
     restart: "always"
     labels:
       - traefik.enable=true
-      - traefik.http.routers.registry.rule=Host(`bartekbanach.dev`)
+      - traefik.http.routers.registry.rule=Host(`$DEPLOYMENT_HOST:-bartekbanach.dev`)
       - traefik.http.routers.registry.entrypoints=websecure
       - traefik.http.routers.registry.tls=true
       - traefik.http.services.registry.loadbalancer.server.port=80
