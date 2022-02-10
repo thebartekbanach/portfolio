@@ -5,7 +5,7 @@ services:
     container_name: Prod.Portfolio.Proxy
     image: nginx:1.19.6
     volumes:
-      - ./services/proxy/dev:/etc/nginx
+      - ./services/proxy/dev/nginx.conf:/etc/nginx/nginx.conf:ro
     networks:
       - public
     depends_on:
