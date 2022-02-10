@@ -1,0 +1,69 @@
+version: "3.8"
+
+services:
+  proxy:
+    container_name: Prod.Portfolio.Proxy
+    image: nginx:1.19.6
+    volumes:
+      - ./services/proxy/dev:/etc/nginx
+    networks:
+      - prod-portfolio-internal
+      - public
+    depends_on:
+      - client
+      - email-gateway
+    restart: "always"
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.registry.rule=Host(`bartekbanach.dev`)
+      - traefik.http.routers.registry.entrypoints=websecure
+      - traefik.http.routers.registry.tls=true
+      - traefik.http.services.registry.loadbalancer.server.port=80
+
+  client:
+    container_name: Prod.Portfolio.Client
+    build:
+      context: ./services/portfolio-client
+      dockerfile: ./Dockerfile
+      target: prod
+      args:
+        - EMAIL_GATEWAY_API_ADDRESS=$EMAIL_GATEWAY_API_ADDRESS:-/api/email-gateway
+    environment:
+      - EMAIL_GATEWAY_API_ADDRESS=$EMAIL_GATEWAY_API_ADDRESS:-/api/email-gateway
+    networks:
+      - prod-portfolio-internal
+    depends_on:
+      - email-gateway
+    restart: "always"
+
+  email-gateway:
+    container_name: Prod.Portfolio.EmailGateway
+    build:
+      context: ./services/email-gateway
+      dockerfile: ./Dockerfile
+      target: prod
+    environment:
+      - ENV=$ENV:-PROD
+      # translations configuration
+      - SUBJECT_TRANSLATIONS_FILES_PATH=$SUBJECT_TRANSLATIONS_FILES_PATH:-/src/portfolio-client/public/locales/{lang}/pages.index.json
+      - SUBJECT_JSON_TRANSLATION_QUERY=$SUBJECT_JSON_TRANSLATION_QUERY:-contact.contactForm.availableSubjects.#(id=\"{id}\").subject
+      - AVAILABLE_SUBJECT_ID_QUERY=$AVAILABLE_SUBJECT_ID_QUERY:-contact.contactForm.availableSubjects.subject
+      # email forwoarding config
+      - GMAIL_OAUTH2_REDIRECT_URL=$GMAIL_OAUTH2_REDIRECT_URL:-https://bartekbanach.dev
+      - GMAIL_CONTACT_EMAIL_ADDRESS=$GMAIL_CONTACT_EMAIL_ADDRESS?:"set contact email address"
+      # email forwoarding secrets
+      - GMAIL_CLIENT_ID=$GMAIL_CLIENT_ID?:"set client id"
+      - GMAIL_CLIENT_SECRET=$GMAIL_CLIENT_SECRET?:"set client secret"
+      - GMAIL_OAUTH2_REFRESH_TOKEN=$GMAIL_OAUTH2_REFRESH_TOKEN?:"set oauth2 refresh token"
+      - GMAIL_OAUTH2_ACCESS_TOKEN=$GMAIL_OAUTH2_ACCESS_TOKEN?:"set oauth2 access token"
+    networks:
+      - prod-portfolio-internal
+    volumes:
+      - ./services/portfolio-client:/src/portfolio-client:ro
+    restart: "always"
+
+networks:
+  prod-portfolio-internal:
+    name: Prod.Portfolio.Internal
+  public:
+    external: true
