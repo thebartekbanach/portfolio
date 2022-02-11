@@ -3,9 +3,9 @@ version: "3.8"
 services:
   proxy:
     container_name: Prod.Portfolio.Proxy
-    image: nginx:1.19.6
-    volumes:
-      - ./services/proxy/dev:/etc/nginx
+    build:
+      context: ./services/proxy/managed
+      dockerfile: ./Dockerfile
     networks:
       - public
     depends_on:
@@ -37,9 +37,9 @@ services:
   email-gateway:
     container_name: Prod.Portfolio.EmailGateway
     build:
-      context: ./services/email-gateway
-      dockerfile: ./Dockerfile
-      target: prod
+      context: ./services
+      dockerfile: ./email-gateway/Dockerfile
+      target: prod-managed
     environment:
       - ENV=${ENV:-PROD}
       # translations configuration
@@ -56,8 +56,6 @@ services:
       - GMAIL_OAUTH2_ACCESS_TOKEN=${GMAIL_OAUTH2_ACCESS_TOKEN?:"set oauth2 access token"}
     networks:
       - public
-    volumes:
-      - ./services/portfolio-client:/src/portfolio-client:ro
     restart: "always"
 
 networks:
