@@ -4,7 +4,7 @@ services:
   proxy:
     container_name: Prod.Portfolio.Proxy
     build:
-      context: ./services/proxy/managed
+      context: ./services/proxy/
       dockerfile: ./Dockerfile
     networks:
       - public
@@ -16,8 +16,8 @@ services:
       - traefik.http.routers.portfolio_proxy.rule=Host(`${DEPLOYMENT_HOST:-bartekbanach.dev}`)
       - traefik.http.routers.portfolio_proxy.entrypoints=websecure
       - traefik.http.routers.portfolio_proxy.tls=true
-      - traefik.http.routers.portfolio_proxy.tls.certresolver=leresolver
       - traefik.http.services.portfolio_proxy.loadbalancer.server.port=80
+
   client:
     container_name: Prod.Portfolio.Client
     build:
@@ -33,19 +33,19 @@ services:
     depends_on:
       - email-gateway
     restart: "always"
-
+    
   email-gateway:
     container_name: Prod.Portfolio.EmailGateway
     build:
       context: ./services
-      dockerfile: ./email-gateway/Dockerfile.managed
+      dockerfile: ./email-gateway/Dockerfile
       target: prod-managed
     environment:
       - ENV=${ENV:-PROD}
       # translations configuration
-      - SUBJECT_TRANSLATIONS_FILES_PATH=${SUBJECT_TRANSLATIONS_FILES_PATH:-"/src/portfolio-client/public/locales/{lang}/pages.index.json"}
-      - SUBJECT_JSON_TRANSLATION_QUERY=${SUBJECT_JSON_TRANSLATION_QUERY:-contact.contactForm.availableSubjects.#(id=\"{id}\").subject}
-      - AVAILABLE_SUBJECT_ID_QUERY=${AVAILABLE_SUBJECT_ID_QUERY:-contact.contactForm.availableSubjects.subject}
+      - SUBJECT_TRANSLATIONS_FILES_PATH="/src/portfolio-client/public/locales/{lang}"
+      - SUBJECT_JSON_TRANSLATION_QUERY="contact.contactForm.availableSubjects.#(id=\"{id}\").subject"
+      - AVAILABLE_SUBJECT_ID_QUERY="contact.contactForm.availableSubjects.subject"
       # email forwoarding config
       - GMAIL_OAUTH2_REDIRECT_URL=${GMAIL_OAUTH2_REDIRECT_URL:-https://bartekbanach.dev}
       - GMAIL_CONTACT_EMAIL_ADDRESS=${GMAIL_CONTACT_EMAIL_ADDRESS?:"set contact email address"}
