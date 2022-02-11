@@ -43,7 +43,7 @@ services:
     environment:
       - ENV=${ENV:-PROD}
       # translations configuration
-      - SUBJECT_TRANSLATIONS_FILES_PATH=${SUBJECT_TRANSLATIONS_FILES_PATH:-/src/portfolio-client/public/locales/{lang}/pages.index.json}
+      - SUBJECT_TRANSLATIONS_FILES_PATH=${SUBJECT_TRANSLATIONS_FILES_PATH:-"/src/portfolio-client/public/locales/{lang}/pages.index.json"}
       - SUBJECT_JSON_TRANSLATION_QUERY=${SUBJECT_JSON_TRANSLATION_QUERY:-contact.contactForm.availableSubjects.#(id=\"{id}\").subject}
       - AVAILABLE_SUBJECT_ID_QUERY=${AVAILABLE_SUBJECT_ID_QUERY:-contact.contactForm.availableSubjects.subject}
       # email forwoarding config
