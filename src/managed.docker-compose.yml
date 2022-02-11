@@ -38,7 +38,7 @@ services:
     container_name: Prod.Portfolio.EmailGateway
     build:
       context: ./services
-      dockerfile: ./email-gateway/Dockerfile
+      dockerfile: ./email-gateway/Dockerfile.managed
       target: prod-managed
     environment:
       - ENV=${ENV:-PROD}
