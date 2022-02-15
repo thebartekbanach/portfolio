@@ -11,8 +11,21 @@
 	"previewUrl": "https://bartekbanach.dev/go/domukasi",
 	"previewType": "website",
 	"tags": {
-		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "MobX", "Photoswipe"],
-		"#9672e7": ["Express", "Marked", "Sharp"],
-		"#c26eda": ["Tslint"]
+		"#5e8fea": [
+			"Typescript",
+			"Next",
+			"React",
+			"Styled components",
+			"MobX",
+			"Photoswipe"
+		],
+		"#9672e7": [
+			"Express",
+			"Marked",
+			"Sharp"
+		],
+		"#c26eda": [
+			"Tslint"
+		]
 	}
 }

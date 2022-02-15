@@ -11,8 +11,24 @@
 	"previewUrl": "https://bartekbanach.dev/go/kajakgo",
 	"previewType": "website",
 	"tags": {
-		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "Deox", "Express"],
-		"#9672e7": ["Eslint", "Stylelint", "Prettier", "Webpack"],
-		"#c26eda": ["Docker", "Docker compose", "Nginx"]
+		"#5e8fea": [
+			"Typescript",
+			"Next",
+			"React",
+			"Styled components",
+			"Deox",
+			"Express"
+		],
+		"#9672e7": [
+			"Eslint",
+			"Stylelint",
+			"Prettier",
+			"Webpack"
+		],
+		"#c26eda": [
+			"Docker",
+			"Docker compose",
+			"Nginx"
+		]
 	}
 }
