@@ -389,7 +389,7 @@
 				"name": "KajakGO",
 				"description": "Strona internetowa firmy oferującej spływy kajakowe rzeką Krutynią. Szybka, z przyjemnymi dla oka animacjami oraz dostosowana na każdy rozmiar urządzenia.",
 				"previewType": "website",
-				"previewUrl": "https://kajakgo.pl"
+				"previewUrl": "https://bartekbanach.dev/go/kajakgo"
 			},
 			{
 				"id": "dom-u-kasi",
@@ -397,7 +397,7 @@
 				"name": "Dom u Kasi",
 				"description": "Witryna internetowa domku letniskowego do wynajęcia. Responsywna oraz dynamiczna, napisana w React. Strona ładuje się szybko nawet przy wolnym łączu dzięki specjalnej optymalizacji ładowania obrazków.",
 				"previewType": "website",
-				"previewUrl": "https://domukasi.pl"
+				"previewUrl": "https://bartekbanach.dev/go/domukasi"
 			},
 			{
 				"id": "majkel-music",
@@ -413,7 +413,7 @@
 				"name": "Kontroler akwarystyczy",
 				"description": "Kontroler akwarystyczny napisany na płytkę Arduino Due. Pozwala na półautomatyczną podmianę wody, automatycznie uzupełnia parującą wodę, dynamicznie steruje oświetleniem w ciągu dnia i wiele więcej!",
 				"previewType": "github",
-				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
+				"previewUrl": "https://bartekbanach.dev/go/simple-aqua-controller"
 			}
 		]
 	},

@@ -389,7 +389,7 @@
 				"name": "KajakGO",
 				"description": "Website of the company offering canoeing on the Krutynia River. Fast, with eye-catching animations and adapted to any device size.",
 				"previewType": "website",
-				"previewUrl": "https://kajakgo.pl"
+				"previewUrl": "https://bartekbanach.dev/go/kajakgo"
 			},
 			{
 				"id": "dom-u-kasi",
@@ -397,7 +397,7 @@
 				"name": "Dom u Kasi",
 				"description": "Website of a holiday home for rent. Responsive and dynamic, written in React. The page loads quickly even with a slow internet connection, thanks to the special optimization of images loading.",
 				"previewType": "website",
-				"previewUrl": "https://domukasi.pl"
+				"previewUrl": "https://bartekbanach.dev/go/domukasi"
 			},
 			{
 				"id": "majkel-music",
@@ -413,7 +413,7 @@
 				"name": "Aquaristic controller",
 				"description": "Aquarium controller written for the Arduino Due board. It allows for semi-automatic water change, automatically replenishes evaporating water, dynamically controls lighting during the day and much more!",
 				"previewType": "github",
-				"previewUrl": "https://github.com/thebartekbanach/simple-aqua-controller"
+				"previewUrl": "https://bartekbanach.dev/go/simple-aqua-controller"
 			}
 		]
 	},

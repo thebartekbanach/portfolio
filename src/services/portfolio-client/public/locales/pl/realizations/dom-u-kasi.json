@@ -8,7 +8,7 @@
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/dom-u-kasi.jpg",
 	"contentUrl": "/locales/pl/realizations/dom-u-kasi.md",
-	"previewUrl": "https://domukasi.pl",
+	"previewUrl": "https://bartekbanach.dev/go/domukasi",
 	"previewType": "website",
 	"tags": {
 		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "MobX", "Photoswipe"],

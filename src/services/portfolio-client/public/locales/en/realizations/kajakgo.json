@@ -8,7 +8,7 @@
 	},
 	"previewPicture": "/assets/pages/index/realizations/works/kajakgo.jpg",
 	"contentUrl": "/locales/en/realizations/kajakgo.md",
-	"previewUrl": "https://kajakgo.pl",
+	"previewUrl": "https://bartekbanach.dev/go/kajakgo",
 	"previewType": "website",
 	"tags": {
 		"#5e8fea": ["Typescript", "Next", "React", "Styled components", "Deox", "Express"],
