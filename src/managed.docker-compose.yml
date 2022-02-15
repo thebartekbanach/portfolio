@@ -4,7 +4,7 @@ services:
   proxy:
     container_name: Prod.Portfolio.Proxy
     build:
-      context: ./services/proxy/
+      context: ./services/proxy/managed
       dockerfile: ./Dockerfile
     networks:
       - public
