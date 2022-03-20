@@ -12,6 +12,7 @@ import "~/public/fonts/roboto/bold/include.css";
 
 import App, { AppContext, AppInitialProps, AppProps } from "next/app";
 import { FC, useEffect, useState } from "react";
+import { hotjar } from "react-hotjar";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import { appWithTranslation } from "~/utils/i18next";
@@ -22,7 +23,16 @@ type MyAppType = FC<AppProps> & { getInitialProps: (ctx: AppContext) => Promise<
 const MyApp: MyAppType = ({ Component, pageProps, router }) => {
 	const [isPageFadedIn, setIsPageFadedIn] = useState(false);
 
-	useEffect(() => setIsPageFadedIn(true), []);
+	useEffect(() => {
+		setIsPageFadedIn(true);
+
+		if (process.env.HOTJAR_ID && process.env.HOTJAR_VERSION) {
+			hotjar.initialize(
+				parseInt(process.env.HOTJAR_ID),
+				parseInt(process.env.HOTJAR_VERSION)
+			);
+		}
+	}, []);
 
 	const [pagePath, sectionId] = router.asPath.split("#");
 

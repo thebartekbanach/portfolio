@@ -8,5 +8,8 @@ declare module "*.svg" {
 declare namespace NodeJS {
 	export interface ProcessEnv {
 		EMAIL_GATEWAY_API_ADDRESS: string;
+
+		HOTJAR_ID?: string;
+		HOTJAR_VERSION?: string;
 	}
 }
