@@ -26,6 +26,8 @@ services:
       target: prod
       args:
         - EMAIL_GATEWAY_API_ADDRESS=/api/email-gateway
+        - HOTJAR_ID=${HOTJAR_ID}
+        - HOTJAR_VERSION=${HOTJAR_VERSION}
     environment:
       - EMAIL_GATEWAY_API_ADDRESS=/api/email-gateway
     networks:
