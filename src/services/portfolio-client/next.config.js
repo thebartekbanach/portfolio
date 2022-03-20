@@ -12,7 +12,9 @@ module.exports = {
 		localeSubpaths
 	},
 	env: {
-		EMAIL_GATEWAY_API_ADDRESS: process.env.EMAIL_GATEWAY_API_ADDRESS
+		EMAIL_GATEWAY_API_ADDRESS: process.env.EMAIL_GATEWAY_API_ADDRESS,
+		HOTJAR_ID: process.env.HOTJAR_ID,
+		HOTJAR_VERSION: process.env.HOTJAR_VERSION
 	},
 	webpack: (config, options) => {
 		if (config.resolve.plugins) {
