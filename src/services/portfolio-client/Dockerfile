@@ -1,4 +1,4 @@
-FROM node:16.14.1 AS base
+FROM node:16.14.2 AS base
 
 WORKDIR /src/portfolio-client
 
