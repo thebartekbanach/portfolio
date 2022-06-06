@@ -5,7 +5,7 @@ go 1.15
 require (
 	cloud.google.com/go v0.75.0 // indirect
 	github.com/badoux/checkmail v1.2.1
-	github.com/tidwall/gjson v1.6.7
+	github.com/tidwall/gjson v1.9.3
 	golang.org/x/net v0.0.0-20201224014010-6772e930b67b
 	golang.org/x/oauth2 v0.0.0-20201208152858-08078c50e5b5
 	golang.org/x/sys v0.0.0-20210112091331-59c308dcf3cc // indirect
