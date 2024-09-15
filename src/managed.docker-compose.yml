@@ -18,6 +18,7 @@ services:
       - traefik.http.routers.portfolio_proxy.tls=true
       - traefik.http.routers.portfolio_proxy.tls.certresolver=leresolver
       - traefik.http.services.portfolio_proxy.loadbalancer.server.port=80
+    restart: "always"
 
   client:
     container_name: Prod.Portfolio.Client
